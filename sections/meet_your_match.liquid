@@ -1,0 +1,36 @@
+<div lowercase="" class="w-layout-blockcontainer container_xl w-container"><div class="w-layout-vflex flex_center-center spacing_4"><div class="w-layout-vflex flex_dp-center-tb-left spacing_1"><h2 gsap-heading="" class="heading_medium"><span>
+{{ section.settings.text_meet_your_match_part_1 }}
+</span>
+<span class="fancy_text">
+{{ section.settings.text_meet_your_match_part_2 }}
+</span>
+<span>
+{{ section.settings.text_meet_your_match_part_3 }}
+</span>
+</h2><div>
+{{ section.settings.text_content }}
+</div>
+</div><ul role="list" class="grid_3col w-list-unstyled">{% for product in section.settings.collection_featured.products limit: section.settings.collection_featured_limit %}
+<li>
+    
+    <div class="liquid-embed w-embed">{% assign keycolor = product.metafields.custom.theme_colour | default: 'pink' %}
+                  {% assign byline = product.metafields.custom.byline %}
+                  {% assign transparent_image = product.metafields.custom.transparent_image %}</div>
+    
+    <a li-object:href="product.url" data-w-id="7e7f968a-f650-78bf-284d-4b572c1b8e25" href="{{ product.url }}" class="collection_product-wrapper w-inline-block"><div data-body="{{ keycolor }}" class="collection_product"><div class="collection_product-content"><img src="{{ product.metafields.custom.transparent_image | img_url: 'master' }}" loading="lazy" li-object:src="product.metafields.custom.transparent_image | img_url: 'master'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" class="collection_product-image full">
+<div class="collection_product-tagwrapper">{% for tags in product.metafields.custom.key_ingredients.value %}    <div li-for="tags in product.metafields.custom.key_ingredients.value">
+                                    
+                            <div li-object:text="tags.ingredient_name" class="collection_product-tag">
+{{ tags.ingredient_name }}
+</div>
+                            
+                        </div>
+{% endfor %}</div></div></div><div class="collection_product-label"><div class="w-layout-vflex spacing_0-5"><h3 li-object="product.title" class="heading_small">{{ product.title }}</h3><p class="heading_very-small">{{ byline }}</p></div><div button-size="" class="button is-pink"><div li-object="product.price | money">{{ product.price | money }}</div></div></div></a>
+    
+</li>
+{% endfor %}
+</ul></div></div>
+
+{% schema %}
+    {"tag":"section","name":"meet_your_match","class":"section_meetyourmatch","settings":[{"id":"text_meet_your_match_part_1","type":"text","label":"Meet your Match - Part 1","default":"Meet"},{"id":"text_meet_your_match_part_2","type":"text","label":"Meet your Match - Part 2","default":"your"},{"id":"text_meet_your_match_part_3","type":"text","label":"Meet your Match - Part 3","default":"match"},{"id":"text_content","type":"text","label":"Content","default":"our best-for-you gummy blends are the perfect addition to your daily routine."},{"id":"collection_featured","type":"collection","label":"Featured"},{"id":"collection_featured_limit","type":"range","label":"Limit: Featured","default":6,"min":1,"max":99,"step":1}],"presets":[{"name":"meet_your_match","category":"Liquify"}]}
+{% endschema %}

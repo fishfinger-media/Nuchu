@@ -1,0 +1,13 @@
+<div class="container_science padded"><div class="experts_split"><img src="{{ 'antho_twenty_nuchu_20240221_85_hd-1.jpg' | asset_url }}" loading="lazy" id="w-node-e842792e-a974-5d41-abc1-114851e6b417-07f8c2e5" alt="" class="expert_image">
+<div gsap-heading id="w-node-_217df711-e0dc-4c31-69ed-52d6417aa366-07f8c2e5" class="w-layout-vflex spacing_2"><div  class="text-size-medium ts_bold ts_tc-pink">
+{{ section.settings.text_heading }}
+</div>
+<p  class="heading_small line-spacing-medium"> {{ section.settings.textarea_testimonial }} </p>
+<div  class="heading_very-small ts_tc-pink">
+{{ section.settings.text_credit }}
+</div>
+</div></div></div>
+
+{% schema %}
+    {"tag":"section","name":"testimonial","class":"section_testimonial","settings":[{"id":"text_heading","type":"text","label":"Heading","default":"Expert Heading"},{"id":"textarea_testimonial","type":"textarea","label":"Testimonial","default":"I have tested these supplements and highly recommend them. I am particularly impressed by the absence of added sugar and sweeteners. The concept is well-thought-out, and the essential actives are present, making comparisons with other brands unnecessary."},{"id":"text_credit","type":"text","label":"Credit","default":"Dr. Nabil Sharara, General Practitioner"}],"presets":[{"name":"testimonial","category":"Liquify"}]}
+{% endschema %}

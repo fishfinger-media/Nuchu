@@ -1,0 +1,27 @@
+<div class="w-layout-blockcontainer container_xl w-container"><div class="w-layout-vflex flex_stretch-center spacing_4"><div class="w-layout-vflex flex_stretch-center spacing_2"><h1 li-object="'Contact.Heading' | t" class="heading_big">{{ 'Contact.Heading' | t }}</h1><hr class="divider" style="background:#2770dd">
+</div><div class="account_grid"><div id="w-node-_0f7e3a66-68ea-c636-7492-49bb6846fc71-07f8c291" class="contact_block"><h2 li-object="'Contact.Subtitle' | t" class="heading_small">{{ 'Contact.Subtitle' | t }}</h2><hr class="divider">
+<div> {{ section.settings.richtext_contact_details_text }} </div>
+<div class="w-layout-hflex contact_social-icons">{% for block in section.blocks %}
+    {% if block.type == "social-links" %}
+                    <div li-block="Social Links">
+                                    <a class="w-inline-block" href="{{ block.settings.url_url }}"> <img class="image_l" src="{{ block.settings.image_image | img_url: 'master' }}" alt="{{ block.settings.image_image.alt }}" loading="lazy"> </a>
+
+                            </div>
+            {% endif %}
+{% endfor %}
+</div></div><div class="contact_block"><h2 li-object="'Contact.contact' | t" class="heading_small">{{ 'Contact.contact' | t }}</h2><hr class="divider">
+<div class="w-layout-vflex flex_stretch-center spacing_1">{% for block in section.blocks %}
+    {% if block.type == "contact-links" %}
+                    <div li-block="Contact Links">
+                                    <a class="button is-full w-button" href="{{ block.settings.url_button_link }}">
+{{ block.settings.text_button_text }}
+</a>
+
+                            </div>
+            {% endif %}
+{% endfor %}
+</div></div></div></div></div>
+
+{% schema %}
+    {"tag":"section","name":"contact","class":"section_contact","blocks":[{"name":"Social Links","type":"social-links","settings":[{"type":"url","id":"url_url","label":"URL"},{"type":"image_picker","id":"image_image","label":"Image"}]},{"name":"Contact Links","type":"contact-links","settings":[{"type":"text","id":"text_button_text","label":"Button Text","default":"general enquiries - hello@nuchu.com"},{"type":"url","id":"url_button_link","label":"Button Link"}]}],"settings":[{"id":"richtext_contact_details_text","type":"richtext","label":"Contact Details Text","default":"<p>Need some info regarding Nuchu? Having an issue with your order? Want to stock one of our products? Think you have what it takes to be a Nuchu influencer?<br>\n\u200d<br>\nUse the emails on this page to get to the right person simply.<br>\n\u200d<br>\nYou can also drop us a dm on any of our social media channels.<\/p>"}],"presets":[{"name":"contact","category":"Liquify"}]}
+{% endschema %}

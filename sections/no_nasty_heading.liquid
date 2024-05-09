@@ -1,0 +1,15 @@
+<div lowercase="" class="w-layout-blockcontainer container_xl w-container"><div lowercase="" class="nonasties_content"><div class="w-layout-vflex flex_center spacing_2"><h1 class="heading_very-big max-width_16ch">
+{{ section.settings.text_heading }}
+</h1>
+<div class="heading_small">
+{{ section.settings.text_subheading }}
+</div>
+</div><img src="{{ 'images_gummyDisc-flipped.png' | asset_url }}" loading="lazy" floating="" alt="" class="floatinggummy _4">
+<img src="{{ 'images_gummyDisc-flipped.png' | asset_url }}" loading="lazy" floating="alt" alt="" class="floatinggummy _8">
+<img src="{{ 'images_gummyBear-2-flipped.png' | asset_url }}" loading="lazy" floating="alt" alt="" class="floatinggummy _6">
+<img src="{{ 'images_gummyBear-2.png' | asset_url }}" loading="lazy" floating="alt" alt="" class="floatinggummy _1">
+</div></div>
+
+{% schema %}
+    {"tag":"section","name":"no_nasty_heading","class":"section_nonasties","settings":[{"id":"text_heading","type":"text","label":"Heading","default":"Gummies Without Nasties"},{"id":"text_subheading","type":"text","label":"Subheading","default":"our founder\u2019s story to nuchu nourishment"}],"presets":[{"name":"no_nasty_heading","category":"Liquify"}]}
+{% endschema %}

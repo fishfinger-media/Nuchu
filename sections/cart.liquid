@@ -1,0 +1,37 @@
+<div lowercase="" class="w-layout-blockcontainer container_xl w-container"><div class="w-embed"><style>.divider { 
+	background-color:var(--color--pink-light)!important;
+  height:2px!important;
+}
+</style></div><div class="w-layout-vflex flex_stretch-center spacing_4"><div class="w-layout-vflex flex_stretch-center spacing_2"><h1 li-object="'Cart.Heading' | t">{{ 'Cart.Heading' | t }}</h1><hr class="divider" style="background:white">
+</div>{% if cart.item_count > 0 %}    <div li-if="cart.item_count > 0" class="w-form">
+    {% form 'cart' , cart, class: 'cart_grid-wrapper' %}
+<div class="cart_table outline-solid-1"><div class="cart_grid is-header w-hidden-tiny"><div id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf71-07f8c28f" class="cart_table-header"><p class="heading_cart">Product</p></div><div id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf74-07f8c28f" class="cart_table-header"><p class="heading_cart">Quantity</p></div><div id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf77-07f8c28f" class="cart_table-header"><p class="heading_cart">Price</p></div></div><div class="divider is-nav"></div>{% for item in cart.items %}    <div li-for="item in cart.items" class="cart_grid">
+                                    
+                            <div id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf7b-07f8c28f" class="display-inlineflex"><a href="{{ item.url }}" li-object:href="item.url" id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf7c-07f8c28f" class="w-inline-block"><img src="{{ item.image |  img_url: 'small' }}" li-object:src="item.image |  img_url: 'small'" alt="" class="cart_image">
+</a><div class="cart_info-order"><a href="{{ item.url }}" li-object:href="item.url" li-object="item.title">{{ item.title }}</a><div class="hide"><p item="price" class="cart_price">$13</p><p item="original-price" class="cart_price away">$18</p></div></div></div>
+                            
+                            <div id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf86-07f8c28f" class="cart_table-item anzahl"><div class="cart_quantity-wrapper"><a minus="" href="#" class="qty-counter w-inline-block"><div>-</div></a><input class="form-input quan-num w-input" li-object:value="item.quantity" maxlength="256" name="updates[]" data-name="Updates" quan="" placeholder="" type="number" id="updates[]" required="" value="{{ item.quantity }}">
+<a add="" href="#" class="qty-counter w-inline-block"><div>+</div></a></div><a href="{{ item.url_to_remove }}" li-object:href="item.url_to_remove" class="w-inline-block"><div li-object:url="item.url_to_remove" class="text-align-center" url="{{ item.url_to_remove }}">Remove</div></a></div>
+                            
+                            <div id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf8e-07f8c28f" class="cart_price-info"><div li-object="item.final_line_price | money" id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf8f-07f8c28f">{{ item.final_line_price | money }}</div>{% if item.original_line_price > item.final_line_price %}    <div li-if="item.original_line_price > item.final_line_price" id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf91-07f8c28f">
+    <div li-object="item.original_line_price | money" id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf92-07f8c28f" class="text-style-strikethrough text-style-muted">{{ item.original_line_price | money }}</div>    </div>
+{% endif %}</div>
+                            
+                        </div>
+{% endfor %}</div><div id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf94-07f8c28f" class="cart_wrapper-right"><div id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf95-07f8c28f" class="cart_table outline-solid-1"><div class="cart_grid is-header w-hidden-tiny"><div id="w-node-a221bfc6-6387-ecb8-15ff-f4ee4a9caf97-07f8c28f" class="cart_table-header"><p class="heading_cart">Summary</p></div></div><div class="divider is-nav"></div><div class="cart_content"><div><div class="cart_details-wrapper"><div>total</div><div class="cart_details-price">{% if cart.total_discounts > 0 %}    <div li-if="cart.total_discounts > 0">
+    <div li-object="cart.original_total_price | money" class="text-style-strikethrough text-style-muted">{{ cart.original_total_price | money }}</div>    </div>
+{% endif %}<div li-object="cart.total_price | money" class="text-weight-bold">{{ cart.total_price | money }}</div></div></div>{% if cart.total_discounts > 0 %}    <div li-if="cart.total_discounts > 0" class="cart_details-wrapper">
+    <div>Discount</div><div li-object="cart.total_discount | money">{{ cart.total_discount | money }}</div>    </div>
+{% endif %}</div><div class="divider"></div><div class="cart_action"><input type="submit" data-wait="Please wait..." class="button is-pink w-button" value="Checkout" name="checkout" >
+
+<input type="submit" data-wait="Please wait..." class="button is-outline w-button" value="Update cart" >
+
+</div></div></div></div>{% endform %}
+<div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>    </div>
+{% endif %}{% if cart.item_count == 0 %}    <div li-if="cart.item_count == 0" class="cart_empty outline-solid-1">
+    <div>No products in your basket yet</div><a href="/collections/nuchu" class="button w-button">Shop Now</a>    </div>
+{% endif %}</div></div>
+
+{% schema %}
+    {"tag":"section","name":"cart","class":"section_account","settings":[],"presets":[{"name":"cart","category":"Liquify"}]}
+{% endschema %}

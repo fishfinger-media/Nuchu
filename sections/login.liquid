@@ -1,0 +1,31 @@
+<div class="login_video-wrapper"><div id="w-node-_6c237e86-184a-997e-5dac-9085f0d25ae6-07f8c297" class="login_left"><div data-duration-in="300" data-duration-out="100" id="w-node-_6c237e86-184a-997e-5dac-9085f0d25ae7-07f8c297" data-current="Tab 1" data-easing="ease" class="login_tabs w-tabs"><div class="w-tab-content"><div data-w-tab="Tab 1" class="w-tab-pane w--tab-active"><div class="login_form is-tabbed w-form">{% if form.errors %}    <div li-if="form.errors" class="error_message">
+    <div li-object="form.errors | default_errors">{{ form.errors | default_errors }}</div>    </div>
+{% endif %}<h1 class="text-size-medium ts_bold">Login</h1><div class="divider"></div><div><span li-object="'Account.Forms.New-Account-Label' | t">{{ 'Account.Forms.New-Account-Label' | t }}</span> <a href="{{ routes.account_register_url }}" li-object:href="routes.account_register_url" class="ts_underline text-weight-bold">Register now</a></div>{% form 'customer_login' , return_to: '/account', class: 'form_form' %}
+<div class="form_field-wrapper"><input class="form-input w-input" maxlength="256" name="customer[email]" data-name="Field" placeholder="E-Mail-Address" type="email" id="field" >
+
+</div><div class="form_field-wrapper"><input class="form-input w-input" maxlength="256" name="customer[password]" data-name="Field" placeholder="Password" type="password" id="field" required="" >
+
+</div><input type="submit" data-wait="Please Wait" li-object="'Account.Forms.Login-Button' | t" id="w-node-_6c237e86-184a-997e-5dac-9085f0d25af5-07f8c297" class="button is-full w-button" value="Login">
+{% endform %}
+<div class="divider"></div><div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="login_hinweis-kachel w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div><div data-w-tab="Tab 2" class="w-tab-pane"><div class="login_form is-tabbed w-form">
+  
+  <h2 class="text-size-medium ts_bold">Reset Password</h2>
+  <div class="divider"></div>
+  <p>In order to receive a new password, you need to enter your email address below, and we will send you an email with further instructions immediately.</p>{% form 'recover_customer_password' , return_to: '/pages/reset-confirmation', class: 'form_form' %}
+<div class="form_field-wrapper"><input class="form-input w-input" maxlength="256" name="email" data-name="Field" placeholder="E-Mail-Address" type="email" id="field" >
+
+</div><input type="submit" data-wait="Please wait..." class="button w-button" value="Reset">
+
+    
+{% endform %}
+
+  <div class="divider"></div>
+  
+<div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div></div>
+  
+  <div class="w-tab-menu"><a data-w-tab="Tab 1" class="login_tab-link w-inline-block w-tab-link w--current"><div>Login</div></a><a data-w-tab="Tab 2" class="login_tab-link w-inline-block w-tab-link"><div li-object="'Account.Forms.Forgot-Password-Label' | t" class="ts_underline">{{ 'Account.Forms.Forgot-Password-Label' | t }}</div></a></div></div></div><video class="video is-account" autoplay="true" muted="" loop="" playsinline="true"><source src="https://cdn.shopify.com/videos/c/o/v/7179c7c405c445b298986ce068a02228.mp4" type="video/mp4">
+</video></div>
+
+{% schema %}
+    {"tag":"section","name":"login","class":"section_login","settings":[],"presets":[{"name":"login","category":"Liquify"}]}
+{% endschema %}

@@ -1,0 +1,17 @@
+<div class="container_science large"><div class="w-layout-hflex science_wrapper"><div class="science_heading-wrapper"><div class="w-layout-vflex science_heading"><h1 class="heading_big ts_maxwidth-10">
+{{ section.settings.text_heading }}
+</h1>
+<p class="ts_maxwidth_50"> {{ section.settings.textarea_paragraph }} </p>
+</div><img src="{{ 'bottle-temp.png' | asset_url }}" loading="lazy" alt="" class="science_heading small">
+</div><img src="https://uploads-ssl.webflow.com/65c506881726eb05bb74699d/65d6753456728eaf45794b43_images_gummyBear-2.png" loading="lazy" floating="" alt="" class="floatinggummy _11">
+<img src="https://uploads-ssl.webflow.com/65c506881726eb05bb74699d/65dcd9f843dd505f2e5ca2cc_images_gummyBear-2-flipped.png" loading="lazy" floating="alt" alt="" class="floatinggummy _16">
+<img src="https://uploads-ssl.webflow.com/65c506881726eb05bb74699d/65dcd9f8d28f752869470f58_images_gummyDisc-flipped.png" loading="lazy" floating="alt2" alt="" class="floatinggummy _15">
+<img src="https://uploads-ssl.webflow.com/65c506881726eb05bb74699d/65d67534be4d675ef661505b_images_gummyDisc.png" loading="lazy" floating="alt2" alt="" class="floatinggummy _13">
+</div></div><div class="w-embed"><style>@media (max-width: 1650px) {
+.floatinggummy{ display:none; )
+}
+</style></div>
+
+{% schema %}
+    {"tag":"section","name":"science_report_hero","class":"section_sciencereport","settings":[{"id":"text_heading","type":"text","label":"Heading","default":"Rapport Scientifique"},{"id":"textarea_paragraph","type":"textarea","label":"Paragraph","default":"Dive into the heart of wellness with our \"Science Report\" \u2013 where we unravel the scientific wonders behind each ingredient, demystifying the magic that fuels our products."}],"presets":[{"name":"science_report_hero","category":"Liquify"}]}
+{% endschema %}

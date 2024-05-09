@@ -1,0 +1,236 @@
+<style>/* -- GENERAL STYLINGS -- */
+  html { height:auto; }
+  .thescience_fancy-text::before,
+  .thescience_fancy-text::after {
+    content: '';
+    background-image: url('https://uploads-ssl.webflow.com/65c506881726eb05bb74699d/65ce26b58ca1e2be298eaf97_Star%20icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 2vmin;
+    height: 2vmin;
+    position: absolute;
+    top: 55%;
+    left: -10%;
+  }
+  .thescience_fancy-text::after {
+    top: 0%;
+    left: 90%
+  }
+  /* QTY COUNTER */
+  /* Chrome, Safari, Edge, Opera */
+  .form-input::-webkit-outer-spin-button,
+  .form-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .form-input[type=number] {
+    -moz-appearance: textfield;
+  }
+  /* Prevent all click and hover interaction with an element */
+  .pointer-events-off, .mini-cart-closed {
+    pointer-events: none;
+  }
+  /* Enables all click and hover interaction with an element */
+  .pointer-events-on {
+    pointer-events: auto;
+  }
+  /* Create a class of .div-square which maintains a 1:1 dimension of a div */
+  .div-square::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+  /* These classes are never overwritten */
+  .hide {
+    display: none !important;
+  }
+  /* Wave Text */
+  #wave-text {
+    font-family: 'Nuchu', 'Sharp Grotesk'
+  }
+  .swiper-button-disabled {
+    opacity:50%;
+    cursor:not-allowed;
+  }
+  .product-main_table-row > *:first-child {
+    text-align: left;
+  }
+  body[full-height=""] {
+    .page-wrapper,
+    .main-wrapper,
+    .main-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .page-wrapper {
+      min-height: 100vh;
+    }
+    .main-wrapper {
+      height: 100%;
+      flex-grow: 1;
+    }
+    .footer {
+      margin-top: auto;
+    }
+  }
+  #science-en {
+    display: block;
+  }
+  #science-fr {
+    display: none;
+  }
+  html[lang="fr"] #science-en {
+    display: none;
+  }
+  html[lang="fr"] #science-fr {
+    display: block;
+  }
+  /* -- ATTRIBUTES -- */
+  [li-cloak_disabled="hide"]  { display: none !important; }
+  [x-cloak] { display: none !important; }
+  [max-container=""] { max-width: 100% !important }
+  [lowercase] { text-transform: lowercase; }
+  [button-size="large"] { font-size: 1.5rem; padding: 1rem 2rem }
+  [button-color="white"] { background: white }
+  /* -- MEDIA QUERIES -- */
+  /* Desktop an Up */
+  @media (min-width: 992px) {
+    .w-container {
+      padding-left: var(--page-padding--desktop);
+      padding-right: var(--page-padding--desktop);
+      width: 100% !important;
+      max-width: var(--page-padding--max-width);
+      margin: auto;
+    }
+    [data-logosize="large"] { height: 4.68rem; }
+    .fancy_text::before,
+    .fancy_text::after {
+      content: '';
+      background-image: url('https://uploads-ssl.webflow.com/65c506881726eb05bb74699d/65ce26b58ca1e2be298eaf97_Star%20icon.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 1.5vw;
+      height: 1.5vw;
+      position: absolute;
+      top: 55%;
+      left: -10%;
+    }
+    .fancy_text::after {
+      top: 0%;
+      left: 90%
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+      display: none !important;
+    }
+    .w-container {
+      padding-left: var(--page-padding--tablet);
+      padding-right: var(--page-padding--tablet);
+      width: 100%;
+      max-width: var(--page-padding--max-width);
+      margin: auto;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+    .w-container {
+      padding-left: var(--page-padding--mobile-landscape);
+      padding-right: var(--page-padding--mobile-landscape);
+      width: 100%;
+      max-width: var(--page-padding--max-width);
+      margin: auto;
+    }
+  }
+  @media screen and (max-width: 478px) {
+    .hide-mobile{
+      display: none !important;
+    }
+    .w-container {
+      padding-left: var(--page-padding--mobile);
+      padding-right: var(--page-padding--mobile);
+      width: 100%;
+      max-width: var(--page-padding--max-width);
+      margin: auto;
+    }
+  }
+  /* -- BODY COLOURS -- */
+  [data-body="blue"] {
+    --utility--body-fill: var(--color--blue);
+    --utility--body-text: var(--color--white);
+    --utility--body-button: var(--color--white);
+  }
+  [data-body="pink"] {
+    --utility--body-fill: var(--color--pink-light);
+    --utility--product-medium: var(--color--lilac-medium);
+    --utility--product-dark: var(--color--lilac-dark);
+    --utility--product-light: var(--color--lilac-light);
+  }
+  [data-body="teal"] {
+    --utility--body-fill: var(--color--teal-light);
+    --utility--product-medium: var(--color--teal-medium);
+    --utility--product-dark: var(--color--teal-dark);
+    --utility--product-light: var(--color--teal-light);
+  }
+  [data-body="yellow"] {
+    --utility--body-fill: var(--color--yellow-light);
+    --utility--product-medium: var(--color--yellow-medium);
+    --utility--product-dark: var(--color--yellow-dark);
+    --utility--product-light: var(--color--yellow-light);
+  }
+  /* -- ANIMATIONS -- */
+  @keyframes banner {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes fall-1 {
+    0% {
+      transform: translate(0px, 0px) scale(0.25);
+      opacity: 0;
+    }
+    5% {
+      transform: translate(10px, -10px) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(25px, 200px) scale(1);
+      opacity: 0;
+    }
+  }
+  @keyframes fall-2 {
+    0% {
+      transform: translate(0px, 0px) scale(0.25);
+      opacity: 0;
+    }
+    10% {
+      transform: translate(-10px, -5px) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-10px, 160px) scale(0.25);
+      opacity: 0;
+    }
+  }
+  @keyframes fall-3 {
+    0% {
+      transform: translate(0px, 0px) scale(0.5);
+      opacity: 0;
+    }
+    15% {
+      transform: translate(7px, 5px) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(20px, 120px) scale(0.5);
+      opacity: 0;
+    }
+  }
+</style>
