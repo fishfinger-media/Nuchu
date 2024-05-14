@@ -1,1 +1,14 @@
-{"sections":{"contact":{"type":"contact","settings":{}}},"layout":"page.contact","wrapper":"main.main-wrapper","order":["contact"]}
+{
+  "sections": {
+    "contact": {
+      "type": "contact",
+      "settings": {
+      }
+    }
+  },
+  "layout": "page.contact",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "contact"
+  ]
+}

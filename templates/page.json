@@ -1,1 +1,14 @@
-{"sections":{"default":{"type":"default","settings":{}}},"layout":"page","wrapper":"main.main-wrapper","order":["default"]}
+{
+  "sections": {
+    "default": {
+      "type": "default",
+      "settings": {
+      }
+    }
+  },
+  "layout": "page",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "default"
+  ]
+}

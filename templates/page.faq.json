@@ -1,1 +1,20 @@
-{"sections":{"faq_header":{"type":"faq_header","settings":{}},"faq_questions":{"type":"faq_questions","settings":{}}},"layout":"page.faq","wrapper":"main.main-wrapper","order":["faq_header","faq_questions"]}
+{
+  "sections": {
+    "faq_header": {
+      "type": "faq_header",
+      "settings": {
+      }
+    },
+    "faq_questions": {
+      "type": "faq_questions",
+      "settings": {
+      }
+    }
+  },
+  "layout": "page.faq",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "faq_header",
+    "faq_questions"
+  ]
+}
