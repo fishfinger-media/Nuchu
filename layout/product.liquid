@@ -69,8 +69,7 @@
            {
             "@id": "{{ shop.url }}",
             "name": "Home"
-            }
-          },
+            }},
         {
            "@type": "ListItem",
            "position": 2,
@@ -78,8 +77,7 @@
            {
             "@id": "{% if collection.url %}{{ collection.url }}{% else %}{{ product.vendor }}{% endif %}",
             "name": "{% if collection.url %}{{collection.title }}{% else %}{{ product.vendor }}{% endif %}"
-            }
-          },
+            }},
           {
            "@type": "ListItem",
           "position": 3,
@@ -87,8 +85,7 @@
            {
              "@id": "{{ product.url }}",
              "name": "{{ product.title }}"
-           }
-          }
+           }}
          ]
         }
     </script><script type="application/ld+json">{
@@ -100,11 +97,10 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "{{ fa_qs.antwort | metafield_tag | strip_html }}"
-            }
-          }{% if forloop.last == false %},{% endif %}{% endfor %}
+            }}{% if forloop.last == false %},{% endif %}{% endfor %}
           ]
         }
-    </script><script src="{{ '4f284803bd0966cc24fa8683a34afc6e_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
+    </script><script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
 <body li-page="product" data-body="{{ product.metafields.custom.theme_colour | default:'pink' }}">
 
 <div class="page-wrapper">{% render 'global_styles' %}
@@ -150,8 +146,7 @@ function toggleFaq(index, isOpening) {
   faqArrows[index].style.transform = `rotate(${rotateValue}) scale(${scaleValue})`;
   if (isOpening) {
       setTimeout(() => faqArrows[index].style.transform = `rotate(${rotateValue})`, 200);
-  }
-}
+  }}
 faqQuestions.forEach((question, index) => {
   question.addEventListener("click", () => {
       const isOpening = faqAnswers[index].style.height === "0px";
@@ -173,8 +168,7 @@ faqQuestions.forEach((question, index) => {
             const form = this.querySelector('form');
             this.elements.input.value = event.currentTarget.dataset.value;
             if (form) form.submit();
-        }
-    }
+        }}
     customElements.define('localization-form', LocalizationForm);
     </script><script>const dropdown = document.getElementById('locale-dropdown');
       const localeList = document.querySelector('.locale_list');
@@ -183,8 +177,7 @@ faqQuestions.forEach((question, index) => {
           localeList.style.display = 'flex';
         } else {
           localeList.style.display = 'none';
-        }
-      });
+        }});
     </script><script>document.querySelectorAll(".product-main_slider-container").forEach(function (container) {
     const thumbsSwiper = new Swiper(container.querySelector(".swiper.is-productthumbnail"), {
       slidesPerView: "auto",
@@ -208,8 +201,7 @@ faqQuestions.forEach((question, index) => {
       navigation: {
         nextEl: container.querySelector(".swiper-next"),
         prevEl: container.querySelector(".swiper-prev"),
-      }
-    });
+      }});
   });
 </script><script>document.addEventListener("DOMContentLoaded", function() {
   const ingredientBtn = document.querySelector('[ingredient-btn]');
@@ -222,8 +214,7 @@ faqQuestions.forEach((question, index) => {
     } else {
       mainTableWrapper.style.maxHeight = '80rem';
       ingredientIcon.style.transform = 'rotate(180deg)';
-    }
-  });
+    }});
 });
 </script><script>function runScriptBelow991px() {
     const productHeading = document.querySelectorAll(".product-detail_title");
@@ -244,8 +235,7 @@ faqQuestions.forEach((question, index) => {
         productArrows[index].style.transform = `rotate(${rotateValue}) scale(${scaleValue})`;
         if (isOpening) {
             setTimeout(() => productArrows[index].style.transform = `rotate(${rotateValue})`, 200);
-        }
-    }
+        }}
     productHeading.forEach((question, index) => {
         question.addEventListener("click", () => {
             const isOpening = productAnswers[index].style.height === "0px";
@@ -262,8 +252,7 @@ if (mediaQuery.matches) {
 mediaQuery.addListener(function(mediaQueryList) {
     if (mediaQueryList.matches) {
         runScriptBelow991px();
-    } 
-});
+    }});
 </script><script>document.addEventListener("DOMContentLoaded", function() {
     // Get all elements with attribute is-add-to-cart
     const addToCartElements = document.querySelectorAll('[is-add-to-cart]');
@@ -276,8 +265,7 @@ mediaQuery.addListener(function(mediaQueryList) {
                 addToCartButton.click(); // Trigger click event
             } else {
                 console.error('Add to cart button not found');
-            }
-        });
+            }});
     });
 });
 </script><script>document.addEventListener('DOMContentLoaded', function() {
@@ -294,12 +282,10 @@ mediaQuery.addListener(function(mediaQueryList) {
                 var elementToClick = document.querySelector('[link="hitters"]');
                 if (elementToClick) {
                     elementToClick.click();
-                }
-            }
+                }}
         });
     });
 });
 </script>
-
 </body>
 </html>

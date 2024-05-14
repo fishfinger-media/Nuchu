@@ -1,44 +1,41 @@
-<div lowercase="" class="w-layout-blockcontainer w-container"><div class="cart_grid-wrapper"><div class="cart_table outline-solid-1"><div class="cart_grid is-header is-order"><div li-object="'Order-Page.Name-Label' | t" id="w-node-bcd6f150-7844-1b66-d054-ab3db8f0208e-07f8c29b">{{ 'Order-Page.Name-Label' | t }}</div><div li-object="'Order-Page.Quantity-Label' | t" id="w-node-bcd6f150-7844-1b66-d054-ab3db8f02090-07f8c29b">{{ 'Order-Page.Quantity-Label' | t }}</div><div li-object="'Order-Page.Price-Label' | t" id="w-node-bcd6f150-7844-1b66-d054-ab3db8f02092-07f8c29b">{{ 'Order-Page.Price-Label' | t }}</div><div li-object="'Order-Page.Total-Label' | t" id="w-node-bcd6f150-7844-1b66-d054-ab3db8f02094-07f8c29b">{{ 'Order-Page.Total-Label' | t }}</div></div><div class="account_divider"></div>{% for item in order.line_items %}    <div li-for="item in order.line_items" class="cart_grid is-order">
+<div lowercase="" class="w-layout-blockcontainer container_account w-container"><div class="account_grid-container is-order"><div id="w-node-_3f9c2591-8c43-12b4-37c1-9beec5c8473f-07f8c29b" class="account_card"><div class="account_table is-short"><div id="w-node-_3f0a3eaf-b95a-ca29-b484-615493990055-07f8c29b">Name</div><div id="w-node-f5c4f617-cec3-87f4-96e9-06eff649ac48-07f8c29b">Quantity</div><div id="w-node-_8d886173-8283-6433-a913-2491a577f861-07f8c29b">Price</div><div id="w-node-_47bd6825-79fe-3e2f-cba5-157dae5e5dc6-07f8c29b" class="text-align-right">Total</div></div><div class="account_divider"></div>{% for item in order.line_items %}    <div li-for="item in order.line_items" class="account_table is-short">
                                     
-                            <div li-object="item.product.title" id="w-node-_7da89c9c-ec63-34c8-86ac-403c453b6962-07f8c29b">{{ item.product.title }}</div>
+                            <div id="w-node-_5e835fdc-1a26-8e3e-a0c1-b43ddd5869a3-07f8c29b" class="w-layout-hflex account_orders-flex"><div li-object="item.product.title" id="w-node-d36f213f-130b-2d0f-0d01-e34bdeefffd7-07f8c29b">{{ item.product.title }}</div></div>
                             
-                            <div li-object="item.quantity" id="w-node-_7da89c9c-ec63-34c8-86ac-403c453b6964-07f8c29b">{{ item.quantity }}</div>
+                            <div li-object="item.quantity" id="w-node-cef1e255-50dc-c1ea-03fb-43558167c7ae-07f8c29b">{{ item.quantity }}</div>
                             
-                            <div li-object="item.unit_price" id="w-node-_7da89c9c-ec63-34c8-86ac-403c453b6966-07f8c29b">{{ item.unit_price }}</div>
+                            <div li-object="item.unit_price" id="w-node-_398b0b23-34ba-22e7-afb5-e5bb31cea209-07f8c29b">{{ item.unit_price }}</div>
                             
-                            <div li-object="item.final_line_price | money" id="w-node-_7da89c9c-ec63-34c8-86ac-403c453b6968-07f8c29b">{{ item.final_line_price | money }}</div>
+                            <div li-object="item.final_line_price | money" id="w-node-_96538423-6a77-8c60-b996-c8cfd48a5c38-07f8c29b" class="text-align-right">{{ item.final_line_price | money }}</div>
                             
                         </div>
-{% endfor %}<div><div class="order_line"><div li-object="'Order-Page.Subtotal-Label' | t">{{ 'Order-Page.Subtotal-Label' | t }}</div><div li-object="order.subtotal_price | money">{{ order.subtotal_price | money }}</div></div>{% for line_item in order.line_items %}    <div li-for="line_item in order.line_items">
+{% endfor %}{% if customer.orders.size != 0 %}    <div li-if="customer.orders.size != 0" class="account_content">
+    <div class="account_details-content"><div>subtotal</div><div li-object="order.subtotal_price | money">{{ order.subtotal_price | money }}</div></div>{% for line_item in order.line_items %}    <div li-for="line_item in order.line_items" class="account_details-content">
                                     
-                            {% for discount in line_item.discount_allocations %}    <div li-for="discount in line_item.discount_allocations" class="order_line">
-                                    
-                            <div li-object="'Order-Page.Discount-Label' | t">{{ 'Order-Page.Discount-Label' | t }}</div>
+                            <div>discount</div>
                             
                             <div li-object="discount.amount | money">{{ discount.amount | money }}</div>
                             
                         </div>
-{% endfor %}
-                            
-                        </div>
-{% endfor %}{% for shipping_line in order.shipping_lines %}    <div li-for="shipping_line in order.shipping_lines" class="order_line">
+{% endfor %}{% for shipping_line in order.shipping_lines %}    <div li-for="shipping_line in order.shipping_lines" class="account_details-content">
                                     
-                            <div li-object="'Order-Page.Shipping-Label' | t">{{ 'Order-Page.Shipping-Label' | t }}</div>
+                            <div>shipping</div>
                             
                             <div li-object="shipping_line.price | money">{{ shipping_line.price | money }}</div>
                             
                         </div>
-{% endfor %}{% for tax_line in order.tax_lines %}    <div li-for="tax_line in order.tax_lines" class="order_line">
+{% endfor %}{% for tax_line in order.tax_lines %}    <div li-for="tax_line in order.tax_lines" class="account_details-content">
                                     
-                            <div class="display-inlineflex"><div li-object="'Order-Page.Vat-Label' | t">{{ 'Order-Page.Vat-Label' | t }}</div></div>
+                            <div>vat</div>
                             
                             <div li-object="tax_line.price | money">{{ tax_line.price | money }}</div>
                             
                         </div>
-{% endfor %}<div class="order_line"><div>total</div><div li-object="order.total_price | money">{{ order.total_price | money }}</div></div></div></div><div id="w-node-bcd6f150-7844-1b66-d054-ab3db8f020bd-07f8c29b" class="cart_table outline-solid-1"><div class="cart_grid is-header"><div id="w-node-bcd6f150-7844-1b66-d054-ab3db8f020bf-07f8c29b" class="cart_table-header"><div li-object="'Order-Page.Customer-Information-Label' | t">{{ 'Order-Page.Customer-Information-Label' | t }}</div></div></div><div class="account_divider"></div><div class="addresses_account-wrapper content-grid"><div><div li-object="order.name">{{ order.name }}</div><div li-object="order.created_at | date: '%e.%m.%Y'">{{ order.created_at | date: '%e.%m.%Y' }}</div>{% if order.cancelled == true %}    <div li-if="order.cancelled == true" class="order_wrapper">
-    <div li-object="'Order-Page.Cancelled-Label' | t">{{ 'Order-Page.Cancelled-Label' | t }}</div><div li-object="order.cancelled_at | date: '%e.%m.%Y'">{{ order.cancelled_at | date: '%e.%m.%Y' }}</div>    </div>
-{% endif %}<div liquid:if="order.cancelled == true" class="order_wrapper"><div li-object="'Order-Page.Reason-Label' | t">{{ 'Order-Page.Reason-Label' | t }}</div><div li-object="order.cancel_reason_label">{{ order.cancel_reason_label }}</div></div></div><div><div li-object="'Order-Page.Billing-Address-Label' | t">{{ 'Order-Page.Billing-Address-Label' | t }}</div><div li-object="order.billing_address | format_address">{{ order.billing_address | format_address }}</div></div><div><div li-object="'Order-Page.Shipping-Address-Label' | t">{{ 'Order-Page.Shipping-Address-Label' | t }}</div><div li-object="order.shipping_address | format_address">{{ order.shipping_address | format_address }}</div></div></div></div></div></div>
-
-{% schema %}
-    {"tag":"section","name":"order","class":"section_account","settings":[],"presets":[{"name":"order","category":"Liquify"}]}
-{% endschema %}
+{% endfor %}<div class="account_details-content"><div>total</div><div li-object="order.total_price | money">{{ order.total_price | money }}</div></div>    </div>
+{% endif %}</div><div id="w-node-_1288c56b-41ca-7873-08c1-08f4173f1b00-07f8c29b" class="account_card"><div class="account_table is-short"><div id="w-node-_1cebb7b5-dc65-fab7-5de6-c712ae52cf28-07f8c29b">Customer Information</div></div><div class="account_divider"></div>{% if customer.orders.size != 0 %}    <div li-if="customer.orders.size != 0" class="account_content">
+    <div><div li-object="order.name">{{ order.name }}</div><div li-object="order.created_at | date: '%e.%m.%Y'">{{ order.created_at | date: '%e.%m.%Y' }}</div>{% if order.cancelled == true %}    <div li-if="order.cancelled == true" class="order_wrapper">
+    <div>Canceled at: </div><div li-object="order.cancelled_at | date: '%e.%m.%Y'">{{ order.cancelled_at | date: '%e.%m.%Y' }}</div>    </div>
+{% endif %}{% if order.cancelled == true %}    <div li-if="order.cancelled == true" class="order_wrapper">
+    <div>Reason: </div><div li-object="order.cancel_reason_label">{{ order.cancel_reason_label }}</div>    </div>
+{% endif %}</div><div><div>Billing Address:</div><div li-object="order.billing_address | format_address">{{ order.billing_address | format_address }}</div></div><div><div>Shipping Address:</div><div li-object="order.shipping_address | format_address">{{ order.shipping_address | format_address }}</div></div>    </div>
+{% endif %}</div></div></div> {% schema %} {"tag":"section","name":"order","class":"section_account-orders","presets":[{"name":"order","category":"Liquify"}]} {% endschema %}

@@ -247,8 +247,13 @@ document.addEventListener('alpine:init', () => {
                 this.products = data.items;
 
                 // Trigger dropdown click to open minicart
-                let element = document.querySelectorAll('[data-dropdowntoggle]')
-                LiquifyHelper.triggerClick(element.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))
+                let elements = document.querySelectorAll('[li-element="mini-cart-trigger"]');
+                elements.forEach(element => {
+                    let closestDropdown = element.closest('.w-dropdown-toggle');
+                    if (closestDropdown) {
+                        LiquifyHelper.triggerClick(closestDropdown);
+                    }
+                });
 
                 console.log('All items added!');
                 this.$dispatch('cartupdated');
@@ -299,8 +304,13 @@ document.addEventListener('alpine:init', () => {
                     this.products = data.items;
 
                     // Trigger dropdown click to open minicart
-                    let element = document.querySelectorAll('[data-dropdowntoggle]')
-                    LiquifyHelper.triggerClick(element.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))
+                    let elements = document.querySelectorAll('[li-element="mini-cart-trigger"]');
+                    elements.forEach(element => {
+                        let closestDropdown = element.closest('.w-dropdown-toggle');
+                        if (closestDropdown) {
+                            LiquifyHelper.triggerClick(closestDropdown);
+                        }
+                    });
 
                     console.log('product added');
                     console.log('Dispatch cart events');

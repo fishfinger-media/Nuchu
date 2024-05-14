@@ -6,7 +6,7 @@
 {% endif %}</div></div><div class="spacer-xxsmall"></div><a li-object:href="product.url" href="{{ product.url }}" class="product-item_text-link w-inline-block"><div class="product-item_left"><div li-object="product.vendor" class="text-size-small">{{ product.vendor }}</div><div class="heading_small text-weight-normal"><span li-object="product.title">{{ product.title }}</span></div></div><div class="product-item_price">{% if product.compare_at_price_max > product.price %}    <div li-if="product.compare_at_price_max > product.price">
     <div li-object="product.compare_at_price | money" class="text-size-regular text-style-strikethrough text-style-muted">{{ product.compare_at_price | money }}</div>    </div>
 {% endif %}<div li-object="product.price | money" class="text-size-regular">{{ product.price | money }}</div></div></a><div class="spacer-xsmall is-grow"></div><div class="margin-top-auto"><div class="product-item_form-wrapper">{% if product.available == true %}    <div li-if="product.available == true">
-    <script src="{{ '4f284803bd0966cc24fa8683a34afc6e_custom.js' | asset_url }}" type="text/javascript"></script>
+    <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
 <a li-element="direct-add-to-cart" href="#" class="button max-width-full w-button" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" @click="addToCart()">Add to Cart</a>    </div>
 {% endif %}{% if product.available != true %}    <div li-if="product.available != true">
     <a href="#" class="button is-secondary pointer-events-off max-width-full w-button">Not in Stock</a>    </div>

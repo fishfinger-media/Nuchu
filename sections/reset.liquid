@@ -1,45 +1,38 @@
-<div class="hide w-embed"><style>body{
+<div class="w-embed"><style>body{
     --utility--body-fill: var(--color--pink-light) !important;
     --utility--product-medium: var(--color--lilac-medium) !important;
     --utility--product-dark: var(--color--lilac-dark) !important;
     --utility--product-light: var(--color--lilac-light) !important;
   }
   .page-wrapper,
-  .main-wrapper,
-  .main-wrapper {
+  .main-wrapper{
     display: flex!important;
     flex-direction: column;
   }
   .page-wrapper {
-    min-height: 100vh;
+    min-height: 100svh;
   }
-  .main-wrapper {
+  .main-wrapper  {
     height: 100%;
     flex-grow: 1;
+  }
+  section{
+  	flex-grow: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;&nbsp;&nbsp;
   }
   .footer {
     margin-top: auto;
   }
-  .navbar_logo-link{
-    color:var(--color--blue);
-  }
-  .login_video-wrapper {
-    .button {
-      background-color:var(--color--lilac-medium);
-    }
-  }
-</style></div><section class="container_xl"><div class="login_video-wrapper"><div class="login_tabs"><div class="login_form w-form">{% if form.errors %}    <div li-if="form.errors" class="error_message">
-    <div li-object="form.errors | default_errors">{{ form.errors | default_errors }}</div>    </div>
-{% endif %}<h1 li-object="'Account.Forms.Reset-Password-Label' | t" class="heading_small">{{ 'Account.Forms.Reset-Password-Label' | t }}</h1><div class="divider"></div>{% form 'reset_customer_password' , return_to: '/pages/reset-confirmation', class: 'form_form' %}
-<div class="form_field-wrapper"><input class="form-input w-input" maxlength="256" name="customer[password]" data-name="" placeholder="Password*" type="password" id="field" required="" >
+</style></div><div class="w-layout-blockcontainer w-container"><div lowercase="" class="login_wrapper"><div class="login_container"><div class="login_content"><div class="form_account w-form"><form id="email-form" name="email-form" data-name="Email Form" method="get" class="account_content is-login" data-wf-page-id="65f99dbf57aed29707f8c2e0" data-wf-element-id="d164bd19-1c84-2da8-b7a3-e9e3461e31d4">{% if form.errors %}    <div li-if="form.errors">
+    <div li-object="form.errors | default_errors" class="account_login-error">{{ form.errors | default_errors }}</div>    </div>
+{% endif %}<h2 class="text-size-medium text-weight-bold">reset password</h2><div class="divider"></div>{% form 'reset_customer_password'  %}
+<input class="form-input w-input" maxlength="256" name="customer[password]" data-name="Field 4" placeholder="password" type="password" id="field-4" >
 
-</div><div class="form_field-wrapper"><input class="form-input w-input" maxlength="256" name="customer[password_confirmation]" data-name="" placeholder="Confirm Password*" type="password" id="field-2" required="" >
+<input class="form-input w-input" maxlength="256" name="customer[password_confirmation]" data-name="Field 6" placeholder="Confirm Password" type="password" id="field-6" required="" >
 
-</div><input type="submit" data-wait="" li-object="'Account.Forms.Reset-Password-Label' | t" id="w-node-b92a1df1-2576-4fde-2b10-96c423ecbb42-07f8c2e0" class="button is-pink max-width-full w-button" value="Reset password">
+<input type="submit" data-wait="Please Wait" id="w-node-d164bd19-1c84-2da8-b7a3-e9e3461e31db-07f8c2e0" class="button is-pink w-button" value="Reset Password">
 {% endform %}
-<div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="login_hinweis-kachel w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div><video class="video is-account" autoplay="true" muted="" loop="" playsinline="true"><source src="https://cdn.shopify.com/videos/c/o/v/7179c7c405c445b298986ce068a02228.mp4" type="video/mp4">
-</video></div></section>
-
-{% schema %}
-    {"tag":"section","name":"reset","class":"section_newsletter","settings":[],"presets":[{"name":"reset","category":"Liquify"}]}
-{% endschema %}
+</form><div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div></div><video class="video is-video" autoplay="true" muted="" loop="" playsinline="true"><source src="https://cdn.shopify.com/videos/c/o/v/7179c7c405c445b298986ce068a02228.mp4" type="video/mp4">
+</video></div></div> {% schema %} {"tag":"section","name":"reset","class":"section_login-activate","presets":[{"name":"reset","category":"Liquify"}]} {% endschema %}
