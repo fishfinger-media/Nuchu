@@ -1,1 +1,20 @@
-{"sections":{"search_bar":{"type":"search_bar","settings":{}},"search_products":{"type":"search_products","settings":{}}},"layout":"search","wrapper":"main.main-wrapper","order":["search_bar","search_products"]}
+{
+  "sections": {
+    "search_bar": {
+      "type": "search_bar",
+      "settings": {
+      }
+    },
+    "search_products": {
+      "type": "search_products",
+      "settings": {
+      }
+    }
+  },
+  "layout": "search",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "search_bar",
+    "search_products"
+  ]
+}

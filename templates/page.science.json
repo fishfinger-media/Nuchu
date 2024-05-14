@@ -1,1 +1,50 @@
-{"sections":{"science_report_hero":{"type":"science_report_hero","settings":{}},"basic_heading":{"type":"basic_heading","settings":{}},"ingredients":{"type":"ingredients","settings":{}},"testimonial":{"type":"testimonial","settings":{}},"all_the_best":{"type":"all_the_best","settings":{}},"meet_your_match":{"type":"meet_your_match","settings":{}},"omg":{"type":"omg","settings":{}}},"layout":"page.science","wrapper":"main.main-wrapper","order":["science_report_hero","basic_heading","ingredients","testimonial","all_the_best","meet_your_match","omg"]}
+{
+  "sections": {
+    "science_report_hero": {
+      "type": "science_report_hero",
+      "settings": {
+      }
+    },
+    "basic_heading": {
+      "type": "basic_heading",
+      "settings": {
+      }
+    },
+    "ingredients": {
+      "type": "ingredients",
+      "settings": {
+      }
+    },
+    "testimonial": {
+      "type": "testimonial",
+      "settings": {
+      }
+    },
+    "all_the_best": {
+      "type": "all_the_best",
+      "settings": {
+      }
+    },
+    "meet_your_match": {
+      "type": "meet_your_match",
+      "settings": {
+      }
+    },
+    "omg": {
+      "type": "omg",
+      "settings": {
+      }
+    }
+  },
+  "layout": "page.science",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "science_report_hero",
+    "basic_heading",
+    "ingredients",
+    "testimonial",
+    "all_the_best",
+    "meet_your_match",
+    "omg"
+  ]
+}

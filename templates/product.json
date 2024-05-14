@@ -1,1 +1,26 @@
-{"sections":{"product_page":{"type":"product_page","settings":{}},"product_page_simple":{"type":"product_page_simple","settings":{}},"faq":{"type":"faq","settings":{}}},"layout":"product","wrapper":"main.main-wrapper","order":["product_page","product_page_simple","faq"]}
+{
+  "sections": {
+    "product_page": {
+      "type": "product_page",
+      "settings": {
+      }
+    },
+    "product_page_simple": {
+      "type": "product_page_simple",
+      "settings": {
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+      }
+    }
+  },
+  "layout": "product",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "product_page",
+    "product_page_simple",
+    "faq"
+  ]
+}
