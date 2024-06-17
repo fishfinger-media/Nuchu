@@ -1,0 +1,8 @@
+<div class="w-embed"><style>body {
+    --utility--body-fill: var(--color--pink-light);
+    --utility--product-medium: var(--color--lilac-medium);
+    --utility--product-dark: var(--color--lilac-dark);
+    --utility--product-light: var(--color--lilac-light);
+  }
+</style></div><div class="w-layout-blockcontainer container_xl w-container"><div class="blog_container"><div class="blog_heading-wrapper"><h1 li-object="article.title" class="heading_big">{{ article.title }}</h1><img src="{{ article.image | img_url: 'master' }}" loading="lazy" li-object:src="article.image | img_url: 'master'" li-object:alt="article.image.alt" alt="{{ article.image.alt }}" class="blog_image">
+</div></div></div><div class="w-layout-blockcontainer container_s w-container"><div class="blog_container is-article"><div li-object="article.content" class="blog_richtext w-richtext">{{ article.content }}</div></div></div> {% schema %} {"tag":"section","name":"blog_posts","class":"section_blog-heading","presets":[{"name":"blog_posts","category":"Liquify"}]} {% endschema %}

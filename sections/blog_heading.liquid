@@ -1,0 +1,7 @@
+<div class="w-embed"><style>body {
+    --utility--body-fill: var(--color--blue);
+    --utility--body-text: var(--color--white);
+    --utility--body-button: var(--color--white);
+  }
+</style></div><div class="w-layout-blockcontainer container_xl w-container"><div class="blog-posts_container"><h1 class="heading_big" li-object="blog.title">{{ blog.title }}</h1><img src="{{ 'BlogPostimg.png' | asset_url }}" loading="lazy" sizes="(max-width: 531px) 100vw, 531px" srcset="{{ 'BlogPostimg-p-500.png' | asset_url }} 500w, {{ 'BlogPostimg.png' | asset_url }} 531w" alt="">
+</div></div> {% schema %} {"tag":"section","name":"blog_heading","class":"section_basic-heading","presets":[{"name":"blog_heading","category":"Liquify"}]} {% endschema %}

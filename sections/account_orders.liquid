@@ -1,0 +1,18 @@
+<div lowercase="" class="w-layout-blockcontainer container_account w-container"><div class="account_grid-container"><div id="w-node-bc3cc795-3300-f70b-197f-f4f2943ec19b-07f8c289" class="account_card"><div class="account_header"><h2 class="heading_small">Last Order</h2></div><div class="account_divider"></div>{% if customer.orders.size != 0 %}    <div li-if="customer.orders.size != 0">
+    <div codehere="" class="account_content"><div class="account_details-content"><div>Order <span>#1123</span></div><div>21.08.1994</div></div><div class="account_details-content"><div>Total</div><div>$2.500</div></div><div class="account_details-content"><div>Payment Status</div><div>Authorized</div></div><div class="account_details-content"><div>Delivery Status</div><div>Unfulfilled</div></div></div>    </div>
+{% endif %}{% if customer.orders.size == 0 %}    <div li-if="customer.orders.size == 0" class="account_content">
+    <div>No Orders</div><a li-object:href="routes.root_url" href="{{ routes.root_url }}" class="button is-pink w-button">Shop now</a>    </div>
+{% endif %}</div><div id="w-node-ae6f3839-dc90-f164-df13-b1b3fa1b19d7-07f8c289" class="account_card"><div class="account_header"><div class="account_details-content"><h2 item="total" class="heading_small">Customer Information</h2><a li-object:href="routes.account_logout_url" href="{{ routes.account_logout_url }}" class="button is-pink w-button">Logout</a></div></div><div class="account_divider"></div><div class="account_content"><div><span li-object="customer.first_name">{{ customer.first_name }}</span><span li-object="customer.last_name">{{ customer.last_name }}</span></div><div li-object="customer.email">{{ customer.email }}</div><div li-object="customer.default_address | format_address">{{ customer.default_address | format_address }}</div><a li-object:href="routes.account_addresses_url" href="{{ routes.account_addresses_url }}" class="button is-pink w-button">Add Address</a></div></div></div><div id="w-node-_679680a3-dcb8-268c-a526-63dcef90623f-07f8c289" class="account_card"><div class="account_table mb-hidden"><div>Order No.</div><div item="date">Date</div><div item="payment-status">Payment Status</div><div item="fulfillment-status">Delivery Status</div><div item="total">total</div></div><div class="account_divider mb-hidden"></div>{% for order in customer.orders %}    <div li-for="order in customer.orders" class="account_table">
+                                    
+                            <a li-object:href="order.customer_url" id="w-node-_55b72641-0ad5-97ce-e39c-c80f3726d222-07f8c289" href="{{ order.customer_url }}" class="w-inline-block"><div li-object="order.name" id="w-node-c03e75b5-af3c-424d-511a-9e925865c854-07f8c289" class="text-weight-bold ts_underline">{{ order.name }}</div></a>
+                            
+                            <div li-object="order.created_at | date: '%e.%m.%Y'">{{ order.created_at | date: '%e.%m.%Y' }}</div>
+                            
+                            <div li-object="order.financial_status_label">{{ order.financial_status_label }}</div>
+                            
+                            <div li-object="order.fulfillment_status_label">{{ order.fulfillment_status_label }}</div>
+                            
+                            <div li-object="order.total_price | money">{{ order.total_price | money }}</div>
+                            
+                        </div>
+{% endfor %}</div></div> {% schema %} {"tag":"section","name":"account_orders","class":"section_account-main","presets":[{"name":"account_orders","category":"Liquify"}]} {% endschema %}

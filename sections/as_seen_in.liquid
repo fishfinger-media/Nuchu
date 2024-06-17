@@ -1,0 +1,12 @@
+<div max-container="" class="w-layout-blockcontainer w-container"><div class="asseenin_wrapper">{% for block in section.blocks %}
+    {% if block.type == "featured-logo" %}
+                    <div li-block="Featured Logo">
+                                    <img class="asseenin_logo"
+     src="{{ block.settings.image_logo | img_url: 'master' }}"
+     alt="{{ block.settings.image_logo.alt }}"
+     loading="lazy">
+
+                            </div>
+            {% endif %}
+{% endfor %}
+</div></div> {% schema %} {"tag":"section","name":"as_seen_in","class":"section_asseenin","blocks":[{"name":"Featured Logo","type":"featured-logo","settings":[{"id":"image_logo","type":"image_picker","label":"Logo"}]}],"presets":[{"name":"as_seen_in","category":"Liquify"}]} {% endschema %}

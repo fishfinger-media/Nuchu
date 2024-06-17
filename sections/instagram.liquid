@@ -1,0 +1,12 @@
+<div lowercase="" class="w-layout-blockcontainer container_s w-container"><div class="instagram_wrapper"><h2 class="heading_medium">
+{{ section.settings.text_social_heading }}
+</h2>
+<div class="w-layout-hflex spacing_1">{% for block in section.blocks %}
+    {% if block.type == "social-link" %}
+                    <div li-block="social-link">
+                                    <a class="instagram_button w-inline-block" href="{{ block.settings.url_link }}"> <img class="image_m contain" src="{{ block.settings.image_social_icon | img_url: 'master' }}" alt="{{ block.settings.image_social_icon.alt }}" loading="lazy"> </a>
+
+                            </div>
+            {% endif %}
+{% endfor %}
+</div></div></div> {% schema %} {"tag":"section","name":"instagram","class":"section_instagram","blocks":[{"name":"social-link","type":"social-link","settings":[{"id":"url_link","type":"url","label":"link"},{"id":"image_social_icon","type":"image_picker","label":"Social Icon"}]}],"settings":[{"id":"text_social_heading","type":"text","label":"Social Heading","default":"Let's get social"}],"presets":[{"name":"instagram","category":"Liquify"}]} {% endschema %}

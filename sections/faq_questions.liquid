@@ -1,0 +1,16 @@
+<div class="w-layout-blockcontainer w-container"><div class="w-layout-vflex spacing_2"><h2 class="heading_small">
+{{ section.settings.text_category }}
+</h2>
+{% for block in section.blocks %}
+    {% if block.type == "faq" %}
+                    <div li-block="FAQ" class="faq_item is-product">
+                                    <div class="faq_question is-product"><h3 class="text-size-medium">
+{{ block.settings.text_question }}
+</h3>
+<svg class="faq_arrow" xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 24 13" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.7951 12.3411C13.323 12.763 12.6829 13 12.0156 13C11.3482 13 10.7082 12.763 10.236 12.3411L0.737217 3.84598C0.265028 3.42334 -0.00015735 2.85018 7.00464e-08 2.25261C0.00015749 1.65504 0.265644 1.082 0.738056 0.659556C1.21047 0.237109 1.85111 -0.000140774 2.51904 6.26672e-08C3.18698 0.0001409 3.82749 0.23766 4.29968 0.660306L12.0156 7.56335L19.7314 0.660306C20.2062 0.249708 20.8422 0.0223512 21.5024 0.027204C22.1627 0.0320568 22.7945 0.268731 23.2616 0.686251C23.7287 1.10377 23.9938 1.66873 23.9999 2.25945C24.0059 2.85016 23.7524 3.41937 23.2939 3.84448L13.7968 12.3426L13.7951 12.3411Z" fill="currentColor"></path></svg></div>
+                                    <div class="faq_answer is-product"><div class="faq_answer-text is-product"><div> {{ block.settings.richtext_answer }} </div>
+</div></div>
+                            </div>
+            {% endif %}
+{% endfor %}
+</div></div> {% schema %} {"tag":"section","name":"faq_questions","class":"section_faq-questions","blocks":[{"name":"FAQ","type":"faq","settings":[{"id":"text_question","type":"text","label":"Question","default":"Can I take these gummies every day?"},{"id":"richtext_answer","type":"richtext","label":"Answer","default":"<p>Absolutely! Our wellness gummies are crafted for daily use, ensuring you get a delightful dose of essential vitamins to support your overall well-being<\/p>"}]}],"settings":[{"id":"text_category","type":"text","label":"Category","default":"category"}],"presets":[{"name":"faq_questions","category":"Liquify"}]} {% endschema %}

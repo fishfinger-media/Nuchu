@@ -1,0 +1,43 @@
+<div class="w-layout-blockcontainer container_xl w-container"><div class="w-layout-vflex flex_stretch-center spacing_4"><div class="w-layout-vflex flex_stretch-center spacing_2"><h1 li-object="'Contact.Heading' | t" class="heading_big">{{ 'Contact.Heading' | t }}</h1><hr class="divider" style="background:#2770dd">
+</div><div class="account_grid"><div id="w-node-_0f7e3a66-68ea-c636-7492-49bb6846fc71-07f8c291" class="contact_block"><h2 lowercase li-object="'Contact.Subtitle' | t" class="heading_small">{{ 'Contact.Subtitle' | t }}</h2><hr class="divider">
+<div> {{ section.settings.richtext_contact_details_text }} </div>
+<div class="w-layout-hflex contact_social-icons">{% for block in section.blocks %}
+    {% if block.type == "social-links" %}
+                    <div li-block="Social Links">
+                                    <a class="w-inline-block" href="{{ block.settings.url_url }}"> <img class="image_l" src="{{ block.settings.image_image | img_url: 'master' }}" alt="{{ block.settings.image_image.alt }}" loading="lazy"> </a>
+
+                            </div>
+            {% endif %}
+{% endfor %}
+</div></div><div class="w-layout-vflex flex_stretch-center spacing_1"><div class="contact_block"><h2 lowercase li-object="'Contact.contact' | t" class="heading_small">{{ 'Contact.contact' | t }}</h2><hr class="divider">
+<div class="w-layout-vflex flex_stretch-center spacing_1">{% for block in section.blocks %}
+    {% if block.type == "contact-links" %}
+                    <div li-block="Contact Links">
+                                    <a class="button is-full w-button" href="{{ block.settings.url_button_link }}">
+{{ block.settings.text_button_text }}
+</a>
+
+                            </div>
+            {% endif %}
+{% endfor %}
+</div></div><div class="contact_block"><h2 lowercase li-object="'Contact.contact' | t" class="heading_small">{{ 'Contact.newsletter' | t }}</h2><hr class="divider">
+<p>{{ 'Contact.newsletter-message' | t }}</p><div class="footer_form-block w-form">{% form 'customer' , return_to: '/newsletter-success', class: 'footer_form' %}
+<input class="form-input is-pink w-input" maxlength="256" name="contact[email]" data-name="Email" placeholder="{{ 'Contact.form-input' | t }}" type="email" id="email" required="" >
+
+<div li-object="form.errors | default_errors" class="text-size-regular text-color-red" style="display:none">{{ form.errors | default_errors }}</div><div id="w-node-_76c4d614-f344-0bce-d1ac-8fee72b524a4-07f8c291" class="hide w-embed" style="display:none">
+  
+<input type="hidden" name="contact[accepts_marketing]" value="true" style="display:none">
+
+
+  
+</div><label id="w-node-_76c4d614-f344-0bce-d1ac-8fee72b524a5-07f8c291" class="w-checkbox form-checkbox" name="contact[accepts_marketing]" style="display:none">
+
+  <input type="checkbox" name="Accepts-Marketing" id="Accepts-Marketing" data-name="Accepts Marketing" class="w-checkbox-input form-checkbox-icon" checked style="display: none;">
+
+</label>
+<input type="submit" data-wait="" id="w-node-_76c4d614-f344-0bce-d1ac-8fee72b524ad-07f8c291" class="button w-button" value="Subscribe ">
+{% endform %}
+<div class="success-message w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="error-message w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div></div></div></div></div> 
+
+
+{% schema %} {"tag":"section","name":"contact","class":"section_contact","blocks":[{"name":"Social Links","type":"social-links","settings":[{"id":"url_url","type":"url","label":"URL"},{"id":"image_image","type":"image_picker","label":"Image"}]},{"name":"Contact Links","type":"contact-links","settings":[{"id":"text_button_text","type":"text","label":"Button Text","default":"hello@nuchu.com"},{"id":"url_button_link","type":"url","label":"Button Link"}]}],"settings":[{"id":"richtext_contact_details_text","type":"richtext","label":"Contact Details Text","default":"<p>Need some info regarding Nuchu? Having an issue with your order? Want to stock one of our products? Think you have what it takes to be a Nuchu influencer?<br\/>\u200d<br\/>Use the emails on this page to get to the right person simply.<br\/>\u200d<br\/>You can also drop us a dm on any of our social media channels.<\/p>"},{"id":"text_checkbox","type":"text","label":"Checkbox","default":"By subscribing you agree to with our <a href=\"#\"><span class=\"ts_underline\">Privacy Policy<\/span><\/a> and provide consent to receive updates from our company."}],"presets":[{"name":"contact","category":"Liquify"}]} {% endschema %}

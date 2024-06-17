@@ -1,0 +1,25 @@
+<div lowercase="" class="w-layout-blockcontainer container_m w-container"><div id="w-node-fe101a1b-c8e7-5d1f-bcc2-6727591d2680-c04fc7ce" class="w-layout-vflex spacing_2"><h1 id="w-node-_17cf99d8-cca9-6029-5ca2-fd70c04fc7d1-c04fc7ce" class="heading_big"><span li-object="'Account.Account-Page.Greeting' | t">{{ 'Account.Account-Page.Greeting' | t }}</span>, <span li-object="customer.first_name">{{ customer.first_name }}</span>.<br>
+</h1><hr class="divider" style="background:white">
+<div class="account-tabs_wrapper"><a href="{{ routes.account_url }}" li-object:href="routes.account_url" id="w-node-_17cf99d8-cca9-6029-5ca2-fd70c04fc7d9-c04fc7ce" class="button is-account">Account</a><a href="{{ routes.account_addresses_url }}" li-object:href="routes.account_addresses_url" id="w-node-_17cf99d8-cca9-6029-5ca2-fd70c04fc7dd-c04fc7ce" class="button is-account">Address</a></div></div></div><div class="w-embed"><style>body{
+	    --utility--body-fill: var(--color--blue);
+    --utility--body-text: var(--color--white);
+    --utility--body-button: var(--color--white);
+}
+  .page-wrapper,
+  .main-wrapper{
+    display: flex!important;
+    flex-direction: column;
+  }
+  .page-wrapper {
+    min-height: 100svh;
+  }
+  .main-wrapper  {
+  }
+  section{
+  	flex-grow: 1; 
+    display: flex;
+  }
+  .footer {
+    margin-top: auto;
+  }
+</style></div> {% schema %} {"tag":"section","name":"account_hero","class":"section_account-nav","presets":[{"name":"account_hero","category":"Liquify"}]} {% endschema %}
