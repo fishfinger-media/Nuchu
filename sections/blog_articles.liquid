@@ -1,7 +1,33 @@
-<div class="w-layout-blockcontainer w-container"><div class="blog-posts_grid">{% for article in blog.articles %}    <div li-for="article in blog.articles" id="w-node-_764e92aa-3a3a-57e8-8fed-aa14ae468fe0-07f8c28d">
+<style>
+    @media (min-width: 992px) {
+        .item:nth-child(1) {
+          grid-column: span 2;
+          grid-row: span 2;
+        }
+
+        .blog_post-item:hover .blog_post-img {
+            filter: brightness(80%);
+            transform: scale(1.1);
+        
+          }
+            .blog_post-item .image_s {
+          transition: transform 0.3s ease;
+          }
+          
+          .blog_post-item:hover .image_s {
+              transform: rotate(45deg)
+          
+          }
+          
+      }
+</style>
+
+<div class="w-layout-blockcontainer w-container"><div class="blog-posts_grid">{% for article in blog.articles %}   
+
+<div id="blog-post" li-for="article in blog.articles" id="w-node-_764e92aa-3a3a-57e8-8fed-aa14ae468fe0-07f8c28d">
                                     
                             <a li-object:href="article.url" href="{{ article.url }}" class="blog_post-item w-inline-block"><img src="{{ article.image | img_url: 'master' }}" loading="lazy" id="w-node-c45bff24-6242-fee4-5061-f2f14b06a7bf-4b06a7bd" li-object:src="article.image | img_url: 'master'" alt="{{ article.image.alt }}" li-object:alt="article.image.alt" class="blog_post-img">
-<div id="w-node-dfe94909-a70f-f235-86a2-55333f0ac51d-4b06a7bd" class="blog_post_label-wrapper"><div id="w-node-_37c2585f-4e61-fdab-75df-ea51d0960a6f-4b06a7bd" class="blog_post-label_container"><h2 li-object="article.title" id="w-node-_38461dff-259e-b484-da6a-157e1cedc2e4-4b06a7bd" class="blog_post-label">{{ article.title }}</h2></div><div id="w-node-_9306c4f2-e533-7e72-4830-ad57800a4891-4b06a7bd" class="blog_posts-arrow"><svg class="image_m" xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 9 9" fill="none"><path d="M0.999342 0.666667C0.999342 1.03333 1.29934 1.33333 1.66601 1.33333H6.72601L0.806009 7.25333C0.744287 7.31505 0.695327 7.38833 0.661924 7.46897C0.628521 7.54961 0.611328 7.63605 0.611328 7.72333C0.611328 7.81062 0.628521 7.89705 0.661924 7.9777C0.695327 8.05834 0.744287 8.13161 0.806009 8.19333C0.86773 8.25506 0.941004 8.30402 1.02165 8.33742C1.10229 8.37082 1.18872 8.38801 1.27601 8.38801C1.3633 8.38801 1.44973 8.37082 1.53037 8.33742C1.61101 8.30402 1.68429 8.25506 1.74601 8.19333L7.66601 2.27333V7.33333C7.66601 7.7 7.96601 8 8.33268 8C8.69934 8 8.99934 7.7 8.99934 7.33333V0.666667C8.99934 0.3 8.69934 0 8.33268 0H1.66601C1.29934 0 0.999342 0.3 0.999342 0.666667Z" fill="#316afa"></path></svg></div></div></a>
+<div id="w-node-dfe94909-a70f-f235-86a2-55333f0ac51d-4b06a7bd" class="blog_post_label-wrapper"><div id="w-node-_37c2585f-4e61-fdab-75df-ea51d0960a6f-4b06a7bd" class="blog_post-label_container"><h2 li-object="article.title" id="w-node-_38461dff-259e-b484-da6a-157e1cedc2e4-4b06a7bd" class="blog_post-label">{{ article.title }}</h2></div><div id="w-node-_9306c4f2-e533-7e72-4830-ad57800a4891-4b06a7bd" class="blog_posts-arrow"><svg class="image_s" xmlns="http://www.w3.org/2000/svg"  viewbox="0 0 9 9" fill="none"><path d="M0.999342 0.666667C0.999342 1.03333 1.29934 1.33333 1.66601 1.33333H6.72601L0.806009 7.25333C0.744287 7.31505 0.695327 7.38833 0.661924 7.46897C0.628521 7.54961 0.611328 7.63605 0.611328 7.72333C0.611328 7.81062 0.628521 7.89705 0.661924 7.9777C0.695327 8.05834 0.744287 8.13161 0.806009 8.19333C0.86773 8.25506 0.941004 8.30402 1.02165 8.33742C1.10229 8.37082 1.18872 8.38801 1.27601 8.38801C1.3633 8.38801 1.44973 8.37082 1.53037 8.33742C1.61101 8.30402 1.68429 8.25506 1.74601 8.19333L7.66601 2.27333V7.33333C7.66601 7.7 7.96601 8 8.33268 8C8.69934 8 8.99934 7.7 8.99934 7.33333V0.666667C8.99934 0.3 8.69934 0 8.33268 0H1.66601C1.29934 0 0.999342 0.3 0.999342 0.666667Z" fill="#316afa"></path></svg></div></div></a>
                             
                         </div>
 {% endfor %}</div></div><div class="container_m"></div><div class="w-embed"><svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">   <defs>       <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />               <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />           <feComposite in="SourceGraphic" in2="goo" operator="atop"/>       </filter>   </defs> </svg></div> {% schema %} {"tag":"section","name":"blog_articles","class":"section_blog-list","presets":[{"name":"blog_articles","category":"Liquify"}]} {% endschema %}
