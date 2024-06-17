@@ -1053,6 +1053,9 @@ figcaption {
       height: 100%;
     width: 100%;
   position: absolute;
+  transition-property: transform, filter;
+  transition-duration: 500ms, 500ms;
+  transition-timing-function: ease-in-out, ease-in-out;
   top: 0%;
   bottom: 0%;
   left: 0%;

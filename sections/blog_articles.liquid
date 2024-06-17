@@ -1,25 +1,26 @@
 <style>
-    @media (min-width: 992px) {
-        .item:nth-child(1) {
-          grid-column: span 2;
-          grid-row: span 2;
-        }
+  @media (min-width: 992px) {
+    #blog-post:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
 
-        .blog_post-item:hover .blog_post-img {
-            filter: brightness(80%);
-            transform: scale(1.1);
-        
-          }
-            .blog_post-item .image_s {
-          transition: transform 0.3s ease;
-          }
-          
-          .blog_post-item:hover .image_s {
-              transform: rotate(45deg)
-          
-          }
-          
-      }
+    .blog_post-item:hover .blog_post-img {
+      filter: brightness(80%);
+      transform: scale(1.1);
+
+    }
+
+    .blog_post-item .image_s {
+      transition: transform 0.2s ease-in-out;
+
+    }
+
+    .blog_post-item:hover .image_s {
+      transform: rotate(45deg)
+    }
+
+  }
 </style>
 
 <div class="w-layout-blockcontainer w-container"><div class="blog-posts_grid">{% for article in blog.articles %}   
