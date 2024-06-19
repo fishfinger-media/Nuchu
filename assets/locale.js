@@ -48,3 +48,5 @@ class LocalizationForm extends HTMLElement {
   
   customElements.define('localization-form', LocalizationForm);
   
+
+  
