@@ -15,12 +15,12 @@ class LocalizationForm extends HTMLElement {
   
     hidePanel() {
       this.elements.button.setAttribute('aria-expanded', 'false');
-      this.elements.panel.setAttribute('aria-hidden', 'true');
+      this.elements.panel.style.display = 'none';
     }
   
     showPanel() {
       this.elements.button.setAttribute('aria-expanded', 'true');
-      this.elements.panel.setAttribute('aria-hidden', 'false');
+      this.elements.panel.style.display = 'flex';
     }
   
     onContainerKeyUp(event) {
@@ -38,7 +38,7 @@ class LocalizationForm extends HTMLElement {
     }
   
     toggleSelector() {
-      if (this.elements.panel.getAttribute('aria-hidden') === 'true') {
+      if (this.elements.panel.style.display === 'none' || this.elements.panel.style.display === '') {
         this.showPanel();
       } else {
         this.hidePanel();
@@ -46,8 +46,7 @@ class LocalizationForm extends HTMLElement {
     }
   
     closeSelector(event) {
-      const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
-      if (event.relatedTarget === null || shouldClose) {
+      if (!this.contains(event.relatedTarget)) {
         this.hidePanel();
       }
     }
