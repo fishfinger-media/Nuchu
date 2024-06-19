@@ -98,31 +98,53 @@ faqQuestions.forEach((question, index) => {
       toggleFaq(index, isOpening);
   });
 });
-</script><script>class LocalizationForm extends HTMLElement {
-        constructor() {
-            super();
-            this.elements = {
-                input: this.querySelector('input[name="language_code"], input[name="country_code"]'),
-                panel: this.querySelector('ul'),
-                items: this.querySelectorAll('a')
-            };
-            this.elements.items.forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
-        }
-        onItemClick(event) {
-            event.preventDefault();
-            const form = this.querySelector('form');
-            this.elements.input.value = event.currentTarget.dataset.value;
-            if (form) form.submit();
-        }}
-    customElements.define('localization-form', LocalizationForm);
-    </script><script>const dropdown = document.getElementById('locale-dropdown');
+</script>
+
+<script>
+  class LocalizationForm extends HTMLElement {
+      constructor() {
+          super();
+          this.elements = {
+              input: this.querySelector('input[name="language_code"], input[name="country_code"]'),
+              panel: this.querySelector('ul'),
+              items: this.querySelectorAll('a')
+          };
+          this.elements.items.forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
+      }
+  
+      onItemClick(event) {
+          event.preventDefault();
+          const form = this.querySelector('form');
+          const selectedLocale = event.currentTarget.dataset.value;
+          this.elements.input.value = selectedLocale;
+          localStorage.setItem('selectedLocale', selectedLocale);
+          if (form) form.submit();
+      }
+  }
+  
+  customElements.define('localization-form', LocalizationForm);
+  
+  document.addEventListener('DOMContentLoaded', () => {
+      const storedLocale = localStorage.getItem('selectedLocale');
+      if (storedLocale) {
+          const languageCodeInput = document.getElementById('language_code');
+          languageCodeInput.value = storedLocale;
+  
+          // If you need to trigger a form submission to apply the locale, uncomment the line below
+          // document.getElementById('localization-form').submit();
+      }
+  
+      const dropdown = document.getElementById('locale-dropdown');
       const localeList = document.querySelector('.locale_list');
       dropdown.addEventListener('click', function() {
-        if (localeList.style.display === 'none' || localeList.style.display === '') {
-          localeList.style.display = 'flex';
-        } else {
-          localeList.style.display = 'none';
-        }});
-    </script>
+          if (localeList.style.display === 'none' || localeList.style.display === '') {
+              localeList.style.display = 'flex';
+          } else {
+              localeList.style.display = 'none';
+          }
+      });
+  });
+  </script>
+  
 </body>
 </html>
