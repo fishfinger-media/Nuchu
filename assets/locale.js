@@ -6,7 +6,7 @@ class LocalizationForm extends HTMLElement {
         button: this.querySelector('button'),
         panel: this.querySelector('ul'),
       };
-      this.elements.button.addEventListener('click', this.openSelector.bind(this));
+      this.elements.button.addEventListener('click', this.toggleSelector.bind(this));
       this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
       this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
   
@@ -15,7 +15,12 @@ class LocalizationForm extends HTMLElement {
   
     hidePanel() {
       this.elements.button.setAttribute('aria-expanded', 'false');
-      this.elements.panel.setAttribute('hidden', true);
+      this.elements.panel.setAttribute('aria-hidden', 'true');
+    }
+  
+    showPanel() {
+      this.elements.button.setAttribute('aria-expanded', 'true');
+      this.elements.panel.setAttribute('aria-hidden', 'false');
     }
   
     onContainerKeyUp(event) {
@@ -32,10 +37,12 @@ class LocalizationForm extends HTMLElement {
       if (form) form.submit();
     }
   
-    openSelector() {
-      this.elements.button.focus();
-      this.elements.panel.toggleAttribute('hidden');
-      this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') === 'false').toString());
+    toggleSelector() {
+      if (this.elements.panel.getAttribute('aria-hidden') === 'true') {
+        this.showPanel();
+      } else {
+        this.hidePanel();
+      }
     }
   
     closeSelector(event) {
@@ -47,6 +54,4 @@ class LocalizationForm extends HTMLElement {
   }
   
   customElements.define('localization-form', LocalizationForm);
-  
-
   

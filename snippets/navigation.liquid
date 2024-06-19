@@ -10,7 +10,37 @@
 {% endunless %}</div></div><div class="navbar-mobilelinks-bottom"><img src="{{ 'mobile-nav_img.png' | asset_url }}" loading="lazy" alt="" class="nav_content-bottom">
 </div></div></div><a href="{{ routes.root_url }}" data-logosize="" li-object:href="routes.root_url" id="w-node-_1f4a994c-7640-c194-e1f7-4193b5553f7d-b641c10b" class="navbar_logo-link w-nav-brand"><svg viewbox="0 0 156 40" fill="currentcolor" height="100%"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.266724V39.7334H10.7508C10.7508 39.7334 10.8861 38.9467 10.8861 37.7357C10.8861 34.9514 10.2721 30.0142 6.29647 26.3294C3.21589 23.4934 2.529 19.0737 2.529 15.5027C2.529 12.3458 3.08059 9.93414 3.08059 9.93414L18.2129 39.7334H30.4V0.266724H19.5867C19.5867 0.266724 19.3161 1.15687 19.3161 2.74051C19.3161 4.73816 19.7949 7.84333 21.918 11.5178C25.1339 17.0864 26.9135 21.2887 26.9135 29.7555C26.9135 31.2252 26.9135 32.8606 26.7782 34.6409L9.58521 0.266724H0Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M115.488 0.266724V17.7118H106.718V0.266724H97.3333V39.7334H106.718V19.7043H115.488V39.7334H124.8V0.266724H115.488Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M94.7695 27.9544C93.1115 29.798 87.7333 31.3102 85.1634 31.3102C78.8007 31.3102 70.7178 27.5816 70.7178 14.6142C70.7178 8.6898 73.6194 5.75868 77.3499 5.75868C82.4898 5.75868 87.4639 10.9477 88.5519 15.7328L94.7695 4.64008C94.7695 4.64008 89.381 0 80.7385 0C70.9873 0 63.7334 9.60124 63.7334 21.4915C63.7334 32.6877 70.7178 40 81.3603 40C87.8576 40 96.2099 35.681 94.7695 27.9441V27.9544Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M51.4106 0.277074V36.5351C51.4106 36.5351 49.9737 36.7938 47.985 36.7938C42.6437 36.7938 37.7813 34.5271 37.7813 27.0022C37.7813 23.5865 38.8121 19.9535 40.3114 16.6827C42.4355 11.9939 45.7256 8.15384 45.6528 2.99927C45.6528 2.21263 45.5799 1.10512 45.4445 0.266724H33.8665V28.3271C33.8665 31.0079 34.4287 32.902 36.3445 34.9618C38.7288 37.5391 43.2268 39.7334 51.6084 39.7334H61.3331V0.277074H51.4001H51.4106Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M145.811 0.277074V36.5351C145.811 36.5351 144.374 36.7938 142.385 36.7938C137.044 36.7938 132.181 34.5271 132.181 27.0022C132.181 23.5865 133.212 19.9535 134.712 16.6827C136.836 11.9939 140.126 8.15384 140.053 2.99927C140.053 2.21263 139.98 1.10512 139.845 0.266724H128.267V28.3271C128.267 31.0079 128.829 32.902 130.745 34.9618C133.129 37.5391 137.627 39.7334 146.009 39.7334H155.733V0.277074H145.8H145.811Z" fill="currentColor"></path></svg></a><div class="navbar_links-right"><div class="navbar_links-right-desktop"><a href="/collections/nuchu" class="button w-button">shop</a>
 
-
+<style>
+    .localization-form .disclosure {
+        position: relative;
+      }
+      
+      .localization-form .disclosure__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        display: none;
+      }
+      
+      .localization-form .disclosure__list[aria-hidden="false"] {
+        display: block;
+      }
+      
+      .localization-form .disclosure__item {
+        padding: 10px;
+        cursor: pointer;
+      }
+      
+      .localization-form .disclosure__item:hover {
+        background: #f0f0f0;
+      }
+      
+    </style>
     
     {% assign allowed_currencies = "EUR,GBP" | split: "," %}
 {% assign displayed_currencies = "" %}
@@ -19,7 +49,7 @@
     {% form 'localization' %}
       <div class="disclosure">
         <button type="button" class="disclosure__button button is-icon" aria-expanded="false" aria-controls="CountryList">
-          {{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }}
+          {{ localization.country.currency.symbol }}
 
           <svg class="image_icon" width="100%" viewBox="0 0 13 8" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.08018 7.59453C6.84409 7.85417 6.52407 8 6.1904 8C5.85673 8 5.53671 7.85417 5.30062 7.59453L0.551226 2.36676C0.315131 2.10667 0.182539 1.75396 0.182617 1.38622C0.182696 1.01849 0.315439 0.665848 0.551645 0.40588C0.787852 0.145913 1.10817 -8.66303e-05 1.44214 3.85644e-08C1.77611 8.67074e-05 2.09636 0.146252 2.33246 0.406342L6.1904 4.65437L10.0483 0.406342C10.2857 0.153666 10.6037 0.0137546 10.9338 0.0167409C11.264 0.0197273 11.5798 0.165373 11.8134 0.422308C12.047 0.679244 12.1795 1.02691 12.1826 1.39043C12.1856 1.75395 12.0588 2.10423 11.8296 2.36583L7.08102 7.59546L7.08018 7.59453Z" fill="currentColor"></path></svg>
         </button>
@@ -50,7 +80,7 @@
     {% form 'localization' %}
       <div class="disclosure">
         <button type="button" class="disclosure__button button is-icon" aria-expanded="false" aria-controls="LanguageList">
-          {{ localization.language.endonym_name }}
+            {{ localization.language.iso_code | downcase }}
 
           <svg class="image_icon" width="100%" viewBox="0 0 13 8" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.08018 7.59453C6.84409 7.85417 6.52407 8 6.1904 8C5.85673 8 5.53671 7.85417 5.30062 7.59453L0.551226 2.36676C0.315131 2.10667 0.182539 1.75396 0.182617 1.38622C0.182696 1.01849 0.315439 0.665848 0.551645 0.40588C0.787852 0.145913 1.10817 -8.66303e-05 1.44214 3.85644e-08C1.77611 8.67074e-05 2.09636 0.146252 2.33246 0.406342L6.1904 4.65437L10.0483 0.406342C10.2857 0.153666 10.6037 0.0137546 10.9338 0.0167409C11.264 0.0197273 11.5798 0.165373 11.8134 0.422308C12.047 0.679244 12.1795 1.02691 12.1826 1.39043C12.1856 1.75395 12.0588 2.10423 11.8296 2.36583L7.08102 7.59546L7.08018 7.59453Z" fill="currentColor"></path></svg>
         </button>
