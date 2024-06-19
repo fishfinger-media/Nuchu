@@ -30,16 +30,20 @@
               </button>
       
               <ul id="CurrencyList" role="list" class="disclosure__list" hidden>
-                <li class="disclosure__item" tabindex="-1">
-                  <a href="#" data-value="EUR" {% if localization.country.currency.iso_code == 'EUR' %}aria-current="true"{% endif %}>
-                    Euro (EUR €)
-                  </a>
-                </li>
-                <li class="disclosure__item" tabindex="-1">
-                  <a href="#" data-value="GBP" {% if localization.country.currency.iso_code == 'GBP' %}aria-current="true"{% endif %}>
-                    British Pound (GBP £)
-                  </a>
-                </li>
+                {% if localization.country.currency.iso_code != 'EUR' %}
+                  <li class="disclosure__item" tabindex="-1">
+                    <a href="#" data-value="EUR">
+                      Euro (EUR €)
+                    </a>
+                  </li>
+                {% endif %}
+                {% if localization.country.currency.iso_code != 'GBP' %}
+                  <li class="disclosure__item" tabindex="-1">
+                    <a href="#" data-value="GBP">
+                      British Pound (GBP £)
+                    </a>
+                  </li>
+                {% endif %}
               </ul>
       
               <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
@@ -48,7 +52,6 @@
         </localization-form>
       {% endif %}
     
-
 
   {% if localization.available_languages.size > 1 %}
     <localization-form>
