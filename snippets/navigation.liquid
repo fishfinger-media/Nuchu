@@ -47,20 +47,20 @@
 {% if localization.available_countries.size > 1 %}
   <localization-form>
     {% form 'localization' %}
-      <div class="disclosure">
+      <div class="disclosure locale_dropdown">
         <button type="button" class="disclosure__button button is-icon" aria-expanded="false" aria-controls="CountryList">
           {{ localization.country.currency.symbol }}
 
           <svg class="image_icon" width="100%" viewBox="0 0 13 8" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.08018 7.59453C6.84409 7.85417 6.52407 8 6.1904 8C5.85673 8 5.53671 7.85417 5.30062 7.59453L0.551226 2.36676C0.315131 2.10667 0.182539 1.75396 0.182617 1.38622C0.182696 1.01849 0.315439 0.665848 0.551645 0.40588C0.787852 0.145913 1.10817 -8.66303e-05 1.44214 3.85644e-08C1.77611 8.67074e-05 2.09636 0.146252 2.33246 0.406342L6.1904 4.65437L10.0483 0.406342C10.2857 0.153666 10.6037 0.0137546 10.9338 0.0167409C11.264 0.0197273 11.5798 0.165373 11.8134 0.422308C12.047 0.679244 12.1795 1.02691 12.1826 1.39043C12.1856 1.75395 12.0588 2.10423 11.8296 2.36583L7.08102 7.59546L7.08018 7.59453Z" fill="currentColor"></path></svg>
         </button>
 
-        <ul id="CountryList" role="list" class="disclosure__list" hidden>
+        <ul id="CountryList" role="list" class="disclosure__list locale_list" hidden>
           {% for country in localization.available_countries %}
             {% if allowed_currencies contains country.currency.iso_code %}
               {% unless displayed_currencies contains country.currency.iso_code %}
                 {% assign displayed_currencies = displayed_currencies | append: country.currency.iso_code | append: "," %}
-                <li class="disclosure__item" tabindex="-1">
-                  <a href="#"{% if country.currency.iso_code == localization.country.currency.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
+                <li class="disclosure__item locale_item" tabindex="-1">
+                  <a class="button" href="#"{% if country.currency.iso_code == localization.country.currency.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
                     {{ country.currency.symbol }}
                   </a>
                 </li>
@@ -78,17 +78,17 @@
 {% if localization.available_languages.size > 1 %}
   <localization-form>
     {% form 'localization' %}
-      <div class="disclosure">
+      <div class="disclosure locale_dropdown">
         <button type="button" class="disclosure__button button is-icon" aria-expanded="false" aria-controls="LanguageList">
             {{ localization.language.iso_code | downcase }}
 
           <svg class="image_icon" width="100%" viewBox="0 0 13 8" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.08018 7.59453C6.84409 7.85417 6.52407 8 6.1904 8C5.85673 8 5.53671 7.85417 5.30062 7.59453L0.551226 2.36676C0.315131 2.10667 0.182539 1.75396 0.182617 1.38622C0.182696 1.01849 0.315439 0.665848 0.551645 0.40588C0.787852 0.145913 1.10817 -8.66303e-05 1.44214 3.85644e-08C1.77611 8.67074e-05 2.09636 0.146252 2.33246 0.406342L6.1904 4.65437L10.0483 0.406342C10.2857 0.153666 10.6037 0.0137546 10.9338 0.0167409C11.264 0.0197273 11.5798 0.165373 11.8134 0.422308C12.047 0.679244 12.1795 1.02691 12.1826 1.39043C12.1856 1.75395 12.0588 2.10423 11.8296 2.36583L7.08102 7.59546L7.08018 7.59453Z" fill="currentColor"></path></svg>
         </button>
 
-        <ul id="LanguageList" role="list" class="disclosure__list" hidden>
+        <ul id="LanguageList" role="list" class="disclosure__list locale_list" hidden>
           {% for language in localization.available_languages %}
-            <li class="disclosure__item" tabindex="-1">
-              <a href="#"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}" data-value="{{ language.iso_code }}">
+            <li class="disclosure__item locale_item" tabindex="-1">
+              <a class="button" href="#"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}" data-value="{{ language.iso_code }}">
                 {{ language.iso_code | downcase }}
               </a>
             </li>
