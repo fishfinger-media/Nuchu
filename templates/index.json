@@ -127,6 +127,12 @@
         "url_button_link": "shopify:\/\/collections\/nuchu",
         "text_button_text": "Shop now"
       }
+    },
+    "promo_popup_ecH6jL": {
+      "type": "promo_popup",
+      "settings": {
+        "text_checkbox": "By subscribing you agree to with our <a href=\"#\"><span class=\"ts_underline\">Privacy Policy<\/span><\/a> and provide consent to receive updates from our company."
+      }
     }
   },
   "layout": "theme",
@@ -140,6 +146,7 @@
     "the_science_french",
     "instagram",
     "1715780517809e6c74",
-    "omg"
+    "omg",
+    "promo_popup_ecH6jL"
   ]
 }
