@@ -20,8 +20,9 @@
       </div>
       
       <script>
+        document.addEventListener('DOMContentLoaded', function() {
 
-        console.log('promo popup');
+            console.log('promo popup loaded');
 
           // Get the form element
           var form = document.querySelector('form[action="/contact"]');
@@ -61,7 +62,7 @@
               console.error('Form submission failed:', error);
             });
           });
-       
+        });
       </script>
       
       
