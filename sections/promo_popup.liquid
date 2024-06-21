@@ -1,4 +1,4 @@
-<div class="popup_container"><button class="popup_close"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.31802 1.31802C3.07538 -0.43934 5.92462 -0.43934 7.68198 1.31802L23.75 17.386L39.818 1.31802C41.5754 -0.43934 44.4246 -0.43934 46.182 1.31802C47.9393 3.07538 47.9393 5.92462 46.182 7.68198L30.114 23.75L46.182 39.818C47.9393 41.5754 47.9393 44.4246 46.182 46.182C44.4246 47.9393 41.5754 47.9393 39.818 46.182L23.75 30.114L7.68198 46.182C5.92462 47.9393 3.07538 47.9393 1.31802 46.182C-0.43934 44.4246 -0.43934 41.5754 1.31802 39.818L17.386 23.75L1.31802 7.68198C-0.43934 5.92462 -0.43934 3.07538 1.31802 1.31802Z" fill="#F60EA6"></path></svg></button><img src="{{ 'popup_img.jpg' | asset_url }}" loading="lazy" id="w-node-_5bf9ab54-2d3f-1f84-bf3c-4a30a2e82eeb-07f8c27d" sizes="(max-width: 479px) 100vw, (max-width: 767px) 77vw, (max-width: 991px) 383.9985656738281px, 39vw" alt="" srcset="{{ 'popup_img.jpg' | asset_url }} 500w, {{ 'popup_img.jpg' | asset_url }} 800w" class="popup_img">
+<div class="popup_container"><button class="popup_close"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.31802 1.31802C3.07538 -0.43934 5.92462 -0.43934 7.68198 1.31802L23.75 17.386L39.818 1.31802C41.5754 -0.43934 44.4246 -0.43934 46.182 1.31802C47.9393 3.07538 47.9393 5.92462 46.182 7.68198L30.114 23.75L46.182 39.818C47.9393 41.5754 47.9393 44.4246 46.182 46.182C44.4246 47.9393 41.5754 47.9393 39.818 46.182L23.75 30.114L7.68198 46.182C5.92462 47.9393 3.07538 47.9393 1.31802 46.182C-0.43934 44.4246 -0.43934 41.5754 1.31802 39.818L17.386 23.75L1.31802 7.68198C-0.43934 5.92462 -0.43934 3.07538 1.31802 1.31802Z" fill="#F60EA6"></path></svg></button><img src="{{ 'popup_img.jpg' | asset_url }}" loading="lazy" id="w-node-_5bf9ab54-2d3f-1f84-bf3c-4a30a2e82eeb-07f8c27d" sizes="(max-width: 479px) 100vw, (max-width: 767px) 77vw, (max-width: 991px) 384px, 39vw" alt="" srcset="{{ 'popup_img-p-500.jpg' | asset_url }} 500w, {{ 'popup_img.jpg' | asset_url }} 800w" class="popup_img">
 <div id="w-node-f91a8ed6-9a6f-9f6c-2209-30ddf2feebdb-07f8c27d" class="popup_content"><h2 class="heading_small">10% off your first order</h2><p class="ts_maxwidth_40">Subscribe to receive 10% off your first order, along with product updates and exclusive offers!</p><div class="footer_form-block w-form">{% form 'customer', return_to: '/newsletter-success', class: 'popup_form' %}
 <input class="footer_form-input is-pink w-node-_6a5953c3-cd93-15f9-0610-caf41c0cfb5a-07f8c27d w-input" maxlength="256" name="contact[email]" data-name="Email 2" placeholder="your email" type="email" id="email-2" required="">
 <input type="submit" data-wait="" data-="pink" id="w-node-_6a5953c3-cd93-15f9-0610-caf41c0cfb5b-07f8c27d" class="button is-pink w-button" value="Subscribe ">
@@ -8,23 +8,4 @@
 {{ section.settings.text_checkbox }}
 </span>
 </label>{% endform %}
-<div class="success-message w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="error-message w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div>
-
-<div class="ts_maxwidth_40"><div class="text-size-small">By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time</div></div></div></div> 
-
-
-
-{% schema %} 
-
-    {
-        "tag": "section",
-        "name": "promo_popup",
-        "class": "offer-popup_wrapper",
-        
-        "presets": [{
-            "name": "promo_popup",
-            "category": "Liquify"
-        }]
-}
-
-{% endschema %}
+<div class="success-message w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="error-message w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div><div class="ts_maxwidth_40"><div class="text-size-small">By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time</div></div></div></div> {% schema %} {"tag":"section","name":"promo_popup","class":"offer-popup_wrapper","settings":[{"id":"text_checkbox","type":"text","label":"Checkbox","default":"By subscribing you agree to with our <a href=\"#\"><span class=\"ts_underline\">Privacy Policy<\/span><\/a> and provide consent to receive updates from our company."}],"presets":[{"name":"promo_popup","category":"Liquify"}]} {% endschema %}
