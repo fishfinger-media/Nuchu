@@ -4,7 +4,7 @@
     <h2 class="heading_small">10% off your first order</h2>
     <p class="ts_maxwidth_40">Subscribe to receive 10% off your first order, along with product updates and exclusive offers!</p>
     
-    <form id="popup-newsletter" action="/contact" method="post">
+    <form id="newsletter-form" action="/contact" method="post">
         <div class="email">
           <label for="email">Email</label>
           <input type="email" name="contact[email]" id="email-input" required />
@@ -19,16 +19,21 @@
         Thank you for signing up!
       </div>
       
+      <div id="error-message" style="display:none; color: red;">
+        An error occurred. Please try again.
+      </div>
+      
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          var form = document.getElementById('popup-newsletter');
+          var form = document.getElementById('newsletter-form');
       
           form.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the default form submission
       
             var formData = new FormData(form);
+            var formAction = form.getAttribute('action');
       
-            fetch(form.action, {
+            fetch(formAction, {
               method: 'POST',
               body: formData,
               headers: {
@@ -38,21 +43,25 @@
             })
             .then(function(response) {
               if (response.ok) {
-                // Show the success message
-                document.getElementById('success-message').style.display = 'block';
-      
-                // Optionally, hide the form
-                form.style.display = 'none';
+                return response.json();
               } else {
-                // Handle errors here
                 return response.json().then(function(json) {
-                  // Show errors (you can customize this)
-                  alert('Error: ' + (json.message || 'Unknown error'));
+                  throw new Error(json.message || 'Unknown error');
                 });
               }
             })
+            .then(function(data) {
+              // Show the success message
+              document.getElementById('success-message').style.display = 'block';
+              document.getElementById('error-message').style.display = 'none';
+      
+              // Optionally, hide the form
+              form.style.display = 'none';
+            })
             .catch(function(error) {
               console.error('Form submission failed:', error);
+              document.getElementById('error-message').textContent = error.message;
+              document.getElementById('error-message').style.display = 'block';
             });
           });
         });
