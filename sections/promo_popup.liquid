@@ -40,6 +40,102 @@
 
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const showPopupKey = "showPromoPopup";
+    const clickedPromoButtonKey = "clickedPromoButton";
+    const closeButton = document.querySelector(".popup_close");
+    const sudoPromoButton = document.getElementById("sudo-promo-btn");
+    const copyCodeButton = document.getElementById("copy-code");
+    const promoCodeSpan = document.getElementById("promo-code");
+    const popupContainer = document.querySelector(".popup_container");
+    const offerPopupWrapper = document.querySelector(".offer-popup_wrapper");
+    const successContent = document.querySelector(".popup_content.is-success");
+    const promoFormBtn = document.getElementById("promo-form-btn");
+
+    // Helper function to show the popup
+    function showPopup() {
+        const tl = gsap.timeline();
+        tl.set(offerPopupWrapper, { display: "flex" })
+          .to(offerPopupWrapper, { opacity: 1, duration: 1 })
+          .to(popupContainer, { y: "0vh", duration: 1 }, "-=1");
+    }
+
+    // Helper function to close the popup
+    function closePopup() {
+        const tl = gsap.timeline();
+        tl.to(popupContainer, { y: "100vh", duration: 1 })
+          .to(offerPopupWrapper, { opacity: 0, duration: 1 }, "-=1")
+          .set(offerPopupWrapper, { display: "none" });
+    }
+
+    // Set a cookie
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // Get a cookie
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Check local storage to decide whether to show the popup
+    if (!localStorage.getItem(showPopupKey)) {
+        showPopup();
+        localStorage.setItem(showPopupKey, Date.now());
+    } else {
+        const lastShown = parseInt(localStorage.getItem(showPopupKey), 10);
+        const now = Date.now();
+        const oneDay = 24 * 60 * 60 * 1000;
+        if (now - lastShown > oneDay) {
+            showPopup();
+            localStorage.setItem(showPopupKey, Date.now());
+        }
+    }
+
+    // Check if the promo button has been clicked
+    if (getCookie(clickedPromoButtonKey)) {
+        gsap.set(successContent, { y: "0%" });
+    }
+
+    // Close popup on close button click
+    closeButton.addEventListener("click", closePopup);
+
+    // Handle sudo promo button click
+    sudoPromoButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        setCookie(clickedPromoButtonKey, "true", 30); // Remember for 30 days
+        promoFormBtn.click();
+    });
+
+    // Handle copy code button click
+    copyCodeButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        navigator.clipboard.writeText(promoCodeSpan.innerText).then(() => {
+            alert("Promo code copied to clipboard!");
+        });
+    });
+
+    // Handle form submission to prevent popup for 30 days
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function () {
+        const thirtyDays = 30 * 24 * 60 * 60 * 1000;
+        localStorage.setItem(showPopupKey, Date.now() + thirtyDays);
+    });
+});
+
+</script>
+
 {% schema %}
 {
 "name": "Promo Popup",
