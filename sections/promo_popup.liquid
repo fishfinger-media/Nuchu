@@ -4,7 +4,7 @@
     <h2 class="heading_small">10% off your first order</h2>
     <p class="ts_maxwidth_40">Subscribe to receive 10% off your first order, along with product updates and exclusive offers!</p>
     
-    {% form 'customer' %}
+    <form id="popup-newsletter" action="/contact" method="post">
         <div class="email">
           <label for="email">Email</label>
           <input type="email" name="contact[email]" id="email-input" required />
@@ -13,7 +13,7 @@
         <div class="submit">
           <input type="submit" value="Sign up" />
         </div>
-      {% endform %}
+      </form>
       
       <div id="success-message" style="display:none;">
         Thank you for signing up!
@@ -21,49 +21,40 @@
       
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          // Use a more specific selector for the form
-          var form = document.querySelector('form[action="/contact"]');
+          var form = document.getElementById('popup-newsletter');
       
-          // Check if the form exists
-          if (form) {
-            // Listen for form submission
-            form.addEventListener('submit', function(event) {
-              event.preventDefault(); // Prevent the default form submission
+          form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
       
-              // Create a new FormData object from the form
-              var formData = new FormData(form);
+            var formData = new FormData(form);
       
-              // Send an AJAX request to the form action
-              fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                  'Accept': 'application/json',
-                  'X-Requested-With': 'XMLHttpRequest'
-                }
-              })
-              .then(function(response) {
-                if (response.ok) {
-                  // Show the success message
-                  document.getElementById('success-message').style.display = 'block';
+            fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+              }
+            })
+            .then(function(response) {
+              if (response.ok) {
+                // Show the success message
+                document.getElementById('success-message').style.display = 'block';
       
-                  // Optionally, hide the form
-                  form.style.display = 'none';
-                } else {
-                  // Handle errors here
-                  return response.json().then(function(json) {
-                    // Show errors (you can customize this)
-                    alert('Error: ' + (json.message || 'Unknown error'));
-                  });
-                }
-              })
-              .catch(function(error) {
-                console.error('Form submission failed:', error);
-              });
+                // Optionally, hide the form
+                form.style.display = 'none';
+              } else {
+                // Handle errors here
+                return response.json().then(function(json) {
+                  // Show errors (you can customize this)
+                  alert('Error: ' + (json.message || 'Unknown error'));
+                });
+              }
+            })
+            .catch(function(error) {
+              console.error('Form submission failed:', error);
             });
-          } else {
-            console.error('Form not found');
-          }
+          });
         });
       </script>
       
