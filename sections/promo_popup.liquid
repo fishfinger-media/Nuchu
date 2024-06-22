@@ -92,7 +92,7 @@
     sudoPromoButton.addEventListener("click", function (event) {
         event.preventDefault();
         const tl = gsap.timeline();
-        tl.to(successContent, { y: "-100%", duration: 1 });
+        tl.to(successContent, { y: "0%", duration: 1 });
         setTimeout(() => {
             promoFormBtn.click();
         }, 1000);
