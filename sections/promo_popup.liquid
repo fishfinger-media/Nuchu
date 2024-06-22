@@ -4,80 +4,48 @@
     <h2 class="heading_small">10% off your first order</h2>
     <p class="ts_maxwidth_40">Subscribe to receive 10% off your first order, along with product updates and exclusive offers!</p>
     
-    <form id="newsletter-form" action="/contact" method="post">
-        <div class="email">
-          <label for="email">Email</label>
-          <input type="email" name="contact[email]" id="email-input" required />
-        </div>
-        
-        <!-- Include CSRF token if required -->
-        <input type="hidden" name="form_type" value="customer">
-        <input type="hidden" name="utf8" value="✓">
-      
-        <div class="submit">
-          <input type="submit" value="Sign up" />
-        </div>
-      </form>
-      
-      <div id="success-message" style="display:none;">
-        Thank you for signing up!
-      </div>
-      
-      <div id="error-message" style="display:none; color: red;">
-        An error occurred. Please try again.
-      </div>
+{% comment %}
+  Assume this is within a Shopify Liquid template file, like 'customer.liquid'
+{% endcomment %}
 
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          var form = document.getElementById('newsletter-form');
+{% form 'customer' %}
+    <div class="email">
+      <label for="email">Email</label>
+      <input type="email" name="contact[email]" id="email-input" required />
+    </div>
+  
+    <a href="#" class="sudosubmit-btn">sign up</a>
+    
+    <div class="success-banner" style="display: none;">
+      <p>Use promo code welcome10 at checkout</p>
+    </div>
+    
+    <div class="submit">
+      <input type="submit" value="Sign up"/>
+    </div>
+  {% endform %}
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var fakeButton = document.querySelector('.sudosubmit-btn');
+      var successBanner = document.querySelector('.success-banner');
+      var submitButton = document.querySelector('input[type="submit"]');
       
-          form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
+      // Function to show success banner and automatically submit form after delay
+      function showSuccessAndSubmit(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        
+        successBanner.style.display = 'block'; // Show success banner
+        
+        setTimeout(function() {
+          submitButton.click(); // Simulate click on submit button after 10 seconds
+        }, 10000); // 10000 milliseconds = 10 seconds
+      }
       
-            var formData = new FormData(form);
-            var formAction = form.getAttribute('action');
-      
-            fetch(formAction, {
-              method: 'POST',
-              body: formData,
-              headers: {
-                'Accept': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-                // Include CSRF token if required by your form
-                // Replace 'YOUR_CSRF_TOKEN' with the actual token
-                'X-CSRF-Token': 'YOUR_CSRF_TOKEN'
-              }
-            })
-            .then(function(response) {
-              if (response.ok) {
-                return response.json();
-              } else {
-                return response.json().then(function(json) {
-                  console.error('Response error:', json);
-                  throw new Error(json.message || 'Unknown error');
-                }).catch(function() {
-                  throw new Error('Error parsing response JSON');
-                });
-              }
-            })
-            .then(function(data) {
-              // Show the success message
-              document.getElementById('success-message').style.display = 'block';
-              document.getElementById('error-message').style.display = 'none';
-      
-              // Optionally, hide the form
-              form.style.display = 'none';
-            })
-            .catch(function(error) {
-              console.error('Form submission failed:', error);
-              document.getElementById('error-message').textContent = error.message;
-              document.getElementById('error-message').style.display = 'block';
-            });
-          });
-        });
-      </script>
-      
-      
+      // Attach click event listener to the fake button
+      fakeButton.addEventListener('click', showSuccessAndSubmit);
+    });
+  </script>
   
       
 <div class="ts_maxwidth_40"><div class="text-size-small">By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time</div></div></div></div> {% schema %} {"tag":"section","name":"promo_popup","class":"offer-popup_wrapper","settings":[{"id":"text_checkbox","type":"text","label":"Checkbox","default":"By subscribing you agree to with our <a href=\"#\"><span class=\"ts_underline\">Privacy Policy<\/span><\/a> and provide consent to receive updates from our company."}],"presets":[{"name":"promo_popup","category":"Liquify"}]} {% endschema %}
