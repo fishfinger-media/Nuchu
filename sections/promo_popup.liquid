@@ -10,30 +10,88 @@
         
         <div id="w-node-f91a8ed6-9a6f-9f6c-2209-30ddf2feebdb-07f8c27d" class="popup_content">
             <div class="w-layout-vflex spacing_1">
-                <h2 class="heading_small">10% off your first order</h2>
-                <p class="ts_maxwidth_40">Subscribe to receive 10% off your first order, along with product updates and exclusive offers!</p>
+                <h2 class="heading_small">{{ settings.promo_heading }}</h2>
+                <p class="ts_maxwidth_40">{{ settings.promo_paragraph }}</p>
             </div>
 
             <div class="w-layout-vflex spacing_1" style="width:100%">
                 <input type="email" name="contact[email]" id="email-input" required="" placeholder="email address" class="footer_form-input is-pink">
-                <a href="#" class="button is-pink">submit</a>
+                <a href="#" class="button is-pink">{{ settings.submit_button_text }}</a>
             </div>
 
             <div class="ts_maxwidth_40">
-                <div class="text-size-small">By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time</div>
+                <div class="text-size-small">{{ settings.promo_disclaimer }}</div>
             </div>
 
         </div>
 
         <div class="popup_content is-success">
-            <h2 class="heading_small">You're in!</h2>
-            <p>Use the code <strong>WELCOME10</strong>at checkout for a discount on your first order!</p>
-            <a href="#" class="button is-pink w-button">Copy code</a>
+            <h2 class="heading_small">{{ settings.success_heading }}</h2>
+            <p>{{ settings.success_code_part1 }} <span><strong>{{ settings.success_code }}</strong></span> {{ settings.success_code_part2 }}</p>
+            <a href="#" class="button is-pink w-button">{{ settings.copy_code_button_text }}</a>
         </div>
     </div>
 
 </div>
 
-
-
-{% schema %} {"tag":"section","name":"promo_popup","class":"offer-popup_wrapper","presets":[{"name":"promo_popup","category":"Liquify"}]} {% endschema %}
+{% schema %}
+{
+  "name": "Promo Popup",
+  "settings": [
+    {
+      "type": "text",
+      "id": "promo_heading",
+      "label": "Promo Heading",
+      "default": "10% off your first order"
+    },
+    {
+      "type": "textarea",
+      "id": "promo_paragraph",
+      "label": "Promo Paragraph",
+      "default": "Subscribe to receive 10% off your first order, along with product updates and exclusive offers!"
+    },
+    {
+      "type": "text",
+      "id": "submit_button_text",
+      "label": "Submit Button Text",
+      "default": "submit"
+    },
+    {
+      "type": "textarea",
+      "id": "promo_disclaimer",
+      "label": "Promo Disclaimer",
+      "default": "By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time"
+    },
+    {
+      "type": "text",
+      "id": "success_heading",
+      "label": "Success Heading",
+      "default": "You're in!"
+    },
+    {
+      "type": "textarea",
+      "id": "success_code_part1",
+      "label": "Success Code Part 1",
+      "default": "Use the code"
+    },
+    {
+      "type": "text",
+      "id": "success_code",
+      "label": "Success Code",
+      "default": "WELCOME10"
+    },
+    {
+      "type": "textarea",
+      "id": "success_code_part2",
+      "label": "Success Code Part 2",
+      "default": "at checkout for a discount on your first order!"
+    },
+    {
+      "type": "text",
+      "id": "copy_code_button_text",
+      "label": "Copy Code Button Text",
+      "default": "Copy code"
+    }
+  ]
+}
+{% endschema %}
