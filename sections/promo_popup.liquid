@@ -9,6 +9,10 @@
           <label for="email">Email</label>
           <input type="email" name="contact[email]" id="email-input" required />
         </div>
+        
+        <!-- Include CSRF token if required -->
+        <input type="hidden" name="form_type" value="customer">
+        <input type="hidden" name="utf8" value="✓">
       
         <div class="submit">
           <input type="submit" value="Sign up" />
@@ -22,7 +26,7 @@
       <div id="error-message" style="display:none; color: red;">
         An error occurred. Please try again.
       </div>
-      
+
       <script>
         document.addEventListener('DOMContentLoaded', function() {
           var form = document.getElementById('newsletter-form');
@@ -38,7 +42,10 @@
               body: formData,
               headers: {
                 'Accept': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'
+                'X-Requested-With': 'XMLHttpRequest',
+                // Include CSRF token if required by your form
+                // Replace 'YOUR_CSRF_TOKEN' with the actual token
+                'X-CSRF-Token': 'YOUR_CSRF_TOKEN'
               }
             })
             .then(function(response) {
@@ -46,7 +53,10 @@
                 return response.json();
               } else {
                 return response.json().then(function(json) {
+                  console.error('Response error:', json);
                   throw new Error(json.message || 'Unknown error');
+                }).catch(function() {
+                  throw new Error('Error parsing response JSON');
                 });
               }
             })
