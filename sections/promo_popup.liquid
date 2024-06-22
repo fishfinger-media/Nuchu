@@ -128,29 +128,29 @@
 
 <script>
   $(document).ready(function() {
-    $('#email-form').submit(function(event) {
-      event.preventDefault(); // Prevent the default form submission
+    $('#newsletter-form').submit(function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
   
-      var email = $('input[name="contact[email]"]').val();
-      var formData = {
-        'form_type': 'customer',
-        'contact[email]': email
-      };
-  
+      var $form = $(this);
+      var $messageDiv = $('#newsletter-message');
+      
       $.ajax({
-        type: 'POST',
-        url: $(this).attr('action'),
-        data: formData,
-        dataType: 'json',
+        type: $form.attr('method'),
+        url: $form.attr('action'),
+        data: $form.serialize(),
         success: function(response) {
-          $('#form-message').text('Thank you for subscribing!').css('color', 'green');
+          // You can customize this success message as per your requirement
+          $messageDiv.html('<p>Thank you for subscribing!</p>').css('color', 'green');
+          $form.trigger('reset'); // Reset the form fields
         },
         error: function(response) {
-          $('#form-message').text('There was an error. Please try again.').css('color', 'red');
+          // You can customize this error message as per your requirement
+          $messageDiv.html('<p>There was an error. Please try again.</p>').css('color', 'red');
         }
       });
     });
   });
+  
   </script>
   
 
