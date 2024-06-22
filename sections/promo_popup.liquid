@@ -35,6 +35,48 @@
 
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const showPopupKey = "showPromoPopup";
+    const closeButton = document.querySelector(".popup_close");
+    const popupContainer = document.querySelector(".popup_container");
+    const offerPopupWrapper = document.querySelector(".offer-popup_wrapper");
+
+    // Helper function to show the popup
+    function showPopup() {
+        const tl = gsap.timeline();
+        tl.set(offerPopupWrapper, { display: "flex" })
+          .to(offerPopupWrapper, { opacity: 1, duration: 1 })
+          .to(popupContainer, { y: "0vh", duration: 1 }, "-=1");
+    }
+
+    // Helper function to close the popup
+    function closePopup() {
+        const tl = gsap.timeline();
+        tl.to(popupContainer, { y: "100vh", duration: 1 })
+          .to(offerPopupWrapper, { opacity: 0, duration: 1 }, "-=1")
+          .set(offerPopupWrapper, { display: "none" });
+    }
+
+    // Check local storage to decide whether to show the popup
+    if (!localStorage.getItem(showPopupKey)) {
+        showPopup();
+        localStorage.setItem(showPopupKey, Date.now());
+    } else {
+        const lastShown = parseInt(localStorage.getItem(showPopupKey), 10);
+        const now = Date.now();
+        const oneDay = 24 * 60 * 60 * 1000;
+        if (now - lastShown > oneDay) {
+            showPopup();
+            localStorage.setItem(showPopupKey, Date.now());
+        }
+    }
+
+    // Close popup on close button click
+    closeButton.addEventListener("click", closePopup);
+});
+
+</script>
 
 {% schema %}
 {
