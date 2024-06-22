@@ -9,40 +9,52 @@
 
     <img src="{{ 'popup_img.jpg' | asset_url }}" loading="lazy" id="w-node-_5bf9ab54-2d3f-1f84-bf3c-4a30a2e82eeb-07f8c27d" sizes="100vw" alt="" srcset="{{ 'popup_img-p-500.jpg' | asset_url }} 500w, {{ 'popup_img.jpg' | asset_url }} 800w" class="popup_img">
     
-    {% form 'customer' %}
-        <div class="popup_content_wrapper">
-            
-            <div id="w-node-f91a8ed6-9a6f-9f6c-2209-30ddf2feebdb-07f8c27d" class="popup_content">
-                <div class="w-layout-vflex spacing_1">
-                    <h2 class="heading_small">{{ settings.promo_heading | default: "10% off your first order" }}</h2>
-                    <p class="ts_maxwidth_40">{{ settings.promo_paragraph | default: "Subscribe to receive 10% off your first order, along with product updates and exclusive offers!" }}</p>
-                </div>
+   {% comment %}
+  Assume this is within a Shopify Liquid template file, like 'customer.liquid'
+{% endcomment %}
 
-                <div class="w-layout-vflex spacing_1" style="width:100%">
-                    <input type="email" name="contact[email]" id="email-input" required placeholder="email address" class="footer_form-input is-pink"/>
-                    <a id="sudo-promo-btn" href="#" class="button is-pink">{{ settings.submit_button_text | default: "submit" }}</a>
-                </div>
-
-                <div class="ts_maxwidth_40">
-                    <div class="text-size-small">{{ settings.promo_disclaimer | default: "By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time" }}</div>
-                </div>
-
-                <div class="submit" style="display:none">
-                    <input id="promo-form-btn" type="submit" value="Sign up"/>
-                  </div> 
-
-            </div>
-
-            <div class="popup_content is-success">
-                <h2 class="heading_small">{{ settings.success_heading | default: "You're in!" }}</h2>
-                <p>{{ settings.success_code_part1 | default: "Use the code" }} <span id="promo-code"><strong>{{ settings.success_code | default: "WELCOME10" }}</strong></span> {{ settings.success_code_part2 | default: "at checkout for a discount on your first order!" }}</p>
-                <a id="copy-code" href="#" class="button is-pink w-button">{{ settings.copy_code_button_text | default: "Copy code" }}</a>
-            </div>
-        </div>
-    {% endform %}
+{% form 'customer' %}
+    <div class="email">
+      <label for="email">Email</label>
+      <input type="email" name="contact[email]" id="email-input" required />
+    </div>
+  
+    <a href="#" class="sudosubmit-btn">sign up</a>
+    
+    <div class="success-banner" style="display: none;">
+      <p>Use promo code welcome10 at checkout</p>
+    </div>
+    
+    <div class="submit">
+      <input type="submit" value="Sign up"/>
+    </div>
+  {% endform %}
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var fakeButton = document.querySelector('.sudosubmit-btn');
+      var successBanner = document.querySelector('.success-banner');
+      var submitButton = document.querySelector('input[type="submit"]');
+      
+      // Function to show success banner and automatically submit form after delay
+      function showSuccessAndSubmit(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        
+        successBanner.style.display = 'block'; // Show success banner
+        
+        setTimeout(function() {
+          submitButton.click(); // Simulate click on submit button after 10 seconds
+        }, 10000); // 10000 milliseconds = 10 seconds
+      }
+      
+      // Attach click event listener to the fake button
+      fakeButton.addEventListener('click', showSuccessAndSubmit);
+    });
+  </script>
+  
 
 </div>
-
+{% comment %} 
 <script>
 
     const showPopupKey = "showPromoPopup";
@@ -115,7 +127,7 @@
 
 
 
-</script>
+</script> {% endcomment %}
 
 {% schema %}
 {
