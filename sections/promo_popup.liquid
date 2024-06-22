@@ -45,7 +45,6 @@
 
 <script>
 
-
     const showPopupKey = "showPromoPopup";
     const closeButton = document.querySelector(".popup_close");
     const sudoPromoButton = document.getElementById("sudo-promo-btn");
@@ -58,30 +57,18 @@
 
     // Helper function to show the popup
     function showPopup() {
-        gsap.to(offerPopupWrapper, {
-            display: "flex",
-            opacity: 1,
-            duration: 1
-        });
-        gsap.to(popupContainer, {
-            y: "0vh",
-            duration: 1
-        });
+        const tl = gsap.timeline();
+        tl.set(offerPopupWrapper, { display: "flex" })
+          .to(offerPopupWrapper, { opacity: 1, duration: 1 })
+          .to(popupContainer, { y: "0vh", duration: 1 }, "-=1");
     }
 
     // Helper function to close the popup
     function closePopup() {
-        gsap.to(offerPopupWrapper, {
-            opacity: 0,
-            duration: 1,
-            onComplete: () => {
-                offerPopupWrapper.style.display = "none";
-            }
-        });
-        gsap.to(popupContainer, {
-            y: "100vh",
-            duration: 1
-        });
+        const tl = gsap.timeline();
+        tl.to(popupContainer, { y: "100vh", duration: 1 })
+          .to(offerPopupWrapper, { opacity: 0, duration: 1 }, "-=1")
+          .set(offerPopupWrapper, { display: "none" });
     }
 
     // Check local storage to decide whether to show the popup
@@ -104,11 +91,11 @@
     // Handle sudo promo button click
     sudoPromoButton.addEventListener("click", function (event) {
         event.preventDefault();
-        gsap.to(successContent, {
-            y: "-100%",
-            duration: 1
-        });
-        promoFormBtn.click();
+        const tl = gsap.timeline();
+        tl.to(successContent, { y: "-100%", duration: 1 });
+        setTimeout(() => {
+            promoFormBtn.click();
+        }, 1000);
     });
 
     // Handle copy code button click
