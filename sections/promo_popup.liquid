@@ -19,10 +19,14 @@
                 </div>
 
                 <div class="w-layout-vflex spacing_1" style="width:100%">
-                  <form id="email-form" action="/contact" method="post">
+                 
+                  <form id="newsletter-form" method="POST" action="/contact#contact_form">
                     <input type="email" name="contact[email]" placeholder="Enter your email" required>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Subscribe</button>
                   </form>
+                  <div id="newsletter-message"></div>
+                  
+
                   <div id="form-message"></div>
                   
                     <a id="sudo-promo-btn" href="#" class="button is-pink">{{ settings.submit_button_text | default: "submit" }}</a>

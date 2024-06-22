@@ -39,5 +39,40 @@
 {% endform %}
 <div class="success-message w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="error-message w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div></div></div></div></div> 
 
+<div id="newsletter-signup">
+  <form id="newsletter-form" method="POST" action="/contact#contact_form">
+    <input type="hidden" name="form_type" value="customer">
+    <input type="hidden" name="utf8" value="✓">
+    <input type="email" name="contact[email]" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <div id="newsletter-message"></div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#newsletter-form').submit(function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      var $form = $(this);
+      var $messageDiv = $('#newsletter-message');
+      
+      $.ajax({
+        type: 'POST',
+        url: '/contact#contact_form',
+        data: $form.serialize(),
+        success: function(response) {
+          // Display success message
+          $messageDiv.html('<p>Thank you for subscribing!</p>').css('color', 'green');
+          $form.trigger('reset'); // Reset the form fields
+        },
+        error: function(response) {
+          // Display error message
+          $messageDiv.html('<p>There was an error. Please try again.</p>').css('color', 'red');
+        }
+      });
+    });
+  });
+</script>
 
 {% schema %} {"tag":"section","name":"contact","class":"section_contact","blocks":[{"name":"Social Links","type":"social-links","settings":[{"id":"url_url","type":"url","label":"URL"},{"id":"image_image","type":"image_picker","label":"Image"}]},{"name":"Contact Links","type":"contact-links","settings":[{"id":"text_button_text","type":"text","label":"Button Text","default":"hello@nuchu.com"},{"id":"url_button_link","type":"url","label":"Button Link"}]}],"settings":[{"id":"richtext_contact_details_text","type":"richtext","label":"Contact Details Text","default":"<p>Need some info regarding Nuchu? Having an issue with your order? Want to stock one of our products? Think you have what it takes to be a Nuchu influencer?<br\/>\u200d<br\/>Use the emails on this page to get to the right person simply.<br\/>\u200d<br\/>You can also drop us a dm on any of our social media channels.<\/p>"},{"id":"text_checkbox","type":"text","label":"Checkbox","default":"By subscribing you agree to with our <a href=\"#\"><span class=\"ts_underline\">Privacy Policy<\/span><\/a> and provide consent to receive updates from our company."}],"presets":[{"name":"contact","category":"Liquify"}]} {% endschema %}
