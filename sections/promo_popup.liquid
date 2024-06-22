@@ -1,6 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
-
 <div class="popup_container">
 
     <button class="popup_close">
@@ -9,150 +6,35 @@
 
     <img src="{{ 'popup_img.jpg' | asset_url }}" loading="lazy" id="w-node-_5bf9ab54-2d3f-1f84-bf3c-4a30a2e82eeb-07f8c27d" sizes="100vw" alt="" srcset="{{ 'popup_img-p-500.jpg' | asset_url }} 500w, {{ 'popup_img.jpg' | asset_url }} 800w" class="popup_img">
     
-
-        <div class="popup_content_wrapper">
-            
-            <div id="w-node-f91a8ed6-9a6f-9f6c-2209-30ddf2feebdb-07f8c27d" class="popup_content">
-                <div class="w-layout-vflex spacing_1">
-                    <h2 class="heading_small">{{ settings.promo_heading | default: "10% off your first order" }}</h2>
-                    <p class="ts_maxwidth_40">{{ settings.promo_paragraph | default: "Subscribe to receive 10% off your first order, along with product updates and exclusive offers!" }}</p>
-                </div>
-
-                <div class="w-layout-vflex spacing_1" style="width:100%">
-                 
-                  <form id="newsletter-form" method="POST" action="/pages/contact#contact_form">
-                    <input type="email" name="contact[email]" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                  </form>
-                  <div id="newsletter-message">LETS GOOOOO</div>
-                  
-
-                  <div id="form-message"></div>
-                  
-                    <a id="sudo-promo-btn" href="#" class="button is-pink">{{ settings.submit_button_text | default: "submit" }}</a>
-                </div>
-
-                <div class="ts_maxwidth_40">
-                    <div class="text-size-small">{{ settings.promo_disclaimer | default: "By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time" }}</div>
-                </div>
-
-                <div class="submit" style="display:none">
-                    <input id="promo-form-btn" type="submit" value="Sign up"/>
-                  </div> 
-
-            </div>
-
-            <div class="popup_content is-success">
-                <h2 class="heading_small">{{ settings.success_heading | default: "You're in!" }}</h2>
-                <p>{{ settings.success_code_part1 | default: "Use the code" }} <span id="promo-code"><strong>{{ settings.success_code | default: "WELCOME10" }}</strong></span> {{ settings.success_code_part2 | default: "at checkout for a discount on your first order!" }}</p>
-                <a id="copy-code" href="#" class="button is-pink w-button">{{ settings.copy_code_button_text | default: "Copy code" }}</a>
-            </div>
-        </div>
-
+    {% form 'customer' %}
+      <div class="popup_content_wrapper">
+          
+          <div id="w-node-f91a8ed6-9a6f-9f6c-2209-30ddf2feebdb-07f8c27d" class="popup_content">
+              <div class="w-layout-vflex spacing_1">
+                  <h2 class="heading_small">{{ settings.promo_heading | default: "10% off your first order" }}</h2>
+                  <p class="ts_maxwidth_40">{{ settings.promo_paragraph | default: "Subscribe to receive 10% off your first order, along with product updates and exclusive offers!" }}</p>
+              </div>
+              <div class="w-layout-vflex spacing_1" style="width:100%">
+                  <input type="email" name="contact[email]" id="email-input" required placeholder="email address" class="footer_form-input is-pink"/>
+                  <a id="sudo-promo-btn" href="#" class="button is-pink">{{ settings.submit_button_text | default: "submit" }}</a>
+              </div>
+              <div class="ts_maxwidth_40">
+                  <div class="text-size-small">{{ settings.promo_disclaimer | default: "By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time" }}</div>
+              </div>
+              <div class="submit" style="display:none">
+                  <input id="promo-form-btn" type="submit" value="Sign up"/>
+                </div> 
+          </div>
+          <div class="popup_content is-success">
+              <h2 class="heading_small">{{ settings.success_heading | default: "You're in!" }}</h2>
+              <p>{{ settings.success_code_part1 | default: "Use the code" }} <span id="promo-code"><strong>{{ settings.success_code | default: "WELCOME10" }}</strong></span> {{ settings.success_code_part2 | default: "at checkout for a discount on your first order!" }}</p>
+              <a id="copy-code" href="#" class="button is-pink w-button">{{ settings.copy_code_button_text | default: "Copy code" }}</a>
+          </div>
+      </div>
+  {% endform %}
 
 </div>
 
-{% comment %} <script>
-
-    const showPopupKey = "showPromoPopup";
-    const closeButton = document.querySelector(".popup_close");
-    const sudoPromoButton = document.getElementById("sudo-promo-btn");
-    const copyCodeButton = document.getElementById("copy-code");
-    const promoCodeSpan = document.getElementById("promo-code");
-    const popupContainer = document.querySelector(".popup_container");
-    const offerPopupWrapper = document.querySelector(".offer-popup_wrapper");
-    const successContent = document.querySelector(".popup_content.is-success");
-    const promoFormBtn = document.getElementById("promo-form-btn");
-
-    // Helper function to show the popup
-    function showPopup() {
-        const tl = gsap.timeline();
-        tl.set(offerPopupWrapper, { display: "flex" })
-          .to(offerPopupWrapper, { opacity: 1, duration: 1 })
-          .to(popupContainer, { y: "0vh", duration: 1 }, "-=1");
-    }
-
-    // Helper function to close the popup
-    function closePopup() {
-        const tl = gsap.timeline();
-        tl.to(popupContainer, { y: "100vh", duration: 1 })
-          .to(offerPopupWrapper, { opacity: 0, duration: 1 }, "-=1")
-          .set(offerPopupWrapper, { display: "none" });
-    }
-
-    // Check local storage to decide whether to show the popup
-    if (!localStorage.getItem(showPopupKey)) {
-        showPopup();
-        localStorage.setItem(showPopupKey, Date.now());
-    } else {
-        const lastShown = parseInt(localStorage.getItem(showPopupKey), 10);
-        const now = Date.now();
-        const oneDay = 24 * 60 * 60 * 1000;
-        if (now - lastShown > oneDay) {
-            showPopup();
-            localStorage.setItem(showPopupKey, Date.now());
-        }
-    }
-
-    // Close popup on close button click
-    closeButton.addEventListener("click", closePopup);
-
-    // Handle sudo promo button click
-    sudoPromoButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        const tl = gsap.timeline();
-        tl.to(successContent, { y: "0%", duration: 1 });
-        setTimeout(() => {
-            promoFormBtn.click();
-        }, 1000);
-    });
-
-    // Handle copy code button click
-    copyCodeButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        navigator.clipboard.writeText(promoCodeSpan.innerText).then(() => {
-            alert("Promo code copied to clipboard!");
-        });
-    });
-
-    // Handle form submission to prevent popup for 30 days
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function () {
-        const thirtyDays = 30 * 24 * 60 * 60 * 1000;
-        localStorage.setItem(showPopupKey, Date.now() + thirtyDays);
-    });
-
-
-
-</script> {% endcomment %}
-
-<script>
-  $(document).ready(function() {
-    $('#newsletter-form').submit(function(event) {
-      event.preventDefault(); // Prevent the form from submitting normally
-  
-      var $form = $(this);
-      var $messageDiv = $('#newsletter-message');
-      
-      $.ajax({
-        type: $form.attr('method'),
-        url: $form.attr('action'),
-        data: $form.serialize(),
-        success: function(response) {
-          // You can customize this success message as per your requirement
-          $messageDiv.html('<p>Thank you for subscribing!</p>').css('color', 'green');
-          $form.trigger('reset'); // Reset the form fields
-        },
-        error: function(response) {
-          // You can customize this error message as per your requirement
-          $messageDiv.html('<p>There was an error. Please try again.</p>').css('color', 'red');
-        }
-      });
-    });
-  });
-  
-  </script>
-  
 
 {% schema %}
 {
