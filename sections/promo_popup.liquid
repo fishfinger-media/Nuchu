@@ -66,6 +66,20 @@ function getCookie(name) {
   return null;
 }
 
+// Show popup logic
+function showPopup() {
+  gsap.set(popupWrapper, { display: 'flex', opacity: 0 });
+  gsap.to(popupWrapper, { opacity: 1, duration: 1 });
+  gsap.fromTo(popupContainer, { y: '100vh' }, { y: '0vh', duration: 1 });
+}
+
+// Hide popup logic
+function hidePopup() {
+  gsap.to(popupWrapper, { opacity: 0, duration: 1, onComplete: function() {
+      gsap.set(popupWrapper, { display: 'none' });
+  }});
+}
+
 // Initial setup
 document.addEventListener('DOMContentLoaded', function() {
   var hasClickedPromoBtn = getCookie('promo_btn_clicked');
@@ -77,13 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var closeBtn = document.querySelector('.popup_close');
   var copyCodeBtn = document.getElementById('copy-code');
   var promoCode = document.getElementById('promo-code').innerText;
-  
-  // Show popup logic
-  function showPopup() {
-      gsap.set(popupWrapper, { display: 'flex', opacity: 0 });
-      gsap.to(popupWrapper, { opacity: 1, duration: 1 });
-      gsap.fromTo(popupContainer, { y: '100vh' }, { y: '0vh', duration: 1 });
-  }
 
   // Determine the popup state on page load
   if (!hasClickedPromoBtn && !hasClosedPopup) {
@@ -91,10 +98,13 @@ document.addEventListener('DOMContentLoaded', function() {
   } else if (hasClickedPromoBtn && !hasClosedPopup) {
       showPopup();
       gsap.set(promoContentSuccess, { y: '0%' });
+  } else if (!hasClickedPromoBtn && hasClosedPopup && new Date().getTime() - new Date(hasClosedPopup).getTime() > 24 * 60 * 60 * 1000) {
+      showPopup();
   }
 
   // Promo button click event
-  promoBtn.addEventListener('click', function() {
+  promoBtn.addEventListener('click', function(e) {
+      e.preventDefault();
       setCookie('promo_btn_clicked', 'true', 30);
       document.getElementById('promo-form-btn').click();
   });
@@ -102,13 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Close button click event
   closeBtn.addEventListener('click', function() {
       if (!hasClickedPromoBtn) {
-          setCookie('popup_closed', 'true', 1);
+          setCookie('popup_closed', new Date().toUTCString(), 1);
       } else {
           setCookie('popup_closed', 'true', 30);
       }
-      gsap.to(popupWrapper, { opacity: 0, duration: 1, onComplete: function() {
-          gsap.set(popupWrapper, { display: 'none' });
-      }});
+      hidePopup();
   });
 
   // Copy code button click event
@@ -118,7 +126,16 @@ document.addEventListener('DOMContentLoaded', function() {
           alert('Promo code copied to clipboard');
       });
   });
+
+  // Handle form submission success state
+  var urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('form_type') && urlParams.get('form_type') === 'customer') {
+      setCookie('promo_btn_clicked', 'true', 30);
+      showPopup();
+      gsap.set(promoContentSuccess, { y: '0%' });
+  }
 });
+
 
 </script>
 
