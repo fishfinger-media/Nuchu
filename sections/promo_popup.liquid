@@ -44,88 +44,81 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const showPopupKey = "showPromoPopup";
-    const formSubmittedKey = "formSubmitted";
-    const closeButton = document.querySelector(".popup_close");
-    const sudoPromoButton = document.getElementById("sudo-promo-btn");
-    const copyCodeButton = document.getElementById("copy-code");
-    const promoCodeSpan = document.getElementById("promo-code");
-    const popupContainer = document.querySelector(".popup_container");
-    const offerPopupWrapper = document.querySelector(".offer-popup_wrapper");
-    const successContent = document.querySelector(".popup_content.is-success");
-    const promoFormBtn = document.getElementById("promo-form-btn");
+// Utility functions to manage cookies
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
 
-    // Helper function to show the popup
-    function showPopup() {
-        const tl = gsap.timeline();
-        tl.set(offerPopupWrapper, { display: "flex" })
-          .to(offerPopupWrapper, { opacity: 1, duration: 1 })
-          .to(popupContainer, { y: "0vh", duration: 1 }, "-=1");
-    }
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
 
-    // Helper function to close the popup
-    function closePopup() {
-        const tl = gsap.timeline();
-        tl.to(popupContainer, { y: "100vh", duration: 1 })
-          .to(offerPopupWrapper, { opacity: 0, duration: 1 }, "-=1")
-          .set(offerPopupWrapper, { display: "none" });
-    }
+// Initial setup
+document.addEventListener('DOMContentLoaded', function() {
+  var hasClickedPromoBtn = getCookie('promo_btn_clicked');
+  var hasClosedPopup = getCookie('popup_closed');
+  var popupWrapper = document.querySelector('.popup_container');
+  var popupContainer = document.querySelector('.popup_container');
+  var promoContentSuccess = document.querySelector('.popup_content.is-success');
+  var promoBtn = document.getElementById('sudo-promo-btn');
+  var closeBtn = document.querySelector('.popup_close');
+  var copyCodeBtn = document.getElementById('copy-code');
+  var promoCode = document.getElementById('promo-code').innerText;
+  
+  // Show popup logic
+  function showPopup() {
+      gsap.set(popupWrapper, { display: 'flex', opacity: 0 });
+      gsap.to(popupWrapper, { opacity: 1, duration: 1 });
+      gsap.fromTo(popupContainer, { y: '100vh' }, { y: '0vh', duration: 1 });
+  }
 
-    // Check local storage to decide whether to show the popup
-    function shouldShowPopup() {
-        const lastShown = parseInt(localStorage.getItem(showPopupKey), 10);
-        const formSubmitted = localStorage.getItem(formSubmittedKey);
-        const now = Date.now();
-        const oneDay = 24 * 60 * 60 * 1000;
-        const thirtyDays = 30 * 24 * 60 * 60 * 1000;
+  // Determine the popup state on page load
+  if (!hasClickedPromoBtn && !hasClosedPopup) {
+      showPopup();
+  } else if (hasClickedPromoBtn && !hasClosedPopup) {
+      showPopup();
+      gsap.set(promoContentSuccess, { y: '0%' });
+  }
 
-        if (!lastShown) {
-            return true;
-        }
+  // Promo button click event
+  promoBtn.addEventListener('click', function() {
+      setCookie('promo_btn_clicked', 'true', 30);
+      document.getElementById('promo-form-btn').click();
+  });
 
-        if (formSubmitted) {
-            return now - lastShown > thirtyDays;
-        } else {
-            return now - lastShown > oneDay;
-        }
-    }
+  // Close button click event
+  closeBtn.addEventListener('click', function() {
+      if (!hasClickedPromoBtn) {
+          setCookie('popup_closed', 'true', 1);
+      } else {
+          setCookie('popup_closed', 'true', 30);
+      }
+      gsap.to(popupWrapper, { opacity: 0, duration: 1, onComplete: function() {
+          gsap.set(popupWrapper, { display: 'none' });
+      }});
+  });
 
-    if (shouldShowPopup()) {
-        showPopup();
-        localStorage.setItem(showPopupKey, Date.now());
-    }
-
-    // Close popup on close button click
-    closeButton.addEventListener("click", closePopup);
-
-    // Handle sudo promo button click
-    sudoPromoButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        const tl = gsap.timeline();
-        tl.to(successContent, { y: "-100%", duration: 1 });
-        setTimeout(() => {
-            promoFormBtn.click();
-        }, 1000);
-    });
-
-    // Handle copy code button click
-    copyCodeButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        navigator.clipboard.writeText(promoCodeSpan.innerText).then(() => {
-            alert("Promo code copied to clipboard!");
-        });
-    });
-
-    // Handle form submission to prevent popup for 30 days
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function () {
-        localStorage.setItem(formSubmittedKey, "true");
-        const thirtyDays = 30 * 24 * 60 * 60 * 1000;
-        localStorage.setItem(showPopupKey, Date.now() + thirtyDays);
-    });
+  // Copy code button click event
+  copyCodeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(promoCode).then(function() {
+          alert('Promo code copied to clipboard');
+      });
+  });
 });
-
 
 </script>
 
