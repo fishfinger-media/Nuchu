@@ -1,1 +1,201 @@
-{"sections":{"faq_header":{"type":"faq_header","settings":{"text_faq_heading":"Frequently Asked<br>Questions"}},"faq_questions":{"type":"faq_questions","blocks":{"faq_GfQgCW":{"type":"faq","settings":{"text_question":"Where do you ship to?","richtext_answer":"<p>We currently ship to customers in Monaco, France and the United Kingdom. Stay tuned to be the first to know of other expansions!<\/p>"}},"faq_dH4Rzy":{"type":"faq","settings":{"text_question":"How can I cancel my order?","richtext_answer":"<p>Once your order is processed, we are unable to edit or cancel the items in your order. If you have any questions, please email our support team.<\/p>"}},"faq_HGXQpM":{"type":"faq","settings":{"text_question":"How much does shipping cost?","richtext_answer":"<p>Shipping costs differ depending on your country and selected shipping method. Your shipping costs are calculated at checkout.<\/p>"}},"faq_yVWtdp":{"type":"faq","settings":{"text_question":"Where else can I buy Nuchu products?","richtext_answer":"<p>Currently, our products are only available on our website. Stay tuned to be the first know about retail partners.<\/p>"}}},"block_order":["faq_GfQgCW","faq_dH4Rzy","faq_HGXQpM","faq_yVWtdp"],"settings":{"text_category":"Orders & Shipping"}},"faq_questions_rTJy6i":{"type":"faq_questions","blocks":{"faq_Fik8n9":{"type":"faq","settings":{"text_question":"Can I return or exchange an item?","richtext_answer":"<p>We are not currently offering any Returns or Exchanges on orders. Due to strict safety and quality controls, we cannot resell any products that have left our warehouse. For specific cases, returns may be accepted. Please contact us directly regarding this matter.<\/p>"}}},"block_order":["faq_Fik8n9"],"settings":{"text_category":"Returns & Exchanges"}},"faq_questions_TAK9RY":{"type":"faq_questions","blocks":{"faq_KrwdHP":{"type":"faq","settings":{"text_question":"What makes Nuchu different from other gummies?","richtext_answer":"<p>Nuchu is not the first but one of the few gummy brands that does not contain both added sugar and artificial sweeteners. Daily doses are all under 1g of sugar.<\/p>"}},"faq_EkqEQJ":{"type":"faq","settings":{"text_question":"Where does Nuchu manufacture its products?","richtext_answer":"<p>All of our gummy products are manufactured in Spain in BRCGS, IFS, HACCP and GMP certified facilities.<\/p>"}},"faq_HewiQL":{"type":"faq","settings":{"text_question":"Are Nuchu products vegan?","richtext_answer":"<p>Our Beauty and Calming gummies are vegan. The Immunity gummy is vegetarian as it contains propolis.<\/p>"}},"faq_yhJDJc":{"type":"faq","settings":{"text_question":"How often can I take Nuchu products?","richtext_answer":"<p>You can take Nuchu products daily. Please follow the Suggested Use on each product.<\/p>"}},"faq_Npyc8T":{"type":"faq","settings":{"text_question":"Can I take Nuchu products if I'm pregnant of breastfeeding?","richtext_answer":"<p>Please consult your physician if you are pregnant, breastfeeding, have a medical condition or are taking any medication.<\/p>"}},"faq_RUKrad":{"type":"faq","settings":{"text_question":"What is the shelf life of Nuchu products?","richtext_answer":"<p>All of our gummies have a 2-year shelf-life. Please refer to the use-by date on the bottom of the bottle.<\/p>"}},"faq_EWWVUr":{"type":"faq","settings":{"text_question":"How should I store my gummies?","richtext_answer":"<p>It's best to store your gummies in a cool and dry place. Avoid direct sunlight.<\/p>"}},"faq_9pmXRz":{"type":"faq","settings":{"text_question":"Can I take these gummies every day?","richtext_answer":"<p>Absolutely! Our wellness gummies are crafted for daily use, ensuring you get a delightful dose of essential vitamins to support your overall well-being<\/p>"}},"faq_tyraxC":{"type":"faq","settings":{"text_question":"Does Nuchu test on animals?","richtext_answer":"<p>Nuchu does not test on animals!<\/p>"}},"faq_DpWbda":{"type":"faq","settings":{"text_question":"Can I give Nuchu to my children?","richtext_answer":"<p>Nuchu is formulated for adult-use only.<\/p>"}},"faq_emK4LT":{"type":"faq","settings":{"text_question":"With no added sugar or sweeteners, how come Nuchu gummies taste sweet?","richtext_answer":"<p>Our gummies are made with Fructooligosaccharide (FOS), a naturally sweet prebiotic fibre found in plants.<\/p>"}},"faq_AjqEgx":{"type":"faq","settings":{"text_question":"Can I take these gummies every day?","richtext_answer":"<p>Absolutely! Our wellness gummies are crafted for daily use, ensuring you get a delightful dose of essential vitamins to support your overall well-being<\/p>"}},"faq_t4yYig":{"type":"faq","settings":{"text_question":"Why do my gummies often stick together?","richtext_answer":"<p>As our gummies do not contain sugar or sugar coating, clumping can occur. Stickiness can also be a result of changes in the environment within the vitamin bottle but does not affect their properties.<\/p>"}}},"block_order":["faq_KrwdHP","faq_EkqEQJ","faq_HewiQL","faq_yhJDJc","faq_Npyc8T","faq_RUKrad","faq_EWWVUr","faq_9pmXRz","faq_tyraxC","faq_DpWbda","faq_emK4LT","faq_AjqEgx","faq_t4yYig"],"settings":{"text_category":"Products"}}},"layout":"page.faq","wrapper":"main.main-wrapper","order":["faq_header","faq_questions","faq_questions_rTJy6i","faq_questions_TAK9RY"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "faq_header": {
+      "type": "faq_header",
+      "settings": {
+        "text_faq_heading": "Frequently Asked<br>Questions"
+      }
+    },
+    "faq_questions": {
+      "type": "faq_questions",
+      "blocks": {
+        "faq_GfQgCW": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Where do you ship to?",
+            "richtext_answer": "<p>We currently ship to customers in the EU, EEA, Monaco, France, and the United Kingdom. Stay tuned to be the first to know of other expansions!<\/p>"
+          }
+        },
+        "faq_dH4Rzy": {
+          "type": "faq",
+          "settings": {
+            "text_question": "How can I cancel my order?",
+            "richtext_answer": "<p>Once your order is processed, we are unable to edit or cancel the items in your order. If you have any questions, please email our support team.<\/p>"
+          }
+        },
+        "faq_HGXQpM": {
+          "type": "faq",
+          "settings": {
+            "text_question": "How much does shipping cost?",
+            "richtext_answer": "<p>Shipping costs differ depending on your country and selected shipping method. Your shipping costs are calculated at checkout.<\/p>"
+          }
+        },
+        "faq_yVWtdp": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Where else can I buy Nuchu products?",
+            "richtext_answer": "<p>Currently, our products are only available on our website. Stay tuned to be the first know about retail partners.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_GfQgCW",
+        "faq_dH4Rzy",
+        "faq_HGXQpM",
+        "faq_yVWtdp"
+      ],
+      "settings": {
+        "text_category": "Orders & Shipping"
+      }
+    },
+    "faq_questions_rTJy6i": {
+      "type": "faq_questions",
+      "blocks": {
+        "faq_Fik8n9": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Can I return or exchange an item?",
+            "richtext_answer": "<p>We are not currently offering any Returns or Exchanges on orders. Due to strict safety and quality controls, we cannot resell any products that have left our warehouse. For specific cases, returns may be accepted. Please contact us directly regarding this matter.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_Fik8n9"
+      ],
+      "settings": {
+        "text_category": "Returns & Exchanges"
+      }
+    },
+    "faq_questions_TAK9RY": {
+      "type": "faq_questions",
+      "blocks": {
+        "faq_KrwdHP": {
+          "type": "faq",
+          "settings": {
+            "text_question": "What makes Nuchu different from other gummies?",
+            "richtext_answer": "<p>Nuchu is not the first but one of the few gummy brands that does not contain both added sugar and artificial sweeteners. Daily doses are all under 1g of sugar.<\/p>"
+          }
+        },
+        "faq_EkqEQJ": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Where does Nuchu manufacture its products?",
+            "richtext_answer": "<p>All of our gummy products are manufactured in Spain in BRCGS, IFS, HACCP and GMP certified facilities.<\/p>"
+          }
+        },
+        "faq_HewiQL": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Are Nuchu products vegan?",
+            "richtext_answer": "<p>Our Beauty and Calming gummies are vegan. The Immunity gummy is vegetarian as it contains propolis.<\/p>"
+          }
+        },
+        "faq_yhJDJc": {
+          "type": "faq",
+          "settings": {
+            "text_question": "How often can I take Nuchu products?",
+            "richtext_answer": "<p>You can take Nuchu products daily. Please follow the Suggested Use on each product.<\/p>"
+          }
+        },
+        "faq_Npyc8T": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Can I take Nuchu products if I'm pregnant of breastfeeding?",
+            "richtext_answer": "<p>Please consult your physician if you are pregnant, breastfeeding, have a medical condition or are taking any medication.<\/p>"
+          }
+        },
+        "faq_RUKrad": {
+          "type": "faq",
+          "settings": {
+            "text_question": "What is the shelf life of Nuchu products?",
+            "richtext_answer": "<p>All of our gummies have a 2-year shelf-life. Please refer to the use-by date on the bottom of the bottle.<\/p>"
+          }
+        },
+        "faq_EWWVUr": {
+          "type": "faq",
+          "settings": {
+            "text_question": "How should I store my gummies?",
+            "richtext_answer": "<p>It's best to store your gummies in a cool and dry place. Avoid direct sunlight.<\/p>"
+          }
+        },
+        "faq_9pmXRz": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Can I take these gummies every day?",
+            "richtext_answer": "<p>Absolutely! Our wellness gummies are crafted for daily use, ensuring you get a delightful dose of essential vitamins to support your overall well-being<\/p>"
+          }
+        },
+        "faq_tyraxC": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Does Nuchu test on animals?",
+            "richtext_answer": "<p>Nuchu does not test on animals!<\/p>"
+          }
+        },
+        "faq_DpWbda": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Can I give Nuchu to my children?",
+            "richtext_answer": "<p>Nuchu is formulated for adult-use only.<\/p>"
+          }
+        },
+        "faq_emK4LT": {
+          "type": "faq",
+          "settings": {
+            "text_question": "With no added sugar or sweeteners, how come Nuchu gummies taste sweet?",
+            "richtext_answer": "<p>Our gummies are made with Fructooligosaccharide (FOS), a naturally sweet prebiotic fibre found in plants.<\/p>"
+          }
+        },
+        "faq_AjqEgx": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Can I take these gummies every day?",
+            "richtext_answer": "<p>Absolutely! Our wellness gummies are crafted for daily use, ensuring you get a delightful dose of essential vitamins to support your overall well-being<\/p>"
+          }
+        },
+        "faq_t4yYig": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Why do my gummies often stick together?",
+            "richtext_answer": "<p>As our gummies do not contain sugar or sugar coating, clumping can occur. Stickiness can also be a result of changes in the environment within the vitamin bottle but does not affect their properties.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_KrwdHP",
+        "faq_EkqEQJ",
+        "faq_HewiQL",
+        "faq_yhJDJc",
+        "faq_Npyc8T",
+        "faq_RUKrad",
+        "faq_EWWVUr",
+        "faq_9pmXRz",
+        "faq_tyraxC",
+        "faq_DpWbda",
+        "faq_emK4LT",
+        "faq_AjqEgx",
+        "faq_t4yYig"
+      ],
+      "settings": {
+        "text_category": "Products"
+      }
+    }
+  },
+  "layout": "page.faq",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "faq_header",
+    "faq_questions",
+    "faq_questions_rTJy6i",
+    "faq_questions_TAK9RY"
+  ]
+}
