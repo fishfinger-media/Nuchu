@@ -1,5 +1,9 @@
-<style>/* -- GENERAL STYLINGS -- */
-  html { height:auto; }
+<style>
+  /* -- GENERAL STYLINGS -- */
+  html {
+    height: auto;
+  }
+
   .thescience_fancy-text::before,
   .thescience_fancy-text::after {
     content: '';
@@ -13,9 +17,12 @@
     top: 55%;
     left: -10%;
   }
+
   .thescience_fancy-text::after {
     top: 0%;
-    left: 90%}
+    left: 90%
+  }
+
   /* QTY COUNTER */
   /* Chrome, Safari, Edge, Opera */
   .form-input::-webkit-outer-spin-button,
@@ -23,75 +30,113 @@
     -webkit-appearance: none;
     margin: 0;
   }
+
   .form-input[type=number] {
     -moz-appearance: textfield;
   }
+
   /* Prevent all click and hover interaction with an element */
-  .pointer-events-off, .mini-cart-closed {
+  .pointer-events-off,
+  .mini-cart-closed {
     pointer-events: none;
   }
+
   /* Enables all click and hover interaction with an element */
   .pointer-events-on {
     pointer-events: auto;
   }
+
   /* Create a class of .div-square which maintains a 1:1 dimension of a div */
   .div-square::after {
     content: "";
     display: block;
     padding-bottom: 100%;
   }
+
   /* These classes are never overwritten */
   .hide {
     display: none !important;
   }
+
   /* Wave Text */
   #wave-text {
     font-family: 'Nuchu', 'Sharp Grotesk'
   }
+
   .swiper-button-disabled {
-    opacity:50%;
-    cursor:not-allowed;
+    opacity: 50%;
+    cursor: not-allowed;
   }
-  .product-main_table-row > *:first-child {
+
+  .product-main_table-row>*:first-child {
     text-align: left;
   }
+
   body[full-height=""] {
+
     .page-wrapper,
     .main-wrapper,
     .main-wrapper {
       display: flex;
       flex-direction: column;
     }
+
     .page-wrapper {
       min-height: 100vh;
     }
+
     .main-wrapper {
       height: 100%;
       flex-grow: 1;
     }
+
     .footer {
       margin-top: auto;
     }
   }
+
   #science-en {
     display: block;
   }
+
   #science-fr {
     display: none;
   }
+
   html[lang="fr"] #science-en {
     display: none;
   }
+
   html[lang="fr"] #science-fr {
     display: block;
   }
+
   /* -- ATTRIBUTES -- */
-  [li-cloak_disabled="hide"]  { display: none !important; }
-  [x-cloak] { display: none !important; }
-  [max-container=""] { max-width: 100% !important }
-  [lowercase] { text-transform: lowercase; }
-  [button-size="large"] { font-size: 1.5rem; padding: 1rem 2rem }
-  [button-color="white"] { background: white }
+  [li-cloak_disabled="hide"] {
+    display: none !important;
+  }
+
+  [x-cloak] {
+    display: none !important;
+  }
+
+  [max-container=""] {
+    max-width: 100% !important
+  }
+
+  [lowercase] {
+    text-transform: lowercase;
+  }
+
+  [button-size="large"] {
+    font-size: 1.5rem;
+    padding: 1rem 2rem
+  }
+
+  [button-color="white"] {
+    background: white
+  }
+
   /* -- MEDIA QUERIES -- */
   /* Desktop an Up */
   @media (min-width: 992px) {
@@ -102,7 +147,11 @@
       max-width: var(--page-padding--max-width);
       margin: auto;
     }
-    [data-logosize="large"] { height: 4.68rem; }
+
+    [data-logosize="large"] {
+      height: 4.68rem;
+    }
+
     .fancy_text::before,
     .fancy_text::after {
       content: '';
@@ -116,14 +165,30 @@
       top: 55%;
       left: -10%;
     }
+
     .fancy_text::after {
       top: 0%;
-      left: 90%}
+      left: 90%
+    }
+
+    .blog_richtext td {
+      width: 50% !important;
+      padding: 0px 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
   }
+
   @media screen and (max-width: 991px) {
-    .hide, .hide-tablet {
+
+    .hide,
+    .hide-tablet {
       display: none !important;
     }
+
     .w-container {
       padding-left: var(--page-padding--tablet);
       padding-right: var(--page-padding--tablet);
@@ -131,11 +196,24 @@
       max-width: var(--page-padding--max-width);
       margin: auto;
     }
+
+    .blog_richtext tr {
+      display: flex;
+      flex-direction: column;
+      width: 100% !important;
+      gap: 1rem;
+    }
+
+    .blog_richtext tr {
+      width: 100%!important;
+    }
   }
+
   @media screen and (max-width: 767px) {
-    .hide-mobile-landscape{
+    .hide-mobile-landscape {
       display: none !important;
     }
+
     .w-container {
       padding-left: var(--page-padding--mobile-landscape);
       padding-right: var(--page-padding--mobile-landscape);
@@ -144,10 +222,12 @@
       margin: auto;
     }
   }
+
   @media screen and (max-width: 478px) {
-    .hide-mobile{
+    .hide-mobile {
       display: none !important;
     }
+
     .w-container {
       padding-left: var(--page-padding--mobile);
       padding-right: var(--page-padding--mobile);
@@ -156,71 +236,95 @@
       margin: auto;
     }
   }
+
   /* -- ANIMATIONS -- */
   @keyframes banner {
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-100%);
     }
   }
+
   @keyframes fall-1 {
     0% {
       transform: translate(0px, 0px) scale(0.25);
       opacity: 0;
     }
+
     5% {
       transform: translate(10px, -10px) scale(1);
       opacity: 1;
     }
+
     100% {
       transform: translate(25px, 200px) scale(1);
       opacity: 0;
     }
   }
+
   @keyframes fall-2 {
     0% {
       transform: translate(0px, 0px) scale(0.25);
       opacity: 0;
     }
+
     10% {
       transform: translate(-10px, -5px) scale(1);
       opacity: 1;
     }
+
     100% {
       transform: translate(-10px, 160px) scale(0.25);
       opacity: 0;
     }
   }
+
   @keyframes fall-3 {
     0% {
       transform: translate(0px, 0px) scale(0.5);
       opacity: 0;
     }
+
     15% {
       transform: translate(7px, 5px) scale(1);
       opacity: 1;
     }
+
     100% {
       transform: translate(20px, 120px) scale(0.5);
       opacity: 0;
     }
   }
-.blog_post-label {
+
+  .blog_post-label {
     display: inline;
     background: white;
     padding: 0.5rem 1rem;
     -webkit-box-decoration-break: clone;
     filter: url('#goo');
-}
-.is-fr { display: none; }
-.is-en { display: none; }
-:lang(fr) .is-fr { display: flex; }
-:lang(en) .is-en { display: flex; }
+  }
 
-  
+  .is-fr {
+    display: none;
+  }
 
+  .is-en {
+    display: none;
+  }
 
-  #insta-feed{background: var(--color--lilac-light);padding-bottom:3rem}
+  :lang(fr) .is-fr {
+    display: flex;
+  }
+
+  :lang(en) .is-en {
+    display: flex;
+  }
+
+  #insta-feed {
+    background: var(--color--lilac-light);
+    padding-bottom: 3rem
+  }
 </style>
