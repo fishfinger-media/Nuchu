@@ -1,17 +1,66 @@
-<div max-container="" x-data="{modals: 0}" class="w-layout-blockcontainer w-container"><div class="navbar_container"><div class="navbar_links-left"><div class="nav_menu-wrapper"><div class="navbar-mobilelinks-top"><a li-object:href="routes.root_url" href="{{ routes.root_url }}" class="navbar_logo-link w-inline-block"><svg class="nav_menu-icon" viewbox="0 0 24 31" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V30.411H8.28404C8.28404 30.411 8.38829 29.8048 8.38829 28.8717C8.38829 26.7262 7.91515 22.9219 4.85174 20.0826C2.47799 17.8973 1.94871 14.4917 1.94871 11.7401C1.94871 9.30753 2.37374 7.44921 2.37374 7.44921L14.034 30.411H23.4247V0H15.0925C15.0925 0 14.884 0.685902 14.884 1.90617C14.884 3.44546 15.2529 5.83814 16.8889 8.66948C19.3669 12.9604 20.7382 16.1984 20.7382 22.7225C20.7382 23.855 20.7382 25.1152 20.6339 26.487L7.38587 0H0Z" fill="white"></path></svg></a><svg class="nav_menu-icon is-close" viewbox="0 0 30 30" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0ZM8.86243 8.86243C8.37918 9.34567 8.37918 10.1292 8.86243 10.6124L13.2374 14.9874L8.86243 19.3625C8.37918 19.8457 8.37918 20.6292 8.86243 21.1125C9.3457 21.5957 10.1292 21.5957 10.6124 21.1125L14.9874 16.7375L19.3624 21.1125C19.8457 21.5957 20.6292 21.5957 21.1124 21.1125C21.5957 20.6292 21.5957 19.8457 21.1124 19.3624L16.7374 14.9874L21.1124 10.6124C21.5957 10.1292 21.5957 9.34567 21.1124 8.86243C20.6292 8.37918 19.8457 8.37918 19.3624 8.86243L14.9874 13.2374L10.6124 8.86243C10.1292 8.37918 9.34567 8.37918 8.86243 8.86243Z" fill="white"></path></svg></div><div class="navbar-links-main">{% for link in linklists['main-menu'].links %}   
- <div li-for="link in linklists['main-menu'].links">
-                                    
-                            <a li-object:href="link.url" li-object="link.title" href="{{ link.url }}" class="button is-nav w-button">{{ link.title }}</a>
-                            
-                        </div>
-{% endfor %} <a href="/collections/nuchu" class="button w-button w--current" data-display="desktop"> shop</a>
+<div max-container="" x-data="{modals: 0}" class="w-layout-blockcontainer w-container">
+    <div class="navbar_container">
+        <div class="navbar_links-left">
+            <div class="nav_menu-wrapper">
+                <div class="navbar-mobilelinks-top"><a li-object:href="routes.root_url" href="{{ routes.root_url }}"
+                        class="navbar_logo-link w-inline-block"><svg class="nav_menu-icon" viewbox="0 0 24 31"
+                            fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0 0V30.411H8.28404C8.28404 30.411 8.38829 29.8048 8.38829 28.8717C8.38829 26.7262 7.91515 22.9219 4.85174 20.0826C2.47799 17.8973 1.94871 14.4917 1.94871 11.7401C1.94871 9.30753 2.37374 7.44921 2.37374 7.44921L14.034 30.411H23.4247V0H15.0925C15.0925 0 14.884 0.685902 14.884 1.90617C14.884 3.44546 15.2529 5.83814 16.8889 8.66948C19.3669 12.9604 20.7382 16.1984 20.7382 22.7225C20.7382 23.855 20.7382 25.1152 20.6339 26.487L7.38587 0H0Z"
+                                fill="white"></path>
+                        </svg></a><svg class="nav_menu-icon is-close" viewbox="0 0 30 30" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0ZM8.86243 8.86243C8.37918 9.34567 8.37918 10.1292 8.86243 10.6124L13.2374 14.9874L8.86243 19.3625C8.37918 19.8457 8.37918 20.6292 8.86243 21.1125C9.3457 21.5957 10.1292 21.5957 10.6124 21.1125L14.9874 16.7375L19.3624 21.1125C19.8457 21.5957 20.6292 21.5957 21.1124 21.1125C21.5957 20.6292 21.5957 19.8457 21.1124 19.3624L16.7374 14.9874L21.1124 10.6124C21.5957 10.1292 21.5957 9.34567 21.1124 8.86243C20.6292 8.37918 19.8457 8.37918 19.3624 8.86243L14.9874 13.2374L10.6124 8.86243C10.1292 8.37918 9.34567 8.37918 8.86243 8.86243Z"
+                            fill="white"></path>
+                    </svg></div>
+                <div class="navbar-links-main">{% for link in linklists['main-menu'].links %}
+                    <div li-for="link in linklists['main-menu'].links">
 
-<div data-body="blue" class="navbar-mobilelinks-sublinks"><a button-size="nav" href="/cart" class="button alt-font w-button"></a>{% if customer %}    <div li-if="customer">
-    <a li-object:href="routes.account_url" href="{{ routes.account_url }}" class="button w-inline-block"><div class="alt-font"></div></a>    </div>
-{% endif %}{% unless customer %}    <div li-unless="customer">
-    <a li-object:href="routes.account_login_url" href="{{ routes.account_login_url }}" class="button w-inline-block"><div class="alt-font"></div></a>    </div>
-{% endunless %}</div></div><div class="navbar-mobilelinks-bottom"><img src="{{ 'mobile-nav_img.png' | asset_url }}" loading="lazy" alt="" class="nav_content-bottom">
-</div></div></div><a href="{{ routes.root_url }}" data-logosize="" li-object:href="routes.root_url" id="w-node-_1f4a994c-7640-c194-e1f7-4193b5553f7d-b641c10b" class="navbar_logo-link w-nav-brand"><svg viewbox="0 0 156 40" fill="currentcolor" height="100%"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.266724V39.7334H10.7508C10.7508 39.7334 10.8861 38.9467 10.8861 37.7357C10.8861 34.9514 10.2721 30.0142 6.29647 26.3294C3.21589 23.4934 2.529 19.0737 2.529 15.5027C2.529 12.3458 3.08059 9.93414 3.08059 9.93414L18.2129 39.7334H30.4V0.266724H19.5867C19.5867 0.266724 19.3161 1.15687 19.3161 2.74051C19.3161 4.73816 19.7949 7.84333 21.918 11.5178C25.1339 17.0864 26.9135 21.2887 26.9135 29.7555C26.9135 31.2252 26.9135 32.8606 26.7782 34.6409L9.58521 0.266724H0Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M115.488 0.266724V17.7118H106.718V0.266724H97.3333V39.7334H106.718V19.7043H115.488V39.7334H124.8V0.266724H115.488Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M94.7695 27.9544C93.1115 29.798 87.7333 31.3102 85.1634 31.3102C78.8007 31.3102 70.7178 27.5816 70.7178 14.6142C70.7178 8.6898 73.6194 5.75868 77.3499 5.75868C82.4898 5.75868 87.4639 10.9477 88.5519 15.7328L94.7695 4.64008C94.7695 4.64008 89.381 0 80.7385 0C70.9873 0 63.7334 9.60124 63.7334 21.4915C63.7334 32.6877 70.7178 40 81.3603 40C87.8576 40 96.2099 35.681 94.7695 27.9441V27.9544Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M51.4106 0.277074V36.5351C51.4106 36.5351 49.9737 36.7938 47.985 36.7938C42.6437 36.7938 37.7813 34.5271 37.7813 27.0022C37.7813 23.5865 38.8121 19.9535 40.3114 16.6827C42.4355 11.9939 45.7256 8.15384 45.6528 2.99927C45.6528 2.21263 45.5799 1.10512 45.4445 0.266724H33.8665V28.3271C33.8665 31.0079 34.4287 32.902 36.3445 34.9618C38.7288 37.5391 43.2268 39.7334 51.6084 39.7334H61.3331V0.277074H51.4001H51.4106Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M145.811 0.277074V36.5351C145.811 36.5351 144.374 36.7938 142.385 36.7938C137.044 36.7938 132.181 34.5271 132.181 27.0022C132.181 23.5865 133.212 19.9535 134.712 16.6827C136.836 11.9939 140.126 8.15384 140.053 2.99927C140.053 2.21263 139.98 1.10512 139.845 0.266724H128.267V28.3271C128.267 31.0079 128.829 32.902 130.745 34.9618C133.129 37.5391 137.627 39.7334 146.009 39.7334H155.733V0.277074H145.8H145.811Z" fill="currentColor"></path></svg></a><div class="navbar_links-right"><div class="navbar_links-right-desktop"><a href="/collections/nuchu" class="button w-button">shop</a>
+                        <a li-object:href="link.url" li-object="link.title" href="{{ link.url }}"
+                            class="button is-nav w-button">{{ link.title }}</a>
+
+                    </div>
+                    {% endfor %} <a href="/collections/nuchu" class="button w-button w--current" data-display="desktop">
+                        shop</a>
+
+                    <div data-body="blue" class="navbar-mobilelinks-sublinks"><a button-size="nav" href="/cart"
+                            class="button alt-font w-button"></a>{% if customer %} <div li-if="customer">
+                            <a li-object:href="routes.account_url" href="{{ routes.account_url }}"
+                                class="button w-inline-block">
+                                <div class="alt-font"></div>
+                            </a> </div>
+                        {% endif %}{% unless customer %} <div li-unless="customer">
+                            <a li-object:href="routes.account_login_url" href="{{ routes.account_login_url }}"
+                                class="button w-inline-block">
+                                <div class="alt-font"></div>
+                            </a> </div>
+                        {% endunless %}</div>
+                </div>
+                <div class="navbar-mobilelinks-bottom"><img src="{{ 'mobile-nav_img.png' | asset_url }}" loading="lazy"
+                        alt="" class="nav_content-bottom">
+                </div>
+            </div>
+        </div><a href="{{ routes.root_url }}" data-logosize="" li-object:href="routes.root_url"
+            id="w-node-_1f4a994c-7640-c194-e1f7-4193b5553f7d-b641c10b" class="navbar_logo-link w-nav-brand"><svg
+                viewbox="0 0 156 40" fill="currentcolor" height="100%">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M0 0.266724V39.7334H10.7508C10.7508 39.7334 10.8861 38.9467 10.8861 37.7357C10.8861 34.9514 10.2721 30.0142 6.29647 26.3294C3.21589 23.4934 2.529 19.0737 2.529 15.5027C2.529 12.3458 3.08059 9.93414 3.08059 9.93414L18.2129 39.7334H30.4V0.266724H19.5867C19.5867 0.266724 19.3161 1.15687 19.3161 2.74051C19.3161 4.73816 19.7949 7.84333 21.918 11.5178C25.1339 17.0864 26.9135 21.2887 26.9135 29.7555C26.9135 31.2252 26.9135 32.8606 26.7782 34.6409L9.58521 0.266724H0Z"
+                    fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M115.488 0.266724V17.7118H106.718V0.266724H97.3333V39.7334H106.718V19.7043H115.488V39.7334H124.8V0.266724H115.488Z"
+                    fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M94.7695 27.9544C93.1115 29.798 87.7333 31.3102 85.1634 31.3102C78.8007 31.3102 70.7178 27.5816 70.7178 14.6142C70.7178 8.6898 73.6194 5.75868 77.3499 5.75868C82.4898 5.75868 87.4639 10.9477 88.5519 15.7328L94.7695 4.64008C94.7695 4.64008 89.381 0 80.7385 0C70.9873 0 63.7334 9.60124 63.7334 21.4915C63.7334 32.6877 70.7178 40 81.3603 40C87.8576 40 96.2099 35.681 94.7695 27.9441V27.9544Z"
+                    fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M51.4106 0.277074V36.5351C51.4106 36.5351 49.9737 36.7938 47.985 36.7938C42.6437 36.7938 37.7813 34.5271 37.7813 27.0022C37.7813 23.5865 38.8121 19.9535 40.3114 16.6827C42.4355 11.9939 45.7256 8.15384 45.6528 2.99927C45.6528 2.21263 45.5799 1.10512 45.4445 0.266724H33.8665V28.3271C33.8665 31.0079 34.4287 32.902 36.3445 34.9618C38.7288 37.5391 43.2268 39.7334 51.6084 39.7334H61.3331V0.277074H51.4001H51.4106Z"
+                    fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M145.811 0.277074V36.5351C145.811 36.5351 144.374 36.7938 142.385 36.7938C137.044 36.7938 132.181 34.5271 132.181 27.0022C132.181 23.5865 133.212 19.9535 134.712 16.6827C136.836 11.9939 140.126 8.15384 140.053 2.99927C140.053 2.21263 139.98 1.10512 139.845 0.266724H128.267V28.3271C128.267 31.0079 128.829 32.902 130.745 34.9618C133.129 37.5391 137.627 39.7334 146.009 39.7334H155.733V0.277074H145.8H145.811Z"
+                    fill="currentColor"></path>
+            </svg></a>
+        <div class="navbar_links-right">
+            <div class="navbar_links-right-desktop"><a href="/collections/nuchu" class="button w-button">shop</a>
 
 <style>
     .localization-form .disclosure {
