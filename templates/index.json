@@ -9,7 +9,6 @@
 */
 {
   "sections": {
-   
     "home_hero": {
       "type": "home_hero",
       "settings": {
@@ -133,7 +132,6 @@
   "layout": "theme",
   "wrapper": "main.main-wrapper",
   "order": [
-    "promo_popup_ecH6jL",
     "home_hero",
     "meet_your_match",
     "wave",
