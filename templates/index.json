@@ -9,20 +9,7 @@
 */
 {
   "sections": {
-    "promo_popup_ecH6jL": {
-      "type": "promo_popup",
-      "settings": {
-        "promo_heading": "10% off your first order",
-        "promo_paragraph": "Subscribe to receive 10% off your first order, along with product updates and exclusive offers!",
-        "submit_button_text": "submit",
-        "promo_disclaimer": "By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time",
-        "success_heading": "You're in!",
-        "success_code_part1": "Use the code",
-        "success_code": "WELCOME10",
-        "success_code_part2": "at checkout for a discount on your first order!",
-        "copy_code_button_text": "Copy code"
-      }
-    },
+   
     "home_hero": {
       "type": "home_hero",
       "settings": {
