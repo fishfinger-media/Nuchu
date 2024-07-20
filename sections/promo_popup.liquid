@@ -1,48 +1,105 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
-
+<style>
+  .popup_content.is-success {
+    transition: transform 0.5s ease-in-out;
+}
+</style>
 <div class="popup_container">
 
   <button class="popup_close">
-      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" fill="none"> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31802 1.31802C3.07538 -0.43934 5.92462 -0.43934 7.68198 1.31802L23.75 17.386L39.818 1.31802C41.5754 -0.43934 44.4246 -0.43934 46.182 1.31802C47.9393 3.07538 47.9393 5.92462 46.182 7.68198L30.114 23.75L46.182 39.818C47.9393 41.5754 47.9393 44.4246 46.182 46.182C44.4246 47.9393 41.5754 47.9393 39.818 46.182L23.75 30.114L7.68198 46.182C5.92462 47.9393 3.07538 47.9393 1.31802 46.182C-0.43934 44.4246 -0.43934 41.5754 1.31802 39.818L17.386 23.75L1.31802 7.68198C-0.43934 5.92462 -0.43934 3.07538 1.31802 1.31802Z" fill="#F60EA6"></path> </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd"  d="M1.31802 1.31802C3.07538 -0.43934 5.92462 -0.43934 7.68198 1.31802L23.75 17.386L39.818 1.31802C41.5754 -0.43934 44.4246 -0.43934 46.182 1.31802C47.9393 3.07538 47.9393 5.92462 46.182 7.68198L30.114 23.75L46.182 39.818C47.9393 41.5754 47.9393 44.4246 46.182 46.182C44.4246 47.9393 41.5754 47.9393 39.818 46.182L23.75 30.114L7.68198 46.182C5.92462 47.9393 3.07538 47.9393 1.31802 46.182C-0.43934 44.4246 -0.43934 41.5754 1.31802 39.818L17.386 23.75L1.31802 7.68198C-0.43934 5.92462 -0.43934 3.07538 1.31802 1.31802Z" fill="#F60EA6"></path>
+      </svg>
   </button>
 
-  <img src="{{ 'popup_img.jpg' | asset_url }}" loading="lazy" id="w-node-_5bf9ab54-2d3f-1f84-bf3c-4a30a2e82eeb-07f8c27d" sizes="100vw" alt="" srcset="{{ 'popup_img-p-500.jpg' | asset_url }} 500w, {{ 'popup_img.jpg' | asset_url }} 800w" class="popup_img">
-  
-  {% form 'customer' %}
-      <div class="popup_content_wrapper">
-          
-          <div id="w-node-f91a8ed6-9a6f-9f6c-2209-30ddf2feebdb-07f8c27d" class="popup_content">
-              <div class="w-layout-vflex spacing_1">
-                  <h2 class="heading_small">{{ settings.promo_heading | default: "10% off your first order" }}</h2>
-                  <p class="ts_maxwidth_40">{{ settings.promo_paragraph | default: "Subscribe to receive 10% off your first order, along with product updates and exclusive offers!" }}</p>
-              </div>
+  <img src="{{ 'popup_img.jpg' | asset_url }}" loading="lazy"  id="w-node-_5bf9ab54-2d3f-1f84-bf3c-4a30a2e82eeb-07f8c27d" sizes="100vw" alt="" srcset="{{ 'popup_img-p-500.jpg' | asset_url }} 500w, {{ 'popup_img.jpg' | asset_url }} 800w" class="popup_img">
 
-              <div class="w-layout-vflex spacing_1" style="width:100%">
-                  <input type="email" name="contact[email]" id="email-input" required placeholder="email address" class="footer_form-input is-pink"/>
-                  <a id="sudo-promo-btn" href="#" class="button is-pink">{{ settings.submit_button_text | default: "submit" }}</a>
-              </div>
 
-              <div class="ts_maxwidth_40">
-                  <div class="text-size-small">{{ settings.promo_disclaimer | default: "By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time" }}</div>
-              </div>
+  <div class="popup_content_wrapper">
 
-              <div class="submit" style="display:none">
-                  <input id="promo-form-btn" type="submit" value="Sign up"/>
-                </div> 
+    <div id="w-node-f91a8ed6-9a6f-9f6c-2209-30ddf2feebdb-07f8c27d" class="popup_content">
+        <div class="w-layout-vflex spacing_1">
+            <h2 class="heading_small">{{ settings.promo_heading | default: "10% off your first order" }}</h2>
+            <p class="ts_maxwidth_40">
+                {{ settings.promo_paragraph | default: "Subscribe to receive 10% off your first order, along with product updates and exclusive offers!" }}
+            </p>
+        </div>
 
-          </div>
+        <div class="w-layout-vflex spacing_1" style="width:100%">
+            <input type="email" name="EMAIL" id="email-input" required placeholder="email address"
+                class="footer_form-input is-pink" />
+            <a id="sudo-promo-btn" href="#" class="button is-pink">{{ settings.submit_button_text | default: "submit" }}</a>
+        </div>
 
-          <div class="popup_content is-success">
-              <h2 class="heading_small">{{ settings.success_heading | default: "You're in!" }}</h2>
-              <p>{{ settings.success_code_part1 | default: "Use the code" }} <span id="promo-code"><strong>{{ settings.success_code | default: "WELCOME10" }}</strong></span> {{ settings.success_code_part2 | default: "at checkout for a discount on your first order!" }}</p>
-              <a id="copy-code" href="#" class="button is-pink w-button">{{ settings.copy_code_button_text | default: "Copy code" }}</a>
-          </div>
-      </div>
-  {% endform %}
+        <div class="ts_maxwidth_40">
+            <div class="text-size-small">
+                {{ settings.promo_disclaimer | default: "By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time" }}
+            </div>
+        </div>
+
+        <form action="https://mynuchu.us17.list-manage.com/subscribe/post?u=aa69f16bb91c7bcfe77681908&amp;id=dbb7ffca2c&amp;f_id=002f1fe1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate style="display:none;">
+            <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                </div>
+                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                    <input type="text" name="b_aa69f16bb91c7bcfe77681908_dbb7ffca2c" tabindex="-1" value="">
+                </div>
+                <div class="clear">
+                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                </div>
+            </div>
+        </form>
+
+        <div class="submit" style="display:none">
+            <input id="promo-form-btn" type="submit" value="Sign up" />
+        </div>
+
+    </div>
+
+    <div class="popup_content is-success">
+        <h2 class="heading_small">{{ settings.success_heading | default: "You're in!" }}</h2>
+        <p>{{ settings.success_code_part1 | default: "Use the code" }} <span id="promo-code"><strong>{{ settings.success_code | default: "WELCOME10" }}</strong></span>
+            {{ settings.success_code_part2 | default: "at checkout for a discount on your first order!" }}</p>
+        <a id="copy-code" href="#" class="button is-pink w-button">{{ settings.copy_code_button_text | default: "Copy code" }}</a>
+    </div>
+</div>
+
 
 </div>
 
+
+<script>
+  document.getElementById('sudo-promo-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Get the email input value
+    var emailInput = document.getElementById('email-input').value;
+
+    // Validate email input
+    if (emailInput === "") {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    // Set the value of the hidden email input in the Mailchimp form
+    document.getElementById('mce-EMAIL').value = emailInput;
+
+    // Submit the Mailchimp form
+    document.getElementById('mc-embedded-subscribe-form').submit();
+
+    // Wait for a moment to simulate the form submission process
+    setTimeout(function() {
+        // Move the success message up
+        document.querySelector('.popup_content.is-success').style.transform = 'translateY(-100%)';
+    }, 1000);
+});
+</script>
 
 
 {% schema %}
