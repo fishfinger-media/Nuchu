@@ -29,8 +29,8 @@
   <div class="popup_content_wrapper">
     <div id="w-node-f91a8ed6-9a6f-9f6c-2209-30ddf2feebdb-07f8c27d" class="popup_content">
       <div class="w-layout-vflex spacing_1">
-        <h2 class="heading_small">{{ settings.promo_heading }}</h2>
-        <p class="ts_maxwidth_40"> {{ settings.promo_paragraph }}</p>
+        <h2 class="heading_small">{{ settings.promo_heading | default: "10% off your first order" }}</h2>
+        <p class="ts_maxwidth_40">   {{ settings.promo_paragraph | default: "Subscribe to receive 10% off your first order, along with product updates and exclusive offers!" }}</p>
       </div>
 
       
@@ -40,7 +40,7 @@
             <input type="text" name="FNAME" id="mce-FNAME" required="" placeholder="full name" class="footer_form-input is-pink full-width">
             <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="email address" value="" required="" class="footer_form-input is-pink full-width">
             <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe" class="button is-pink" style="border:none!important;margin-top:1rem">
-            <p class="text-size-small"> {{ settings.promo_disclaimer }}</p>
+            <p class="text-size-small">  {{ settings.promo_disclaimer | default: "By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time" }} </p>
             <div id="mce-responses" class="clear">
               <div class="response" id="mce-error-response" style="display: none;"></div>
               <div class="response" id="mce-success-response" style="display: none;"></div>
