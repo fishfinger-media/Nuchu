@@ -1,3 +1,22 @@
+<style>
+ .response {
+    position: absolute;
+    top: 0;
+    left: 0;  
+    background: #ffecff;
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: center;
+    font-size: 2rem;
+    align-items: center;
+    font-weight: 500;
+    text-align: center;
+  }
+</style>
+
 <div class="popup_container">
   <button class="popup_close">
     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" fill="none"> 
@@ -10,16 +29,18 @@
   <div class="popup_content_wrapper">
     <div id="w-node-f91a8ed6-9a6f-9f6c-2209-30ddf2feebdb-07f8c27d" class="popup_content">
       <div class="w-layout-vflex spacing_1">
-        <h2 class="heading_small">10% off your first order</h2>
-        <p class="ts_maxwidth_40">Subscribe to receive 10% off your first order, along with product updates and exclusive offers!</p>
+        <h2 class="heading_small">{{ settings.promo_heading }}</h2>
+        <p class="ts_maxwidth_40"> {{ settings.promo_paragraph }}</p>
       </div>
 
+      
       <div id="mc_embed_signup">
         <form action="https://mynuchu.us17.list-manage.com/subscribe/post?u=aa69f16bb91c7bcfe77681908&amp;id=dbb7ffca2c&amp;f_id=00d11ce1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
           <div class="w-layout-vflex spacing_1">
             <input type="text" name="FNAME" id="mce-FNAME" required="" placeholder="full name" class="footer_form-input is-pink full-width">
             <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="email address" value="" required="" class="footer_form-input is-pink full-width">
-            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe" class="button is-pink">
+            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe" class="button is-pink" style="border:none!important;margin-top:1rem">
+            <p class="text-size-small"> {{ settings.promo_disclaimer }}</p>
             <div id="mce-responses" class="clear">
               <div class="response" id="mce-error-response" style="display: none;"></div>
               <div class="response" id="mce-success-response" style="display: none;"></div>
@@ -33,6 +54,38 @@
 <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
 <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 
+
 {% schema %}
-{"tag":"section","name":"popup","class":"offer-popup_wrapper","presets":[{"name":"popup","category":"Liquify"}]}
+{
+"name": "Popup",
+"class": "offer-popup_wrapper",
+"settings": [
+  {
+    "type": "text",
+    "id": "promo_heading",
+    "label": "Promo Heading",
+    "default": "10% off your first order"
+  },
+  {
+    "type": "textarea",
+    "id": "promo_paragraph",
+    "label": "Promo Paragraph",
+    "default": "Subscribe to receive 10% off your first order, along with product updates and exclusive offers!"
+  },
+  {
+    "type": "text",
+    "id": "submit_button_text",
+    "label": "Submit Button Text",
+    "default": "submit"
+  },
+  {
+    "type": "textarea",
+    "id": "promo_disclaimer",
+    "label": "Promo Disclaimer",
+    "default": "By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time"
+  },
+
+
+]
+}
 {% endschema %}
