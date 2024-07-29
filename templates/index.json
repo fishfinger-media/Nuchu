@@ -131,7 +131,7 @@
     "popup_dN6Rg3": {
       "type": "popup",
       "custom_css": [
-        ".offer-popup_wrapper {opacity:1}"
+
       ],
       "settings": {
       }
