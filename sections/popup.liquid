@@ -1,6 +1,7 @@
 <div class="popup_container">
   <button class="popup_close">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" fill="none"> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31802 1.31802C3.07538 -0.43934 5.92462 -0.43934 7.68198 1.31802L23.75 17.386L39.818 1.31802C41.5754 -0.43934 44.4246 -0.43934 46.182 1.31802C47.9393 3.07538 47.9393 5.92462 46.182 7.68198L30.114 23.75L46.182 39.818C47.9393 41.5754 47.9393 44.4246 46.182 46.182C44.4246 47.9393 41.5754 47.9393 39.818 46.182L23.75 30.114L7.68198 46.182C5.92462 47.9393 3.07538 47.9393 1.31802 46.182C-0.43934 44.4246 -0.43934 41.5754 1.31802 39.818L17.386 23.75L1.31802 7.68198C-0.43934 5.92462 -0.43934 3.07538 1.31802 1.31802Z" fill="#F60EA6"></path>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" fill="none"> 
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31802 1.31802C3.07538 -0.43934 5.92462 -0.43934 7.68198 1.31802L23.75 17.386L39.818 1.31802C41.5754 -0.43934 44.4246 -0.43934 46.182 1.31802C47.9393 3.07538 47.9393 5.92462 46.182 7.68198L30.114 23.75L46.182 39.818C47.9393 41.5754 47.9393 44.4246 46.182 46.182C44.4246 47.9393 41.5754 47.9393 39.818 46.182L23.75 30.114L7.68198 46.182C5.92462 47.9393 3.07538 47.9393 1.31802 46.182C-0.43934 44.4246 -0.43934 41.5754 1.31802 39.818L17.386 23.75L1.31802 7.68198C-0.43934 5.92462 -0.43934 3.07538 1.31802 1.31802Z" fill="#F60EA6"></path>
     </svg>
   </button>
   
@@ -12,22 +13,25 @@
         <h2 class="heading_small">10% off your first order</h2>
         <p class="ts_maxwidth_40">Subscribe to receive 10% off your first order, along with product updates and exclusive offers!</p>
       </div>
-      <div class="w-layout-vflex spacing_1">
-          <input type="email" name="contact[email]" id="email-input" required="" placeholder="email address" class="footer_form-input is-pink">
-        <a href="#" class="button is-pink">submit</a></div>
-      <div class="ts_maxwidth_40">
-        <div class="text-size-small">By subscribing, you agree to receive marketing emails from us. You may unsubscribe at any time</div>
+
+      <div id="mc_embed_signup">
+        <form action="https://mynuchu.us17.list-manage.com/subscribe/post?u=aa69f16bb91c7bcfe77681908&amp;id=dbb7ffca2c&amp;f_id=00d11ce1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+          <div class="w-layout-vflex spacing_1">
+            <input type="text" name="FNAME" id="mce-FNAME" required="" placeholder="full name" class="footer_form-input is-pink full-width">
+            <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="email address" value="" required="" class="footer_form-input is-pink full-width">
+            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe" class="button is-pink">
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display: none;"></div>
+              <div class="response" id="mce-success-response" style="display: none;"></div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="popup_content is-success">
-      <h2 class="heading_small">You're in!</h2>
-      <p>Use the code <strong>WELCOME10</strong>at checkout for a discount on your first order!</p><a href="#"
-        class="button is-pink w-button">Copy code</a>
-    </div>
   </div>
-</div> 
-
-
+</div>
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 
 {% schema %}
 {"tag":"section","name":"popup","class":"offer-popup_wrapper","presets":[{"name":"popup","category":"Liquify"}]}
