@@ -131,8 +131,7 @@
     "popup_dN6Rg3": {
       "type": "popup",
       "custom_css": [
-        ".offer-popup_wrapper {display: flex; opacity: 100;}",
-        ".popup_container {transform:translate (0)}"
+
       ],
       "settings": {
         "promo_heading": "10% off your first order",
