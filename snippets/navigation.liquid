@@ -276,20 +276,7 @@
 </script>
 <div li-element="mini-cart" x-cloak="" x-data="handleMinicart()" x-init="getCart()" @cartupdated.window="getCart()" @setcartitem.window="updateCartItemQuantity($event.detail.product, $event.detail.quantity)" @increasecartitem.window="increaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @decreasecartitem.window="decreaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @toggleminicart.window="toggleMiniCart()" @showcartmessage.window="showCartMessage"><div li-element="mini-cart-toggle" class="button is-cart" @click="$dispatch('toggleminicart')"><div li-element="mini-cart-item-count" class="navbar_shop-quantity" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">1</div><div class="alt-font"></div></div><div li-cloak="hide" li-element="mini-cart-container" class="navbar_mini-cart-holder" :class="open || 'mini-cart-closed'"><div li-element="mini-cart-toggle" class="navbar_mini-cart-close" @click="$dispatch('toggleminicart')"></div><div lowercase="" class="mini-cart_wrapper"><div class="mini-cart_component"><div li-element="mini-cart-full" class="mini-cart_full" :style="total.items < 1 && { display: 'none' }"><div class="mini-cart_header"><div class="heading_small">Basket</div><div li-element="mini-cart-toggle" class="mini-cart_close w-embed" @click="$dispatch('toggleminicart')"><svg width="30" height="30" viewbox="0 0 30 30" fill="none"><path d="M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15Z" fill="white"></path><rect x="8" y="9.75" width="2.47487" height="17.3241" rx="1.23744" transform="rotate(-45 8 9.75)" fill="#316AFA"></rect><rect x="20.25" y="8" width="2.47487" height="17.3241" rx="1.23744" transform="rotate(45 20.25 8)" fill="#316AFA"></rect></svg></div></div>
 
-<div class="cart_item-drawer">
-    <div>you may also like</div>
-    <div class="w-layout-hflex cart_item-drawer_track">
-        {% assign recommended_collection_handle = 'nuchu' %}
-        {% assign recommended_products = collections[recommended_collection_handle].products | limit: 4 %}
-        {% for product in recommended_products %}
 
-            <a href="">
-                <img src="{{ product.featured_image | img_url: 'small' }}" alt="" class="mini-cart_line-item_img">
-            </a>
-
-        {% endfor %}
-    </div>
-</div>
 
 
 <div class="divider is-nav"></div><div class="mini-cart_line-item"><ul role="list" class="mini-cart_line-item_list w-list-unstyled"><template x-for="product in products" :key="product.key">
@@ -300,7 +287,24 @@
         <div li-js-price="product.original_price" class="is-sale" x-text="moneyFormat(product.original_price)">14,99 $</div>        </div>
     </template>
 </div></div></div></li></template>
-</ul></div><div class="divider is-nav"></div><div class="mini-cart_footer"><div class="mini-cart_footer_total"><div>Subtotal</div><div><template x-if="total.price < original_total_price">
+</ul></div>
+
+<div class="cart_item-drawer">
+    <div>you may also like</div>
+    <div class="w-layout-hflex cart_item-drawer_track">
+        {% assign recommended_collection_handle = 'cart' %}
+        {% assign recommended_products = collections[recommended_collection_handle].products | limit: 4 %}
+        {% for product in recommended_products %}
+
+            <div href="{{ product.url }}">
+                <img src="{{ product.featured_image | img_url: 'small' }}" alt="" class="mini-cart_line-item_img">
+            </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+<div class="divider is-nav"></div><div class="mini-cart_footer"><div class="mini-cart_footer_total"><div>Subtotal</div><div><template x-if="total.price < original_total_price">
             <div li-js-if="total.price < original_total_price">
         <div li-js-price="original_total_price" class="text-style-strikethrough" x-text="moneyFormat(original_total_price)">14,99 $</div>        </div>
     </template>
