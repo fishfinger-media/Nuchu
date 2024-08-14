@@ -296,9 +296,9 @@
         {% assign recommended_products = collections[recommended_collection_handle].products | limit: 4 %}
         {% for product in recommended_products %}
 
-            <div href="{{ product.url }}">
+            <a href="{{ product.url }}">
                 <img src="{{ product.featured_image | img_url: 'small' }}" alt="" class="mini-cart_line-item_img">
-            </div>
+            </a>
 
         {% endfor %}
     </div>
