@@ -293,7 +293,7 @@
     <div>you may also like</div>
     <div class="w-layout-hflex cart_item-drawer_track">
         {% assign recommended_collection_handle = 'cart' %}
-        {% assign recommended_products = collections[recommended_collection_handle].products | limit: 4 %}
+        {% assign recommended_products = collections[recommended_collection_handle].products %}
         {% for product in recommended_products %}
 
             <a href="{{ product.url }}">
