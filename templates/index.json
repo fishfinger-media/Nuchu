@@ -55,7 +55,7 @@
     "the_science": {
       "type": "the_science",
       "settings": {
-        "url_button_link": "shopify:\/\/pages\/the-science",
+        "url_button_link": "shopify:\/\/pages\/science",
         "text_button_text": "learn the science",
         "text_footnote": "*contains naturally occurring sugars"
       }
@@ -63,7 +63,7 @@
     "the_science_french": {
       "type": "the_science_french",
       "settings": {
-        "url_button_link": "shopify:\/\/pages\/the-science",
+        "url_button_link": "shopify:\/\/pages\/science",
         "text_button_text": "Les raisons scientifiques",
         "text_footnote": "*contains naturally occurring sugars"
       }
