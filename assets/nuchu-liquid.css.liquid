@@ -72,6 +72,18 @@
   padding-right: 0;
 }
 
+#password-flexcontianer {
+  margin:auto;
+  width:80%
+}
+
+@media screen and (max-width: 991px) { 
+  #password-flexcontianer {
+    width:100%;
+  }
+}
+
+
 /* END POST WEBFLOW EDITS */
 :root {
   --utility--body-fill: var(--color--white);
@@ -620,7 +632,7 @@ figcaption {
 
 .form-input.password {
   width: 24rem;
-  max-width: 100%;
+  max-width: calc(100% - 2rem);
   margin-bottom: 0;
 }
 
@@ -4062,6 +4074,8 @@ figcaption {
 }
 
 @media screen and (max-width: 991px) {
+
+  
   .hide-tablet {
     display: none;
   }
@@ -4609,11 +4623,12 @@ figcaption {
   }
 
   .password_image {
-    flex: 0 auto;
+    flex-shrink: 1;
+    max-height: 50%;
   }
 
   .password_content {
-    flex: 1;
+    flex-grow: 1;
     padding: 0;
   }
 
