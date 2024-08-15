@@ -297,12 +297,12 @@
         {% assign recommended_products = collections[recommended_collection_handle].products %}
         {% for product in recommended_products %}
             <div id="testing">
-            <a x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
-                @click="addToCart()">
-                <img src="{{ product.featured_image | img_url: 'small' }}" alt="" class="mini-cart_line-item_img">
-                <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
-            </a>
-            
+                <a x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
+                    @click="addToCartAndKeepOpen()">
+                     <img src="{{ product.featured_image | img_url: 'small' }}" alt="" class="mini-cart_line-item_img">
+                     <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
+                 </a>
+                 
         </div>
 
         {% endfor %}
