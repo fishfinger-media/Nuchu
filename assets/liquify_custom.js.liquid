@@ -273,6 +273,55 @@ document.addEventListener('alpine:init', () => {
             }
         },
 
+        addToCartAndKeepOpen(productId = undefined, quantity = undefined) {
+            console.log('add to cart (keep open) called, available:', this.selected_or_first_available_variant.available);
+        
+            if (!this.selected_or_first_available_variant.available) {
+                return;
+            }
+        
+            console.log('productId', productId ?? this.selected_product_id ?? this.selected_or_first_available_variant?.id);
+            let body = JSON.stringify({
+                'items': [
+                    {
+                        id: productId ?? this.selected_product_id ?? this.selected_or_first_available_variant?.id,
+                        quantity: quantity ?? this.quantity ?? 1,
+                    }
+                ]
+            });
+        
+            fetch(window.Shopify.routes.root + 'cart/add.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: body
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Item (addToCartAndKeepOpen): ', data, data.items);
+                    this.products = data.items;
+        
+                    // Skip the dropdown trigger and cart toggle here
+                    console.log('product added');
+                    console.log('Dispatch cart events');
+                    this.$dispatch('cartupdated'); // Dispatch cart updated event to refresh cart content
+        
+                    this.$dispatch('showcartmessage', {
+                        status: data.status,
+                        message: data.message,
+                        description: data.description
+                    });
+                })
+                .catch((error) => {
+                    console.error('addToCartAndKeepOpen error:', error);
+                    this.$dispatch('showcartmessage', {
+                        status: error.status,
+                        message: error.message,
+                        description: error.description
+                    });
+                });
+        },
+        
+
         /**
          * Add a single product to cart.
          */
@@ -340,3 +389,5 @@ document.addEventListener('alpine:init', () => {
         },
     }));
 })
+
+
