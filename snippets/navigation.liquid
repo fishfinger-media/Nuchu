@@ -289,25 +289,37 @@
 </div></div></div></li></template>
 </ul></div>
 
-<div class="cart_item-drawer">
-    <div>you may also like</div>
 
-    <div class="w-layout-hflex cart_item-drawer_track">
-        {% assign recommended_collection_handle = 'cart' %}
-        {% assign recommended_products = collections[recommended_collection_handle].products %}
-        {% for product in recommended_products %}
-            <div id="testing">
-                <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
-                <a x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
-                    @click="addToCartAndKeepOpen()">
-                     <img src="{{ product.featured_image | img_url: 'small' }}" alt="" class="mini-cart_line-item_img">
-                 </a>
-                 
+{% assign recommended_collection_handle = 'cart' %}
+{% assign recommended_products = collections[recommended_collection_handle].products %}
+
+<!-- Create an array of product IDs already in the cart -->
+{% assign cart_product_ids = cart.items | map: 'product_id' %}
+
+<!-- Count how many recommended products are NOT in the cart -->
+{% assign non_cart_products = recommended_products | reject: 'id', cart_product_ids %}
+{% assign non_cart_product_count = non_cart_products.size %}
+
+<!-- Only display the basketaddons div if there are products to show -->
+{% if non_cart_product_count > 0 %}
+    <div class="cart_item-drawer" id="basketaddons">
+        <div>You may also like</div>
+
+        <div class="w-layout-hflex cart_item-drawer_track">
+            {% for product in non_cart_products %}
+                <div id="testing">
+                    <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
+                    <a x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
+                        @click="addToCartAndKeepOpen()">
+                        <img src="{{ product.featured_image | img_url: 'small' }}" alt="" class="mini-cart_line-item_img">
+                    </a>
+                </div>
+            {% endfor %}
         </div>
-
-        {% endfor %}
     </div>
-</div>
+{% endif %}
+
+
 
 <div class="divider is-nav"></div><div class="mini-cart_footer"><div class="mini-cart_footer_total"><div>Subtotal</div><div><template x-if="total.price < original_total_price">
             <div li-js-if="total.price < original_total_price">
