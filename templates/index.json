@@ -68,6 +68,42 @@
         "text_footnote": "*contains naturally occurring sugars"
       }
     },
+    "sustainablity_beacJy": {
+      "type": "sustainablity",
+      "blocks": {
+        "card_7Y8m6W": {
+          "type": "card",
+          "settings": {
+            "image_icon": "shopify:\/\/shop_images\/heart_1.svg",
+            "text_heading": "Recyclable Packaging",
+            "textarea_content": "Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."
+          }
+        },
+        "card_fzfzzM": {
+          "type": "card",
+          "settings": {
+            "image_icon": "shopify:\/\/shop_images\/heart_2.svg",
+            "text_heading": "Planet-Friendly Mailers",
+            "textarea_content": "Our mailer boxes are 70% recycled, with the rest from sustainably sourced FSC-certified wood. Even our tape and pouches are recyclable!"
+          }
+        },
+        "card_eXnxpH": {
+          "type": "card",
+          "settings": {
+            "image_icon": "shopify:\/\/shop_images\/heart_3.svg",
+            "text_heading": "Stuffing That’s Sustainable",
+            "textarea_content": "Our box fillers are crafted from 80% recycled kraft paper, making them both sustainable and recyclable. We’re committed to packing with care for the planet."
+          }
+        }
+      },
+      "block_order": [
+        "card_7Y8m6W",
+        "card_fzfzzM",
+        "card_eXnxpH"
+      ],
+      "settings": {
+      }
+    },
     "instagram": {
       "type": "instagram",
       "blocks": {
@@ -111,6 +147,7 @@
             "title": "",
             "title_color": "",
             "alignment": "center",
+            "background_color": "",
             "html_area": ""
           }
         }
@@ -150,6 +187,7 @@
     "all_the_best",
     "the_science",
     "the_science_french",
+    "sustainablity_beacJy",
     "instagram",
     "1715780517809e6c74",
     "omg",
