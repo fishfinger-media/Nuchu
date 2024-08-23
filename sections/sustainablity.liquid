@@ -16,7 +16,7 @@
 
 <div class="w-layout-blockcontainer container_xl w-container">
     <div class="w-layout-vflex spacing_4">
-        <h2 class="heading_medium ts_tc-blue" id="addstar">eco-friendly in every step of the process</h2>
+        <h2 class="heading_medium ts_tc-blue" [gsap-heading] id="addstar">eco-friendly in every step of the process</h2>
         <div class="grid_3col sustainablity">{% for block in section.blocks %}
             {% if block.type == "card" %}
             <div li-block="Card" class="sustainability_card">
