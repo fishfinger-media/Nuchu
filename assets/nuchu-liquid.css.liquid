@@ -410,7 +410,6 @@ figcaption {
   justify-content: center;
   align-items: center;
   display: flex;
-  
 }
 
 .text-style-strikethrough {
@@ -1199,7 +1198,6 @@ figcaption {
   flex: 1;
   max-height: 80vh;
   padding: 1.5rem;
-  overflow: auto;
 }
 
 .mini-cart_close {
@@ -1246,7 +1244,6 @@ figcaption {
   justify-content: space-between;
   max-height: 100dvh;
   display: flex;
-  overflow: auto;
 }
 
 .mini-cart_empty {
@@ -3336,7 +3333,7 @@ figcaption {
   box-shadow: 0 3rem 0 0rem var(--color--blue);
   position: fixed;
   inset: auto 2vw 0% auto;
-  transform: translate(0, 100%);
+  transform: none;
 }
 
 .fixed-basket_content {
@@ -4024,14 +4021,13 @@ figcaption {
 }
 
 .password_overlay {
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   background-color: var(--color--pink-light);
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
   height: 100dvh;
-  max-height: 100dvh;
   padding: 2rem;
   display: grid;
 }
@@ -4049,11 +4045,11 @@ figcaption {
   grid-row-gap: 2rem;
   justify-content: space-between;
   align-items: stretch;
-  padding: 0rem 2rem;
+  padding: 2rem;
 }
 
 .password_btn {
-  width: 3.25rem;
+  height: 3.25rem;
   margin-left: auto;
   display: block;
 }
@@ -4071,11 +4067,36 @@ figcaption {
   inset: 0%;
 }
 
+.password-admin_content {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  transform: translate(0);
+}
 
+.section_sustainablity {
+  background-color: var(--color--lilac-light);
+ 
+}
+
+.sustainability_card {
+  grid-column-gap: 6rem;
+  grid-row-gap: 6rem;
+  color: var(--color--blue);
+  background-color: #fff;
+  border-radius: 1rem;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 2rem;
+  display: flex;
+}
+
+.sustainability_icon {
+  height: 5rem;
+}
 
 @media screen and (max-width: 991px) {
-
-  
   .hide-tablet {
     display: none;
   }
@@ -4269,6 +4290,10 @@ figcaption {
     grid-template-columns: 1fr;
     gap: 4rem;
     width: 100%;
+  }
+
+  .grid_3col.sustainablity {
+    gap: 1.5rem;
   }
 
   .container_l {
@@ -4623,17 +4648,14 @@ figcaption {
   }
 
   .password_image {
-    flex-shrink: 1;
-    max-height: 40%;
+    flex: 0 auto;
   }
 
   .password_content {
-    flex-grow: 1;
+    flex: 1;
     padding: 0;
-    height: 60%;
   }
 
-  
   .password-admin_container {
     position: absolute;
     inset: 3rem 3rem auto auto;

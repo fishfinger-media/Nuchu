@@ -1,0 +1,39 @@
+<style>
+#addstar:after {
+    content:'';
+    display:inline-block;
+    width: clamp(2.5rem,2.2346rem + .4281vw,2.5rem);
+    height:clamp(2.5rem,2.2346rem + .4281vw,2.5rem);
+    margin-left: 0.5ch;
+    transform: translateY(15%);
+    background-image: url("https://uploads-ssl.webflow.com/65c506881726eb05bb74699d/65ce26b58ca1e2be298eaf97_Star%20icon.svg");
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    scale:0.9
+}
+</style>
+
+
+<div class="w-layout-blockcontainer container_xl w-container">
+    <div class="w-layout-vflex spacing_4">
+        <h2 class="heading_medium ts_tc-blue" id="addstar">eco-friendly in every step of the process</h2>
+        <div class="grid_3col sustainablity">{% for block in section.blocks %}
+            {% if block.type == "card" %}
+            <div li-block="Card" class="sustainability_card">
+                <img class="sustainability_icon" src="{{ block.settings.image_icon | img_url: 'master' }}" alt="{{ block.settings.image_icon.alt }}" loading="lazy">
+
+                <div class="w-layout-vflex spacing_1">
+                    <h3 class="heading_small">
+                        {{ block.settings.text_heading }}
+                    </h3>
+                    <p class="text-size-medium"> {{ block.settings.textarea_content }} </p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% schema %} {"tag":"section","name":"Sustainablity","class":"section_sustainablity","blocks":[{"name":"Card","type":"card","settings":[{"id":"image_icon","type":"image_picker","label":"Icon"},{"id":"text_heading","type":"text","label":"Heading","default":"Recyclable Packaging"},{"id":"textarea_content","type":"textarea","label":"Content","default":"Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."}]}],"presets":[{"name":"sustainablity","category":"Liquify"}]} {% endschema %}
