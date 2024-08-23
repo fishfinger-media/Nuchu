@@ -4849,12 +4849,25 @@ figcaption {
     margin: 0;
   }
 
-  .home-hero_pot-wrapper.is-beauty, .home-hero_pot-wrapper.is-immunity {
-    display: none;
+  .home-hero_pot-wrapper.is-beauty {
+    z-index: 0;
+    margin-right: -8vmin;
+    position: absolute;
+    bottom: 1%;
+    right: -15%;
+    transform: scale(.8);
+  }
+
+  .home-hero_pot-wrapper.is-immunity {
+    z-index: -1;
+    position: absolute;
+    top: -5%;
+    left: -15%;
+    transform: scale(.8);
   }
 
   .home-hero_pot {
-    max-width: 70%;
+    max-width: 55%;
     height: auto;
     max-height: 80%;
   }
@@ -5188,9 +5201,19 @@ figcaption {
     max-height: 80vh;
   }
 
+  .home-hero_pot-wrapper.is-beauty {
+    left: 55%;
+    right: 0%;
+  }
+
+  .home-hero_pot-wrapper.is-immunity {
+    left: auto;
+    right: 55%;
+  }
+
   .home-hero_pot {
     object-fit: contain;
-    max-width: 100%;
+    max-width: 85%;
     height: 16rem;
   }
 
