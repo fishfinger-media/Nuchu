@@ -14,9 +14,9 @@
 </style>
 
 
-<div class="w-layout-blockcontainer container_xl w-container">
+<div class="w-layout-blockcontainer container_xl w-container" lowercase id="sustainabliity">
     <div class="w-layout-vflex spacing_4">
-        <h2 class="heading_medium ts_tc-blue" [gsap-heading] id="addstar">eco-friendly in every step of the process</h2>
+        <h2 class="heading_medium ts_tc-blue" [gsap-heading]  id="addstar"> {{ section.settings.heading_text }} </h2>
         <div class="grid_3col sustainablity">{% for block in section.blocks %}
             {% if block.type == "card" %}
             <div li-block="Card" class="sustainability_card">
@@ -36,4 +36,11 @@
 </div>
 
 
-{% schema %} {"tag":"section","name":"Sustainablity","class":"section_sustainablity","blocks":[{"name":"Card","type":"card","settings":[{"id":"image_icon","type":"image_picker","label":"Icon"},{"id":"text_heading","type":"text","label":"Heading","default":"Recyclable Packaging"},{"id":"textarea_content","type":"textarea","label":"Content","default":"Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."}]}],"presets":[{"name":"sustainablity","category":"Liquify"}]} {% endschema %}
+{% schema %} {"tag":"section","name":"Sustainablity","class":"section_sustainablity",  "settings": [
+    {
+        "id": "heading_text",
+        "type": "text",
+        "label": "Heading Text",
+        "default": "Eco-friendly in every step of the process"
+    }
+],"blocks":[{"name":"Card","type":"card","settings":[{"id":"image_icon","type":"image_picker","label":"Icon"},{"id":"text_heading","type":"text","label":"Heading","default":"Recyclable Packaging"},{"id":"textarea_content","type":"textarea","label":"Content","default":"Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."}]}],"presets":[{"name":"sustainablity","category":"Liquify"}]} {% endschema %}
