@@ -108,6 +108,16 @@
                             </div>
                         </template>
                     </div>
+
+
+                    {% for block in section.blocks %}
+                        {% case block.type %}
+                          {% when '@app' %}
+                            {% render block %}
+                        {% endcase %}
+                      {% endfor %}
+
+
                     <hr class="divider">
                     {% endform %}
                     <div class="out-of-stock-state w-form-done">
@@ -245,4 +255,56 @@
             {{ product.price | money }}</div>
     </div>
 </div>
-{% schema %} {"tag":"section","name":"product_page_simple","class":"section_product-main","blocks":[{"name":"Product Reference","type":"product-reference","settings":[{"id":"image_product_image","type":"image_picker","label":"Product Image"},{"id":"image_product_icon","type":"image_picker","label":"Product Icon"},{"id":"text_product_name","type":"text","label":"Product Name","default":"Product Name"},{"id":"textarea_product_description","type":"textarea","label":"Product Description","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."},{"id":"url_product_link","type":"url","label":"Product Link"}]},{"name":"No Nasties Images","type":"no-nasties-images","settings":[{"id":"image_no_nasty_image","type":"image_picker","label":"No Nasty Image"}]}],"presets":[{"name":"product_page_simple","category":"Liquify"}]} {% endschema %}
+
+{% schema %} 
+
+{
+    "tag": "section",
+    "name": "product_page_simple",
+    "class": "section_product-main",
+    "blocks": [{
+        "name": "Product Reference",
+        "type": "product-reference",
+        "settings": [{
+            "id": "image_product_image",
+            "type": "image_picker",
+            "label": "Product Image"
+        }, {
+            "id": "image_product_icon",
+            "type": "image_picker",
+            "label": "Product Icon"
+        }, {
+            "id": "text_product_name",
+            "type": "text",
+            "label": "Product Name",
+            "default": "Product Name"
+        }, {
+            "id": "textarea_product_description",
+            "type": "textarea",
+            "label": "Product Description",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+        }, {
+            "id": "url_product_link",
+            "type": "url",
+            "label": "Product Link"
+        }, ]
+    }, {
+        "name": "No Nasties Images",
+        "type": "no-nasties-images",
+        "settings": [{
+            "id": "image_no_nasty_image",
+            "type": "image_picker",
+            "label": "No Nasty Image"
+        }]
+    },
+
+    {
+        "type": "@app"
+      }
+    ],
+    "presets": [{
+        "name": "product_page_simple",
+        "category": "Liquify"
+    }]
+} 
+{% endschema %}

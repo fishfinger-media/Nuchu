@@ -91,6 +91,14 @@
                 </div>
             </template>
         </div>
+
+        {% for block in section.blocks %}
+            {% case block.type %}
+              {% when '@app' %}
+                {% render block %}
+            {% endcase %}
+          {% endfor %}
+
         <hr class="divider">
         {% endform %}
         <div class="out-of-stock-state w-form-done">
@@ -329,4 +337,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-{% schema %} {"tag":"section","name":"product_page-3col","class":"section_product-main","blocks":[{"name":"No Nasties Images","type":"no-nasties-images","settings":[{"id":"image_no_nasty_image","type":"image_picker","label":"No Nasty Image"}]}],"presets":[{"name":"product_page","category":"Liquify"}]} {% endschema %}
+{% schema %} {
+    "tag": "section",
+    "name": "product_page-3col",
+    "class": "section_product-main",
+    "blocks": [{
+        "name": "No Nasties Images",
+        "type": "no-nasties-images",
+        "settings": [{
+          "id": "image_no_nasty_image",
+          "type": "image_picker",
+          "label": "No Nasty Image"
+        }]
+      },
+
+  {
+    "type": "@app"
+  }
+  
+    ],
+    "presets": [{
+      "name": "product_page",
+      "category": "Liquify"
+    }]
+  } 
+  
+  {% endschema %}
