@@ -1,5 +1,4 @@
 <script src="{{ '_custom.js' | asset_url }}" type="text/javascript"></script>
-
 <div li-element="product-variant-container" class="product_container"
   x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
   x-init="$nextTick(() => { activateVariants() })">
@@ -92,7 +91,19 @@
                 </div>
             </template>
         </div>
+
+        
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when '@app' %}
+              {% render block %}
+          {% endcase %}
+        {% endfor %}
+ 
+
         <hr class="divider">
+
+
         {% endform %}
         <div class="out-of-stock-state w-form-done">
             <div>Thank you! Your submission has been received!</div>
@@ -100,7 +111,12 @@
         <div class="error-state w-form-fail">
             <div>Oops! Something went wrong while submitting the form.</div>
         </div>
-    </div>
+   
+   
+     
+   
+      </div>
+
 </div>
 
       
@@ -319,6 +335,10 @@ document.addEventListener('DOMContentLoaded', function() {
       "type": "image_picker",
       "label": "No Nasty Image"
     }]
+  },
+
+  {
+    "type": "@app"
   }],
   "presets": [{
     "name": "product_page",
