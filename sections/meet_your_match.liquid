@@ -46,8 +46,17 @@
                   {% assign byline = product.metafields.custom.byline %}
                   {% assign transparent_image = product.metafields.custom.transparent_image %}</div>
     
-    <a li-object:href="product.url" data-w-id="7e7f968a-f650-78bf-284d-4b572c1b8e25" href="{{ product.url }}" class="collection_product-wrapper w-inline-block"><div data-body="{{ keycolor }}" class="collection_product"><div class="collection_product-content"><img src="{{ product.metafields.custom.transparent_image | img_url: 'master' }}" loading="lazy" li-object:src="product.metafields.custom.transparent_image | img_url: 'master'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" class="collection_product-image full">
-<div class="collection_product-tagwrapper">{% for tags in product.metafields.custom.key_ingredients.value limit:3 %}    <div li-for="tags in product.metafields.custom.key_ingredients.value">
+    <a li-object:href="product.url" data-w-id="7e7f968a-f650-78bf-284d-4b572c1b8e25" href="{{ product.url }}" class="collection_product-wrapper w-inline-block">
+      <div data-body="{{ keycolor }}" class="collection_product" style="position: relative;">
+
+        <img src="{{ product.metafields.custom.hover_image | img_url: 'master' }}" style="position:absolute; z-index:10; width:100%; height:100%;scale:5;pointer-events:none;" class="product-hoverimg"> 
+
+        <div class="collection_product-content">
+          <img src="{{ product.metafields.custom.transparent_image | img_url: 'master' }}" loading="lazy" li-object:src="product.metafields.custom.transparent_image | img_url: 'master'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" class="collection_product-image full">
+
+
+
+    <div class="collection_product-tagwrapper">{% for tags in product.metafields.custom.key_ingredients.value limit:3 %}    <div li-for="tags in product.metafields.custom.key_ingredients.value">
                                     
                             <div li-object:text="tags.ingredient_name" class="collection_product-tag">
 {{ tags.ingredient_name }}
