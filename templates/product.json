@@ -1,100 +1,150 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
-    "sections": {
-        "product_page": {
-            "type": "product_page",
-            "blocks": {
-                "no_nasties_images_bghJfM": {
-                    "type": "no-nasties-images",
-                    "settings": {
-                        "image_no_nasty_image": "shopify:\/\/shop_images\/Product-Petal-sugar.svg"
-                    }
-                },
-                "no_nasties_images_HWW7KT": {
-                    "type": "no-nasties-images",
-                    "settings": {
-                        "image_no_nasty_image": "shopify:\/\/shop_images\/Product-Petal-sweetner.svg"
-                    }
-                },
-                "no_nasties_images_M3fGbN": {
-                    "type": "no-nasties-images",
-                    "settings": {
-                        "image_no_nasty_image": "shopify:\/\/shop_images\/Product-Petal-vegan.svg"
-                    }
-                },
-                "no_nasties_images_n4gYUw": {
-                    "type": "no-nasties-images",
-                    "settings": {
-                        "image_no_nasty_image": "shopify:\/\/shop_images\/Product-Petal-gluten.svg"
-                    }
-                },
-                "no_nasties_images_QEEYGp": {
-                    "type": "no-nasties-images",
-                    "settings": {
-                        "image_no_nasty_image": "shopify:\/\/shop_images\/Product-Petal-gmo.svg"
-                    }
-                },
-                "no_nasties_images_PeMNDy": {
-                    "type": "no-nasties-images",
-                    "settings": {
-                        "image_no_nasty_image": "shopify:\/\/shop_images\/Product-Petal-colour.svg"
-                    }
-                },
-                "no_nasties_images_U3VwrL": {
-                    "type": "no-nasties-images",
-                    "settings": {
-                        "image_no_nasty_image": "shopify:\/\/shop_images\/Product-Petal-syrup.svg"
-                    }
-                }
-            },
-            "block_order": ["no_nasties_images_bghJfM", "no_nasties_images_HWW7KT", "no_nasties_images_M3fGbN", "no_nasties_images_n4gYUw", "no_nasties_images_QEEYGp", "no_nasties_images_PeMNDy", "no_nasties_images_U3VwrL"],
-            "settings": {}
+  "sections": {
+    "product_page": {
+      "type": "product_page",
+      "blocks": {
+        "no_nasties_images_bghJfM": {
+          "type": "no-nasties-images",
+          "settings": {
+          }
         },
-        "faq": {
-            "type": "faq",
-            "blocks": {
-                "faq_id6JwM": {
-                    "type": "faq",
-                    "settings": {
-                        "text_question": "Are Nuchu products vegan?",
-                        "richtext_answer": "<p>Our Beauty and Calming gummies are vegan. The Immunity gummy is vegetarian as it contains propolis.<\/p>"
-                    }
-                },
-                "faq_4WWe8n": {
-                    "type": "faq",
-                    "settings": {
-                        "text_question": "How often can I take Nuchu products?",
-                        "richtext_answer": "<p>You can take Nuchu products daily. Please follow the Suggested Use on each product.<\/p>"
-                    }
-                },
-                "faq_M4etFD": {
-                    "type": "faq",
-                    "settings": {
-                        "text_question": "How should I store my gummies?",
-                        "richtext_answer": "<p>It's best to store your gummies in a cool and dry place. Avoid direct sunlight.<\/p>"
-                    }
-                },
-                "faq_kHJqRm": {
-                    "type": "faq",
-                    "settings": {
-                        "text_question": "With no added sugar or sweeteners, how come Nuchu gummies taste sweet?",
-                        "richtext_answer": "<p>Our gummies are made with Fructooligosaccharide (FOS), a naturally sweet fibre found in plants.<\/p>"
-                    }
-                },
-                "faq_JKLpLF": {
-                    "type": "faq",
-                    "settings": {
-                        "text_question": "Can I take these gummies every day?",
-                        "richtext_answer": "<p>Absolutely! Our wellness gummies are crafted for daily use, ensuring you get a delightful dose of essential vitamins to support your overall well-being<\/p>"
-                    }
-                }
-            },
-            "block_order": ["faq_id6JwM", "faq_4WWe8n", "faq_M4etFD", "faq_kHJqRm", "faq_JKLpLF"],
-            "settings": {
-                "text_faq_heading": "Frequently Asked Questions"
-            }
+        "no_nasties_images_HWW7KT": {
+          "type": "no-nasties-images",
+          "settings": {
+          }
+        },
+        "no_nasties_images_M3fGbN": {
+          "type": "no-nasties-images",
+          "settings": {
+          }
+        },
+        "no_nasties_images_n4gYUw": {
+          "type": "no-nasties-images",
+          "settings": {
+          }
+        },
+        "no_nasties_images_QEEYGp": {
+          "type": "no-nasties-images",
+          "settings": {
+          }
+        },
+        "no_nasties_images_PeMNDy": {
+          "type": "no-nasties-images",
+          "settings": {
+          }
+        },
+        "no_nasties_images_U3VwrL": {
+          "type": "no-nasties-images",
+          "settings": {
+          }
+        },
+        "subify_subscriptions_app_app_block_6XRinj": {
+          "type": "shopify://apps/subify-subscriptions-app/blocks/app-block/bc0dba25-cd46-4841-bea4-6bdfe9ac815f",
+          "settings": {
+            "product": "{{product}}",
+            "use_app_block_wording": false,
+            "widget_label": "Purchase options",
+            "one_time_purchase_text": "One-Time Purchase",
+            "subscription_text": "Subscribe and save",
+            "delivery_frequency_text": "Delivery frequency",
+            "prepaid_subscription_text": "Subscription with prepaid",
+            "skin1_priceSuffix": "each",
+            "skin1_save": "Save(skin1)",
+            "skin1_prepaid_payment_title": "prepaid",
+            "skin1_normal_payment_title": "pay as you go",
+            "skin2_discountSuffix": "Save",
+            "skin3_fullPrice": "Full price",
+            "skin3_priceSuffix": "each",
+            "skin3_discountSuffix": "Off",
+            "skin4_justOnce": "Just once",
+            "skin4_discountSuffix": "Off",
+            "skin4_priceSuffix": "each",
+            "skin4_fullPrice": "(Full price)",
+            "skin4_sellingPlansTitle": "Renews every:",
+            "from": "from",
+            "max_discount_badge_title": "UP To",
+            "pay": "Pay",
+            "price_save_up_to": "save up to"
+          }
         }
+      },
+      "block_order": [
+        "no_nasties_images_bghJfM",
+        "no_nasties_images_HWW7KT",
+        "no_nasties_images_M3fGbN",
+        "no_nasties_images_n4gYUw",
+        "no_nasties_images_QEEYGp",
+        "no_nasties_images_PeMNDy",
+        "no_nasties_images_U3VwrL",
+        "subify_subscriptions_app_app_block_6XRinj"
+      ],
+      "settings": {
+      }
     },
-    "layout": "product",
-    "wrapper": "main.main-wrapper",
-    "order": ["product_page", "faq"]
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq_id6JwM": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Are Nuchu products vegan?",
+            "richtext_answer": "<p>Our Beauty and Calming gummies are vegan. The Immunity gummy is vegetarian as it contains propolis.</p>"
+          }
+        },
+        "faq_4WWe8n": {
+          "type": "faq",
+          "settings": {
+            "text_question": "How often can I take Nuchu products?",
+            "richtext_answer": "<p>You can take Nuchu products daily. Please follow the Suggested Use on each product.</p>"
+          }
+        },
+        "faq_M4etFD": {
+          "type": "faq",
+          "settings": {
+            "text_question": "How should I store my gummies?",
+            "richtext_answer": "<p>It's best to store your gummies in a cool and dry place. Avoid direct sunlight.</p>"
+          }
+        },
+        "faq_kHJqRm": {
+          "type": "faq",
+          "settings": {
+            "text_question": "With no added sugar or sweeteners, how come Nuchu gummies taste sweet?",
+            "richtext_answer": "<p>Our gummies are made with Fructooligosaccharide (FOS), a naturally sweet fibre found in plants.</p>"
+          }
+        },
+        "faq_JKLpLF": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Can I take these gummies every day?",
+            "richtext_answer": "<p>Absolutely! Our wellness gummies are crafted for daily use, ensuring you get a delightful dose of essential vitamins to support your overall well-being</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_id6JwM",
+        "faq_4WWe8n",
+        "faq_M4etFD",
+        "faq_kHJqRm",
+        "faq_JKLpLF"
+      ],
+      "settings": {
+        "text_faq_heading": "Frequently Asked Questions"
+      }
+    }
+  },
+  "layout": "product",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "product_page",
+    "faq"
+  ]
 }
