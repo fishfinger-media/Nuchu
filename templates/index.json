@@ -14,7 +14,7 @@
       "settings": {
         "text_hero_text": "Fuel Your Vibes with Naturally Sweet Wellness Gummies – No added sugars or sweeteners, All the Goodness!",
         "text_subtext_left": "vitamin gummies",
-        "url_cta_button_link": "shopify:\/\/collections\/nuchu",
+        "url_cta_button_link": "shopify://collections/nuchu",
         "text_cta_button_text": "Shop our Gummies",
         "text_subtext_right": "Without any nasties"
       }
@@ -26,7 +26,7 @@
         "text_meet_your_match_part_2": "your",
         "text_meet_your_match_part_3": "match",
         "text_content": "our best-for-you gummy blends are the perfect addition to your daily routine.",
-        "collection_featured": "nuchu",
+        "collection_featured": "frontpage",
         "collection_featured_limit": 6
       }
     },
@@ -43,19 +43,13 @@
       "settings": {
         "text_heading": "All the best and nothing less",
         "text_paragraph": "We stripped away added sugars, artificial sweeteners, and other fake nasty ingredients for totally yummy gummies you can feel good about.",
-        "text_footnote": "*Contains naturally occurring sugars",
-        "image_image_1": "shopify:\/\/shop_images\/Petal-vegan.svg",
-        "image_image_2": "shopify:\/\/shop_images\/Petal-gluten.svg",
-        "image_image_3": "shopify:\/\/shop_images\/Petal-sugar.svg",
-        "image_image_4": "shopify:\/\/shop_images\/Petal-sweetner.svg",
-        "image_image_5": "shopify:\/\/shop_images\/Petal-gmo.svg",
-        "image_image_6": "shopify:\/\/shop_images\/Petal-syrup.svg"
+        "text_footnote": "*Contains naturally occurring sugars"
       }
     },
     "the_science": {
       "type": "the_science",
       "settings": {
-        "url_button_link": "shopify:\/\/pages\/science",
+        "url_button_link": "shopify://pages/science",
         "text_button_text": "learn the science",
         "text_footnote": "*contains naturally occurring sugars"
       }
@@ -63,7 +57,7 @@
     "the_science_french": {
       "type": "the_science_french",
       "settings": {
-        "url_button_link": "shopify:\/\/pages\/science",
+        "url_button_link": "shopify://pages/science",
         "text_button_text": "Les raisons scientifiques",
         "text_footnote": "*contains naturally occurring sugars"
       }
@@ -74,7 +68,6 @@
         "card_7Y8m6W": {
           "type": "card",
           "settings": {
-            "image_icon": "shopify:\/\/shop_images\/heart_1.svg",
             "text_heading": "Recyclable Packaging",
             "textarea_content": "Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."
           }
@@ -82,7 +75,6 @@
         "card_fzfzzM": {
           "type": "card",
           "settings": {
-            "image_icon": "shopify:\/\/shop_images\/heart_2.svg",
             "text_heading": "Planet-Friendly Mailers",
             "textarea_content": "Our mailer boxes are made from a minimum of 70% recycled material. The remaining material is derived from sustainably and ethically sourced wood that is FSC-certified. Even our tape and pouches are recyclable!"
           }
@@ -90,7 +82,6 @@
         "card_eXnxpH": {
           "type": "card",
           "settings": {
-            "image_icon": "shopify:\/\/shop_images\/heart_3.svg",
             "text_heading": "Stuffing That’s Sustainable",
             "textarea_content": "Our box fillers are crafted from 80% recycled kraft paper, making them both sustainable and recyclable. We’re committed to packing with care for the planet."
           }
@@ -111,22 +102,19 @@
         "social_link_r3LYtU": {
           "type": "social-link",
           "settings": {
-            "url_link": "https:\/\/www.instagram.com\/hellonuchu\/",
-            "image_social_icon": "shopify:\/\/shop_images\/icons_instagram.svg"
+            "url_link": "https://www.instagram.com/hellonuchu/"
           }
         },
         "social_link_CaiRxK": {
           "type": "social-link",
           "settings": {
-            "url_link": "https:\/\/tiktok.com\/@hellonuchu",
-            "image_social_icon": "shopify:\/\/shop_images\/icons_tiktok.svg"
+            "url_link": "https://tiktok.com/@hellonuchu"
           }
         },
         "social_link_dh9fUE": {
           "type": "social-link",
           "settings": {
-            "url_link": "https:\/\/www.linkedin.com\/company\/hellonuchu\/",
-            "image_social_icon": "shopify:\/\/shop_images\/icons_linkedin.svg"
+            "url_link": "https://www.linkedin.com/company/hellonuchu/"
           }
         }
       },
@@ -141,28 +129,13 @@
     },
     "1715780517809e6c74": {
       "type": "apps",
-      "blocks": {
-        "instafeed_app_block_JRLmJ4": {
-          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
-          "settings": {
-            "title": "",
-            "title_color": "",
-            "alignment": "center",
-            "background_color": "",
-            "html_area": ""
-          }
-        }
-      },
-      "block_order": [
-        "instafeed_app_block_JRLmJ4"
-      ],
       "settings": {
       }
     },
     "omg": {
       "type": "omg",
       "settings": {
-        "url_button_link": "shopify:\/\/collections\/nuchu",
+        "url_button_link": "shopify://collections/nuchu",
         "text_button_text": "Shop now"
       }
     },
