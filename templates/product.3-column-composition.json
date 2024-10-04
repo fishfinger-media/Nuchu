@@ -116,12 +116,18 @@
       "settings": {
         "text_faq_heading": "Frequently Asked Questions"
       }
+    },
+    "1728054838fceb4d8a": {
+      "type": "apps",
+      "settings": {
+      }
     }
   },
   "layout": "product",
   "wrapper": "main.main-wrapper",
   "order": [
     "product_page",
+    "1728054838fceb4d8a",
     "faq"
   ]
 }
