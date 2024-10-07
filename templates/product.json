@@ -12,45 +12,52 @@
     "product_page": {
       "type": "product_page",
       "blocks": {
-        "no_nasties_images_bghJfM": {
-          "type": "no-nasties-images",
-          "settings": {
-          }
-        },
         "no_nasties_images_HWW7KT": {
           "type": "no-nasties-images",
           "settings": {
+            "image_no_nasty_image": "shopify://shop_images/Product-Petal-sugar.svg"
+          }
+        },
+        "no_nasties_images_bghJfM": {
+          "type": "no-nasties-images",
+          "settings": {
+            "image_no_nasty_image": "shopify://shop_images/Product-Petal-sweetner.svg"
           }
         },
         "no_nasties_images_M3fGbN": {
           "type": "no-nasties-images",
           "settings": {
+            "image_no_nasty_image": "shopify://shop_images/Product-Petal-vege.svg"
           }
         },
         "no_nasties_images_n4gYUw": {
           "type": "no-nasties-images",
           "settings": {
+            "image_no_nasty_image": "shopify://shop_images/Product-Petal-gluten.svg"
           }
         },
         "no_nasties_images_QEEYGp": {
           "type": "no-nasties-images",
           "settings": {
+            "image_no_nasty_image": "shopify://shop_images/Product-Petal-gmo.svg"
           }
         },
         "no_nasties_images_PeMNDy": {
           "type": "no-nasties-images",
           "settings": {
+            "image_no_nasty_image": "shopify://shop_images/Product-Petal-colour.svg"
           }
         },
         "no_nasties_images_U3VwrL": {
           "type": "no-nasties-images",
           "settings": {
+            "image_no_nasty_image": "shopify://shop_images/Product-Petal-syrup.svg"
           }
         }
       },
       "block_order": [
-        "no_nasties_images_bghJfM",
         "no_nasties_images_HWW7KT",
+        "no_nasties_images_bghJfM",
         "no_nasties_images_M3fGbN",
         "no_nasties_images_n4gYUw",
         "no_nasties_images_QEEYGp",
