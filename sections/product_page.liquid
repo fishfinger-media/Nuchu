@@ -415,6 +415,9 @@ document.querySelector('.qty-counter.minus').addEventListener('click', () => {
 document.querySelector('.qty-counter.plus').addEventListener('click', () => {
     quantityInput.value = parseInt(quantityInput.value) + 1;
 });
+
+const radioInputs = document.querySelectorAll('.w-radio-input');
+radioInputs[0]?.classList.add('w--redirected-checked');
 </script>
 
 
