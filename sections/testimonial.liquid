@@ -1,6 +1,6 @@
 <div class="container_science padded">
   <div class="experts_split">
-    <img src="{{ section.settings.image_testimonial | asset_url }}" loading="lazy" alt="{{ section.settings.text_credit | escape }}" class="expert_image">
+    <img src="{{ section.settings.image_testimonial | asset_url }}" loading="lazy" alt="" class="expert_image">
     <div class="w-layout-vflex spacing_2">
       <p class="heading_small line-spacing-medium">
         {{ section.settings.textarea_testimonial }}
@@ -28,12 +28,6 @@
       "type": "textarea",
       "label": "Testimonial",
       "default": "I have tested these supplements and highly recommend them. I am particularly impressed by the absence of added sugar and sweeteners. The concept is well-thought-out, and the essential actives are present, making comparisons with other brands unnecessary."
-    },
-    {
-      "id": "text_credit",
-      "type": "text",
-      "label": "Credit",
-      "default": "Dr. Nabil Sharara, General Practitioner"
     }
   ],
   "presets": [
