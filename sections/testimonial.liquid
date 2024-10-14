@@ -1,7 +1,7 @@
 <div class="container_science padded">
   <div class="experts_split">
-    <img src="{{ section.settings.image_testimonial | asset_url | default: 'nuchu-testimonial.jpeg' | asset_url }}" loading="lazy" id="w-node-e842792e-a974-5d41-abc1-114851e6b417-07f8c2e5" alt="" class="expert_image">
-    <div id="w-node-_217df711-e0dc-4c31-69ed-52d6417aa366-07f8c2e5" class="w-layout-vflex spacing_2">
+    <img src="{{ section.settings.image_testimonial | asset_url }}" loading="lazy" alt="{{ section.settings.text_credit | escape }}" class="expert_image">
+    <div class="w-layout-vflex spacing_2">
       <p class="heading_small line-spacing-medium">
         {{ section.settings.textarea_testimonial }}
       </p>
@@ -21,8 +21,7 @@
     {
       "id": "image_testimonial",
       "type": "image_picker",
-      "label": "Testimonial Image",
-      "default": "nuchu-testimonial.jpeg"
+      "label": "Testimonial Image"
     },
     {
       "id": "textarea_testimonial",
