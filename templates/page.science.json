@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "science_report_hero": {
@@ -28,37 +28,37 @@
         "ingredients_card_kiU8QH": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_flower.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_flower.png",
             "text_ingredient_name": "ashwagandha",
             "text_ingredient_key_point": "stimulates keratin production",
-            "richtext_ingredient_description": "<p>Ashwagandha, an adaptogenic herb, is scientifically linked to the production of keratin, a crucial protein for hair strength. It supports the synthesis of keratin in our bodies, contributing to the overall health and resilience of our hair. In simple terms, Ashwagandha quietly works behind the scenes to keep your locks robust.<\/p>"
+            "richtext_ingredient_description": "<p>Ashwagandha, an adaptogenic herb, is scientifically linked to the production of keratin, a crucial protein for hair strength. It supports the synthesis of keratin in our bodies, contributing to the overall health and resilience of our hair. In simple terms, Ashwagandha quietly works behind the scenes to keep your locks robust.</p>"
           }
         },
         "ingredients_card_wRmDCr": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_flower.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_flower.png",
             "text_ingredient_name": "vitamin d2",
             "text_ingredient_key_point": "produces serotonin",
-            "richtext_ingredient_description": "<p>vitamin d2 isn't just about bone health; it has a say in your mood too. scientifically, it influences neurotransmitters that play a role in your overall sense of well-being. so, catching some sun or grabbing your calm me down gummies might just be the mood boost you need.<\/p>"
+            "richtext_ingredient_description": "<p>vitamin d2 isn't just about bone health; it has a say in your mood too. scientifically, it influences neurotransmitters that play a role in your overall sense of well-being. so, catching some sun or grabbing your calm me down gummies might just be the mood boost you need.</p>"
           }
         },
         "ingredients_card_KWGE8r": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_flower.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_flower.png",
             "text_ingredient_name": "vitamin b6",
             "text_ingredient_key_point": "produces serotonin",
-            "richtext_ingredient_description": "<p>this vitamin takes the lead in the synthesis of serotonin, a neurotransmitter that's a key player in regulating mood. so, when you're thinking about the feel-good vibes, think about vitamin b6 doing its serotonin-producing dance.<\/p>"
+            "richtext_ingredient_description": "<p>this vitamin takes the lead in the synthesis of serotonin, a neurotransmitter that's a key player in regulating mood. so, when you're thinking about the feel-good vibes, think about vitamin b6 doing its serotonin-producing dance.</p>"
           }
         },
         "ingredients_card_TQY8BA": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_flower.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_flower.png",
             "text_ingredient_name": "vitamin b12",
             "text_ingredient_key_point": "stimulates keratin production",
-            "richtext_ingredient_description": "<p>nerve function gets a superhero in the form of vitamin b12. this essential vitamin plays a crucial role in maintaining the health and proper functioning of your nervous system. think of it as the support system your nerves need to keep things running smoothly.<\/p>"
+            "richtext_ingredient_description": "<p>nerve function gets a superhero in the form of vitamin b12. this essential vitamin plays a crucial role in maintaining the health and proper functioning of your nervous system. think of it as the support system your nerves need to keep things running smoothly.</p>"
           }
         },
         "suggested_use_card_bwxJTC": {
@@ -66,7 +66,7 @@
           "settings": {
             "text_suggested_use_name": "ashwagandha",
             "text_suggested_use_key_point": "stimulates keratin production",
-            "richtext_suggested_use_description": "<p>Take two gummies daily, at any time of day, with or without food<\/p>"
+            "richtext_suggested_use_description": "<p>Take two gummies daily, at any time of day, with or without food</p>"
           }
         }
       },
@@ -80,10 +80,10 @@
       "settings": {
         "text_theme_color": "pink",
         "text_heading": "calm me down",
-        "url_button_link": "shopify:\/\/products\/calming",
+        "url_button_link": "shopify://products/calming",
         "text_button_text": "Go to Product",
-        "image_product_image": "shopify:\/\/shop_images\/Calming_Front-Transparent.png",
-        "richtext_product_text": "<p>We stripped away \"added sugars, artificial sweeteners\", and other fake nasty ingredients for totally yummy gummies you can feel good about.<\/p>"
+        "image_product_image": "shopify://shop_images/Calming_Front-Transparent.png",
+        "richtext_product_text": "<p>We stripped away added sugars, artificial sweeteners, and other fake nasty ingredients for totally yummy gummies you can feel good about.</p>"
       }
     },
     "ingredients_CggNWb": {
@@ -92,37 +92,37 @@
         "ingredients_card_Rzd3qD": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_spike.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_spike.png",
             "text_ingredient_name": "biotin",
             "text_ingredient_key_point": "stimulates keratin production",
-            "richtext_ingredient_description": "<p>biotin steps up as a catalyst for keratin production, the structural backbone of our hair. scientifically, it stimulates the process, ensuring your strands get the support they need to stay strong and vibrant. so, if you're aiming for a luscious mane, think biotin.<\/p>"
+            "richtext_ingredient_description": "<p>biotin steps up as a catalyst for keratin production, the structural backbone of our hair. scientifically, it stimulates the process, ensuring your strands get the support they need to stay strong and vibrant. so, if you're aiming for a luscious mane, think biotin.</p>"
           }
         },
         "ingredients_card_hBaPHX": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_spike.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_spike.png",
             "text_ingredient_name": "vitamin b",
             "text_ingredient_key_point": "promotes hair growth",
-            "richtext_ingredient_description": "<p>enter folic acid, the ally for hair growth. this b-vitamin promotes and supports the growth of healthy hair. so, if you're on a quest for those extra inches of fabulous locks, folic acid might just be your secret weapon.<\/p>"
+            "richtext_ingredient_description": "<p>enter folic acid, the ally for hair growth. this b-vitamin promotes and supports the growth of healthy hair. so, if you're on a quest for those extra inches of fabulous locks, folic acid might just be your secret weapon.</p>"
           }
         },
         "ingredients_card_GkKtr9": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_spike.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_spike.png",
             "text_ingredient_name": "vitamin b12",
             "text_ingredient_key_point": "keeps nails strong",
-            "richtext_ingredient_description": "<p>vitamin b12 takes the spotlight in the nail department. this vitamin isn't just about overall health; it contributes significantly to keeping your nails robust and unbreakable. so, if you're dreaming of strong, resilient nails, let vitamin b12 be your go-to.<\/p>"
+            "richtext_ingredient_description": "<p>vitamin b12 takes the spotlight in the nail department. this vitamin isn't just about overall health; it contributes significantly to keeping your nails robust and unbreakable. so, if you're dreaming of strong, resilient nails, let vitamin b12 be your go-to.</p>"
           }
         },
         "ingredients_card_6yXEVW": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_spike.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_spike.png",
             "text_ingredient_name": "vitamin e",
             "text_ingredient_key_point": "stimulates blood circulation",
-            "richtext_ingredient_description": "<p>vitamin e, the circulation stimulator, does more than just being an antioxidant. scientifically, it plays a role in promoting healthy blood circulation, ensuring that oxygen and nutrients reach where they're needed most. so, when you're thinking about keeping things flowing smoothly, think vitamin e.<\/p>"
+            "richtext_ingredient_description": "<p>vitamin e, the circulation stimulator, does more than just being an antioxidant. scientifically, it plays a role in promoting healthy blood circulation, ensuring that oxygen and nutrients reach where they're needed most. so, when you're thinking about keeping things flowing smoothly, think vitamin e.</p>"
           }
         },
         "suggested_use_card_JEfeHm": {
@@ -130,7 +130,7 @@
           "settings": {
             "text_suggested_use_name": "ashwagandha",
             "text_suggested_use_key_point": "stimulates keratin production",
-            "richtext_suggested_use_description": "<p>Take two gummies daily, at any time of day, with or without food<\/p>"
+            "richtext_suggested_use_description": "<p>Take two gummies daily, at any time of day, with or without food</p>"
           }
         }
       },
@@ -144,10 +144,10 @@
       "settings": {
         "text_theme_color": "yellow",
         "text_heading": "glow me away",
-        "url_button_link": "shopify:\/\/products\/beauty",
+        "url_button_link": "shopify://products/beauty",
         "text_button_text": "Go to Product",
-        "image_product_image": "shopify:\/\/shop_images\/Beauty_Front-Transparent.png",
-        "richtext_product_text": "<p>elevate your beauty game with our gummy blend of biotin, vitamin c, and vitamin e — the ultimate trio for gorgeous hair, radiant skin, and strong nails. glow on!<\/p>"
+        "image_product_image": "shopify://shop_images/Beauty_Front-Transparent.png",
+        "richtext_product_text": "<p>elevate your beauty game with our gummy blend of biotin, vitamin c, and vitamin e — the ultimate trio for gorgeous hair, radiant skin, and strong nails. glow on!</p>"
       }
     },
     "ingredients_qbVGgL": {
@@ -156,37 +156,37 @@
         "ingredients_card_eYBWPp": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_star.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_star.png",
             "text_ingredient_name": "vitamin b",
             "text_ingredient_key_point": "white blood cell production",
-            "richtext_ingredient_description": "<p>vitamin b steps up to the plate, encouraging the production of white blood cells. scientifically, it plays a crucial role in bolstering your immune system by ensuring an ample supply of these infection-fighting cells. so, when it comes to defending your body, think vitamin b as your wingman.<\/p>"
+            "richtext_ingredient_description": "<p>vitamin b steps up to the plate, encouraging the production of white blood cells. scientifically, it plays a crucial role in bolstering your immune system by ensuring an ample supply of these infection-fighting cells. so, when it comes to defending your body, think vitamin b as your wingman.</p>"
           }
         },
         "ingredients_card_VTr7qn": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_star.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_star.png",
             "text_ingredient_name": "zinc",
             "text_ingredient_key_point": "fights against bacterias & virus",
-            "richtext_ingredient_description": "<p>zinc takes on the role of your body's defender against viruses and bacteria. scientifically proven, it enhances your immune system's ability to combat intruders, acting as a shield to keep you resilient and healthy. so, if you're gearing up for battle, make sure zinc is on your side.<br\/><br\/><\/p>"
+            "richtext_ingredient_description": "<p>zinc takes on the role of your body's defender against viruses and bacteria. scientifically proven, it enhances your immune system's ability to combat intruders, acting as a shield to keep you resilient and healthy. so, if you're gearing up for battle, make sure zinc is on your side.<br/><br/></p>"
           }
         },
         "ingredients_card_mzXrP4": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_star.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_star.png",
             "text_ingredient_name": "elderberry",
             "text_ingredient_key_point": "immune-boosting antioxidants",
-            "richtext_ingredient_description": "<p>elderberry, the antioxidant powerhouse, is packed with immune-boosting properties. scientifically, it contains antioxidants that support your body's defense mechanism, making it a natural shield against unwanted invaders. so, when you're thinking about fortifying your immunity, think elderberry.<\/p>"
+            "richtext_ingredient_description": "<p>elderberry, the antioxidant powerhouse, is packed with immune-boosting properties. scientifically, it contains antioxidants that support your body's defense mechanism, making it a natural shield against unwanted invaders. so, when you're thinking about fortifying your immunity, think elderberry.</p>"
           }
         },
         "ingredients_card_nQdtTV": {
           "type": "ingredients-card",
           "settings": {
-            "image_ingredient_icon": "shopify:\/\/shop_images\/Icon_star.png",
+            "image_ingredient_icon": "shopify://shop_images/Icon_star.png",
             "text_ingredient_name": "propolis",
             "text_ingredient_key_point": "immune cell booster",
-            "richtext_ingredient_description": "<p>propolis takes on the role of an immune cell booster. this natural substance, created by bees, has been known to enhance the activity of immune cells, fortifying your body's defense against potential threats. so, when it comes to immune support, consider propolis your natural shield.<\/p>"
+            "richtext_ingredient_description": "<p>propolis takes on the role of an immune cell booster. this natural substance, created by bees, has been known to enhance the activity of immune cells, fortifying your body's defense against potential threats. so, when it comes to immune support, consider propolis your natural shield.</p>"
           }
         },
         "suggested_use_card_htLKNq": {
@@ -194,7 +194,7 @@
           "settings": {
             "text_suggested_use_name": "ashwagandha",
             "text_suggested_use_key_point": "stimulates keratin production",
-            "richtext_suggested_use_description": "<p>Take two gummies daily, at any time of day, with or without food<\/p>"
+            "richtext_suggested_use_description": "<p>Take two gummies daily, at any time of day, with or without food</p>"
           }
         }
       },
@@ -208,16 +208,16 @@
       "settings": {
         "text_theme_color": "teal",
         "text_heading": "for optimised resistance",
-        "url_button_link": "shopify:\/\/products\/immunity",
+        "url_button_link": "shopify://products/immunity",
         "text_button_text": "Go to Product",
-        "image_product_image": "shopify:\/\/shop_images\/Immunity_Front-Transparent.png",
-        "richtext_product_text": "<p>boost your immunity with our powerhouse gummy featuring echinacea, elderberry, and vitamin c – a tasty way to stay strong and keep those pesky bugs at bay!<\/p>"
+        "image_product_image": "shopify://shop_images/Immunity_Front-Transparent.png",
+        "richtext_product_text": "<p>boost your immunity with our powerhouse gummy featuring echinacea, elderberry, and vitamin c – a tasty way to stay strong and keep those pesky bugs at bay!</p>"
       }
     },
     "testimonial": {
       "type": "testimonial",
       "custom_css": [
-        ".expert_image {aspect-ratio: 1\/1;}"
+        ".expert_image {aspect-ratio: 1/1;}"
       ],
       "settings": {
         "textarea_testimonial": "\"I have tested these supplements and highly recommend them. I am particularly impressed by the absence of added sugar and sweeteners. The concept is well-thought-out, and the essential actives are present, making comparisons with other brands unnecessary.\"",
@@ -230,12 +230,12 @@
         "text_heading": "All the best and nothing less",
         "text_paragraph": "We stripped away added sugars, artificial sweeteners, and other fake nasty ingredients for totally yummy gummies you can feel good about.",
         "text_footnote": "*Contains naturally occurring sugars",
-        "image_image_1": "shopify:\/\/shop_images\/Petal-vegan.svg",
-        "image_image_2": "shopify:\/\/shop_images\/Petal-gluten.svg",
-        "image_image_3": "shopify:\/\/shop_images\/Petal-sugar.svg",
-        "image_image_4": "shopify:\/\/shop_images\/Petal-sweetner.svg",
-        "image_image_5": "shopify:\/\/shop_images\/Petal-gmo.svg",
-        "image_image_6": "shopify:\/\/shop_images\/Petal-syrup.svg"
+        "image_image_1": "shopify://shop_images/Petal-vegan.svg",
+        "image_image_2": "shopify://shop_images/Petal-gluten.svg",
+        "image_image_3": "shopify://shop_images/Petal-sugar.svg",
+        "image_image_4": "shopify://shop_images/Petal-sweetner.svg",
+        "image_image_5": "shopify://shop_images/Petal-gmo.svg",
+        "image_image_6": "shopify://shop_images/Petal-syrup.svg"
       }
     },
     "meet_your_match": {
@@ -252,7 +252,7 @@
     "omg": {
       "type": "omg",
       "settings": {
-        "url_button_link": "shopify:\/\/collections\/nuchu",
+        "url_button_link": "shopify://collections/nuchu",
         "text_button_text": "Shop now"
       }
     }
