@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "product_page": {
@@ -58,7 +58,7 @@
           "type": "shopify://apps/subify-subscriptions-app/blocks/app-block/bc0dba25-cd46-4841-bea4-6bdfe9ac815f",
           "settings": {
             "product": "{{product}}",
-            "use_app_block_wording": false,
+            "use_app_block_wording": true,
             "widget_label": "Purchase options",
             "one_time_purchase_text": "One-Time Purchase",
             "subscription_text": "Subscribe and save",
