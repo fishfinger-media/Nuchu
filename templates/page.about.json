@@ -24,7 +24,8 @@
           "settings": {
             "image_step_icon": "shopify://shop_images/step1.svg",
             "text_title": "supplement struggles",
-            "richtext_content": "<p>In 2018, I was thrown a curveball – a Candida and IBS diagnosis that reshaped my perspective on health. This pivotal moment led me to reconsider my dietary choices. Despite the widespread popularity of gummies, it became difficult to find ones that supported my gut health—free from added sugars or artificial sweeteners.</p>"
+            "richtext_content": "<p>In 2018, I was thrown a curveball – a Candida and IBS diagnosis that reshaped my perspective on health. This pivotal moment led me to reconsider my dietary choices. Despite the widespread popularity of gummies, it became difficult to find ones that supported my gut health—free from added sugars or artificial sweeteners.</p>",
+            "show_image": true
           }
         },
         "step_gbXnPU": {
@@ -32,7 +33,8 @@
           "settings": {
             "image_step_icon": "shopify://shop_images/step2.svg",
             "text_title": "making a truly good wellness gummy",
-            "richtext_content": "<p>Driven by a mission to discover cleaner options, I embarked on a journey to create the ultimate gummy – vegan, gluten-free, and free from added sugars, artificial sweeteners, flavors, or colors. My vision was clear: a delicious treat that not only tasted good but also remained faithful to my commitment to wholesome living. With every chew infused with passion, I proudly named my creation 'Nuchu'.</p>"
+            "richtext_content": "<p>Driven by a mission to discover cleaner options, I embarked on a journey to create the ultimate gummy – vegan, gluten-free, and free from added sugars, artificial sweeteners, flavors, or colors. My vision was clear: a delicious treat that not only tasted good but also remained faithful to my commitment to wholesome living. With every chew infused with passion, I proudly named my creation 'Nuchu'.</p>",
+            "show_image": true
           }
         },
         "step_pKzNQ8": {
@@ -40,7 +42,8 @@
           "settings": {
             "image_step_icon": "shopify://shop_images/step3.svg",
             "text_title": "Three Products, One Goal",
-            "richtext_content": "<p>Today, I’m excited to introduce three distinct products, each thoughtfully designed to meet your unique wellness needs: ‘Glow Me Away,’ ‘Calm Me Down,’ and ‘Boost Me Up.’ These offerings are designed with a touch of tender loving care, ensuring that your wellness journey now has bespoke companions. At Nuchu, we’re dedicated to creating tailored companions for your path to well-being.</p>"
+            "richtext_content": "<p>Today, I’m excited to introduce three distinct products, each thoughtfully designed to meet your unique wellness needs: ‘Glow Me Away,’ ‘Calm Me Down,’ and ‘Boost Me Up.’ These offerings are designed with a touch of tender loving care, ensuring that your wellness journey now has bespoke companions. At Nuchu, we’re dedicated to creating tailored companions for your path to well-being.</p>",
+            "show_image": true
           }
         },
         "step_LDDqea": {
@@ -48,7 +51,8 @@
           "settings": {
             "image_step_icon": "shopify://shop_images/step4.svg",
             "text_title": "join our wellness journey",
-            "richtext_content": "<p>Join the Nuchu Crew - where gut health meets delicious flavour, and your well-being is our top priority. It’s more than just supplements; it’s a journey toward a happier, healthier you. Welcome to Nuchu, where we’re redefining wellness from the inside out!</p>"
+            "richtext_content": "<p>Join the Nuchu Crew - where gut health meets delicious flavour, and your well-being is our top priority. It’s more than just supplements; it’s a journey toward a happier, healthier you. Welcome to Nuchu, where we’re redefining wellness from the inside out!</p>",
+            "show_image": true
           }
         }
       },
@@ -62,6 +66,7 @@
 
       ],
       "settings": {
+        "featured-image": "shopify://shop_images/cynthia_pots.webp"
       }
     },
     "all_the_best": {
