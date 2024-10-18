@@ -57,7 +57,8 @@
       "settings": {
         "url_button_link": "shopify://pages/science",
         "text_button_text": "learn the science",
-        "text_footnote": "*contains naturally occurring sugars"
+        "text_footnote": "*contains naturally occurring sugars",
+        "new-image-url": "shopify://shop_images/Nuchu_Pot.webp"
       }
     },
     "the_science_french": {
@@ -65,7 +66,8 @@
       "settings": {
         "url_button_link": "shopify://pages/science",
         "text_button_text": "Les raisons scientifiques",
-        "text_footnote": "*contains naturally occurring sugars"
+        "text_footnote": "*contains naturally occurring sugars",
+        "new-image-url": "shopify://shop_images/Nuchu_Pot.webp"
       }
     },
     "sustainablity_beacJy": {
