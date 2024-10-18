@@ -11,7 +11,9 @@
                 <div gsap-staggerup="" class="steps_grid-item">
                     
                     <div class="ingredients_grid">
-                        <img class="steps_image" src="{{ block.settings.image_step_icon | img_url: 'master' }}" alt="{{ block.settings.image_step_icon.alt }}" loading="lazy">
+                        {% if block.settings.show_image and block.settings.image_step_icon %}
+                            <img class="steps_image" src="{{ block.settings.image_step_icon | img_url: 'master' }}" alt="{{ block.settings.image_step_icon.alt }}" loading="lazy">
+                        {% endif %}
                        <div> 
                     <h2 class="heading_small" style="font-size:1.2rem; margin-bottom:0.8em">
                         {{ block.settings.text_title }}
@@ -22,11 +24,54 @@
         </div>
             </div>
             {% endif %}
-            {% endfor %}
+        {% endfor %}
 
        </div>
 
     </div>
 </div>
 
-{% schema %} {"tag":"section","name":"no_nasty_steps","class":"section_steps","blocks":[{"name":"Step","type":"step","settings":[{"id":"image_step_icon","type":"image_picker","label":"Step Icon"},{"id":"text_title","type":"text","label":"Title","default":"supplement struggles"},{"id":"richtext_content","type":"richtext","label":"Content","default":"<p>In 2018, I was thrown a curveball \u2013 an IBS diagnosis that reshaped my perspective on health. This pivotal moment led me to reconsider my dietary choices. Despite the widespread popularity of gummies, finding ones without added sugar or artificial sweeteners, crucial for my gut health, proved to be a challenge.<\/p>"}]}],"presets":[{"name":"no_nasty_steps","category":"Liquify"}]} {% endschema %}
+{% schema %}
+{
+  "tag": "section",
+  "name": "no_nasty_steps",
+  "class": "section_steps",
+  "blocks": [
+    {
+      "name": "Step",
+      "type": "step",
+      "settings": [
+        {
+          "id": "image_step_icon",
+          "type": "image_picker",
+          "label": "Step Icon"
+        },
+        {
+          "id": "text_title",
+          "type": "text",
+          "label": "Title",
+          "default": "supplement struggles"
+        },
+        {
+          "id": "richtext_content",
+          "type": "richtext",
+          "label": "Content",
+          "default": "<p>In 2018, I was thrown a curveball \u2013 an IBS diagnosis that reshaped my perspective on health. This pivotal moment led me to reconsider my dietary choices. Despite the widespread popularity of gummies, finding ones without added sugar or artificial sweeteners, crucial for my gut health, proved to be a challenge.<\/p>"
+        },
+        {
+          "id": "show_image",
+          "type": "checkbox",
+          "label": "Show Step Image",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "no_nasty_steps",
+      "category": "Liquify"
+    }
+  ]
+}
+{% endschema %}

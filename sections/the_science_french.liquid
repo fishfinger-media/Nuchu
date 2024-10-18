@@ -3,5 +3,45 @@
 <div class="footnote">
 {{ section.settings.text_footnote }}
 </div>
-</div><img src="{{ 'Nuchu_Pot.jpg' | asset_url }}" loading="lazy" alt="" class="thescience_image">
-</div></div> {% schema %} {"tag":"section","name":"the_science_french","class":"section_science is-fr","settings":[{"id":"url_button_link","type":"url","label":"Button-Link"},{"id":"text_button_text","type":"text","label":"Button-Text","default":"Les raisons scientifiques"},{"id":"text_footnote","type":"text","label":"Footnote","default":"*contains naturally occurring sugars"}],"presets":[{"name":"the_science_french","category":"Liquify"}]} {% endschema %}
+</div><img src="{{ section.settings.new-image-url | img_url: 'master' }}" loading="lazy" alt="Nuchu Pot" class="thescience_image">
+</div></div> 
+
+
+
+{% schema %}
+{
+  "tag": "section",
+  "name": "the_science_french",
+  "class": "section_science is-fr",
+  "settings": [
+    {
+      "id": "url_button_link",
+      "type": "url",
+      "label": "Button-Link"
+    },
+    {
+      "id": "text_button_text",
+      "type": "text",
+      "label": "Button-Text",
+      "default": "Les raisons scientifiques"
+    },
+    {
+      "id": "text_footnote",
+      "type": "text",
+      "label": "Footnote",
+      "default": "*contains naturally occurring sugars"
+    },
+    {
+      "id": "new-image-url",
+      "type": "image_picker",
+      "label": "Science Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "the_science_french",
+      "category": "Liquify"
+    }
+  ]
+}
+{% endschema %}
