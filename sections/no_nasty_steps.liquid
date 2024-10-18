@@ -1,7 +1,7 @@
 <div lowercase class="steps_container">
     <div class="steps_grid">
             
-        <img src="{{ 'cynthia_pots.jpg' | asset_url }}" alt="Cynthia the founder holder all three nuchu products" style="border-radius:2rem;">
+        <img src="{{ section.settings.featured-image | img_url: 'master' }}" alt="Cynthia the founder holder all three nuchu products" style="border-radius:2rem;">
 
         <div class="ingredients_card-wrapper">
 
@@ -36,6 +36,12 @@
   "tag": "section",
   "name": "no_nasty_steps",
   "class": "section_steps",
+  "settings": [
+        {
+          "id": "featured-image",
+          "type": "image_picker",
+          "label": "Featured Image"
+        },],
   "blocks": [
     {
       "name": "Step",
