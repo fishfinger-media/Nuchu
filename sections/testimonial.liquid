@@ -1,6 +1,13 @@
 <div class="container_science padded">
   <div class="experts_split">
-    <img src="{{ section.settings.image-testimonial | asset_url }}" loading="lazy" alt="" class="expert_image">
+
+
+    <img class="expert_image"
+      src="{{ section.settings.image_product_image | img_url: 'medium' }}"
+      alt="expert image"
+      loading="lazy">
+
+
     <div class="w-layout-vflex spacing_2">
       <p class="heading_small line-spacing-medium">
         {{ section.settings.textarea_testimonial }}
@@ -20,10 +27,10 @@
   "settings": [
     
     {
-      "id": "image-testimonial",
+      "id": "image_product_image",
       "type": "image_picker",
-      "label": "Testimonial Image"
-    },
+      "label": "Product Image"
+  },
     {
       "id": "textarea_testimonial",
       "type": "textarea",
