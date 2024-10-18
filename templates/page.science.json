@@ -220,7 +220,7 @@
         ".expert_image {aspect-ratio: 1/1;}"
       ],
       "settings": {
-        "image-testimonial": "shopify://shop_images/Immunity_Front_4a8ee9c9-2e43-4ea3-9776-4263e3349621.png",
+        "image_product_image": "shopify://shop_images/nuchu-testimonial.jpg",
         "textarea_testimonial": "\"I have tested these supplements and highly recommend them. I am particularly impressed by the absence of added sugar and sweeteners. The concept is well-thought-out, and the essential actives are present, making comparisons with other brands unnecessary.\""
       }
     },
