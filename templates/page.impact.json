@@ -1,0 +1,109 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "no_nasty_heading": {
+      "type": "no_nasty_heading",
+      "settings": {
+        "text_heading": "Gummies Without Nasties",
+        "text_subheading": "our founder’s story to nuchu nourishment"
+      }
+    },
+    "no_nasty_steps": {
+      "type": "no_nasty_steps",
+      "blocks": {
+        "step_yQwanA": {
+          "type": "step",
+          "settings": {
+            "image_step_icon": "shopify://shop_images/step1.svg",
+            "text_title": "supplement struggles",
+            "richtext_content": "<p>In 2018, I was thrown a curveball – a Candida and IBS diagnosis that reshaped my perspective on health. This pivotal moment led me to reconsider my dietary choices. Despite the widespread popularity of gummies, it became difficult to find ones that supported my gut health—free from added sugars or artificial sweeteners.</p>"
+          }
+        },
+        "step_gbXnPU": {
+          "type": "step",
+          "settings": {
+            "image_step_icon": "shopify://shop_images/step2.svg",
+            "text_title": "making a truly good wellness gummy",
+            "richtext_content": "<p>Driven by a mission to discover cleaner options, I embarked on a journey to create the ultimate gummy – vegan, gluten-free, and free from added sugars, artificial sweeteners, flavors, or colors. My vision was clear: a delicious treat that not only tasted good but also remained faithful to my commitment to wholesome living. With every chew infused with passion, I proudly named my creation 'Nuchu'.</p>"
+          }
+        },
+        "step_pKzNQ8": {
+          "type": "step",
+          "settings": {
+            "image_step_icon": "shopify://shop_images/step3.svg",
+            "text_title": "Three Products, One Goal",
+            "richtext_content": "<p>Today, I’m excited to introduce three distinct products, each thoughtfully designed to meet your unique wellness needs: ‘Glow Me Away,’ ‘Calm Me Down,’ and ‘Boost Me Up.’ These offerings are designed with a touch of tender loving care, ensuring that your wellness journey now has bespoke companions. At Nuchu, we’re dedicated to creating tailored companions for your path to well-being.</p>"
+          }
+        },
+        "step_LDDqea": {
+          "type": "step",
+          "settings": {
+            "image_step_icon": "shopify://shop_images/step4.svg",
+            "text_title": "join our wellness journey",
+            "richtext_content": "<p>Join the Nuchu Crew - where gut health meets delicious flavour, and your well-being is our top priority. It’s more than just supplements; it’s a journey toward a happier, healthier you. Welcome to Nuchu, where we’re redefining wellness from the inside out!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_yQwanA",
+        "step_gbXnPU",
+        "step_pKzNQ8",
+        "step_LDDqea"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+      }
+    },
+    "all_the_best": {
+      "type": "all_the_best",
+      "settings": {
+        "text_heading": "All the best and nothing less",
+        "text_paragraph": "We stripped away added sugars, artificial sweeteners, and other fake nasty ingredients for totally yummy gummies you can feel good about.",
+        "text_footnote": "*Contains naturally occurring sugars",
+        "image_image_1": "shopify://shop_images/Petal-vegan.svg",
+        "image_image_2": "shopify://shop_images/Petal-gluten.svg",
+        "image_image_3": "shopify://shop_images/Petal-sugar.svg",
+        "image_image_4": "shopify://shop_images/Petal-sweetner.svg",
+        "image_image_5": "shopify://shop_images/Petal-gmo.svg",
+        "image_image_6": "shopify://shop_images/Petal-syrup.svg"
+      }
+    },
+    "meet_your_match": {
+      "type": "meet_your_match",
+      "settings": {
+        "text_meet_your_match_part_1": "Meet",
+        "text_meet_your_match_part_2": "your",
+        "text_meet_your_match_part_3": "match",
+        "text_content": "our best-for-you gummy blends are the perfect addition to your daily routine.",
+        "collection_featured": "nuchu",
+        "collection_featured_limit": 6
+      }
+    },
+    "omg": {
+      "type": "omg",
+      "settings": {
+        "url_button_link": "shopify://collections/nuchu",
+        "text_button_text": "Shop now"
+      }
+    }
+  },
+  "layout": "page.about",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "no_nasty_heading",
+    "no_nasty_steps",
+    "all_the_best",
+    "meet_your_match",
+    "omg"
+  ]
+}
