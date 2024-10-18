@@ -21,4 +21,23 @@
                             <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="button w-button">{{ link.title }}</a>
                             
                         </div>
-{% endfor %}</div></div></div></div> {% schema %} {"tag":"footer","name":"footer","class":"section_footer","settings":[{"id":"text_checkbox","type":"text","label":"Checkbox","default":"By subscribing you agree to with our <a href=\"#\"><span class=\"ts_underline\">Privacy Policy<\/span><\/a> and provide consent to receive updates from our company."}],"presets":[{"name":"footer","category":"Liquify"}]} {% endschema %}
+{% endfor %}</div></div></div></div>
+
+<script>
+// Select all anchor elements within .footer_link-wrapper
+const anchors = document.querySelectorAll('.footer_link-wrapper a');
+
+// Loop through each anchor element
+anchors.forEach(anchor => {
+    // Check if the anchor's text content includes "Shop"
+    if (anchor.textContent.trim() === "Shop") {
+        // Add the class 'solo-shop-btn' to the anchor
+        anchor.classList.add('solo-shop-btn');
+    }
+});
+
+</script>
+
+
+
+{% schema %} {"tag":"footer","name":"footer","class":"section_footer","settings":[{"id":"text_checkbox","type":"text","label":"Checkbox","default":"By subscribing you agree to with our <a href=\"#\"><span class=\"ts_underline\">Privacy Policy<\/span><\/a> and provide consent to receive updates from our company."}],"presets":[{"name":"footer","category":"Liquify"}]} {% endschema %}
