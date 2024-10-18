@@ -16,7 +16,7 @@
       ],
       "settings": {
         "text_heading": "Gummies Without Nasties",
-        "text_subheading": "We are thrilled to announce our partnership with Wildwood Trust, a leading conservation charity dedicated to preserving British wildlife and protecting endangered species."
+        "text_subheading": ""
       }
     },
     "no_nasty_steps": {
@@ -25,29 +25,33 @@
         "step_kBWmc9": {
           "type": "step",
           "settings": {
-            "text_title": "Nuchu + Wildwood Trust",
-            "richtext_content": "<p>Nuchu’s Beauty Gummy, which comes in the shape of a bear, has inspired us to partner with Wildwood Trust to support their bear conservation efforts, and we couldn’t be more excited to join forces with such a passionate organisation.<br/></p>"
+            "text_title": "We are thrilled to announce our partnership with Wildwood Trust, a leading conservation charity dedicated to preserving British wildlife and protecting endangered species.",
+            "richtext_content": "<p>Nuchu’s Beauty Gummy, which comes in the shape of a bear, has inspired us to partner with Wildwood Trust to support their bear conservation efforts, and we couldn’t be more excited to join forces with such a passionate organisation.<br/></p>",
+            "show_image": true
           }
         },
         "step_yQwanA": {
           "type": "step",
           "settings": {
             "text_title": "About Wildwood Trust",
-            "richtext_content": "<p>Situated in the heart of Kent, Wildwood Trust houses more than 200 native British animals, including some of the UK's most endangered species. From majestic wolves and wild horses to the adorable red squirrels and beavers, Wildwood Trust is at the forefront of British wildlife conservation. Their efforts include breeding programs for endangered species, restoring natural habitats, and engaging the community through educational initiatives that reconnect people with nature and encourage future generations to protect the environment.<br/></p>"
+            "richtext_content": "<p>Situated in the heart of Kent, Wildwood Trust houses more than 200 native British animals, including some of the UK's most endangered species. From majestic wolves and wild horses to the adorable red squirrels and beavers, Wildwood Trust is at the forefront of British wildlife conservation. Their efforts include breeding programs for endangered species, restoring natural habitats, and engaging the community through educational initiatives that reconnect people with nature and encourage future generations to protect the environment.<br/></p>",
+            "show_image": true
           }
         },
         "step_gbXnPU": {
           "type": "step",
           "settings": {
             "text_title": "Why We’ve Partnered with Wildwood Trust",
-            "richtext_content": "<p>At Nuchu, we believe that preserving biodiversity and supporting conservation efforts is crucial to ensuring a healthy planet for future generations. Wildwood Trust’s dedication to saving native species and restoring natural habitats made them the ideal partner for us. <br/></p>"
+            "richtext_content": "<p>At Nuchu, we believe that preserving biodiversity and supporting conservation efforts is crucial to ensuring a healthy planet for future generations. Wildwood Trust’s dedication to saving native species and restoring natural habitats made them the ideal partner for us. <br/></p>",
+            "show_image": true
           }
         },
         "step_pKzNQ8": {
           "type": "step",
           "settings": {
             "text_title": "How You Can Help",
-            "richtext_content": "<p>Whether it’s visiting the Wildwood Park in Kent to experience their incredible wildlife or donating to their conservation efforts, you can be part of this journey to protect Britain’s wildlife.</p>"
+            "richtext_content": "<p>Whether it’s visiting the Wildwood Park in Kent to experience their incredible wildlife or donating to their conservation efforts, you can be part of this journey to protect Britain’s wildlife.</p>",
+            "show_image": true
           }
         }
       },
