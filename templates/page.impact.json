@@ -33,8 +33,8 @@
         "step_yQwanA": {
           "type": "step",
           "settings": {
-            "text_title": "About Wildwood Trust",
-            "richtext_content": "<p>Situated in the heart of Kent, Wildwood Trust houses more than 200 native British animals, including some of the UK's most endangered species. From majestic wolves and wild horses to the adorable red squirrels and beavers, Wildwood Trust is at the forefront of British wildlife conservation. Their efforts include breeding programs for endangered species, restoring natural habitats, and engaging the community through educational initiatives that reconnect people with nature and encourage future generations to protect the environment.<br/></p>",
+            "text_title": "About Born Free",
+            "richtext_content": "<p>Founded in 1984, Born Free works tirelessly to prevent the exploitation and suffering of wild animals and ensure all wild animals are treated with compassion and respect. This includes rescuing animals in desperate need and providing spacious sanctuary homes, campaigning to end captive animal suffering, and protecting threatened species in their natural habitats through conservation and coexistence with communities. Their mission is to ensure that all wild animals are treated with compassion and respect and are able to live their lives according to their needs.</p>",
             "show_image": true
           }
         },
