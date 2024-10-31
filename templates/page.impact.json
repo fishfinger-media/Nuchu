@@ -22,11 +22,19 @@
     "no_nasty_steps": {
       "type": "no_nasty_steps",
       "blocks": {
+        "step_DQGP4A": {
+          "type": "step",
+          "settings": {
+            "text_title": "supplement struggles",
+            "richtext_content": "<p>In 2018, I was thrown a curveball – an IBS diagnosis that reshaped my perspective on health. This pivotal moment led me to reconsider my dietary choices. Despite the widespread popularity of gummies, finding ones without added sugar or artificial sweeteners, crucial for my gut health, proved to be a challenge.</p>",
+            "show_image": true
+          }
+        },
         "step_kBWmc9": {
           "type": "step",
           "settings": {
             "text_title": "We’re excited to announce a meaningful way for our community to make a difference! For every jar sold, we’ll donate €1 to Born Free, a leading charity dedicated to protecting wildlife and ending wild animal suffering across the globe.",
-            "richtext_content": "<p>Nuchu’s Beauty Gummy, which comes in the shape of a bear, has inspired us to partner with Wildwood Trust to support their bear conservation efforts, and we couldn’t be more excited to join forces with such a passionate organisation.</p>",
+            "richtext_content": "",
             "show_image": true
           }
         },
@@ -56,6 +64,7 @@
         }
       },
       "block_order": [
+        "step_DQGP4A",
         "step_kBWmc9",
         "step_yQwanA",
         "step_gbXnPU",
