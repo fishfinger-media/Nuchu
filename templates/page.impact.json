@@ -12,11 +12,12 @@
     "no_nasty_heading": {
       "type": "no_nasty_heading",
       "custom_css": [
-        ".heading_small {max-width: 50ch; line-height: 1.4;}"
+        ".heading_small {font-size:1.1rem; max-width: 50ch; line-height: 1.4;}"
       ],
       "settings": {
         "text_heading": "Our Partner",
-        "text_subheading": ""
+        "text_subheading": "We’re excited to announce a meaningful way for our community to make a difference! For every jar sold, we’ll donate €1 to Born Free, a leading charity dedicated to protecting wildlife and ending wild animal suffering across the globe.",
+        "show_floating_images": false
       }
     },
     "no_nasty_steps": {
