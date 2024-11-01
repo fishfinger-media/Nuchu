@@ -4103,11 +4103,33 @@ figcaption {
   display: flex;
 }
 
+.split-container {
+  margin:auto;
+  max-width: 90rem;
+}
+
 .sustainability_icon {
   height: 5rem;
 }
 
+.sustainability_card.is-image {
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+.sustainability_card.is-stretch {
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 991px) {
+
+  .split-container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   .sustainability_card {
     grid-column-gap: 6rem;
     grid-row-gap: 6rem;

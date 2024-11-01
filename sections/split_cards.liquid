@@ -1,0 +1,88 @@
+<style>
+    .is-first {
+        order: 999;
+    }
+
+    @media screen and (max-width: 991px) {
+        .sustainability_card.is-image {
+            order: -999;
+        }
+    }
+</style>
+
+
+<div class="w-layout-blockcontainer container_xl w-container" style="background:var(--color--lilac-medium)" lowercase id="sustainabliity">
+    <div class="w-layout-vflex spacing_2">
+        {% for block in section.blocks %}
+            {% if block.type == "card" %}
+        <div class="grid_2col spacing_2 split-container">
+            <img class="sustainability_card is-image {% if block.settings.flip_layout %}is-first{% endif %}"  src="{{ block.settings.image_main | img_url: 'master' }}" alt="{{ block.settings.image_main.alt }}" width="100%" height="100%" loading="lazy">
+
+            <div li-block="Card" class="sustainability_card is-stretch ">
+
+                <img class="sustainability_icon" src="{{ block.settings.image_icon | img_url: 'master' }}" alt="{{ block.settings.image_icon.alt }}" loading="lazy">
+
+                <div class="w-layout-vflex spacing_1">
+                    <h3 class="text-size-medium text-weight-bold">
+                        {{ block.settings.text_heading }}
+                    </h3>
+                    <p> {{ block.settings.textarea_content }} </p>
+                </div>
+            </div>
+            
+        </div>
+    {% endif %}
+{% endfor %}
+    </div>
+</div>
+
+
+{% schema %} 
+
+{
+    "tag": "section",
+    "name": "Split Cards",
+    "class": "split_cards",
+    "settings": [{
+        "id": "heading_text",
+        "type": "text",
+        "label": "Heading Text",
+        "default": "Eco-friendly in every step of the process"
+    }],
+    "blocks": [{
+        "name": "Card",
+        "type": "card",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "flip_layout",
+                "label": "Flip Image Layout",
+                "default": false
+              },
+              {
+            "id": "image_icon",
+            "type": "image_picker",
+            "label": "Icon"
+        }, {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Recyclable Packaging"
+        }, {
+            "id": "textarea_content",
+            "type": "textarea",
+            "label": "Content",
+            "default": "Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."
+        }, {
+            "id": "image_main",
+            "type": "image_picker",
+            "label": "Main Image"
+        },]
+    }],
+    "presets": [{
+        "name": "split_cards",
+        "category": "Liquify"
+    }]
+}
+
+{% endschema %}
