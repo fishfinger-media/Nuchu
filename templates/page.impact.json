@@ -20,47 +20,6 @@
         "show_floating_images": false
       }
     },
-    "split_cards_f8Fiqr": {
-      "type": "split_cards",
-      "blocks": {
-        "card_YyGxRn": {
-          "type": "card",
-          "settings": {
-            "flip_layout": false,
-            "image_icon": "shopify://shop_images/Vector.svg",
-            "text_heading": "About Born Free",
-            "textarea_content": "Founded in 1984, Born Free works tirelessly to prevent the exploitation and suffering of wild animals and ensure all wild animals are treated with compassion and respect. This includes rescuing animals in desperate need and providing spacious sanctuary homes, campaigning to end captive animal suffering, and protecting threatened species in their natural habitats through conservation and coexistence with communities. Their mission is to ensure that all wild animals are treated with compassion and respect and are able to live their lives according to their needs.",
-            "image_main": "shopify://shop_images/c_OBRC_14.jpg"
-          }
-        },
-        "card_QNYkXX": {
-          "type": "card",
-          "settings": {
-            "flip_layout": true,
-            "image_icon": "shopify://shop_images/Vector.svg",
-            "text_heading": "Why We’ve Partnered with Born Free",
-            "textarea_content": "Nuchu’s beauty gummy, which comes in the shape of a bear, has inspired us to partner with Born Free. We believe that protecting wildlife and supporting conservation efforts is crucial to ensuring a healthy planet for future generations. €1 euro from every Nuchu jar will help fund veterinary care and food for the rescued animals requiring lifetime care at Born Free's sanctuaries, supporting their health and wellbeing.",
-            "image_main": "shopify://shop_images/Rescued_Cheetah_C_Born_Free_Ethiopia.jpg"
-          }
-        },
-        "card_PCHkLk": {
-          "type": "card",
-          "settings": {
-            "flip_layout": false,
-            "text_heading": "How You Can Help",
-            "textarea_content": "By purchasing a jar of Nuchu gummy supplements, you’re already making a difference!\n\nEvery €1 donated helps Born Free carry out their mission. But if you’d like to get more involved, here are other ways to support Born Free:\n\n• Adopt an Animal: Through Born Free’s adoption program, you can support the care and protection of 12 different species of animals.\n\n• Donate Directly: Contributions directly support Born Free's vital work to protect wildlife around the world."
-          }
-        }
-      },
-      "block_order": [
-        "card_YyGxRn",
-        "card_QNYkXX",
-        "card_PCHkLk"
-      ],
-      "settings": {
-        "heading_text": "Eco-friendly in every step of the process"
-      }
-    },
     "all_the_best": {
       "type": "all_the_best",
       "settings": {
@@ -98,7 +57,6 @@
   "wrapper": "main.main-wrapper",
   "order": [
     "no_nasty_heading",
-    "split_cards_f8Fiqr",
     "all_the_best",
     "meet_your_match",
     "omg"
