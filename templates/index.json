@@ -174,7 +174,7 @@
 
       ],
       "settings": {
-        "popup_image": "shopify://shop_images/popup_img.jpg",
+        "main_image": "shopify://shop_images/popup_img.jpg",
         "promo_heading": "10% off your first order",
         "promo_paragraph": "Subscribe to receive 10% off your first order, along with product updates and exclusive offers!",
         "submit_button_text": "submit",
