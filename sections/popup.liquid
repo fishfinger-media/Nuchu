@@ -24,8 +24,7 @@
     </svg>
   </button>
   
-  <div class="popup_img" style="position:relative; overflow:hidden;">
-      <img src="{{ settings.popup_image | image_url: 'master' }}" alt="Popup Image" loading="lazy" style="position:absolute; top:0; left:0; width:100%; height:100%;">
+  <div class="popup_img" style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{ section.settings.image_with_text_image | image_url: width: 1500 }}');  ">
   </div>
   
   
@@ -68,8 +67,8 @@
 "settings": [
   {
     "type": "image_picker",
-    "id": "popup_image",
-    "label": "Popup Image",
+    "id": "image_with_text_image",
+    "label": "Image"
   },
   {
     "type": "text",
