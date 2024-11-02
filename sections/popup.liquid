@@ -24,7 +24,7 @@
     </svg>
   </button>
   
-  <div class="popup_img" style="background-image:url('{{ 'popup_img.jpg' | asset_url }}'); background-repeat: no-repeat; background-size: cover; ">
+  <div class="popup_img" style="background-image:url('{{ settings.popup_image | image_url: width: 800 }}'); background-repeat: no-repeat; background-size: cover; ">
   </div>
   
   
@@ -65,6 +65,11 @@
 "name": "Popup",
 "class": "offer-popup_wrapper",
 "settings": [
+  {
+    "type": "image_picker",
+    "id": "popup_image",
+    "label": "Popup Image",
+  },
   {
     "type": "text",
     "id": "promo_heading",
