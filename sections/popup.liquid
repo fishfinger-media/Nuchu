@@ -24,7 +24,7 @@
     </svg>
   </button>
   
-  <div class="popup_img" style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{ section.settings.image_with_text_image | image_url: width: 1500 }}');  ">
+  <div class="popup_img" style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{ section.settings.main_image | image_url: width: 1500 }}');  ">
   </div>
   
   
@@ -67,7 +67,7 @@
 "settings": [
   {
     "type": "image_picker",
-    "id": "image_with_text_image",
+    "id": "main_image",
     "label": "Image"
   },
   {
