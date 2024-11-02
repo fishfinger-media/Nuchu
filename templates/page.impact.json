@@ -12,7 +12,7 @@
     "no_nasty_heading": {
       "type": "no_nasty_heading",
       "custom_css": [
-        ".heading_small {font-size: 1rem; max-width: 50ch; line-height: 1.4;}"
+        ".heading_small {font-size: 1rem; max-width: 52ch; line-height: 1.4;}"
       ],
       "settings": {
         "text_heading": "Our Partner",
