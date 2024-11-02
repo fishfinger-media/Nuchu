@@ -24,7 +24,8 @@
     </svg>
   </button>
   
-  <div class="popup_img" style="background-image:url('{{ settings.popup_image | img_url: 'master' }}'); background-repeat: no-repeat; background-size: cover; ">
+  <div class="popup_img" style="position:relative; overflow:hidden;">
+      <img src="{{ settings.popup_image | image_url: 'master' }}" alt="Popup Image" loading="lazy" style="position:absolute; top:0; left:0; width:100%; height:100%;">
   </div>
   
   
