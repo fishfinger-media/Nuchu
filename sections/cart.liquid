@@ -35,4 +35,59 @@
     --utility--body-text: var(--color--white);
     --utility--body-button: var(--color--white);
   }
-</style></div> {% schema %} {"tag":"section","name":"cart","class":"section_account-main","presets":[{"name":"cart","category":"Liquify"}]} {% endschema %}
+</style></div>
+
+<script>
+// Get all quantity wrapper elements
+document.querySelectorAll('.cart_quantity-wrapper').forEach(wrapper => {
+    const minusBtn = wrapper.querySelector('[minus]');
+    const plusBtn = wrapper.querySelector('[add]');
+    const input = wrapper.querySelector('input.quan-num');
+    
+    // Set minimum value to prevent negative quantities
+    const minValue = 1;
+    // Optional: Set maximum value based on inventory
+    const maxValue = 99;
+  
+    // Update input value and trigger change event
+    function updateValue(newValue) {
+      // Ensure value stays within bounds
+      newValue = Math.max(minValue, Math.min(maxValue, newValue));
+      input.value = newValue;
+      
+      // Trigger change event to notify Shopify
+      const event = new Event('change', { bubbles: true });
+      input.dispatchEvent(event);
+    }
+  
+    // Handle minus button click
+    minusBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const currentValue = parseInt(input.value) || 0;
+      updateValue(currentValue - 1);
+    });
+  
+    // Handle plus button click
+    plusBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const currentValue = parseInt(input.value) || 0;
+      updateValue(currentValue + 1);
+    });
+  
+    // Handle direct input changes
+    input.addEventListener('change', (e) => {
+      let newValue = parseInt(e.target.value) || 0;
+      updateValue(newValue);
+    });
+  
+    // Prevent non-numeric input
+    input.addEventListener('keypress', (e) => {
+      if (!/[0-9]/.test(e.key)) {
+        e.preventDefault();
+      }
+    });
+  });
+</script>
+
+
+{% schema %} {"tag":"section","name":"cart","class":"section_account-main","presets":[{"name":"cart","category":"Liquify"}]} {% endschema %}
