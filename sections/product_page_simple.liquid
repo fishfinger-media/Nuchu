@@ -169,41 +169,7 @@
                 </div>
             </div>
         </div>
-        <div lowercase="" class="container_xl is-product-dropdown">
-            <div class="product-detail_item">
-                <div class="product-detail_title">
-                    <h2 li-object="'Shop.No-Nasties' | t" class="heading_small">{{ 'Shop.No-Nasties' | t }}</h2><svg
-                        class="product-item_icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 13 13" fill="none">
-                        <path d="M0 4.77087H4.81025V0H8.09108V4.77087H13V8.20388H8.09108V13H4.81025V8.20388H0V4.77087Z"
-                            fill="#f818ac"></path>
-                    </svg>
-                </div>{% for block in section.blocks %}
-                {% if block.type == "product-reference" %}
-                <div li-block="Product Reference">
-                    <div class="product-main_grid-item is-bundle">
-                        <div class="product-detail_container"><img class="product-detail_image"
-                                src="{{ block.settings.image_product_image | img_url: 'master' }}"
-                                alt="{{ block.settings.image_product_image.alt }}" loading="lazy">
-                            <div class="w-layout-vflex spacing_1">
-                                <div class="w-layout-hflex flex_center-center spacing_1"><img class="image_l"
-                                        src="{{ block.settings.image_product_icon | img_url: 'master' }}"
-                                        alt="{{ block.settings.image_product_icon.alt }}" loading="lazy">
-                                    <h3 class="heading_very-small">
-                                        {{ block.settings.text_product_name }}
-                                    </h3>
-                                </div>
-                                <p> {{ block.settings.textarea_product_description }} </p>
-                                <a class="button w-button" href="{{ block.settings.url_product_link }}">
-                                    {{ 'Shop.Learn-More-Button' | t }} </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <hr class="divider">
+       
         <div lowercase="" class="container_xl is-product-dropdown">
             <div class="product-detail_item">
                 <div class="product-detail_title">

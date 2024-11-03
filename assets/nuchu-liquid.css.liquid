@@ -8,6 +8,19 @@
   color: white!important;
 }
 
+.subify-widget-whole-wrapper {
+  margin: 0 !important;;
+}
+
+.page-wrapper {
+  width:100%;
+  overflow-x: clip;
+}
+
+tbody > * {
+  width: 100%;
+  max-width: 100%;
+}
 
 .shopify-policy__title {
   grid-column-gap: 1.5rem;
@@ -4124,6 +4137,10 @@ figcaption {
 
 @media screen and (max-width: 991px) {
 
+  .product-main_grid-item {
+    max-width:100%;
+  }
+
   .split-container {
     max-width: 100%;
     display: flex;
@@ -4372,7 +4389,7 @@ figcaption {
 
   .collection_product-image.full {
     width: auto;
-    height: 120%;
+    height: 100%;
   }
 
   .collection_product-tagwrapper {
@@ -5089,6 +5106,10 @@ figcaption {
 }
 
 @media screen and (max-width: 479px) {
+
+  .blog_post-share {
+    width: 100%;
+  }
   .padding-global {
     padding-left: 1.35rem;
     padding-right: 1.35rem;
@@ -5237,6 +5258,8 @@ figcaption {
     right: 0%;
   }
 
+  .subify-product-price-wrapper  {order: -999;}
+
   .home-hero_pot-wrapper.is-immunity {
     left: auto;
     right: 55%;
@@ -5303,12 +5326,13 @@ figcaption {
 
   .product-info_hero {
     width: 100%;
+    min-height: auto;
   }
 
   .product-main_table-row {
     grid-column-gap: .5rem;
     grid-row-gap: .5rem;
-    grid-template-columns: 1fr 1fr .5fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .faq_container {
