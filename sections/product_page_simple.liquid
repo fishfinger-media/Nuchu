@@ -1,334 +1,351 @@
 <script src="{{ '_custom.js' | asset_url }}" type="text/javascript"></script>
 
+
 <style>
-    .subify-widget-main-title {
-      display:none!important;
-    }
-  
-    .subify-widget-box {
-      background-color: white!important;
-      border: none!important;
-      padding: 0.5rem!important;
-      border-radius: 1rem!important;
-    }
-  
-    .subify-widget-whole-wrapper {
-      padding:0!important;
-    }
-  
-    .subify-powered-text {
-      position:absolute!important;
-      clip-path: polygon(0 0, 0 0, 0 0, 0 0)!important;
-    }
-  
-    .subify-product-price-wrapper {
-      margin:0!important;
-      padding:0!important;
-      height:auto!important;
-      min-height:auto!important;
-    }
-  
-    .subify-discount-percentage {
-      margin: 0!important;
-      border: none!important;
-      padding: 0 1rem!important;
-      height: 100%!important;
-      display: flex!important;
-      background-color: #316afa!important;
-      border-radius: 50vw!important;
-      font-family: Sharp Grotesk, sans-serif!important;
-      font-size: .875rem!important;
-      font-weight: 500!important;
-      justify-content: center!important;
-      align-items: center!important;
-      color: white!important;
+
+  .product-header_ad-to-cart-wrapper {
+    align-items: center
   }
-  
-  </style>
+
+  .product-price {
+    margin-right: 15px;
+    font-size: 19px;
+    font-weight: 600;
+  }
+  .subify-widget-main-title {
+    display:none!important;
+  }
+
+  .subify-widget-box {
+    background-color: white!important;
+    border: none!important;
+    padding: 0.5rem!important;
+    border-radius: 1rem!important;
+  }
+
+  .subify-widget-whole-wrapper {
+    padding:0!important;
+  }
+
+  .subify-powered-text {
+    position:absolute!important;
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0)!important;
+  }
+
+  .subify-product-price-wrapper {
+    margin:0!important;
+    padding:0!important;
+    height:auto!important;
+    min-height:auto!important;
+  }
+
+  .subify-discount-percentage {
+    margin: 0!important;
+    border: none!important;
+    padding: 0 1rem!important;
+    height: 100%!important;
+    display: flex!important;
+    background-color: #316afa!important;
+    border-radius: 50vw!important;
+    font-family: Sharp Grotesk, sans-serif!important;
+    font-size: .875rem!important;
+    font-weight: 500!important;
+    justify-content: center!important;
+    align-items: center!important;
+    color: white!important;
+}
+
+</style>
 
 
 <div li-element="product-variant-container" class="product_container"
-    x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
-    x-init="$nextTick(() => { activateVariants() })">
-    <div class="product-info_descriptioncontainer">
-        <div class="product-info_hero">
-            <div class="w-layout-vflex product-main_table_heading">
-                <h1 lowercase="" li-object:text="product.title" gsap-product="" class="allow-break">
-                    {{ product.title }}
-                </h1>
-                <div gsap-product="" class="product-info_keyfact"><img
-                        src="{{ product.metafields.custom.product_icon | img_url: 'master' }}" loading="lazy" width="32"
-                        height="32" alt="" li-object:src="product.metafields.custom.product_icon | img_url: 'master'"
-                        class="image_l hide-tablet">
-                    <p li-object="product.metafields.custom.byline" class="heading_small">
-                        {{ product.metafields.custom.byline }}</p>
-                    <p li-object="product.metafields.custom.GummyNumber" class="heading_small ts_tc-pink">
-                        {{ product.metafields.custom.GummyNumber }}</p>
-                </div>
-                <div class="w-layout-vflex spacing_1 hide-tablet">
-                    {% for tags in product.metafields.custom.key_ingredients.value %} <div gsap-product=""
-                        li-for="tags in product.metafields.custom.key_ingredients.value"
-                        class="product-info_keyingredients">
-
-                        <div class="product-main_label fixed-width"><svg class="image_s"
-                                xmlns="http://www.w3.org/2000/svg" viewbox="0 0 18 18" fill="none">
-                                <path
-                                    d="M16.7143 10.2857H10.2857V16.7143C10.2857 17.0553 10.1503 17.3823 9.90914 17.6234C9.66802 17.8645 9.34099 18 9 18C8.65901 18 8.33198 17.8645 8.09086 17.6234C7.84974 17.3823 7.71429 17.0553 7.71429 16.7143V10.2857H1.28571C0.944722 10.2857 0.617695 10.1503 0.376577 9.90914C0.135459 9.66802 0 9.34099 0 9C0 8.65901 0.135459 8.33198 0.376577 8.09086C0.617695 7.84975 0.944722 7.71429 1.28571 7.71429H7.71429V1.28571C7.71429 0.944722 7.84974 0.617695 8.09086 0.376577C8.33198 0.135458 8.65901 0 9 0C9.34099 0 9.66802 0.135458 9.90914 0.376577C10.1503 0.617695 10.2857 0.944722 10.2857 1.28571V7.71429H16.7143C17.0553 7.71429 17.3823 7.84975 17.6234 8.09086C17.8645 8.33198 18 8.65901 18 9C18 9.34099 17.8645 9.66802 17.6234 9.90914C17.3823 10.1503 17.0553 10.2857 16.7143 10.2857Z"
-                                    fill="currentColor"></path>
-                            </svg>
-                            <p li-object="tags.ingredient_name">{{ tags.ingredient_name }}</p>
-                        </div>
-
-                        <p class="product-main_label color_white">{{ tags.key_point }}</p>
-
-                    </div>
-                    {% endfor %}</div>
-            </div>
-            <div class="w-layout-vflex spacing_2">
-                <div li-object="product.description" class="text-size-medium w-richtext">{{ product.description }}</div>
-                <div class="product-header_add-to-cart w-form">
-                   
-                    
-
- {% comment %} CUSTOM CONTENT {% endcomment %}
-
- <div >
-    <form id="add-to-cart-form" action="/cart/add" method="post" enctype="multipart/form-data">
-  
-      <div class="product-buy-section w-layout-vflex spacing_1" style="align-items: stretch;" >
-      <!-- Variant Radios -->
-      {% if product.variants.size > 1 %}
-        <div class="product-header_radio-list" >
-          {% for variant in product.variants %}
-           
-              <label class="product-header_radio w-radio">
-                <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"></div>
-                <span class="header_radio-label w-form-label"> {{ variant.title }} </span>
-                <input 
-                  style="opacity:0;position:absolute;z-index:-1"  type="radio" name="id" value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %} checked {% endif %}>
-              </label>
-       
-          {% endfor %}
+  x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
+  x-init="$nextTick(() => { activateVariants() })">
+  <div class="product-info_descriptioncontainer">
+    <div class="product-info_hero">
+      <div class="w-layout-vflex product-main_table_heading">
+        <h1 lowercase="" li-object:text="product.title" gsap-product="" class="allow-break">
+          {{ product.title }}
+        </h1>
+        <div gsap-product="" class="product-info_keyfact"><img
+            src="{{ product.metafields.custom.product_icon | img_url: 'master' }}" loading="lazy" width="32" height="32"
+            alt="" li-object:src="product.metafields.custom.product_icon | img_url: 'master'"
+            class="image_l hide-tablet">
+          <p li-object="product.metafields.custom.byline" class="heading_small">{{ product.metafields.custom.byline }}
+          </p>
+          <p li-object="product.metafields.custom.GummyNumber" class="heading_small ts_tc-pink">
+            {{ product.metafields.custom.GummyNumber }}</p>
         </div>
-      {% else %}
-        <!-- Hidden Input for Products with No Variants -->
-        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-      {% endif %}
 
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when '@app' %}
-            {% render block %}
-        {% endcase %}
-      {% endfor %}
-  
-      <!-- Quantity Input -->
-      <div class="product-header_ad-to-cart-wrapper">
-   
-        <div class="qty-wrapper">
-          <div class="qty-counter minus">-</div>
-          <input type="number" class="form-input qty w-input" id="quantity" name="quantity" value="1" min="1">
-          <div class="qty-counter plus">+</div>
+
+
+      </div>
+      
+        
+<div class="w-layout-vflex spacing_2">
+    <div li-object="product.description" class="text-size-medium w-richtext">{{ product.description }}</div>
+    <div class="product-header_add-to-cart w-form">
+        
+
+        {% comment %} CUSTOM CONTENT {% endcomment %}
+
+        <div >
+          <form id="add-to-cart-form" action="/cart/add" method="post" enctype="multipart/form-data">
+
+            <div class="fixed-basket_container">
+              <div data-body="blue" class="fixed-basket_content"><a is-add-to-cart="" href="#"
+                  class="button is-product w-button">{{ 'Shop.Add-to-Cart-Button' | t }}</a>
+                  <div li-object="product.price | money" li-js-price="price" class="heading_small flex-align_center">
+                    {{ product.title }}</div>
+              
+              </div>
+            </div>
+
+            
+        
+            <div class="product-buy-section w-layout-vflex spacing_1" style="align-items: stretch;" >
+            <!-- Variant Radios -->
+            {% if product.variants.size > 1 %}
+              <div class="product-header_radio-list" >
+                {% for variant in product.variants %}
+                 
+                    <label class="product-header_radio w-radio">
+                      <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"></div>
+                      <span class="header_radio-label w-form-label"> {{ variant.title }} </span>
+                      <input 
+                        style="opacity:0;position:absolute;z-index:-1"  type="radio" name="id" value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %} checked {% endif %}>
+                    </label>
+             
+                {% endfor %}
+              </div>
+            {% else %}
+              <!-- Hidden Input for Products with No Variants -->
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+            {% endif %}
+
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when '@app' %}
+                  {% render block %}
+              {% endcase %}
+            {% endfor %}
+        
+            <!-- Quantity Input -->
+            <div class="product-header_ad-to-cart-wrapper">
+         
+              <div class="qty-wrapper">
+                <div class="qty-counter minus">-</div>
+                <input type="number" class="form-input qty w-input" id="quantity" name="quantity" value="1" min="1">
+                <div class="qty-counter plus">+</div>
+              </div>
+            
+              <!-- Add to Cart Button -->
+              {% if product.available %}
+                <button type="submit" name="add" class="button">
+                  Add to Cart
+                </button>
+              {% else %}
+                <!-- Out of Stock Text -->
+                <p class="out-of-stock">This product is currently out of stock.</p>
+              {% endif %}
+              
+              <!-- Product Price -->
+            <div class="product-price">
+              <span>{{ product.price | money }}</span>
+            </div>
+        
+             
+
+            
+          </div>
+            
+          <hr class="divider">
+        </div>
+         
+            
+          </form>
+        
+         
+
+          <div id="cart-message"></div> <!-- Feedback message area -->
         </div>
       
-        <!-- Add to Cart Button -->
-        {% if product.available %}
-          <button type="submit" name="add" class="button">
-            Add to Cart
-          </button>
-        {% else %}
-          <!-- Out of Stock Text -->
-          <p class="out-of-stock">This product is currently out of stock.</p>
-        {% endif %}
-        
-        <!-- Product Price -->
-      <div class="product-price">
-        <span>{{ product.price | money }}</span>
-      </div>
-  
-       
+        {% comment %} END CUSTOM CONTENT {% endcomment %}
+
+
+
+
+    
+
+    </div>
+
+   
+</div>
 
       
     </div>
-      
+  
+    <div lowercase="" class="container_xl is-product-dropdown">
+      <div class="product-detail_item">
+        <div class="product-detail_title">
+          <h2 li-object="'Shop.No-Nasties' | t" class="heading_small">{{ 'Shop.No-Nasties' | t }}</h2><svg
+            class="product-item_icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 13 13" fill="none">
+            <path d="M0 4.77087H4.81025V0H8.09108V4.77087H13V8.20388H8.09108V13H4.81025V8.20388H0V4.77087Z"
+              fill="#f818ac"></path>
+          </svg>
+        </div>
+        <div class="product-detail_answer">
+          <div class="product-detail_text">
+            <div class="w-layout-grid product-main_nonasties-container">{% for block in section.blocks %}
+              {% if block.type == "no-nasties-images" %}
+              <div li-block="No Nasties Images" id="w-node-_93a2e293-4226-37c1-bdad-ff3ce3f4f42e-07f8c2c1"
+                class="nonasties_image">
+                <img class="max-width-full" src="{{ block.settings.image_no_nasty_image | img_url: 'master' }}" alt="{{ block.settings.image_no_nasty_image.alt }}" loading="lazy">
+
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <hr class="divider">
   </div>
-   
-      
-    </form>
-  
-   
+  <div class="product-info_imagecontainer">
+    <div class="product-main_slider-container">
+      <div class="swiper is-productmain"><a href="#" class="swiper-button swiper-prev w-inline-block">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 58 58" fill="none"> <g clip-path="url(#clip0_553_1033)"> <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1883 31.5617C18.5095 30.882 18.1282 29.9606 18.1282 29C18.1282 28.0394 18.5095 27.118 19.1883 26.4383L32.857 12.7648C33.537 12.0851 34.4592 11.7034 35.4207 11.7036C36.3822 11.7038 37.3042 12.086 37.9839 12.7661C38.6637 13.4461 39.0454 14.3683 39.0452 15.3298C39.0449 16.2913 38.6628 17.2133 37.9827 17.893L26.8757 29L37.9827 40.107C38.6434 40.7904 39.0092 41.7059 39.0014 42.6564C38.9936 43.6068 38.6128 44.5162 37.941 45.1886C37.2692 45.8611 36.3602 46.2427 35.4097 46.2514C34.4593 46.2601 33.5434 45.8952 32.8594 45.2352L19.1859 31.5641L19.1883 31.5617Z" fill="currentColor"></path> </g> <defs> <clippath id="clip0_553_1033"> <rect width="58" height="58" fill="currentColor" transform="matrix(-1 0 0 -1 58 58)"></rect> </clippath> </defs> </svg>
+      </a><a href="#" class="swiper-button swiper-next w-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 58 58" fill="none">
+            <g clip-path="url(#clip0_553_1033)">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M38.8117 26.4384C39.4905 27.1181 39.8718 28.0395 39.8718 29.0001C39.8718 29.9607 39.4905 30.8821 38.8117 31.5618L25.143 45.2353C24.463 45.915 23.5408 46.2967 22.5793 46.2965C21.6178 46.2963 20.6958 45.9141 20.0161 45.2341C19.3363 44.554 18.9546 43.6318 18.9548 42.6703C18.9551 41.7088 19.3372 40.7868 20.0173 40.1071L31.1243 29.0001L20.0173 17.8931C19.3566 17.2097 18.9908 16.2942 18.9986 15.3438C19.0064 14.3933 19.3872 13.4839 20.059 12.8115C20.7308 12.1391 21.6398 11.7574 22.5903 11.7487C23.5407 11.74 24.4566 12.1049 25.1406 12.7649L38.8141 26.436L38.8117 26.4384Z"
+                fill="currentColor"></path>
+            </g>
+            <defs>
+              <clippath id="clip0_553_1033">
+                <rect width="58" height="58" fill="currentColor" transform="matrix(-1 0 0 -1 58 58)"></rect>
+              </clippath>
+            </defs>
+          </svg></a>
+        <div class="swiper-wrapper is-productmain">{% for image in product.images %} <div
+            li-for="image in product.images" class="swiper-slide is-productmain">
 
-    <div id="cart-message"></div> <!-- Feedback message area -->
+            <div class="productmain_image"><img src="{{ image.src | product_img_url: 'master' }}" loading="lazy"
+                li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" alt="{{ image.alt }}"
+                class="product_image">
+            </div>
+
+          </div>
+          {% endfor %}</div>
+      </div>
+      <div>
+        <div class="swiper is-productthumbnail">
+          <div class="swiper-wrapper is-productthumbnail">{% for image in product.images %} <div
+              li-for="image in product.images" class="swiper-slide is-productthumbnail">
+              <img src="{{ image.src | product_img_url: 'master' }}" loading="lazy"
+                li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" alt="{{ image.alt }}"
+                class="productthumbnail">
+
+            </div>
+            {% endfor %}</div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  {% comment %} END CUSTOM CONTENT {% endcomment %}
-
-
-
-                </div>
-            </div>
-        </div>
-       
-        <div lowercase="" class="container_xl is-product-dropdown">
-            <div class="product-detail_item">
-                <div class="product-detail_title">
-                    <h2 li-object="'Shop.No-Nasties' | t" class="heading_small">{{ 'Shop.No-Nasties' | t }}</h2><svg
-                        class="product-item_icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 13 13" fill="none">
-                        <path d="M0 4.77087H4.81025V0H8.09108V4.77087H13V8.20388H8.09108V13H4.81025V8.20388H0V4.77087Z"
-                            fill="#f818ac"></path>
-                    </svg>
-                </div>
-                <div class="product-detail_answer">
-                    <div class="product-detail_text">
-                        <div class="w-layout-grid product-main_nonasties-container">{% for block in section.blocks %}
-                            {% if block.type == "no-nasties-images" %}
-                            <div li-block="No Nasties Images" id="w-node-_905ec33c-24b5-d585-87e9-f067b0fbc4ac-07f8c2c1"
-                                class="nonasties_image">
-                                <img class="max-width-full"
-                                    src="{{ block.settings.image_no_nasty_image | img_url: 'master' }}"
-                                    alt="{{ block.settings.image_no_nasty_image.alt }}" loading="lazy">
-
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="divider">
-    </div>
-    <div class="product-info_imagecontainer">
-        <div class="product-main_slider-container">
-            <div class="swiper is-productmain"><a href="#" class="swiper-button swiper-prev w-inline-block"><svg
-                        xmlns="http://www.w3.org/2000/svg" viewbox="0 0 58 58" fill="none">
-                        <g clip-path="url(#clip0_553_1033)">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M19.1883 31.5617C18.5095 30.882 18.1282 29.9606 18.1282 29C18.1282 28.0394 18.5095 27.118 19.1883 26.4383L32.857 12.7648C33.537 12.0851 34.4592 11.7034 35.4207 11.7036C36.3822 11.7038 37.3042 12.086 37.9839 12.7661C38.6637 13.4461 39.0454 14.3683 39.0452 15.3298C39.0449 16.2913 38.6628 17.2133 37.9827 17.893L26.8757 29L37.9827 40.107C38.6434 40.7904 39.0092 41.7059 39.0014 42.6564C38.9936 43.6068 38.6128 44.5162 37.941 45.1886C37.2692 45.8611 36.3602 46.2427 35.4097 46.2514C34.4593 46.2601 33.5434 45.8952 32.8594 45.2352L19.1859 31.5641L19.1883 31.5617Z"
-                                fill="currentColor"></path>
-                        </g>
-                        <defs>
-                            <clippath id="clip0_553_1033">
-                                <rect width="58" height="58" fill="currentColor" transform="matrix(-1 0 0 -1 58 58)">
-                                </rect>
-                            </clippath>
-                        </defs>
-                    </svg></a><a href="#" class="swiper-button swiper-next w-inline-block"><svg
-                        xmlns="http://www.w3.org/2000/svg" viewbox="0 0 58 58" fill="none">
-                        <g clip-path="url(#clip0_553_1033)">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M38.8117 26.4384C39.4905 27.1181 39.8718 28.0395 39.8718 29.0001C39.8718 29.9607 39.4905 30.8821 38.8117 31.5618L25.143 45.2353C24.463 45.915 23.5408 46.2967 22.5793 46.2965C21.6178 46.2963 20.6958 45.9141 20.0161 45.2341C19.3363 44.554 18.9546 43.6318 18.9548 42.6703C18.9551 41.7088 19.3372 40.7868 20.0173 40.1071L31.1243 29.0001L20.0173 17.8931C19.3566 17.2097 18.9908 16.2942 18.9986 15.3438C19.0064 14.3933 19.3872 13.4839 20.059 12.8115C20.7308 12.1391 21.6398 11.7574 22.5903 11.7487C23.5407 11.74 24.4566 12.1049 25.1406 12.7649L38.8141 26.436L38.8117 26.4384Z"
-                                fill="currentColor"></path>
-                        </g>
-                        <defs>
-                            <clippath id="clip0_553_1033">
-                                <rect width="58" height="58" fill="currentColor" transform="matrix(-1 0 0 -1 58 58)">
-                                </rect>
-                            </clippath>
-                        </defs>
-                    </svg></a>
-                <div class="swiper-wrapper is-productmain">{% for image in product.images %} <div
-                        li-for="image in product.images" class="swiper-slide is-productmain">
-
-                        <div class="productmain_image"><img src="{{ image.src | product_img_url: 'master' }}"
-                                loading="lazy" li-object:src="image.src | product_img_url: 'master'"
-                                li-object:alt="image.alt" alt="{{ image.alt }}" class="product_image">
-                        </div>
-
-                    </div>
-                    {% endfor %}</div>
-            </div>
-            <div>
-                <div class="swiper is-productthumbnail">
-                    <div class="swiper-wrapper is-productthumbnail">{% for image in product.images %} <div
-                            li-for="image in product.images" class="swiper-slide is-productthumbnail">
-                            <img src="{{ image.src | product_img_url: 'master' }}" loading="lazy"
-                                li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt"
-                                alt="{{ image.alt }}" class="productthumbnail">
-
-                        </div>
-                        {% endfor %}</div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-<div class="fixed-basket_container">
-    <div data-body="blue" class="fixed-basket_content"><a is-add-to-cart="" href="#"
-            class="button is-product w-button">{{ 'Shop.Add-to-Cart-Button' | t }}</a>
-        <div li-object="product.price | money" li-js-price="price" class="heading_small flex-align_center">
-            {{ product.title }}</div>
-    </div>
-</div>
-
-
-
 
 <script>
-    document.getElementById('add-to-cart-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent the default form submission
-  
-      const formData = new FormData(this);
-  
-      fetch('/cart/add.js', {
-              method: 'POST',
-              body: formData,
-          })
-          .then(response => response.json())
-          .then(data => {
-              // Display a success message or update the cart icon
-              setTimeout(function () {
-                  document.querySelector('[li-element="mini-cart-item-count"]').click();
-              }, 200);
-              console.log('Product added to cart:', data);
-  
-              // Optionally, update cart count or perform other actions
-              updateCartCount();
-          })
-          .catch(error => {
-              console.error('Error adding to cart:', error);
-              document.getElementById('cart-message').innerHTML = 'Failed to add to cart.';
-          });
-  });
-  
-  // Example of updating cart count (optional)
-  function updateCartCount() {
-      fetch('/cart.js')
-          .then(response => response.json())
-          .then(data => {
-              const cartCount = data.item_count;
-              document.querySelector('.cart-count').textContent = cartCount;
-              document.querySelector('[li-element="mini-cart"]').click();
-  
-          });
-  }
-  
-  // Quantity Update Functionality
-  
-  const quantityInput = document.getElementById('quantity');
-  
-  document.querySelector('.qty-counter.minus').addEventListener('click', () => {
-      quantityInput.value = Math.max(1, parseInt(quantityInput.value) - 1);
-  });
-  
-  document.querySelector('.qty-counter.plus').addEventListener('click', () => {
-      quantityInput.value = parseInt(quantityInput.value) + 1;
-  });
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to format the price according to the Shopify store's currency format
+    function formatMoney(cents, format) {
+        if (typeof Shopify !== 'undefined' && Shopify.formatMoney) {
+            return Shopify.formatMoney(cents, format);
+        } else {
+            // Fallback formatting
+            return '$' + (cents / 100).toFixed(2);
+        }
+    }
 
-  const radioInputs = document.querySelectorAll('.w-radio-input');
+    var variantInputs = document.querySelectorAll('[data-selectorType="radio"]');
+    var priceElement = document.getElementById('product-price');
+
+    variantInputs.forEach(function(input) {
+        input.addEventListener('click', function() {
+            var newPrice = this.getAttribute('data-price');
+            if (priceElement) {
+                priceElement.textContent = formatMoney(newPrice);
+            }
+        });
+    });
+});
+</script>
+
+<script>
+  document.getElementById('add-to-cart-form').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this);
+
+    fetch('/cart/add.js', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Display a success message or update the cart icon
+            setTimeout(function () {
+                document.querySelector('[li-element="mini-cart-item-count"]').click();
+            }, 200);
+            console.log('Product added to cart:', data);
+
+            // Optionally, update cart count or perform other actions
+            updateCartCount();
+        })
+        .catch(error => {
+            console.error('Error adding to cart:', error);
+            document.getElementById('cart-message').innerHTML = 'Failed to add to cart.';
+        });
+});
+
+// Example of updating cart count (optional)
+function updateCartCount() {
+    fetch('/cart.js')
+        .then(response => response.json())
+        .then(data => {
+            const cartCount = data.item_count;
+            document.querySelector('.cart-count').textContent = cartCount;
+            document.querySelector('[li-element="mini-cart"]').click();
+
+        });
+}
+
+// Quantity Update Functionality
+
+const quantityInput = document.getElementById('quantity');
+
+document.querySelector('.qty-counter.minus').addEventListener('click', () => {
+    quantityInput.value = Math.max(1, parseInt(quantityInput.value) - 1);
+});
+
+document.querySelector('.qty-counter.plus').addEventListener('click', () => {
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+});
+
+const radioInputs = document.querySelectorAll('.w-radio-input');
 radioInputs[0]?.classList.add('w--redirected-checked');
-  </script>
-  
-  
-  
-  
-  
-  {% schema %} {
-    "tag": "section",
-    "name": "product_page_simple",
-    "class": "section_product-main",
-    "blocks": [{
+</script>
+
+
+
+
+
+{% schema %} {
+  "tag": "section",
+  "name": "product_page_simple",
+  "class": "section_product-main",
+  "blocks": [{
         "name": "No Nasties Images",
         "type": "no-nasties-images",
         "settings": [{
@@ -336,18 +353,17 @@ radioInputs[0]?.classList.add('w--redirected-checked');
           "type": "image_picker",
           "label": "No Nasty Image"
         }]
-      },
-  
-  {
-    "type": "@app"
-  }
-  
-    ],
-    "presets": [{
-      "name": "product_page",
-      "category": "Liquify"
-    }]
-  } 
-  
-  {% endschema %}
+    },
 
+{
+  "type": "@app"
+}
+
+  ],
+  "presets": [{
+    "name": "product_page",
+    "category": "Liquify"
+  }]
+} 
+
+{% endschema %}

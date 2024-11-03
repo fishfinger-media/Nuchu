@@ -22,6 +22,11 @@ tbody > * {
   max-width: 100%;
 }
 
+.shopify-pc__banner__dialog button {
+  border: none !important;
+  border-radius: 50vw;
+}
+
 .shopify-policy__title {
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
@@ -1220,6 +1225,9 @@ figcaption {
   flex: 1;
   max-height: 80vh;
   padding: 1.5rem;
+  min-height: 0;
+  overflow: auto;
+}
 }
 
 .mini-cart_close {
@@ -1266,6 +1274,7 @@ figcaption {
   justify-content: space-between;
   max-height: 100dvh;
   display: flex;
+  height: 100%;
 }
 
 .mini-cart_empty {

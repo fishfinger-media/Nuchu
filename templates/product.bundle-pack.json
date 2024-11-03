@@ -3,36 +3,7 @@
         "product_page_simple_T9j9pr": {
             "type": "product_page_simple",
             "blocks": {
-                "product_reference_yB4TM3": {
-                    "type": "product-reference",
-                    "settings": {
-                        "image_product_image": "shopify:\/\/shop_images\/Beauty_Front.png",
-                        "image_product_icon": "shopify:\/\/shop_images\/Icon_spike.png",
-                        "text_product_name": "Glow me away",
-                        "textarea_product_description": "Elevate your beauty game with our gummy blend of Biotin, Vitamin C, and Vitamin E –the ultimate trio for gorgeous hair, radiant skin, and strong nails. Glow on!",
-                        "url_product_link": "shopify:\/\/products\/beauty"
-                    }
-                },
-                "product_reference_tcbphB": {
-                    "type": "product-reference",
-                    "settings": {
-                        "image_product_image": "shopify:\/\/shop_images\/Immunity_Front.png",
-                        "image_product_icon": "shopify:\/\/shop_images\/Icon_star.png",
-                        "text_product_name": "Boost me up",
-                        "textarea_product_description": "Boost your immunity with our powerhouse gummy featuring plant extracts and vitamin C* – a tasty way to stay strong and at your best! *Vitamin C contributes to the normal function of the immune system.",
-                        "url_product_link": "shopify:\/\/products\/immunity"
-                    }
-                },
-                "product_reference_RGgPjt": {
-                    "type": "product-reference",
-                    "settings": {
-                        "image_product_image": "shopify:\/\/shop_images\/Calming_Front.png",
-                        "image_product_icon": "shopify:\/\/shop_images\/Icon_flower.png",
-                        "text_product_name": "Calm me down",
-                        "textarea_product_description": "Unwind with our plant extract-infused and vitamin* gummy that’s all about those calm and chill feelings – your daily dose of tranquillity and good vibes!",
-                        "url_product_link": "shopify:\/\/products\/calming"
-                    }
-                },
+                
                 "no_nasties_images_nPz38X": {
                     "type": "no-nasties-images",
                     "settings": {
@@ -76,7 +47,7 @@
                     }
                 }
             },
-            "block_order": ["product_reference_yB4TM3", "product_reference_tcbphB", "product_reference_RGgPjt", "no_nasties_images_nPz38X", "no_nasties_images_3HRrmw", "no_nasties_images_LzwEfz", "no_nasties_images_ccCGjx", "no_nasties_images_9Uz4bp", "no_nasties_images_wBEGgW", "no_nasties_images_6gThw3"],
+            "block_order": [ "no_nasties_images_nPz38X", "no_nasties_images_3HRrmw", "no_nasties_images_LzwEfz", "no_nasties_images_ccCGjx", "no_nasties_images_9Uz4bp", "no_nasties_images_wBEGgW", "no_nasties_images_6gThw3"],
             "settings": {}
         },
         "faq": {
