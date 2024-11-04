@@ -404,17 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 });
 
-// Example of updating cart count (optional)
-function updateCartCount() {
-    fetch('/cart.js')
-        .then(response => response.json())
-        .then(data => {
-            const cartCount = data.item_count;
-            document.querySelector('.cart-count').textContent = cartCount;
-            document.querySelector('[li-element="mini-cart"]').click();
 
-        });
-}
 
 // Quantity Update Functionality
 
