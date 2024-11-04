@@ -20,7 +20,6 @@
     },
     "featured_product": {
       "type": "featured_product",
-      "disabled": true,
       "settings": {
         "product": "discovery-bundle"
       }
