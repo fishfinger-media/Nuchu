@@ -214,31 +214,37 @@
     const productHeading = document.querySelectorAll(".product-detail_title");
     const productAnswers = document.querySelectorAll(".product-detail_answer");
     const productArrows = document.querySelectorAll(".product-item_icon");
-    window.addEventListener("load", () => {
-      productAnswers.forEach(answer => answer.style.height = "0px");
-    });
 
-    function toggleFaq(index, isOpening) {
-      const height = isOpening ? productAnswers[index].scrollHeight + "px" : "0px";
-      const rotateValue = isOpening ? "180deg" : "0deg";
-      const scaleValue = isOpening ? "1.2" : "1";
-      const heightTransition = "height 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)";
-      const transformTransition = "transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
-      productAnswers[index].style.height = height;
-      productAnswers[index].style.transition = heightTransition;
-      productArrows[index].style.transition = transformTransition;
-      productArrows[index].style.transform = `rotate(${rotateValue}) scale(${scaleValue})`;
-      if (isOpening) {
-        setTimeout(() => productArrows[index].style.transform = `rotate(${rotateValue})`, 200);
-      }
-    }
-    productHeading.forEach((question, index) => {
-      question.addEventListener("click", () => {
-        const isOpening = productAnswers[index].style.height === "0px";
-        toggleFaq(index, isOpening);
+    // Add a 1 second delay before initializing
+    setTimeout(() => {
+      window.addEventListener("load", () => {
+        productAnswers.forEach(answer => answer.style.height = "0px");
       });
-    });
+
+      function toggleFaq(index, isOpening) {
+        const height = isOpening ? productAnswers[index].scrollHeight + "px" : "0px";
+        const rotateValue = isOpening ? "180deg" : "0deg";
+        const scaleValue = isOpening ? "1.2" : "1";
+        const heightTransition = "height 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)";
+        const transformTransition = "transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
+        productAnswers[index].style.height = height;
+        productAnswers[index].style.transition = heightTransition;
+        productArrows[index].style.transition = transformTransition;
+        productArrows[index].style.transform = `rotate(${rotateValue}) scale(${scaleValue})`;
+        if (isOpening) {
+          setTimeout(() => productArrows[index].style.transform = `rotate(${rotateValue})`, 200);
+        }
+      }
+      
+      productHeading.forEach((question, index) => {
+        question.addEventListener("click", () => {
+          const isOpening = productAnswers[index].style.height === "0px";
+          toggleFaq(index, isOpening);
+        });
+      });
+    }, 1000); // 1000ms = 1 second delay
   }
+
   const mediaQuery = window.matchMedia('(max-width: 991px)');
   // Initial check
   if (mediaQuery.matches) {
