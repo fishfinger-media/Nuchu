@@ -56,51 +56,51 @@
       "Delivery-Label": "Delivery Status"
     },
     "Address-Page": {
-      "Main-Address-Label": "Main Address",
-      "Other-Addresses-Label": "Other Addresses",
-      "Edit-Button": "Edit",
-      "Edit-Address-Label": "Edit Address",
-      "New-Address-Label": "New Address",
-      "Save-As-Default-Label": "Save as default"
+      "Main-Address-Label": "Adresse principale",
+      "Other-Addresses-Label": "Autres adresses",
+      "Edit-Button": "Modifier",
+      "Edit-Address-Label": "Modifier l'adresse",
+      "New-Address-Label": "Nouvelle adresse",
+      "Save-As-Default-Label": "Définir par défaut"
     },
     "Order-Page": {
-      "Name-Label": "Name",
-      "Quantity-Label": "Quantity",
-      "Price-Label": "Price",
+      "Name-Label": "Nom",
+      "Quantity-Label": "Quantité",
+      "Price-Label": "Prix",
       "Total-Label": "Total",
-      "Subtotal-Label": "Subtotal",
-      "Discount-Label": "Discount",
-      "Shipping-Label": "Shipping",
-      "Vat-Label": "VAT",
-      "Customer-Information-Label": "Customer Information",
-      "Cancelled-Label": "Cancelled at",
-      "Reason-Label": "Reason",
-      "Billing-Address-Label": "Billing Address",
-      "Shipping-Address-Label": "Shipping Address"
+      "Subtotal-Label": "Sous-total",
+      "Discount-Label": "Réduction",
+      "Shipping-Label": "Livraison",
+      "Vat-Label": "TVA",
+      "Customer-Information-Label": "Informations client",
+      "Cancelled-Label": "Annulé le",
+      "Reason-Label": "Motif",
+      "Billing-Address-Label": "Adresse de facturation",
+      "Shipping-Address-Label": "Adresse de livraison"
     },
     "Forms": {
-      "Create-Account-Label": "Create Account",
-      "Login-Label": "Login",
-      "Register-Button": "Register",
-      "Login-Button": "Login",
-      "Existing-Account-Label": "Already have an account?",
-      "New-Account-Label": "need a Nuchu account?",
-      "Forgot-Password-Label": "forgotten password?",
-      "Reset-Password-Label": "Reset Password",
-      "Legal": "By creating an account, you agree to our terms and conditions",
-      "Accept-Marketing": "I want to receive marketing messages"
+      "Create-Account-Label": "Créer un compte",
+      "Login-Label": "Connexion",
+      "Register-Button": "S'inscrire",
+      "Login-Button": "Se connecter",
+      "Existing-Account-Label": "Vous avez déjà un compte ?",
+      "New-Account-Label": "Besoin d'un compte Nuchu ?",
+      "Forgot-Password-Label": "Mot de passe oublié ?",
+      "Reset-Password-Label": "Réinitialiser le mot de passe",
+      "Legal": "En créant un compte, vous acceptez nos conditions générales",
+      "Accept-Marketing": "Je souhaite recevoir des messages marketing"
     }
   },
   "Confirmination-Pages": {
     "Signup-Confirmination": {
-      "Heading": "Thanks for signing up",
-      "Subheading": "You will receive an email shortly with a confirmation link",
-      "Button": "Back to Home"
+      "Heading": "Merci de vous être inscrit",
+      "Subheading": "Vous recevrez bientôt un email avec un lien de confirmation",
+      "Button": "Retour à l'accueil"
     },
     "Password-Reset-Confirmination": {
-      "Heading": "Reset Successful",
-      "Subheading": "Your password has been reset",
-      "Button": "Login Now"
+      "Heading": "Réinitialisation réussie",
+      "Subheading": "Votre mot de passe a été réinitialisé",
+      "Button": "Se connecter maintenant"
     }
   },
   "Contact": {
