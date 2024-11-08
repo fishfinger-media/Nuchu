@@ -123,12 +123,7 @@
               <input type="hidden" name="id" value="{{ product.variants.first.id }}">
             {% endif %}
 
-            {% for block in section.blocks %}
-              {% case block.type %}
-                {% when '@app' %}
-                  {% render block %}
-              {% endcase %}
-            {% endfor %}
+           
         
             <!-- Quantity Input -->
             <div class="product-header_ad-to-cart-wrapper">
@@ -158,6 +153,13 @@
 
             
           </div>
+
+           {% for block in section.blocks %}
+              {% case block.type %}
+                {% when '@app' %}
+                  {% render block %}
+              {% endcase %}
+            {% endfor %}
             
           <hr class="divider">
         </div>
