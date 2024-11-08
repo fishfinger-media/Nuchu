@@ -24,25 +24,20 @@
       },
       "header": {
         "type": "header",
-        "settings": {
-        }
+        "settings": {}
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "1232542678405107163": {
         "type": "shopify://apps/instafeed/blocks/head-block/c447db20-095d-4a10-9725-b5977662c9d5",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "15588394620387169604": {
         "type": "shopify://apps/subify-subscriptions-app/blocks/app-embed-block/bc0dba25-cd46-4841-bea4-6bdfe9ac815f",
-        "disabled": true,
-        "settings": {
-        }
+        "disabled": false,
+        "settings": {}
       }
     }
   }
