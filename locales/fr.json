@@ -34,8 +34,11 @@
     "Discount-Label": "Discount",
     "Checkout-Button": "Checkout",
     "Update-Button": "Update",
-    "No-Products-Yet": "No products in your basket yet",
-    "Shop-Now-Button": "Shop Now"
+    "No-Products-Yet": "Votre panier est encore vide",
+    "Shop-Now-Button": "Shop Now",
+    "mini-cart-checkout": "Passer à la caisse",
+    "mini-cart-cta": "Vous aimerez aussi",
+    "mini-cart-shipping": "Frais de livraison calculés à la caisse"
   },
   "Account": {
     "Account-Page": {
