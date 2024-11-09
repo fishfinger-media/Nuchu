@@ -1,5 +1,65 @@
 <script src="{{ '_custom.js' | asset_url }}" type="text/javascript"></script>
 
+
+<style>
+
+  .product-header_ad-to-cart-wrapper {
+    align-items: center
+  }
+
+  .product-price {
+    margin-right: 15px;
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  
+  .subify-widget-main-title {
+    display:none!important;
+  }
+
+  .subify-widget-box {
+    background-color: white!important;
+    border: none!important;
+    padding: 0.5rem!important;
+    border-radius: 1rem!important;
+  }
+
+  .subify-widget-whole-wrapper {
+    padding:0!important;
+  }
+
+  .subify-powered-text {
+    position:absolute!important;
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0)!important;
+  }
+
+  .subify-product-price-wrapper {
+    margin:0!important;
+    padding:0!important;
+    height:auto!important;
+    min-height:auto!important;
+  }
+
+  .subify-discount-percentage {
+    margin: 0!important;
+    border: none!important;
+    padding: 0 1rem!important;
+    height: 100%!important;
+    display: flex!important;
+    background-color: #316afa!important;
+    border-radius: 50vw!important;
+    font-family: Sharp Grotesk, sans-serif!important;
+    font-size: .875rem!important;
+    font-weight: 500!important;
+    justify-content: center!important;
+    align-items: center!important;
+    color: white!important;
+}
+
+</style>
+
+
 <div li-element="product-variant-container" class="product_container"
   x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
   x-init="$nextTick(() => { activateVariants() })">
@@ -23,97 +83,105 @@
 
       </div>
       
-
+        
 <div class="w-layout-vflex spacing_2">
     <div li-object="product.description" class="text-size-medium w-richtext">{{ product.description }}</div>
     <div class="product-header_add-to-cart w-form">
+        
 
+        {% comment %} CUSTOM CONTENT {% endcomment %}
 
-      {% form 'product', product, class: 'product-header_default-state' %}
-        {% if product.has_only_default_variant != true %}
-          <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
-            <template x-for="(option, optionKey) in product.options" :key="optionKey">
-              <div li-element="product-options-loop" class="product-header_option" data-ProductVariantsLoop="true">
-                <div li-element="product-options-name" class="hide" x-text="option">Variant</div>
-                <div class="product-header_radio-list">
-                  <template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
-                    <label li-element="product-option-loop" class="product-header_radio w-radio">
+        <div >
+          <form id="add-to-cart-form" action="/cart/add" method="post" enctype="multipart/form-data">
+
+            <div class="fixed-basket_container">
+              <div data-body="blue" class="fixed-basket_content"><a is-add-to-cart="" href="#"
+                  class="button is-product w-button">{{ 'Shop.Add-to-Cart-Button' | t }}</a>
+                  <div li-object="product.price | money" li-js-price="price" class="heading_small flex-align_center">
+                    {{ product.title }}</div>
+              
+              </div>
+            </div>
+
+            
+        
+            <div class="product-buy-section w-layout-vflex spacing_1" style="align-items: stretch;" >
+            <!-- Variant Radios -->
+            {% if product.variants.size > 1 %}
+              <div class="product-header_radio-list" >
+                {% for variant in product.variants %}
+                 
+                    <label class="product-header_radio w-radio">
                       <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"></div>
-                      <input type="radio" 
-                        li-element="product-option-input" 
-                        style="opacity:0;position:absolute;z-index:-1" 
-                        x-on:click="setVariant" 
-                        :name="option" 
-                        :data-name="option" 
-                        :value="variantName" 
-                        :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" 
-                        :checked="selected_or_first_available_variant?.options.includes(variantName)" 
-                        data-selectorType="radio"
-                        :data-price="selected_or_first_available_variant.price"
-                        :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
-                    <span  li-element="product-option-name"  class="header_radio-label w-form-label"  for="radio" x-text="variantName"  :for="variantName"  >1 Pack</span>
+                      <span class="header_radio-label w-form-label"> {{ variant.title }} </span>
+                      <input 
+                        style="opacity:0;position:absolute;z-index:-1"  type="radio" name="id" value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %} checked {% endif %}>
                     </label>
-                  </template>
-                </div>
+             
+                {% endfor %}
               </div>
-            </template>
-          </div>
-        {% endif %}
-    
-        <div class="product-header_ad-to-cart-wrapper">
-          <template x-if="selected_or_first_available_variant.available == true">
-            <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
+            {% else %}
+              <!-- Hidden Input for Products with No Variants -->
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+            {% endif %}
+
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when '@app' %}
+                  {% render block %}
+              {% endcase %}
+            {% endfor %}
+        
+            <!-- Quantity Input -->
+            <div class="product-header_ad-to-cart-wrapper">
+         
               <div class="qty-wrapper">
-                <div x-on:click="quantity--" class="qty-counter minus">
-                  <div>-</div>
-                </div>
-                <input  class="form-input qty w-input"  qtycounter=""  maxlength="256"  name="quantity" li-element="add-to-cart-quantity"  data-name="Quantity"  placeholder="1"  type="number" id="quantity"  required=""  x-model="quantity" >
-                <div x-on:click="quantity++" class="qty-counter plus">
-                  <div>+</div>
-                </div>
+                <div class="qty-counter minus">-</div>
+                <input type="number" class="form-input qty w-input" id="quantity" name="quantity" value="1" min="1">
+                <div class="qty-counter plus">+</div>
               </div>
+            
+              <!-- Add to Cart Button -->
+              {% if product.available %}
+                <button type="submit" name="add" class="button">
+                  Add to Cart
+                </button>
+              {% else %}
+                <!-- Out of Stock Text -->
+                <p class="out-of-stock">This product is currently out of stock.</p>
+              {% endif %}
+              
+              <!-- Product Price -->
+            <div class="product-price">
+              <span>{{ product.price | money }}</span>
             </div>
-          </template>
-    
-          <template x-if="selected_or_first_available_variant.available == true">
-            <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity is-cart-btn">
-              <a li-element="add-to-cart" href="#" class="button is-product w-button" @click="addToCart()":disabled="!addToCartButton" >Add to basket</a>
-            </div>
-          </template>
-    
-         <template x-if="selected_or_first_available_variant.available == true">
-                <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
+        
+             
 
-                    <!-- Main price element -->
-<div li-object="product.price | money" li-js-price="price" class="heading_small flex-align_center">
-  <span id="product-price">{{ product.price | money }}</span>
-</div>
-
-
-                    <div li-object="product.compare_at_price | money" class="heading_small flex-align_center is-sale">
-                        {{ product.compare_at_price | money }}
-                    </div>
-                </div>
-            </template>
-    
-          <template x-if="selected_or_first_available_variant.available != true">
-            <div li-js-if="selected_or_first_available_variant.available != true" class="product-header_quantity">
-              <a href="#" class="button w-button" >{{ 'Product-Page.Product-Page-Hero.Not-In-Stock' | t }}</a>
-            </div>
-          </template>
+            
+          </div>
+            
+          <hr class="divider">
         </div>
+         
+            
+          </form>
+        
+         
+
+          <div id="cart-message"></div> <!-- Feedback message area -->
+        </div>
+      
+        {% comment %} END CUSTOM CONTENT {% endcomment %}
+
+
+
+
     
-        <hr class="divider">
-      {% endform %}
 
-
-        <div class="out-of-stock-state w-form-done">
-            <div>Thank you! Your submission has been received!</div>
-        </div>
-        <div class="error-state w-form-fail">
-            <div>Oops! Something went wrong while submitting the form.</div>
-        </div>
     </div>
+
+   
 </div>
 
       
@@ -227,7 +295,7 @@
               {% if block.type == "no-nasties-images" %}
               <div li-block="No Nasties Images" id="w-node-_93a2e293-4226-37c1-bdad-ff3ce3f4f42e-07f8c2c1"
                 class="nonasties_image">
-                <img class="max-width-full" src="{{ block.settings.image_no_nasty_image | img_url: 'master' }}" alt="{{ block.settings.image_no_nasty_image.alt }}" loading="lazy">
+                <img class="max-width-full" src="{{ block.settings.image_no_nasty_image | img_url: 'master' }}" alt="{{ block.settings.image_no_nasty_image.alt }}" loading="eager">
 
               </div>
               {% endif %}
@@ -282,102 +350,105 @@
     </div>
   </div>
 </div>
-<div class="fixed-basket_container">
-  <div data-body="blue" class="fixed-basket_content"><a is-add-to-cart="" href="#"
-      class="button is-product w-button">{{ 'Shop.Add-to-Cart-Button' | t }}</a>
-      <div li-object="product.price | money" li-js-price="price" class="heading_small flex-align_center">
-        <span id="fixed-product-price">{{ product.price | money }}</span>
-    </div>
-</div>
-
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-      // Function to get the current Shopify currency
-      function getCurrentCurrency() {
-          if (typeof Shopify !== 'undefined' && Shopify.currency && Shopify.currency.active) {
-              return Shopify.currency.active;
-          }
-          // Fallback to store's default currency
-          return document.querySelector('meta[property="og:price:currency"]')?.content || 'USD';
-      }
-  
-      // Function to format the price according to the locale and currency
-      function formatMoney(cents, format) {
-          if (typeof Shopify !== 'undefined' && Shopify.formatMoney) {
-              return Shopify.formatMoney(cents, format);
-          } else {
-              // Enhanced fallback formatting using Intl.NumberFormat
-              const currency = getCurrentCurrency();
-              return new Intl.NumberFormat(document.documentElement.lang || 'en', {
-                  style: 'currency',
-                  currency: currency,
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2
-              }).format(cents / 100);
-          }
-      }
-  
-      // Function to update all price elements
-      function updatePrices(price) {
-          const priceElements = [
-              document.getElementById('product-price'),
-              document.getElementById('fixed-product-price')
-          ];
-  
-          priceElements.forEach(element => {
-              if (element) {
-                  element.textContent = formatMoney(price);
-              }
-          });
-      }
-  
-      var variantInputs = document.querySelectorAll('[data-selectorType="radio"]');
-  
-      // Initial price update
-      if (variantInputs.length > 0) {
-          const selectedVariant = document.querySelector('[data-selectorType="radio"]:checked');
-          if (selectedVariant) {
-              const initialPrice = selectedVariant.getAttribute('data-price');
-              if (initialPrice) {
-                  updatePrices(initialPrice);
-              }
-          }
-      }
-  
-      // Update price on variant selection
-      variantInputs.forEach(function(input) {
-          input.addEventListener('click', function() {
-              var newPrice = this.getAttribute('data-price');
-              if (newPrice) {
-                  updatePrices(newPrice);
-              }
-          });
-      });
-  });
-  </script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to format the price according to the Shopify store's currency format
+    function formatMoney(cents, format) {
+        if (typeof Shopify !== 'undefined' && Shopify.formatMoney) {
+            return Shopify.formatMoney(cents, format);
+        } else {
+            // Fallback formatting
+            return '$' + (cents / 100).toFixed(2);
+        }
+    }
+
+    var variantInputs = document.querySelectorAll('[data-selectorType="radio"]');
+    var priceElement = document.getElementById('product-price');
+
+    variantInputs.forEach(function(input) {
+        input.addEventListener('click', function() {
+            var newPrice = this.getAttribute('data-price');
+            if (priceElement) {
+                priceElement.textContent = formatMoney(newPrice);
+            }
+        });
+    });
+});
+</script>
+
+<script>
+  document.getElementById('add-to-cart-form').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this);
+
+    fetch('/cart/add.js', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Display a success message or update the cart icon
+            setTimeout(function () {
+                document.querySelector('[li-element="mini-cart-item-count"]').click();
+            }, 200);
+            console.log('Product added to cart:', data);
+
+            // Optionally, update cart count or perform other actions
+            updateCartCount();
+        })
+        .catch(error => {
+            console.error('Error adding to cart:', error);
+            document.getElementById('cart-message').innerHTML = 'Failed to add to cart.';
+        });
+});
 
 
 
-{% schema %} 
+// Quantity Update Functionality
 
-  {
+const quantityInput = document.getElementById('quantity');
+
+document.querySelector('.qty-counter.minus').addEventListener('click', () => {
+    quantityInput.value = Math.max(1, parseInt(quantityInput.value) - 1);
+});
+
+document.querySelector('.qty-counter.plus').addEventListener('click', () => {
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+});
+
+const radioInputs = document.querySelectorAll('.w-radio-input');
+radioInputs[0]?.classList.add('w--redirected-checked');
+</script>
+
+
+
+
+
+{% schema %} {
   "tag": "section",
   "name": "product_page",
   "class": "section_product-main",
   "blocks": [{
-    "name": "No Nasties Images",
-    "type": "no-nasties-images",
-    "settings": [{
-      "id": "image_no_nasty_image",
-      "type": "image_picker",
-      "label": "No Nasty Image"
-    }]
-  }],
+      "name": "No Nasties Images",
+      "type": "no-nasties-images",
+      "settings": [{
+        "id": "image_no_nasty_image",
+        "type": "image_picker",
+        "label": "No Nasty Image"
+      }]
+    },
+
+{
+  "type": "@app"
+}
+
+  ],
   "presets": [{
     "name": "product_page",
     "category": "Liquify"
   }]
-  }
-  
+} 
+
 {% endschema %}
