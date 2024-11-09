@@ -309,15 +309,44 @@
 
 
 
-<div class="divider is-nav"></div><div class="mini-cart_line-item"><ul role="list" class="mini-cart_line-item_list w-list-unstyled"><template x-for="product in products" :key="product.key">
-    <li li-element="mini-cart-item" class="mini-cart_line-item_item" x-init="getCart()" @cartupdated.window="getCart()"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="mini-cart_line-item_img" x-bind:src="product.image">
-<div class="mini-cart_line-item_product-info"><div class="w-layout-hflex mini-cart_flex-wrapper"><div li-js-object="product.title" x-text="product.title">Product Title</div><a li-element="mini-cart-item-remove" href="#" class="w-inline-block" :productprop="product" @click="$dispatch('setcartitem', { product: product.id, quantity: 0 })"><svg class="image_m" viewbox="0 0 18 18" fill="none"><path d="M7.33342 4.00001H10.6667C10.6667 3.55798 10.4912 3.13405 10.1786 2.82149C9.86603 2.50893 9.44211 2.33334 9.00008 2.33334C8.55805 2.33334 8.13413 2.50893 7.82157 2.82149C7.50901 3.13405 7.33342 3.55798 7.33342 4.00001ZM5.66675 4.00001C5.66675 3.11595 6.01794 2.2681 6.64306 1.64298C7.26818 1.01786 8.11603 0.666672 9.00008 0.666672C9.88414 0.666672 10.732 1.01786 11.3571 1.64298C11.9822 2.2681 12.3334 3.11595 12.3334 4.00001H16.5001C16.7211 4.00001 16.9331 4.0878 17.0893 4.24408C17.2456 4.40036 17.3334 4.61232 17.3334 4.83334C17.3334 5.05435 17.2456 5.26631 17.0893 5.42259C16.9331 5.57887 16.7211 5.66667 16.5001 5.66667H15.7651L15.0267 14.2833C14.9558 15.1154 14.5751 15.8905 13.96 16.4553C13.3449 17.0201 12.5402 17.3334 11.7051 17.3333H6.29508C5.46001 17.3334 4.65531 17.0201 4.04021 16.4553C3.4251 15.8905 3.0444 15.1154 2.97341 14.2833L2.23508 5.66667H1.50008C1.27907 5.66667 1.06711 5.57887 0.910826 5.42259C0.754545 5.26631 0.666748 5.05435 0.666748 4.83334C0.666748 4.61232 0.754545 4.40036 0.910826 4.24408C1.06711 4.0878 1.27907 4.00001 1.50008 4.00001H5.66675ZM11.5001 9.00001C11.5001 8.77899 11.4123 8.56703 11.256 8.41075C11.0997 8.25447 10.8878 8.16667 10.6667 8.16667C10.4457 8.16667 10.2338 8.25447 10.0775 8.41075C9.92121 8.56703 9.83342 8.77899 9.83342 9.00001V12.3333C9.83342 12.5544 9.92121 12.7663 10.0775 12.9226C10.2338 13.0789 10.4457 13.1667 10.6667 13.1667C10.8878 13.1667 11.0997 13.0789 11.256 12.9226C11.4123 12.7663 11.5001 12.5544 11.5001 12.3333V9.00001ZM7.33342 8.16667C7.1124 8.16667 6.90044 8.25447 6.74416 8.41075C6.58788 8.56703 6.50008 8.77899 6.50008 9.00001V12.3333C6.50008 12.5544 6.58788 12.7663 6.74416 12.9226C6.90044 13.0789 7.1124 13.1667 7.33342 13.1667C7.55443 13.1667 7.76639 13.0789 7.92267 12.9226C8.07895 12.7663 8.16675 12.5544 8.16675 12.3333V9.00001C8.16675 8.77899 8.07895 8.56703 7.92267 8.41075C7.76639 8.25447 7.55443 8.16667 7.33342 8.16667Z" fill="currentColor"></path></svg></a></div><div class="w-layout-hflex mini-cart_flex-wrapper"><div class="mini-cart_line-item_quantity"><a li-element="mini-cart-item-decrease" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" @click="$dispatch('decreasecartitem', { product: product.id, quantity: product.quantity, action: 'decrease' })">-</a><div class="mini-cart_divider"></div><input class="mini-cart_line-item_quantity-adjust" li-element="mini-cart-item-quantity" value="1" :productprop="product" @blur="$dispatch('setcartitem', { product: product.id, quantity: product.quantity })" x-model="product.quantity">
-<div class="mini-cart_divider"></div><a li-element="mini-cart-item-increase" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" @click="$dispatch('increasecartitem', { product: product.id, quantity: product.quantity, action: 'increase' })">+</a></div><div class="mini-cart_line-item_price"><div li-js-price="product.price" x-text="moneyFormat(product.price)">14,99 $</div><template x-if="product.price < product.original_price">
-            <div li-js-if="product.price < product.original_price">
-        <div li-js-price="product.original_price" class="is-sale" x-text="moneyFormat(product.original_price)">14,99 $</div>        </div>
-    </template>
-</div></div></div></li></template>
-</ul></div>
+<div class="divider is-nav"></div>
+<div class="mini-cart_line-item">
+    <ul role="list" class="mini-cart_line-item_list w-list-unstyled">
+        <template x-for="product in products" :key="product.key">
+            <li li-element="mini-cart-item" class="mini-cart_line-item_item" x-init="getCart()" @cartupdated.window="getCart()">
+                <img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="mini-cart_line-item_img" x-bind:src="product.image">
+                <div class="mini-cart_line-item_product-info">
+                    <div class="w-layout-hflex mini-cart_flex-wrapper">
+                        <div li-js-object="product.title" x-text="product.title">Product Title</div>
+                            <a li-element="mini-cart-item-remove" href="#" class="w-inline-block" :productprop="product" @click="$dispatch('setcartitem', { product: product.id, quantity: 0 })">
+                                <svg class="image_m" viewbox="0 0 18 18" fill="none">
+                                    <path d="M7.33342 4.00001H10.6667C10.6667 3.55798 10.4912 3.13405 10.1786 2.82149C9.86603 2.50893 9.44211 2.33334 9.00008 2.33334C8.55805 2.33334 8.13413 2.50893 7.82157 2.82149C7.50901 3.13405 7.33342 3.55798 7.33342 4.00001ZM5.66675 4.00001C5.66675 3.11595 6.01794 2.2681 6.64306 1.64298C7.26818 1.01786 8.11603 0.666672 9.00008 0.666672C9.88414 0.666672 10.732 1.01786 11.3571 1.64298C11.9822 2.2681 12.3334 3.11595 12.3334 4.00001H16.5001C16.7211 4.00001 16.9331 4.0878 17.0893 4.24408C17.2456 4.40036 17.3334 4.61232 17.3334 4.83334C17.3334 5.05435 17.2456 5.26631 17.0893 5.42259C16.9331 5.57887 16.7211 5.66667 16.5001 5.66667H15.7651L15.0267 14.2833C14.9558 15.1154 14.5751 15.8905 13.96 16.4553C13.3449 17.0201 12.5402 17.3334 11.7051 17.3333H6.29508C5.46001 17.3334 4.65531 17.0201 4.04021 16.4553C3.4251 15.8905 3.0444 15.1154 2.97341 14.2833L2.23508 5.66667H1.50008C1.27907 5.66667 1.06711 5.57887 0.910826 5.42259C0.754545 5.26631 0.666748 5.05435 0.666748 4.83334C0.666748 4.61232 0.754545 4.40036 0.910826 4.24408C1.06711 4.0878 1.27907 4.00001 1.50008 4.00001H5.66675ZM11.5001 9.00001C11.5001 8.77899 11.4123 8.56703 11.256 8.41075C11.0997 8.25447 10.8878 8.16667 10.6667 8.16667C10.4457 8.16667 10.2338 8.25447 10.0775 8.41075C9.92121 8.56703 9.83342 8.77899 9.83342 9.00001V12.3333C9.83342 12.5544 9.92121 12.7663 10.0775 12.9226C10.2338 13.0789 10.4457 13.1667 10.6667 13.1667C10.8878 13.1667 11.0997 13.0789 11.256 12.9226C11.4123 12.7663 11.5001 12.5544 11.5001 12.3333V9.00001ZM7.33342 8.16667C7.1124 8.16667 6.90044 8.25447 6.74416 8.41075C6.58788 8.56703 6.50008 8.77899 6.50008 9.00001V12.3333C6.50008 12.5544 6.58788 12.7663 6.74416 12.9226C6.90044 13.0789 7.1124 13.1667 7.33342 13.1667C7.55443 13.1667 7.76639 13.0789 7.92267 12.9226C8.07895 12.7663 8.16675 12.5544 8.16675 12.3333V9.00001C8.16675 8.77899 8.07895 8.56703 7.92267 8.41075C7.76639 8.25447 7.55443 8.16667 7.33342 8.16667Z" fill="currentColor"></path></svg>
+                            </a>
+                        </div>
+                        <div class="w-layout-hflex mini-cart_flex-wrapper">
+                            <div class="mini-cart_line-item_quantity">
+                                <a li-element="mini-cart-item-decrease" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" @click="$dispatch('decreasecartitem', { product: product.id, quantity: product.quantity, action: 'decrease' })">-</a>
+                                <div class="mini-cart_divider">
+                                    </div>
+                                    <input class="mini-cart_line-item_quantity-adjust" li-element="mini-cart-item-quantity" value="1" :productprop="product" @blur="$dispatch('setcartitem', { product: product.id, quantity: product.quantity })" x-model="product.quantity">
+                                <div class="mini-cart_divider">
+                                    </div>
+                                    <a li-element="mini-cart-item-increase" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" @click="$dispatch('increasecartitem', { product: product.id, quantity: product.quantity, action: 'increase' })">+</a>
+                                </div>
+                                <div class="mini-cart_line-item_price" 
+                                    x-data="fastProductPrice"
+                                    x-effect="currentPrice = product.price">
+                                   <div x-text="formatPrice(handleQuantityChange(product.quantity))"></div>
+                                   <template x-if="product.price < product.original_price">
+                                       <div class="is-sale" x-text="formatPrice(product.original_price)"></div>
+                                   </template>
+                               </div>
+                        </div>
+                 </div>
+            </li>
+        </template>
+     </ul></div>
+
 
 <div class="cart_item-drawer">
     <div>{{ "Cart.mini-cart-cta" | t }}</div>
@@ -344,3 +373,29 @@
         <div li-js-price="original_total_price" class="text-style-strikethrough" x-text="moneyFormat(original_total_price)">14,99 $</div>        </div>
     </template>
 <div li-js-price="total.price" x-text="moneyFormat(total.price)">14,99 $</div></div></div><div li-cloak="hide" li-element="mini-cart-api-response" class="mini-cart_footer-message"><div class="mini-cart_footer-message-item"><div>Nachricht</div><div li-js-object="cartApiResponse?.result?.message" x-text="cartApiResponse?.result?.message">14,99 $</div></div><div class="mini-cart_footer-message-item"><div>Status</div><div li-js-object="cartApiResponse?.result?.description" x-text="cartApiResponse?.result?.description">14,99 $</div></div></div><a x-bind:href="'/checkout'" href="#" class="button is-pink w-button">{{  "Cart.mini-cart-checkout" | t }}</a><a li-object:href="routes.cart_url" href="{{ routes.cart_url }}" class="button w-button">Cart</a><div class="text-align-center">{{ "Cart.mini-cart-shipping" | t }}</div></div></div><div li-cloak="hide" li-element="mini-cart-empty" :style="total.items && { display: 'none' }"><div class="mini-cart_header"><div class="heading_small">Basket</div><div li-mini-cart-toggle="" class="mini-cart_close w-embed" @click="$dispatch('toggleminicart')"><svg width="30" height="30" viewbox="0 0 30 30" fill="none"><path d="M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15Z" fill="white"></path><rect x="8" y="9.75" width="2.47487" height="17.3241" rx="1.23744" transform="rotate(-45 8 9.75)" fill="#316AFA"></rect><rect x="20.25" y="8" width="2.47487" height="17.3241" rx="1.23744" transform="rotate(45 20.25 8)" fill="#316AFA"></rect></svg></div></div><div class="mini-cart_empty"><div>{{  "Cart.No-Products-Yet" | t }}</div></div></div></div></div></div></div></div></div></div>
+
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('fastProductPrice', () => ({
+            basePrice: 0,
+            currentPrice: 0,
+            
+            init() {
+                // Set initial prices
+                this.basePrice = this.product.price / this.product.quantity;
+                this.currentPrice = this.product.price;
+            },
+    
+            // Immediately update UI price when quantity changes
+            handleQuantityChange(newQuantity) {
+                this.currentPrice = this.basePrice * newQuantity;
+                return this.currentPrice;
+            },
+    
+            // Format price for display
+            formatPrice(price) {
+                return this.moneyFormat(price);
+            }
+        }));
+    });
+ </script>
