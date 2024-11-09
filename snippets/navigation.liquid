@@ -333,20 +333,15 @@
                                     </div>
                                     <a li-element="mini-cart-item-increase" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" @click="$dispatch('increasecartitem', { product: product.id, quantity: product.quantity, action: 'increase' })">+</a>
                                 </div>
-                                <div class="mini-cart_line-item_price" 
-                                    x-data="fastProductPrice"
-                                    x-effect="currentPrice = product.price">
-                                   <div x-text="formatPrice(handleQuantityChange(product.quantity))"></div>
-                                   <template x-if="product.price < product.original_price">
-                                       <div class="is-sale" x-text="formatPrice(product.original_price)"></div>
-                                   </template>
-                               </div>
-                        </div>
-                 </div>
-            </li>
-        </template>
-     </ul></div>
-
+                                <div class="mini-cart_line-item_price">
+                                    <div li-js-price="product.price" x-text="moneyFormat(product.price)">14,99 $</div>
+                                    <template x-if="product.price < product.original_price">
+                            <div li-js-if="product.price < product.original_price">
+                        <div li-js-price="product.original_price" class="is-sale" x-text="moneyFormat(product.original_price)">14,99 $</div>
+                    </div>
+                    </template>
+                </div></div></div></li></template>
+                </ul></div>
 
 <div class="cart_item-drawer">
     <div>{{ "Cart.mini-cart-cta" | t }}</div>
@@ -373,29 +368,3 @@
         <div li-js-price="original_total_price" class="text-style-strikethrough" x-text="moneyFormat(original_total_price)">14,99 $</div>        </div>
     </template>
 <div li-js-price="total.price" x-text="moneyFormat(total.price)">14,99 $</div></div></div><div li-cloak="hide" li-element="mini-cart-api-response" class="mini-cart_footer-message"><div class="mini-cart_footer-message-item"><div>Nachricht</div><div li-js-object="cartApiResponse?.result?.message" x-text="cartApiResponse?.result?.message">14,99 $</div></div><div class="mini-cart_footer-message-item"><div>Status</div><div li-js-object="cartApiResponse?.result?.description" x-text="cartApiResponse?.result?.description">14,99 $</div></div></div><a x-bind:href="'/checkout'" href="#" class="button is-pink w-button">{{  "Cart.mini-cart-checkout" | t }}</a><a li-object:href="routes.cart_url" href="{{ routes.cart_url }}" class="button w-button">Cart</a><div class="text-align-center">{{ "Cart.mini-cart-shipping" | t }}</div></div></div><div li-cloak="hide" li-element="mini-cart-empty" :style="total.items && { display: 'none' }"><div class="mini-cart_header"><div class="heading_small">Basket</div><div li-mini-cart-toggle="" class="mini-cart_close w-embed" @click="$dispatch('toggleminicart')"><svg width="30" height="30" viewbox="0 0 30 30" fill="none"><path d="M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15Z" fill="white"></path><rect x="8" y="9.75" width="2.47487" height="17.3241" rx="1.23744" transform="rotate(-45 8 9.75)" fill="#316AFA"></rect><rect x="20.25" y="8" width="2.47487" height="17.3241" rx="1.23744" transform="rotate(45 20.25 8)" fill="#316AFA"></rect></svg></div></div><div class="mini-cart_empty"><div>{{  "Cart.No-Products-Yet" | t }}</div></div></div></div></div></div></div></div></div></div>
-
-<script>
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('fastProductPrice', () => ({
-            basePrice: 0,
-            currentPrice: 0,
-            
-            init() {
-                // Set initial prices
-                this.basePrice = this.product.price / this.product.quantity;
-                this.currentPrice = this.product.price;
-            },
-    
-            // Immediately update UI price when quantity changes
-            handleQuantityChange(newQuantity) {
-                this.currentPrice = this.basePrice * newQuantity;
-                return this.currentPrice;
-            },
-    
-            // Format price for display
-            formatPrice(price) {
-                return this.moneyFormat(price);
-            }
-        }));
-    });
- </script>
