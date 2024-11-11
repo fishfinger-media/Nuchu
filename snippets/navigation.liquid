@@ -334,13 +334,17 @@
                                     <a li-element="mini-cart-item-increase" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" @click="$dispatch('increasecartitem', { product: product.id, quantity: product.quantity, action: 'increase' })">+</a>
                                 </div>
                                 <div class="mini-cart_line-item_price">
-                                    <div li-js-price="product.price" x-text="moneyFormat(product.price)">14,99 $</div>
+                                    <div li-js-price="product.price" x-text="moneyFormat(product.price * product.quantity)">14,99 $</div>
                                     <template x-if="product.price < product.original_price">
-                            <div li-js-if="product.price < product.original_price">
-                        <div li-js-price="product.original_price" class="is-sale" x-text="moneyFormat(product.original_price)">14,99 $</div>
-                    </div>
-                    </template>
-                </div></div></div></li></template>
+                                        <div li-js-if="product.price < product.original_price">
+                                            <div li-js-price="product.original_price" class="is-sale" x-text="moneyFormat(product.original_price * product.quantity)">14,99 $</div>
+                                        </div>
+                                    </template>
+                                </div>
+                            
+                            </div>
+            
+            </div></li></template>
                 </ul></div>
 
 <div class="cart_item-drawer">
