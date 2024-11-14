@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin language editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "Offer-Banner": {
     "Banner-Text": " Livraison gratuite à partir de €60"
@@ -25,17 +25,17 @@
   },
   "Cart": {
     "Heading": "Your Goodies",
-    "Product-Label": "Product",
-    "Quantity-Label": "Quantity",
-    "Price-Label": "Price",
-    "Summary-Label": "Summary",
-    "Remove-Button": "Remove",
+    "Product-Label": "Produit",
+    "Quantity-Label": "Quantité",
+    "Price-Label": "Prix",
+    "Summary-Label": "Résumé",
+    "Remove-Button": "Retirer",
     "Total-Label": "Total",
-    "Discount-Label": "Discount",
-    "Checkout-Button": "Checkout",
-    "Update-Button": "Update",
-    "No-Products-Yet": "Votre panier est encore vide",
-    "Shop-Now-Button": "Shop Now",
+    "Discount-Label": "Remise",
+    "Checkout-Button": "Caisse",
+    "Update-Button": "Mettre à jour",
+    "No-Products-Yet": "Votre panier est toujours vide",
+    "Shop-Now-Button": "Acheter maintenant",
     "mini-cart-checkout": "Passer à la caisse",
     "mini-cart-cta": "Vous aimerez aussi",
     "mini-cart-shipping": "Frais de livraison calculés à la caisse"
