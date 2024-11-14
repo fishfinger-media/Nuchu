@@ -63,7 +63,8 @@
         "card_6VbhgB"
       ],
       "custom_css": [
-        ".sustainability_icon {height: 3rem;}"
+        ".sustainability_icon {height: 3rem;}",
+        ".sustainability_card {gap: 3rem !important; height: 100%; justify-content: space-around;}"
       ],
       "settings": {
         "heading_text": "Eco-friendly in every step of the process"
