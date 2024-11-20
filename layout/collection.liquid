@@ -67,15 +67,19 @@
   }
 </style>
   
-<script type="application/ld+json"> {
-  "@context":"http:\/\/schema.org",
-  "@type":"WebPage",
-  "url":"{{ shop.url }}",
-  "mainEntity":{"@type":"offerCatalog",
-  "name":{{ collection.title }},
-  "url":{{ {{ collection.title | link_to: collection.url }} }},
-  "numberOfItems":{{ collection.products.size }}
-</script>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "url": "{{ shop.url }}",
+    "mainEntity": {
+      "@type": "OfferCatalog",
+      "name": "{{ collection.title }}",
+      "url": "{{ collection.url }}",
+      "numberOfItems": {{ collection.products.size }}
+    }
+  }
+  </script>
     
 <script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>
 
