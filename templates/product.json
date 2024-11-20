@@ -27,7 +27,7 @@
         "no_nasties_images_M3fGbN": {
           "type": "no-nasties-images",
           "settings": {
-            "image_no_nasty_image": "shopify://shop_images/Product-Petal-vege.svg"
+            "image_no_nasty_image": "shopify://shop_images/Product-Petal-vegan.svg"
           }
         },
         "no_nasties_images_n4gYUw": {
@@ -64,8 +64,7 @@
         "no_nasties_images_PeMNDy",
         "no_nasties_images_U3VwrL"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "faq": {
       "type": "faq",
