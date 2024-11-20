@@ -69,27 +69,15 @@
   
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
-    "@type": "WebPage",
-    "url": "{{ shop.url }}{{ collection.url }}",
-    "mainEntity": {
-      "@type": "OfferCatalog",
-      "name": "{{ collection.title | json }}",
-      "url": "{{ shop.url }}{{ collection.url }}",
-      "numberOfItems": {{ collection.products_count | json }},
-      "itemListElement": [
-        {% for product in collection.products limit: 10 %}
-        {
-          "@type": "Product",
-          "name": {{ product.title | json }},
-          "url": "{{ shop.url }}{{ product.url }}",
-          "image": "{{ product.featured_image | img_url: 'large' }}"
-        }{% unless forloop.last %},{% endunless %}
-        {% endfor %}
-      ]
-    }
-  }
-  </script>
+     "@context":"http:\/\/schema.org",
+     "@type":"WebPage",
+     "url":{{ shop.name | json }},
+     "mainEntity":{"@type":"offerCatalog",
+     "name":{{ collection.title }},
+     "url":{{ {{ collection.title | link_to: collection.url }} }},
+     "numberOfItems":{{ collection.products.size }}}
+}
+</script>
     
 <script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>
 
