@@ -34,15 +34,6 @@
             "richtext_ingredient_description": "<p>Ashwagandha, an adaptogenic herb, is scientifically linked to the production of keratin, a crucial protein for hair strength. It supports the synthesis of keratin in our bodies, contributing to the overall health and resilience of our hair. In simple terms, Ashwagandha quietly works behind the scenes to keep your locks robust.</p>"
           }
         },
-        "ingredients_card_wRmDCr": {
-          "type": "ingredients-card",
-          "settings": {
-            "image_ingredient_icon": "shopify://shop_images/Icon_flower.png",
-            "text_ingredient_name": "vitamin d2",
-            "text_ingredient_key_point": "produces serotonin",
-            "richtext_ingredient_description": "<p>vitamin d2 isn't just about bone health; it has a say in your mood too. scientifically, it influences neurotransmitters that play a role in your overall sense of well-being. so, catching some sun or grabbing your calm me down gummies might just be the mood boost you need.</p>"
-          }
-        },
         "ingredients_card_KWGE8r": {
           "type": "ingredients-card",
           "settings": {
@@ -72,7 +63,6 @@
       },
       "block_order": [
         "ingredients_card_kiU8QH",
-        "ingredients_card_wRmDCr",
         "ingredients_card_KWGE8r",
         "ingredients_card_TQY8BA",
         "suggested_use_card_bwxJTC"
