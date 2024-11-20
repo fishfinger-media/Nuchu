@@ -69,15 +69,17 @@
 {% comment %} new schema {% endcomment %}
 <script type="application/ld+json">
   {
-     "@context":"http:\/\/schema.org",
-     "@type":"WebPage",
-     "url":{{ shop.name | json }},
-     "mainEntity":{"@type":"offerCatalog",
-     "name":{{ collection.title }},
-     "url":{{ {{ collection.title | link_to: collection.url }} }},
-     "numberOfItems":{{ collection.products.size }}}
-}
-</script>
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://mynuchu.com",
+    "mainEntity": {
+      "@type": "OfferCatalog",
+      "name": {{ collection.title | json }},
+      "url": "https://mynuchu.com{{ collection.url }}",
+      "numberOfItems": {{ collection.products.size }}
+    }
+  }
+  </script>
     
 <script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>
 
