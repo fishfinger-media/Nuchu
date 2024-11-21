@@ -30,8 +30,8 @@
 
 
       {% form 'product', product, class: 'product-header_default-state' %}
-        {% if product.has_only_default_variant != true %}
-          <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
+        {% if product.has_only_default_variant == false %}
+          <div li-if="product.has_only_default_variant == false" class="product-header_option-list">
             <template x-for="(option, optionKey) in product.options" :key="optionKey">
               <div li-element="product-options-loop" class="product-header_option" data-ProductVariantsLoop="true">
                 <div li-element="product-options-name" class="hide" x-text="option">Variant</div>
@@ -51,7 +51,7 @@
                         data-selectorType="radio"
                         :data-price="selected_or_first_available_variant.price"
                         :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
-                    <span  li-element="product-option-name"  class="header_radio-label w-form-label"  for="radio" x-text="variantName"  :for="variantName"  >1 Pack</span>
+                      <span li-element="product-option-name" class="header_radio-label w-form-label" for="radio" x-text="variantName" :for="variantName">1 Pack</span>
                     </label>
                   </template>
                 </div>
