@@ -1,0 +1,383 @@
+<script src="{{ '_custom.js' | asset_url }}" type="text/javascript"></script>
+
+<div li-element="product-variant-container" class="product_container"
+  x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
+  x-init="$nextTick(() => { activateVariants() })">
+  <div class="product-info_descriptioncontainer">
+    <div class="product-info_hero">
+      <div class="w-layout-vflex product-main_table_heading">
+        <h1 lowercase="" li-object:text="product.title" gsap-product="" class="allow-break">
+          {{ product.title }}
+        </h1>
+        <div gsap-product="" class="product-info_keyfact"><img
+            src="{{ product.metafields.custom.product_icon | img_url: 'master' }}" loading="lazy" width="32" height="32"
+            alt="" li-object:src="product.metafields.custom.product_icon | img_url: 'master'"
+            class="image_l hide-tablet">
+          <p li-object="product.metafields.custom.byline" class="heading_small">{{ product.metafields.custom.byline }}
+          </p>
+          <p li-object="product.metafields.custom.GummyNumber" class="heading_small ts_tc-pink">
+            {{ product.metafields.custom.GummyNumber }}</p>
+        </div>
+
+
+
+      </div>
+      
+
+<div class="w-layout-vflex spacing_2">
+    <div li-object="product.description" class="text-size-medium w-richtext">{{ product.description }}</div>
+    <div class="product-header_add-to-cart w-form">
+
+
+      {% form 'product', product, class: 'product-header_default-state' %}
+        {% if product.has_only_default_variant != true %}
+          <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
+            <template x-for="(option, optionKey) in product.options" :key="optionKey">
+              <div li-element="product-options-loop" class="product-header_option" data-ProductVariantsLoop="true">
+                <div li-element="product-options-name" class="hide" x-text="option">Variant</div>
+                <div class="product-header_radio-list">
+                  <template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
+                    <label li-element="product-option-loop" class="product-header_radio w-radio">
+                      <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"></div>
+                      <input type="radio" 
+                        li-element="product-option-input" 
+                        style="opacity:0;position:absolute;z-index:-1" 
+                        x-on:click="setVariant" 
+                        :name="option" 
+                        :data-name="option" 
+                        :value="variantName" 
+                        :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" 
+                        :checked="selected_or_first_available_variant?.options.includes(variantName)" 
+                        data-selectorType="radio"
+                        :data-price="selected_or_first_available_variant.price"
+                        :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
+                    <span  li-element="product-option-name"  class="header_radio-label w-form-label"  for="radio" x-text="variantName"  :for="variantName"  >1 Pack</span>
+                    </label>
+                  </template>
+                </div>
+              </div>
+            </template>
+          </div>
+        {% endif %}
+    
+        <div class="product-header_ad-to-cart-wrapper">
+          <template x-if="selected_or_first_available_variant.available == true">
+            <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
+              <div class="qty-wrapper">
+                <div x-on:click="quantity--" class="qty-counter minus">
+                  <div>-</div>
+                </div>
+                <input  class="form-input qty w-input"  qtycounter=""  maxlength="256"  name="quantity" li-element="add-to-cart-quantity"  data-name="Quantity"  placeholder="1"  type="number" id="quantity"  required=""  x-model="quantity" >
+                <div x-on:click="quantity++" class="qty-counter plus">
+                  <div>+</div>
+                </div>
+              </div>
+            </div>
+          </template>
+    
+          <template x-if="selected_or_first_available_variant.available == true">
+            <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity is-cart-btn">
+              <a li-element="add-to-cart" href="#" class="button is-product w-button" @click="addToCart()":disabled="!addToCartButton" >Add to basket</a>
+            </div>
+          </template>
+    
+         <template x-if="selected_or_first_available_variant.available == true">
+                <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
+
+                    <!-- Main price element -->
+<div li-object="product.price | money" li-js-price="price" class="heading_small flex-align_center">
+  <span id="product-price">{{ product.price | money }}</span>
+</div>
+
+
+                    <div li-object="product.compare_at_price | money" class="heading_small flex-align_center is-sale">
+                        {{ product.compare_at_price | money }}
+                    </div>
+                </div>
+            </template>
+    
+          <template x-if="selected_or_first_available_variant.available != true">
+            <div li-js-if="selected_or_first_available_variant.available != true" class="product-header_quantity">
+              <a href="#" class="button w-button" >{{ 'Product-Page.Product-Page-Hero.Not-In-Stock' | t }}</a>
+            </div>
+          </template>
+        </div>
+    
+        <hr class="divider">
+      {% endform %}
+
+
+        <div class="out-of-stock-state w-form-done">
+            <div>Thank you! Your submission has been received!</div>
+        </div>
+        <div class="error-state w-form-fail">
+            <div>Oops! Something went wrong while submitting the form.</div>
+        </div>
+    </div>
+</div>
+
+      
+    </div>
+    <div lowercase="" class="container_xl is-product-dropdown">
+      <div class="product-detail_item">
+        <div class="product-detail_title">
+          <h2 li-object="'Shop.The-Composition' | t" class="heading_small">{{ 'Shop.The-Composition' | t }}</h2><svg
+            class="product-item_icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 13 13" fill="none">
+            <path d="M0 4.77087H4.81025V0H8.09108V4.77087H13V8.20388H8.09108V13H4.81025V8.20388H0V4.77087Z"
+              fill="#f818ac"></path>
+          </svg>
+        </div>
+        <div class="product-detail_answer">
+          <div class="product-detail_text">
+            <ul role="list" class="product-main_grid">
+              {% for compositions in product.metafields.custom.key_ingredients.value %} <li
+                li-for="compositions in product.metafields.custom.key_ingredients.value" class="product-main_grid-item">
+
+                <div class="w-layout-vflex spacing_1"><img
+                    src="{{ product.metafields.custom.product_icon | img_url: 'master' }}" loading="lazy" width="32"
+                    height="32" alt="" li-object:src="product.metafields.custom.product_icon | img_url: 'master'"
+                    class="image_l">
+                  <h3 class="heading_very-small">{{ compositions.ingredient_name }}</h3>
+                  <p>{{ compositions.ingredient_short_description }}</p>
+                </div>
+
+              </li>
+              {% endfor %}</ul>
+            <div class="prodict-main_table-container">
+              <div class="product-main_table-row heading">
+                <h2 li-object="'Shop.Ingredients-table-Label' | t" class="heading_very-small">
+                  {{ 'Shop.Ingredients-table-Label' | t }}</h2>
+                <div li-object="'Shop.Ingredients-table-List' | t" class="heading_very-small text-align-right">
+                  {{ 'Shop.Ingredients-table-List' | t }}</div>
+              </div>
+              <div class="product-main_table-wrapper">
+
+
+                <ul class="product-main_table-list">
+                  {% assign ingredients = product.metafields.custom.ingredientsList | newline_to_br | split: '<br />' %}
+                  {% for ingredient in ingredients %}
+                  {% assign parts = ingredient | remove: '"' | split: ',' %}
+                  <li class="product-main_table-row">
+                    <p>{{ parts[0] }}</p>
+                    <p>{{ parts[1] }}</p>
+                  </li>
+                  {% endfor %}
+                </ul>
+
+
+
+
+                <div class="w-layout-vflex product-main_table_additionals">
+                  <p li-object="product.metafields.custom.all-ingredients">
+                    {{ product.metafields.custom.all-ingredients }}</p>
+                </div>
+              </div><a ingredient-btn="" button-size="" href="#" class="button w-inline-block">
+                <div class="button_icon-wrapper">
+                  <div li-object="'Shop.All-Ingredients-Button' | t">{{ 'Shop.All-Ingredients-Button' | t }}</div><svg
+                    class="image_icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 13 8" fill="none"
+                    id="ingredient-icon">
+                    <path
+                      d="M7.08091 7.59453C6.84482 7.85417 6.5248 8 6.19113 8C5.85746 8 5.53744 7.85417 5.30135 7.59453L0.551958 2.36676C0.315863 2.10667 0.183271 1.75396 0.18335 1.38622C0.183428 1.01849 0.316172 0.665848 0.552378 0.40588C0.788584 0.145913 1.1089 -8.66303e-05 1.44287 3.85644e-08C1.77684 8.67074e-05 2.0971 0.146252 2.33319 0.406342L6.19113 4.65437L10.0491 0.406342C10.2864 0.153666 10.6044 0.0137546 10.9346 0.0167409C11.2647 0.0197273 11.5806 0.165373 11.8141 0.422308C12.0477 0.679244 12.1803 1.02691 12.1833 1.39043C12.1863 1.75395 12.0596 2.10423 11.8303 2.36583L7.08175 7.59546L7.08091 7.59453Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <ul role="list" class="product-main_grid is-3">
+              <li class="product-main_grid-item small-for-product">
+                <div class="w-layout-hflex product-main_grid-item_content"><img
+                    src="{{ 'smallIcon-60.svg' | asset_url }}" loading="lazy" alt="" class="image_xl">
+                  <div><span
+                      li-object="product.metafields.custom.GummyNumber">{{ product.metafields.custom.GummyNumber }}</span>
+                  </div>
+                </div>
+              </li>
+              <li class="product-main_grid-item small-for-product">
+                <div class="w-layout-hflex product-main_grid-item_content"><img
+                    src="{{ 'smallIcon-2Bears.svg' | asset_url }}" loading="lazy" alt="" class="image_xl">
+                  <div li-object="product.metafields.custom.daily_amount">{{ product.metafields.custom.daily_amount }}
+                  </div>
+                </div>
+              </li>
+              <li class="product-main_grid-item small-for-product">
+                <div class="w-layout-hflex product-main_grid-item_content"><img
+                    src="{{ product.metafields.custom.flavour_image | img_url: 'master' }}" loading="lazy"
+                    li-object:src="product.metafields.custom.flavour_image | img_url: 'master'" alt="" class="image_xl">
+                  <div li-object="product.metafields.custom.flavour">{{ product.metafields.custom.flavour }}</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="divider">
+    <div lowercase="" class="container_xl is-product-dropdown">
+      <div class="product-detail_item">
+        <div class="product-detail_title">
+          <h2 li-object="'Shop.No-Nasties' | t" class="heading_small">{{ 'Shop.No-Nasties' | t }}</h2><svg
+            class="product-item_icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 13 13" fill="none">
+            <path d="M0 4.77087H4.81025V0H8.09108V4.77087H13V8.20388H8.09108V13H4.81025V8.20388H0V4.77087Z"
+              fill="#f818ac"></path>
+          </svg>
+        </div>
+        <div class="product-detail_answer">
+          <div class="product-detail_text">
+            <div class="w-layout-grid product-main_nonasties-container">{% for block in section.blocks %}
+              {% if block.type == "no-nasties-images" %}
+              <div li-block="No Nasties Images" id="w-node-_93a2e293-4226-37c1-bdad-ff3ce3f4f42e-07f8c2c1"
+                class="nonasties_image">
+                <img class="max-width-full" src="{{ block.settings.image_no_nasty_image | img_url: 'master' }}" alt="{{ block.settings.image_no_nasty_image.alt }}" loading="lazy">
+
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="divider">
+  </div>
+  <div class="product-info_imagecontainer">
+    <div class="product-main_slider-container">
+      <div class="swiper is-productmain"><a href="#" class="swiper-button swiper-prev w-inline-block">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 58 58" fill="none"> <g clip-path="url(#clip0_553_1033)"> <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1883 31.5617C18.5095 30.882 18.1282 29.9606 18.1282 29C18.1282 28.0394 18.5095 27.118 19.1883 26.4383L32.857 12.7648C33.537 12.0851 34.4592 11.7034 35.4207 11.7036C36.3822 11.7038 37.3042 12.086 37.9839 12.7661C38.6637 13.4461 39.0454 14.3683 39.0452 15.3298C39.0449 16.2913 38.6628 17.2133 37.9827 17.893L26.8757 29L37.9827 40.107C38.6434 40.7904 39.0092 41.7059 39.0014 42.6564C38.9936 43.6068 38.6128 44.5162 37.941 45.1886C37.2692 45.8611 36.3602 46.2427 35.4097 46.2514C34.4593 46.2601 33.5434 45.8952 32.8594 45.2352L19.1859 31.5641L19.1883 31.5617Z" fill="currentColor"></path> </g> <defs> <clippath id="clip0_553_1033"> <rect width="58" height="58" fill="currentColor" transform="matrix(-1 0 0 -1 58 58)"></rect> </clippath> </defs> </svg>
+      </a><a href="#" class="swiper-button swiper-next w-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 58 58" fill="none">
+            <g clip-path="url(#clip0_553_1033)">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M38.8117 26.4384C39.4905 27.1181 39.8718 28.0395 39.8718 29.0001C39.8718 29.9607 39.4905 30.8821 38.8117 31.5618L25.143 45.2353C24.463 45.915 23.5408 46.2967 22.5793 46.2965C21.6178 46.2963 20.6958 45.9141 20.0161 45.2341C19.3363 44.554 18.9546 43.6318 18.9548 42.6703C18.9551 41.7088 19.3372 40.7868 20.0173 40.1071L31.1243 29.0001L20.0173 17.8931C19.3566 17.2097 18.9908 16.2942 18.9986 15.3438C19.0064 14.3933 19.3872 13.4839 20.059 12.8115C20.7308 12.1391 21.6398 11.7574 22.5903 11.7487C23.5407 11.74 24.4566 12.1049 25.1406 12.7649L38.8141 26.436L38.8117 26.4384Z"
+                fill="currentColor"></path>
+            </g>
+            <defs>
+              <clippath id="clip0_553_1033">
+                <rect width="58" height="58" fill="currentColor" transform="matrix(-1 0 0 -1 58 58)"></rect>
+              </clippath>
+            </defs>
+          </svg></a>
+        <div class="swiper-wrapper is-productmain">{% for image in product.images %} <div
+            li-for="image in product.images" class="swiper-slide is-productmain">
+
+            <div class="productmain_image"><img src="{{ image.src | product_img_url: 'master' }}" loading="lazy"
+                li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" alt="{{ image.alt }}"
+                class="product_image">
+            </div>
+
+          </div>
+          {% endfor %}</div>
+      </div>
+      <div>
+        <div class="swiper is-productthumbnail">
+          <div class="swiper-wrapper is-productthumbnail">{% for image in product.images %} <div
+              li-for="image in product.images" class="swiper-slide is-productthumbnail">
+              <img src="{{ image.src | product_img_url: 'master' }}" loading="lazy"
+                li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" alt="{{ image.alt }}"
+                class="productthumbnail">
+
+            </div>
+            {% endfor %}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="fixed-basket_container">
+  <div data-body="blue" class="fixed-basket_content"><a is-add-to-cart="" href="#"
+      class="button is-product w-button">{{ 'Shop.Add-to-Cart-Button' | t }}</a>
+      <div li-object="product.price | money" li-js-price="price" class="heading_small flex-align_center">
+        <span id="fixed-product-price">{{ product.price | money }}</span>
+    </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Function to get the current Shopify currency
+      function getCurrentCurrency() {
+          if (typeof Shopify !== 'undefined' && Shopify.currency && Shopify.currency.active) {
+              return Shopify.currency.active;
+          }
+          // Fallback to store's default currency
+          return document.querySelector('meta[property="og:price:currency"]')?.content || 'USD';
+      }
+  
+      // Function to format the price according to the locale and currency
+      function formatMoney(cents, format) {
+          if (typeof Shopify !== 'undefined' && Shopify.formatMoney) {
+              return Shopify.formatMoney(cents, format);
+          } else {
+              // Enhanced fallback formatting using Intl.NumberFormat
+              const currency = getCurrentCurrency();
+              return new Intl.NumberFormat(document.documentElement.lang || 'en', {
+                  style: 'currency',
+                  currency: currency,
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2
+              }).format(cents / 100);
+          }
+      }
+  
+      // Function to update all price elements
+      function updatePrices(price) {
+          const priceElements = [
+              document.getElementById('product-price'),
+              document.getElementById('fixed-product-price')
+          ];
+  
+          priceElements.forEach(element => {
+              if (element) {
+                  element.textContent = formatMoney(price);
+              }
+          });
+      }
+  
+      var variantInputs = document.querySelectorAll('[data-selectorType="radio"]');
+  
+      // Initial price update
+      if (variantInputs.length > 0) {
+          const selectedVariant = document.querySelector('[data-selectorType="radio"]:checked');
+          if (selectedVariant) {
+              const initialPrice = selectedVariant.getAttribute('data-price');
+              if (initialPrice) {
+                  updatePrices(initialPrice);
+              }
+          }
+      }
+  
+      // Update price on variant selection
+      variantInputs.forEach(function(input) {
+          input.addEventListener('click', function() {
+              var newPrice = this.getAttribute('data-price');
+              if (newPrice) {
+                  updatePrices(newPrice);
+              }
+          });
+      });
+  });
+  </script>
+
+
+
+{% schema %} 
+
+  {
+  "tag": "section",
+  "name": "product_page",
+  "class": "section_product-main",
+  "blocks": [{
+    "name": "No Nasties Images",
+    "type": "no-nasties-images",
+    "settings": [{
+      "id": "image_no_nasty_image",
+      "type": "image_picker",
+      "label": "No Nasty Image"
+    }]
+  }],
+  "presets": [{
+    "name": "product_page",
+    "category": "Liquify"
+  }]
+  }
+  
+{% endschema %}
