@@ -12,4 +12,27 @@
                             </div>
             {% endif %}
 {% endfor %}
-</div></div></div> {% schema %} {"tag":"section","name":"faq","class":"section_faq","blocks":[{"name":"FAQ","type":"faq","settings":[{"id":"text_question","type":"text","label":"Question","default":"Can I take these gummies every day?"},{"id":"richtext_answer","type":"richtext","label":"Answer","default":"<p>Absolutely! Our wellness gummies are crafted for daily use, ensuring you get a delightful dose of essential vitamins to support your overall well-being<\/p>"}]}],"settings":[{"id":"text_faq_heading","type":"text","label":"FAQ Heading","default":"Frequently Asked Questions"}],"presets":[{"name":"faq","category":"Liquify"}]} {% endschema %}
+</div></div>
+
+{% assign faq_items = section.blocks | where: "type", "faq" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for block in faq_items %}
+      {
+        "@type": "Question",
+        "name": {{ block.settings.text_question | json }},
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": {{ block.settings.richtext_answer | strip_html | json }}
+        }
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+
+</div> {% schema %} {"tag":"section","name":"faq","class":"section_faq","blocks":[{"name":"FAQ","type":"faq","settings":[{"id":"text_question","type":"text","label":"Question","default":"Can I take these gummies every day?"},{"id":"richtext_answer","type":"richtext","label":"Answer","default":"<p>Absolutely! Our wellness gummies are crafted for daily use, ensuring you get a delightful dose of essential vitamins to support your overall well-being<\/p>"}]}],"settings":[{"id":"text_faq_heading","type":"text","label":"FAQ Heading","default":"Frequently Asked Questions"}],"presets":[{"name":"faq","category":"Liquify"}]} {% endschema %}

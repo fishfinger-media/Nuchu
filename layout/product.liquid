@@ -123,19 +123,9 @@
            }}
          ]
         }
-    </script><script type="application/ld+json">{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [{% for fa_qs in shop.metaobjects.fa_qs.values %}{
-            "@type": "Question",
-            "name": "{{ fa_qs.frage }}",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "{{ fa_qs.antwort | metafield_tag | strip_html }}"
-            }}{% if forloop.last == false %},{% endif %}{% endfor %}
-          ]
-        }
     </script>
+    
+  
     
     <script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>
     
