@@ -85,7 +85,8 @@
         "card_FPReFx"
       ],
       "custom_css": [
-        ".sustainability_icon {height: 3rem;}"
+        ".sustainability_icon {height: 3rem;}",
+        ".container_xl {padding-top:4vmin; padding-bottom:4vmin}"
       ],
       "settings": {
         "heading_text": "Monaco"
@@ -109,7 +110,7 @@
       "custom_css": [
         ".grid_3col {width: 100%;}",
         ".sustainability_icon {height: 3rem;}",
-        ".container_xl {padding-top:4vmin; padding-bottom:4vmin}"
+        ".container_xl {padding-top: 4vmin; padding-bottom: 4vmin;}"
       ],
       "settings": {
         "heading_text": "London"
