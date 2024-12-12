@@ -95,6 +95,9 @@
       "block_order": [
         "card_JNV767"
       ],
+      "custom_css": [
+        ".grid_3col {width:100%;}"
+      ],
       "settings": {
         "heading_text": "London"
       }
