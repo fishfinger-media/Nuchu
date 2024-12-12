@@ -26,6 +26,7 @@
         "card_hHmiBn": {
           "type": "card",
           "settings": {
+            "image_icon": "shopify://shop_images/Vector.svg",
             "text_heading": "Melrose Kitchen Geneva",
             "textarea_content": "Galerie Des Bergues, Rue Arnold Winkelried 1, 1201 Genève, Switzerland"
           }
@@ -33,6 +34,7 @@
         "card_Je6fp6": {
           "type": "card",
           "settings": {
+            "image_icon": "shopify://shop_images/Vector.svg",
             "text_heading": "Form Studio geneva",
             "textarea_content": "Av. de la Gare des Eaux-Vives 28, 1208 Genève, Switzerland"
           }
@@ -40,6 +42,7 @@
         "card_4UKcpq": {
           "type": "card",
           "settings": {
+            "image_icon": "shopify://shop_images/Vector.svg",
             "text_heading": "Form Studio Zurich",
             "textarea_content": "Talstrasse 62A, 8001 Zürich, Switzerland"
           }
@@ -50,7 +53,9 @@
         "card_Je6fp6",
         "card_4UKcpq"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".sustainability_icon {height: 3rem;}"
+      ],
       "settings": {
         "heading_text": "Switzerland"
       }
@@ -61,6 +66,7 @@
         "card_DwaPjd": {
           "type": "card",
           "settings": {
+            "image_icon": "shopify://shop_images/Vector.svg",
             "text_heading": "Espace Beauté Eric Zemmour",
             "textarea_content": "6 Bd des Moulins, 98000 Monaco"
           }
@@ -68,6 +74,7 @@
         "card_FPReFx": {
           "type": "card",
           "settings": {
+            "image_icon": "shopify://shop_images/Vector.svg",
             "text_heading": "HealthStore",
             "textarea_content": "Métropole Shopping, 17 Av. des Spélugues, 98000 Monaco"
           }
@@ -76,6 +83,9 @@
       "block_order": [
         "card_DwaPjd",
         "card_FPReFx"
+      ],
+      "custom_css": [
+        ".sustainability_icon {height: 3rem;}"
       ],
       "settings": {
         "heading_text": "Monaco"
@@ -87,6 +97,7 @@
         "card_JNV767": {
           "type": "card",
           "settings": {
+            "image_icon": "shopify://shop_images/Vector.svg",
             "text_heading": "MAD fitness Studio",
             "textarea_content": "32 N Audley St, London W1K 6ZG"
           }
@@ -96,7 +107,9 @@
         "card_JNV767"
       ],
       "custom_css": [
-        ".grid_3col {width: 100%;}"
+        ".grid_3col {width: 100%;}",
+        ".sustainability_icon {height: 3rem;}",
+        ".container_xl {padding-top:4vmin; padding-bottom:4vmin}"
       ],
       "settings": {
         "heading_text": "London"
@@ -108,6 +121,7 @@
         "card_mq66Qf": {
           "type": "card",
           "settings": {
+            "image_icon": "shopify://shop_images/Vector.svg",
             "text_heading": "Tiara Health Marbella",
             "textarea_content": "Centro de Negocios Oasis, \nN-340, Km 183, Oficina 2, \n29600 Marbella, Málaga"
           }
@@ -115,6 +129,9 @@
       },
       "block_order": [
         "card_mq66Qf"
+      ],
+      "custom_css": [
+        ".sustainability_icon {height: 3rem;}"
       ],
       "settings": {
         "heading_text": "Spain"
