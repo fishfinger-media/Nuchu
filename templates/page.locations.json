@@ -27,21 +27,21 @@
           "type": "card",
           "settings": {
             "text_heading": "Melrose Kitchen Geneva",
-            "textarea_content": "Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."
+            "textarea_content": "Galerie Des Bergues, Rue Arnold Winkelried 1, 1201 Genève, Switzerland"
           }
         },
         "card_Je6fp6": {
           "type": "card",
           "settings": {
             "text_heading": "Form Studio geneva",
-            "textarea_content": "Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."
+            "textarea_content": "Av. de la Gare des Eaux-Vives 28, 1208 Genève, Switzerland"
           }
         },
         "card_4UKcpq": {
           "type": "card",
           "settings": {
             "text_heading": "Form Studio Zurich",
-            "textarea_content": "Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."
+            "textarea_content": "Talstrasse 62A, 8001 Zürich, Switzerland"
           }
         }
       },
@@ -62,14 +62,14 @@
           "type": "card",
           "settings": {
             "text_heading": "Espace Beauté Eric Zemmour",
-            "textarea_content": "Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."
+            "textarea_content": "6 Bd des Moulins, 98000 Monaco"
           }
         },
         "card_FPReFx": {
           "type": "card",
           "settings": {
             "text_heading": "HealthStore",
-            "textarea_content": "Our product packaging is fully recyclable. Every piece can be separated and responsibly recycled, ensuring a minimal impact on the environment."
+            "textarea_content": "Métropole Shopping, 17 Av. des Spélugues, 98000 Monaco"
           }
         }
       },
@@ -96,7 +96,7 @@
         "card_JNV767"
       ],
       "custom_css": [
-        ".grid_3col {width:100%;}"
+        ".grid_3col {width: 100%;}"
       ],
       "settings": {
         "heading_text": "London"
