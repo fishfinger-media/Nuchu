@@ -97,7 +97,7 @@
         "location_tktUCm"
       ],
       "custom_css": [
-        "#locations {background-color: var(--color--lilac-light);}"
+        "#locations {}"
       ],
       "settings": {
         "section_heading": "Our Locations"
