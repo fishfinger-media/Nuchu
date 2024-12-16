@@ -103,6 +103,13 @@
         "section_heading": "Our Locations"
       }
     },
+    "tradeform_3YcKXy": {
+      "type": "tradeform",
+      "settings": {
+        "heading": "Be part of the Nuchu family",
+        "description": "Want to become a Nuchu Stockist? Fill out the form below and we will get back to you as soon as possible."
+      }
+    },
     "all_the_best": {
       "type": "all_the_best",
       "settings": {
@@ -141,6 +148,7 @@
   "order": [
     "no_nasty_heading",
     "locations_m7CwLh",
+    "tradeform_3YcKXy",
     "all_the_best",
     "meet_your_match",
     "omg"
