@@ -19,10 +19,23 @@
         "text_content": "our best-for-you gummy blends are the perfect addition to your daily routine."
       }
     },
-    "featured_product": {
-      "type": "featured_product",
+    "faq_NMtJrf": {
+      "type": "faq",
+      "blocks": {
+        "faq_pCbgpT": {
+          "type": "faq",
+          "settings": {
+            "text_question": "Can I take these gummies every day?",
+            "richtext_answer": "<p>Absolutely! Our wellness gummies are crafted for daily use, ensuring you get a delightful dose of essential vitamins to support your overall well-being</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_pCbgpT"
+      ],
+      "disabled": true,
       "settings": {
-        "product": "discovery-bundle"
+        "text_faq_heading": "Frequently Asked Questions"
       }
     },
     "all_the_best": {
@@ -105,7 +118,7 @@
   "wrapper": "main.main-wrapper",
   "order": [
     "collection_list",
-    "featured_product",
+    "faq_NMtJrf",
     "all_the_best",
     "instagram",
     "1716118870c90ede84",
