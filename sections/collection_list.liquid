@@ -1,16 +1,21 @@
 <div lowercase="" class="w-layout-blockcontainer container_l w-container">
     <div class="w-layout-vflex flex_center-center spacing_4">
         <div class="w-layout-vflex flex_dp-center-tb-left spacing_1">
-            <h2 gsap-heading="" class="heading_medium"><span>
-                    {{ section.settings.text_meet_your_match_part_1 }}
-                </span>
-                <span class="fancy_text">
-                    {{ section.settings.text_meet_your_match_part_2 }}
-                </span>
-                <span>
-                    {{ section.settings.text_meet_your_match_part_3 }}
-                </span>
-            </h2>
+            {% if section.settings.use_basic_heading %}
+                <h2>{{ section.settings.text_meet_your_match_part_1 }} {{ section.settings.text_meet_your_match_part_2 }} {{ section.settings.text_meet_your_match_part_3 }}</h2>
+            {% else %}
+                <h2 gsap-heading="" class="heading_medium">
+                    <span>
+                        {{ section.settings.text_meet_your_match_part_1 }}
+                    </span>
+                    <span class="fancy_text">
+                        {{ section.settings.text_meet_your_match_part_2 }}
+                    </span>
+                    <span>
+                        {{ section.settings.text_meet_your_match_part_3 }}
+                    </span>
+                </h2>
+            {% endif %}
             <div>
                 {{ section.settings.text_content }}
             </div>
@@ -60,4 +65,49 @@
 </div>
 
 
-{% schema %} {"tag":"section","name":"collection_list","class":"section_meetyourmatch","settings":[{"id":"text_meet_your_match_part_1","type":"text","label":"Meet your Match - Part 1","default":"Meet"},{"id":"text_meet_your_match_part_2","type":"text","label":"Meet your Match - Part 2","default":"your"},{"id":"text_meet_your_match_part_3","type":"text","label":"Meet your Match - Part 3","default":"match"},{"id":"text_content","type":"text","label":"Content","default":"our best-for-you gummy blends are the perfect addition to your daily routine."}],"presets":[{"name":"collection_list","category":"Liquify"}]} {% endschema %}
+{% schema %}
+{
+    "tag": "section",
+    "name": "collection_list",
+    "class": "section_meetyourmatch",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "use_basic_heading",
+            "label": "Use Basic Heading",
+            "default": false,
+            "info": "Check this to use a simple heading instead of the styled version"
+        },
+        {
+            "id": "text_meet_your_match_part_1",
+            "type": "text",
+            "label": "Meet your Match - Part 1",
+            "default": "Meet"
+        },
+        {
+            "id": "text_meet_your_match_part_2",
+            "type": "text",
+            "label": "Meet your Match - Part 2",
+            "default": "your"
+        },
+        {
+            "id": "text_meet_your_match_part_3",
+            "type": "text",
+            "label": "Meet your Match - Part 3",
+            "default": "match"
+        },
+        {
+            "id": "text_content",
+            "type": "text",
+            "label": "Content",
+            "default": "our best-for-you gummy blends are the perfect addition to your daily routine."
+        }
+    ],
+    "presets": [
+        {
+            "name": "collection_list",
+            "category": "Liquify"
+        }
+    ]
+}
+{% endschema %}
