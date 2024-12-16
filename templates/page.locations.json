@@ -20,122 +20,50 @@
         "show_floating_images": true
       }
     },
-    "sustainablity_kAFmr8": {
-      "type": "sustainablity",
+    "locations_m7CwLh": {
+      "type": "locations",
       "blocks": {
-        "card_hHmiBn": {
-          "type": "card",
+        "location_BxbFAd": {
+          "type": "location",
           "settings": {
-            "image_icon": "shopify://shop_images/Vector.svg",
-            "text_heading": "Melrose Kitchen Geneva",
-            "textarea_content": "Galerie Des Bergues, Rue Arnold Winkelried 1, 1201 Genève, Switzerland"
+            "image": "shopify://shop_images/Vector.svg",
+            "country": "Switzerland",
+            "heading": "Melrose Kitchen Geneva",
+            "address": "Galerie Des Bergues, Rue Arnold Winkelried 1, 1201 Genève, Switzerland",
+            "link": ""
           }
         },
-        "card_Je6fp6": {
-          "type": "card",
+        "location_gNRTGh": {
+          "type": "location",
           "settings": {
-            "image_icon": "shopify://shop_images/Vector.svg",
-            "text_heading": "Form Studio geneva",
-            "textarea_content": "Av. de la Gare des Eaux-Vives 28, 1208 Genève, Switzerland"
+            "image": "shopify://shop_images/Vector.svg",
+            "country": "Switzerland",
+            "heading": "Form Studio geneva",
+            "address": "Av. de la Gare des Eaux-Vives 28, 1208 Genève, Switzerland",
+            "link": ""
           }
         },
-        "card_4UKcpq": {
-          "type": "card",
+        "location_7W7dAA": {
+          "type": "location",
           "settings": {
-            "image_icon": "shopify://shop_images/Vector.svg",
-            "text_heading": "Form Studio Zurich",
-            "textarea_content": "Talstrasse 62A, 8001 Zürich, Switzerland"
+            "image": "shopify://shop_images/Vector.svg",
+            "country": "Switzerland",
+            "heading": "Form Studio Zurich",
+            "address": "Talstrasse 62A, 8001 Zürich, Switzerland",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "card_hHmiBn",
-        "card_Je6fp6",
-        "card_4UKcpq"
+        "location_BxbFAd",
+        "location_gNRTGh",
+        "location_7W7dAA"
       ],
       "custom_css": [
-        ".sustainability_icon {height: 3rem;}"
+        "#locations {background-color: var(--color--lilac-light);}"
       ],
       "settings": {
-        "heading_text": "Switzerland"
-      }
-    },
-    "sustainablity_RHJdGT": {
-      "type": "sustainablity",
-      "blocks": {
-        "card_DwaPjd": {
-          "type": "card",
-          "settings": {
-            "image_icon": "shopify://shop_images/Vector.svg",
-            "text_heading": "Espace Beauté Eric Zemmour",
-            "textarea_content": "6 Bd des Moulins, 98000 Monaco"
-          }
-        },
-        "card_FPReFx": {
-          "type": "card",
-          "settings": {
-            "image_icon": "shopify://shop_images/Vector.svg",
-            "text_heading": "HealthStore",
-            "textarea_content": "Métropole Shopping, 17 Av. des Spélugues, 98000 Monaco"
-          }
-        }
-      },
-      "block_order": [
-        "card_DwaPjd",
-        "card_FPReFx"
-      ],
-      "custom_css": [
-        ".sustainability_icon {height: 3rem;}",
-        ".container_xl {padding-top:4vmin; padding-bottom:4vmin}"
-      ],
-      "settings": {
-        "heading_text": "Monaco"
-      }
-    },
-    "sustainablity_dfq6aE": {
-      "type": "sustainablity",
-      "blocks": {
-        "card_JNV767": {
-          "type": "card",
-          "settings": {
-            "image_icon": "shopify://shop_images/Vector.svg",
-            "text_heading": "MAD fitness Studio",
-            "textarea_content": "32 N Audley St, London W1K 6ZG"
-          }
-        }
-      },
-      "block_order": [
-        "card_JNV767"
-      ],
-      "custom_css": [
-        ".grid_3col {width: 100%;}",
-        ".sustainability_icon {height: 3rem;}",
-        ".container_xl {padding-top: 4vmin; padding-bottom: 4vmin;}"
-      ],
-      "settings": {
-        "heading_text": "London"
-      }
-    },
-    "sustainablity_BDLWNp": {
-      "type": "sustainablity",
-      "blocks": {
-        "card_mq66Qf": {
-          "type": "card",
-          "settings": {
-            "image_icon": "shopify://shop_images/Vector.svg",
-            "text_heading": "Tiara Health Marbella",
-            "textarea_content": "Centro de Negocios Oasis, \nN-340, Km 183, Oficina 2, \n29600 Marbella, Málaga"
-          }
-        }
-      },
-      "block_order": [
-        "card_mq66Qf"
-      ],
-      "custom_css": [
-        ".sustainability_icon {height: 3rem;}"
-      ],
-      "settings": {
-        "heading_text": "Spain"
+        "section_heading": "Our Locations"
       }
     },
     "all_the_best": {
@@ -175,10 +103,7 @@
   "wrapper": "main.main-wrapper",
   "order": [
     "no_nasty_heading",
-    "sustainablity_kAFmr8",
-    "sustainablity_RHJdGT",
-    "sustainablity_dfq6aE",
-    "sustainablity_BDLWNp",
+    "locations_m7CwLh",
     "all_the_best",
     "meet_your_match",
     "omg"
