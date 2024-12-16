@@ -1,6 +1,6 @@
 <div class="w-layout-blockcontainer container_l w-container" id="locations">
     <div class="w-layout-vflex spacing_2">
-      <div class="grid_4col spacing_2 split-container" style="width:100%">
+      <div class="grid_3col spacing_2 split-container" style="width:100%">
         {% for block in section.blocks %}
           
           <div li-block="Card" class="sustainability_card" style="gap:3rem">
@@ -59,25 +59,10 @@
             "id": "address",
             "label": "Address",
             "default": "Enter location address here"
-          },
-          {
-            "type": "url",
-            "id": "link",
-            "label": "Link URL"
           }
         ]
       }
     ],
-    "presets": [
-      {
-        "name": "Locations",
-        "category": "Content",
-        "blocks": [
-          {
-            "type": "location"
-          }
-        ]
-      }
-    ]
+   
   }
   {% endschema %}
