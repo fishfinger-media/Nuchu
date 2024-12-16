@@ -12,6 +12,7 @@
     "collection_list": {
       "type": "collection_list",
       "settings": {
+        "use_basic_heading": true,
         "text_meet_your_match_part_1": "Meet",
         "text_meet_your_match_part_2": "your",
         "text_meet_your_match_part_3": "match",
@@ -82,6 +83,7 @@
             "title_color": "",
             "alignment": "center",
             "background_color": "",
+            "feed_id": "",
             "html_area": ""
           }
         }
