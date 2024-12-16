@@ -29,8 +29,7 @@
             "image": "shopify://shop_images/Vector.svg",
             "country": "Switzerland",
             "heading": "Melrose Kitchen Geneva",
-            "address": "Galerie Des Bergues, Rue Arnold Winkelried 1, 1201 Genève, Switzerland",
-            "link": ""
+            "address": "Galerie Des Bergues, Rue Arnold Winkelried 1, 1201 Genève, Switzerland"
           }
         },
         "location_gNRTGh": {
@@ -39,8 +38,7 @@
             "image": "shopify://shop_images/Vector.svg",
             "country": "Switzerland",
             "heading": "Form Studio geneva",
-            "address": "Av. de la Gare des Eaux-Vives 28, 1208 Genève, Switzerland",
-            "link": ""
+            "address": "Av. de la Gare des Eaux-Vives 28, 1208 Genève, Switzerland"
           }
         },
         "location_7W7dAA": {
@@ -49,15 +47,54 @@
             "image": "shopify://shop_images/Vector.svg",
             "country": "Switzerland",
             "heading": "Form Studio Zurich",
-            "address": "Talstrasse 62A, 8001 Zürich, Switzerland",
-            "link": ""
+            "address": "Talstrasse 62A, 8001 Zürich, Switzerland"
+          }
+        },
+        "location_3XxTyy": {
+          "type": "location",
+          "settings": {
+            "image": "shopify://shop_images/Vector.svg",
+            "country": "Monaco",
+            "heading": "Espace Beauté Eric Zemmour",
+            "address": "6 Bd des Moulins, 98000 Monaco"
+          }
+        },
+        "location_7XDb3R": {
+          "type": "location",
+          "settings": {
+            "image": "shopify://shop_images/Vector.svg",
+            "country": "Monaco",
+            "heading": "HealthStore",
+            "address": "Métropole Shopping, 17 Av. des Spélugues, 98000 Monaco"
+          }
+        },
+        "location_YtkTLC": {
+          "type": "location",
+          "settings": {
+            "image": "shopify://shop_images/Vector.svg",
+            "country": "London",
+            "heading": "MAD fitness Studio",
+            "address": "32 N Audley St, London W1K 6ZG"
+          }
+        },
+        "location_tktUCm": {
+          "type": "location",
+          "settings": {
+            "image": "shopify://shop_images/Vector.svg",
+            "country": "Spain",
+            "heading": "Tiara Health Marbella",
+            "address": "Centro de Negocios Oasis, N-340, Km 183, Oficina 2, 29600 Marbella, Málaga"
           }
         }
       },
       "block_order": [
         "location_BxbFAd",
         "location_gNRTGh",
-        "location_7W7dAA"
+        "location_7W7dAA",
+        "location_3XxTyy",
+        "location_7XDb3R",
+        "location_YtkTLC",
+        "location_tktUCm"
       ],
       "custom_css": [
         "#locations {background-color: var(--color--lilac-light);}"
