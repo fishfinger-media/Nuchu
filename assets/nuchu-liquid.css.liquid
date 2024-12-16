@@ -4146,8 +4146,21 @@ figcaption {
   justify-content: space-between;
 }
 
+.is-trade {
+  width: 100%;
+  max-width: 65rem;
+}
+
+.is2col {
+  grid-column: span 2;
+}
+
+
 @media screen and (max-width: 991px) {
 
+  .is2col {
+    grid-column: span 1;
+  }
   #lclbtn {display: block;}
 
   .product-main_grid-item {

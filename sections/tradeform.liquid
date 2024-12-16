@@ -1,0 +1,73 @@
+<section>
+    <div class="w-layout-blockcontainer container_l w-container" >
+      <div class="w-layout-vflex spacing_4 flex_dp-center_mb-left">
+      
+        <div class="w-layout-vflex flex_dp-center_mb-left spacing_1" style="text-align: center;">
+          <h2 class="heading_medium"> All the best and nothing less </h2>
+          <div class="ts_maxwidth_64"> We stripped away added sugars, artificial sweeteners, and other fake nasty ingredients for totally yummy gummies you can feel good about. </div>
+        </div>
+  
+        
+        {% form 'contact', return_to: '/trade-success', class: 'contact_block is-trade' %}
+          {% if form.errors %}
+            <div class="text-size-regular text-color-red">
+              {{ form.errors | default_errors }}
+            </div>
+          {% endif %}
+          
+          <div class="grid_2col spacing_2 split-container" style="width:100%">
+            <input class="form-input is-pink w-input" maxlength="256" name="contact[first_name]" placeholder="First Name" type="text" id="first_name" required>
+            
+            <input class="form-input is-pink w-input" maxlength="256" name="contact[last_name]" placeholder="Last Name" type="text" id="last_name" required>
+        
+            <input class="form-input is-pink w-input" maxlength="256" name="contact[company]" placeholder="Company Name" type="text" id="company" required>
+            
+            <input class="form-input is-pink w-input" maxlength="256" name="contact[address]" placeholder="Company Address" type="text" id="address" required>
+        
+            <input class="form-input is-pink w-input" maxlength="256" name="contact[email]" placeholder="Email Address" type="email" id="email" required>
+            
+            <input class="form-input is-pink w-input" maxlength="256" name="contact[phone]" placeholder="Telephone" type="tel" id="phone" required>
+        
+            <textarea class="form-input is-pink w-input is2col" maxlength="256" name="contact[body]" placeholder="Message (Optional)" id="message" style="min-height:8rem; vertical-align:top!important;"></textarea>
+        
+            <div class="is2col" style="text-align: center;"> 
+              <input class="w-button button is-pink" type="submit" value="Submit Inquiry">
+            </div>
+          </div>
+        {% endform %}
+  
+      </div>
+    </div>
+  </section>
+
+  {% schema %}
+
+  {
+    "name": "Contact Form Section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content Settings"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Be part of the Nuchu family"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description Text",
+        "default": "Want to become a Nuchu Stockist? Fill out the form below and we will get back to you as soon as possible."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Trade Form",
+      }
+    ]
+  }
+
+  {% endschema %}
+  
