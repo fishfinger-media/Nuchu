@@ -8,7 +8,7 @@
         </div>
   
         
-        {% form 'contact', return_to: '/trade-success', class: 'contact_block is-trade' %}
+        {% form 'contact', return_to: '/pages/trade-success', class: 'contact_block is-trade' %}
           {% if form.errors %}
             <div class="text-size-regular text-color-red">
               {{ form.errors | default_errors }}
