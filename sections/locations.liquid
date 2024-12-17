@@ -4,15 +4,21 @@
     color:#f60da7;
     margin-bottom: 0.2rem
   }
+
+  .address p {
+    margin-bottom: 2rem;
+    margin-top: 0.2rem;
+    font-size: 0.875rem;
+  }
 </style>
 
 <div style="background-color: #ffcbff;">
   <div class="w-layout-blockcontainer container_l w-container" id="locations">
     <div class="w-layout-vflex spacing_2">
-      <div class="grid_4col spacing_2 split-container" style="width:100%">
+      <div class="grid_4col spacing_2 split-container" style="width:100%; align-items: start ">
         {% for block in section.blocks %}
           
-          <div li-block="Card" class="sustainability_card" style="gap:2rem">
+          <div li-block="Card" class="sustainability_card" style="gap:2rem;">
             <img class="sustainability_icon" src="{{ block.settings.image | img_url: 'master'}}" alt="{{ block.settings.image.alt }}" style="height:2rem" loading="lazy">
 
             <div class="w-layout-vflex spacing_1">
