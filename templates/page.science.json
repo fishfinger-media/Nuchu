@@ -218,7 +218,8 @@
     "testimonial_flipped_KjT64r": {
       "type": "testimonial-flipped",
       "custom_css": [
-        ".expert_image {aspect-ratio: 1/1;}"
+        ".expert_image {aspect-ratio: 1/1;}",
+        ".container_science.padded {padding-top:0;}"
       ],
       "settings": {
         "image_product_image": "shopify://shop_images/popup_img.jpg",
