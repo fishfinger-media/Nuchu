@@ -1,18 +1,26 @@
-<div style="background-color: var(--color--lilac-light);">
+<style>
+  .address h3 {
+    font-size: 1rem;
+    color:#f60da7;
+    margin-bottom: 0.2rem
+  }
+</style>
+
+<div style="background-color: #ffcbff;">
   <div class="w-layout-blockcontainer container_l w-container" id="locations">
     <div class="w-layout-vflex spacing_2">
-      <div class="grid_3col spacing_2 split-container" style="width:100%">
+      <div class="grid_4col spacing_2 split-container" style="width:100%">
         {% for block in section.blocks %}
           
-          <div li-block="Card" class="sustainability_card" style="gap:3rem">
+          <div li-block="Card" class="sustainability_card" style="gap:2rem">
             <img class="sustainability_icon" src="{{ block.settings.image | img_url: 'master'}}" alt="{{ block.settings.image.alt }}" style="height:2rem" loading="lazy">
 
             <div class="w-layout-vflex spacing_1">
-                <div class="heading_small" style="font-size:0.875rem; color:#f70da6"> {{ block.settings.country }} </div>
+            
                 <h3 class="heading_small" style="font-size:1.2rem;">
                     {{  block.settings.heading }}
                 </h3>
-                <p> {{block.settings.address}} </p>
+                <div class="address"> {{block.settings.address}} </div>
             </div>
         </div>
 
@@ -57,10 +65,10 @@
             "default": "Location Name"
           },
           {
-            "type": "text",
+            "type": "richtext",
             "id": "address",
             "label": "Address",
-            "default": "Enter location address here"
+            "default": "<p>text</p>"
           }
         ]
       }
