@@ -215,6 +215,17 @@
         "text_credit": "Dr. Nabil Sharara, General Practitioner"
       }
     },
+    "testimonial_flipped_KjT64r": {
+      "type": "testimonial-flipped",
+      "custom_css": [
+        ".expert_image {aspect-ratio: 1/1;}"
+      ],
+      "settings": {
+        "image_product_image": "shopify://shop_images/popup_img.jpg",
+        "textarea_testimonial": "\"Nuchu gummies are really good and well made. I love the formulation and they're easy to chew and take regularly as opposed to other supplements.\"",
+        "text_credit": "Dr. Teniola Saraki, MBBS, MPH"
+      }
+    },
     "all_the_best": {
       "type": "all_the_best",
       "settings": {
@@ -257,6 +268,7 @@
     "ingredients_CggNWb",
     "ingredients_qbVGgL",
     "testimonial",
+    "testimonial_flipped_KjT64r",
     "all_the_best",
     "meet_your_match",
     "omg"
