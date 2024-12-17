@@ -28,8 +28,8 @@
           "settings": {
             "image": "shopify://shop_images/Vector.svg",
             "country": "Switzerland",
-            "heading": "Melrose Kitchen Geneva",
-            "address": "Galerie Des Bergues, Rue Arnold Winkelried 1, 1201 Genève, Switzerland"
+            "heading": "Switzerland",
+            "address": "<h3>Melrose Kitchen Geneva</h3><p>Galerie Des Bergues, Rue Arnold Winkelried 1, 1201 Genève, Switzerland</p><p>  </p><p> </p><h3>Form Studio geneva</h3><p>Av. de la Gare des Eaux-Vives 28, 1208 Genève, Switzerland</p><p>  </p><h3>Form Studio Zurich</h3><p>Talstrasse 62A, 8001 Zürich, Switzerland</p><p>  </p><h3>Melrose Kitchen Geneva</h3><p>Galerie Des Bergues, Rue Arnold Winkelried 1, 1201 Genève, Switzerland</p>"
           }
         },
         "location_gNRTGh": {
@@ -37,8 +37,8 @@
           "settings": {
             "image": "shopify://shop_images/Vector.svg",
             "country": "Switzerland",
-            "heading": "Form Studio geneva",
-            "address": "Av. de la Gare des Eaux-Vives 28, 1208 Genève, Switzerland"
+            "heading": "Monaco",
+            "address": "<h3>Espace Beauté Eric Zemmour</h3><p>6 Bd des Moulins, 98000 Monaco</p><p></p><h3>HealthStore</h3><p>Métropole Shopping, 17 Av. des Spélugues, 98000 Monaco</p><p></p><h3>The Organic Shop</h3><p>45-47 Rue Grimaldi, 98000, Monaco</p>"
           }
         },
         "location_7W7dAA": {
@@ -46,8 +46,8 @@
           "settings": {
             "image": "shopify://shop_images/Vector.svg",
             "country": "Switzerland",
-            "heading": "Form Studio Zurich",
-            "address": "Talstrasse 62A, 8001 Zürich, Switzerland"
+            "heading": "Spain",
+            "address": "<h3>Tiara Health Marbella</h3><p>Centro de Negocios Oasis, N-340, Km 183, Oficina 2, 29600 Marbella, Málaga  </p>"
           }
         },
         "location_3XxTyy": {
@@ -55,35 +55,8 @@
           "settings": {
             "image": "shopify://shop_images/Vector.svg",
             "country": "Monaco",
-            "heading": "Espace Beauté Eric Zemmour",
-            "address": "6 Bd des Moulins, 98000 Monaco"
-          }
-        },
-        "location_7XDb3R": {
-          "type": "location",
-          "settings": {
-            "image": "shopify://shop_images/Vector.svg",
-            "country": "Monaco",
-            "heading": "HealthStore",
-            "address": "Métropole Shopping, 17 Av. des Spélugues, 98000 Monaco"
-          }
-        },
-        "location_YtkTLC": {
-          "type": "location",
-          "settings": {
-            "image": "shopify://shop_images/Vector.svg",
-            "country": "London",
-            "heading": "MAD fitness Studio",
-            "address": "32 N Audley St, London W1K 6ZG"
-          }
-        },
-        "location_tktUCm": {
-          "type": "location",
-          "settings": {
-            "image": "shopify://shop_images/Vector.svg",
-            "country": "Spain",
-            "heading": "Tiara Health Marbella",
-            "address": "Centro de Negocios Oasis, N-340, Km 183, Oficina 2, 29600 Marbella, Málaga"
+            "heading": "London",
+            "address": "<h3>MAD fitness Studio</h3><p>32 N Audley St, London W1K 6ZG  </p>"
           }
         }
       },
@@ -91,10 +64,7 @@
         "location_BxbFAd",
         "location_gNRTGh",
         "location_7W7dAA",
-        "location_3XxTyy",
-        "location_7XDb3R",
-        "location_YtkTLC",
-        "location_tktUCm"
+        "location_3XxTyy"
       ],
       "custom_css": [
         "#locations {}"
