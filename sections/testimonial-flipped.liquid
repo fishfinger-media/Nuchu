@@ -1,12 +1,5 @@
 <div class="container_science padded">
-  <div class="experts_split">
-
-
-    <img class="expert_image"
-      src="{{ section.settings.image_product_image | img_url: 'master' }}"
-      alt="expert image"
-      loading="lazy">
-
+  <div class="experts_split is-flipped">
 
     <div class="w-layout-vflex spacing_2">
       <p class="heading_small line-spacing-medium">
@@ -16,13 +9,21 @@
         {{ section.settings.text_credit }}
       </div>
     </div>
+
+    <img class="expert_image"
+      src="{{ section.settings.image_product_image | img_url: 'master' }}"
+      alt="expert image"
+      loading="lazy">
+
+
+    
   </div>
 </div>
 
 {% schema %}
 {
   "tag": "section",
-  "name": "testimonial",
+  "name": "Testimonial Flipped",
   "class": "section_testimonial",
   "settings": [
     
@@ -46,7 +47,7 @@
   ],
   "presets": [
     {
-      "name": "testimonial",
+      "name": "testimonial-flipped",
       "category": "Liquify"
     }
   ]
