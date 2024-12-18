@@ -29,15 +29,7 @@
             "image": "shopify://shop_images/Vector.svg",
             "country": "Switzerland",
             "heading": "Switzerland",
-            "address": "<h3>Melrose Kitchen Geneva</h3><p>Galerie Des Bergues, Rue Arnold Winkelried 1, 1201 Genève, Switzerland</p><p>  </p><p> </p><h3>Form Studio geneva</h3><p>Av. de la Gare des Eaux-Vives 28, 1208 Genève, Switzerland</p><p>  </p><h3>Form Studio Zurich</h3><p>Talstrasse 62A, 8001 Zürich, Switzerland</p>"
-          }
-        },
-        "location_qkapH8": {
-          "type": "location",
-          "settings": {
-            "country": "Monaco",
-            "heading": "Location Name",
-            "address": "<p>text</p>"
+            "address": "<h3>Melrose Kitchen Geneva</h3><p>Galerie Des Bergues, Rue Arnold Winkelried 11201 Geneva, Switzerland</p><p>  </p><p> </p><h3>Form Studio geneva</h3><p>Av. de la Gare des Eaux-Vives 28, 1208 Geneva, Switzerland</p><p>  </p><h3>Form Studio Zurich</h3><p>Talstrasse 62A, 8001 Zürich, Switzerland</p>"
           }
         },
         "location_gNRTGh": {
@@ -70,7 +62,6 @@
       },
       "block_order": [
         "location_BxbFAd",
-        "location_qkapH8",
         "location_gNRTGh",
         "location_7W7dAA",
         "location_3XxTyy"
