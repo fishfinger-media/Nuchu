@@ -11,13 +11,9 @@
   "sections": {
     "product_page_subs_YHgeAK": {
       "type": "product_page-subs",
-      "settings": {}
-    },
-    "17331330948327f747": {
-      "type": "apps",
       "blocks": {
-        "subi_subscriptions_app_app_block_rYzzhT": {
-          "type": "shopify://apps/subi-subscriptions-app/blocks/app-block/bc0dba25-cd46-4841-bea4-6bdfe9ac815f",
+        "subi_ex_subify_app_block_T4Hr6D": {
+          "type": "shopify://apps/subi-ex-subify/blocks/app-block/bc0dba25-cd46-4841-bea4-6bdfe9ac815f",
           "settings": {
             "product": "{{product}}",
             "use_app_block_wording": false,
@@ -47,7 +43,7 @@
         }
       },
       "block_order": [
-        "subi_subscriptions_app_app_block_rYzzhT"
+        "subi_ex_subify_app_block_T4Hr6D"
       ],
       "settings": {}
     },
@@ -105,7 +101,6 @@
   "layout": "product",
   "wrapper": "main.main-wrapper",
   "order": [
-    "17331330948327f747",
     "product_page_subs_YHgeAK",
     "faq"
   ]
