@@ -52,6 +52,10 @@
 
                     {% for link in linklists['main-menu-right'].links %}
                       <a href="{{ link.url }}" class="button w-button solo-shop-btn" data-display="desktop"> {{ link.title }}</a>
+                        {% for link in linklists['main-menu-right-alt'].links %}
+                            <a href="{{ link.url }}" class="button w-button " data-display="desktop"> {{ link.title }}</a>
+                        {% endfor %} 
+
                     {% endfor %} 
 
                     <div data-body="blue" class="navbar-mobilelinks-sublinks"><a button-size="nav" href="/cart"
